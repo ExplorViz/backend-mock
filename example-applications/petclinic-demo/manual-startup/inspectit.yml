@@ -6,8 +6,8 @@ inspectit:
   instrumentation:
     scopes:
       s_allClasses:
-        type:
-            name: net
+        type: 
+            name: org.springframework.samples
             matcher-mode: STARTS_WITH_IGNORE_CASE
 
     rules:
@@ -39,11 +39,11 @@ inspectit:
           application_name_attr:
             action: a_assign_value
             constant-input:
-              value: "fibonacci"
+              value: "spring pet clinic"
           application_instance_id_attr:
             action: a_assign_value
             constant-input:
-              value: "1"
+              value: "0"
           application_language_attr:
             action: a_assign_value
             constant-input:

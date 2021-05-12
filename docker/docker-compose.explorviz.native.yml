@@ -11,7 +11,7 @@ services:
 
   adapter-service:
     container_name: adapter-service
-    image: explorviz/adapter-service-jvm:latest
+    image: explorviz/adapter-service-native:latest
     networks:
       - explorviz
     environment:
@@ -24,7 +24,7 @@ services:
 
   landscape-service:
     container_name: landscape-service
-    image: explorviz/landscape-service-jvm:latest
+    image: explorviz/landscape-service-native:latest
     networks:
       - explorviz
     ports:
@@ -42,7 +42,7 @@ services:
 
   trace-service:
     container_name: trace-service
-    image: explorviz/trace-service-jvm:latest
+    image: explorviz/trace-service-native:latest
     ports:
       - 8083:8080
     networks:
@@ -60,7 +60,7 @@ services:
 
   user-service:
     container_name: user-service
-    image: explorviz/user-service-jvm:latest
+    image: explorviz/user-service-native:latest
     ports:
       - 8084:8080
     networks:

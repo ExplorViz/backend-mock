@@ -1,0 +1,38 @@
+version: "3.5"
+services:
+
+  ocelot-agent:
+    image: inspectit/inspectit-ocelot-agent:1.8.1
+    container_name: ocelot-agent
+    networks:
+      - explorviz
+    volumes:
+      - agent-vol:/agent
+
+  spring-petclinic:
+    image: explorviz/spring-petclinic
+    container_name: spring-petclinic
+    depends_on: 
+      - ocelot-agent
+    ports: 
+      - 18080:18080
+    networks:
+      - explorviz
+    environment:
+      - LANDSCAPE_TOKEN=bf540505-6bcc-445a-b0ce-6577f402cdd8
+      - OC_COLLECTOR_ADDRESS=oc-collector:55678
+    volumes:
+      - agent-vol:/agent
+    entrypoint: ["sh", "-c", "
+    ./inspectit-updater.sh &&
+    java
+    -Dinspectit.config.file-based.path=\"/inspectit/\"
+    -javaagent:/agent/inspectit-ocelot-agent.jar
+    -jar /app.jar"]
+
+volumes:
+  agent-vol:
+
+networks:
+  explorviz:
+    name: explorviz

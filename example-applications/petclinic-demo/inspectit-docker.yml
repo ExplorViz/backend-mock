@@ -18,7 +18,6 @@ inspectit:
             start-span: true
             attributes:
               landscape_token: landscape_token_attr
-              token_secret: token_secret_attr
               application_name: application_name_attr
               application_language: application_language_attr
               application_instance_id: application_instance_id_attr
@@ -30,12 +29,7 @@ inspectit:
             action: a_assign_value
             constant-input:
               # Replace with generated token
-              value: "token"
-          token_secret_attr:
-            action: a_assign_value
-            constant-input:
-              # Replace with generated secret
-              value: "secret"
+              value: "sample-token"
           application_name_attr:
             action: a_assign_value
             constant-input:
@@ -43,7 +37,7 @@ inspectit:
           application_instance_id_attr:
             action: a_assign_value
             constant-input:
-              value: 0
+              value: "0"
           application_language_attr:
             action: a_assign_value
             constant-input:
@@ -86,6 +80,6 @@ inspectit:
   exporters:
     tracing:
       open-census-agent:
-        address: "localhost:55678"
+        address: "oc-collector:55678"
         service-name: "OC Agent Local"
         use-insecure: true

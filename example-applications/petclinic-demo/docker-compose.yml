@@ -19,7 +19,8 @@ services:
     networks:
       - explorviz
     environment:
-      - LANDSCAPE_TOKEN=bf540505-6bcc-445a-b0ce-6577f402cdd8
+      - LANDSCAPE_TOKEN=copy-from-frontend
+      - LANDSCAPE_SECRET=copy-from-frontend
       - OC_COLLECTOR_ADDRESS=oc-collector:55678
     volumes:
       - agent-vol:/agent

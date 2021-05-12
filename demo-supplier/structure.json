@@ -1,97 +1,344 @@
 {
-  "landscapeToken" : "17844195-6144-4254-a17b-0f7fb49adb0a",
+  "landscapeToken" : "a5a92b25-8740-496b-9d97-b95758aa5819",
   "nodes" : [ {
-    "ipAddress" : "192.168.178.74",
-    "hostName" : "Alexanders-MBP.fritz.box",
+    "ipAddress" : "172.18.0.11",
+    "hostName" : "7361d99b4baa",
     "applications" : [ {
-      "name" : "fibonacci",
+      "name" : "spring-petclinic-customers-service",
       "language" : "java",
       "instanceId" : "1",
       "packages" : [ {
-        "name" : "net",
+        "name" : "org",
         "subPackages" : [ {
-          "name" : "explorviz",
+          "name" : "springframework",
           "subPackages" : [ {
-            "name" : "sampleApplication",
+            "name" : "samples",
             "subPackages" : [ {
-              "name" : "application",
+              "name" : "petclinic",
               "subPackages" : [ {
-                "name" : "math",
-                "subPackages" : [ ],
-                "classes" : [ {
-                  "name" : "Fibonacci",
-                  "methods" : [ {
-                    "name" : "calculate",
-                    "hashCode" : "0b064d846e37337db07991f806a36f4fcacab5517d2801918ba6ba65284c9888"
-                  } ]
-                } ]
-              } ],
-              "classes" : [ {
-                "name" : "JavaExample",
-                "methods" : [ {
-                  "name" : "start",
-                  "hashCode" : "05dc4a2405adf51e81214c7a8a237ad68bd329939296729619b3c50eb878c114"
-                } ]
-              } ]
-            }, {
-              "name" : "database",
-              "subPackages" : [ {
-                "name" : "helper",
-                "subPackages" : [ ],
-                "classes" : [ {
-                  "name" : "SQLStatementHandler",
-                  "methods" : [ {
-                    "name" : "executeStatementHandler",
-                    "hashCode" : "4a16407ec3a7f718dcbf29804d0f3e77307760bea7b559c0d29a2a34146e0841"
+                "name" : "customers",
+                "subPackages" : [ {
+                  "name" : "model",
+                  "subPackages" : [ ],
+                  "classes" : [ {
+                    "name" : "Owner",
+                    "methods" : [ {
+                      "name" : "getTelephone",
+                      "hashCode" : "02775e1b5ea9d7a85151b762b6b7e6668118471083d8c7ef6833ee876a330673"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "1b4c0a6df9155a9e8d353004a2a81a7d31603afd578916bc8678e3c6de69eff5"
+                    }, {
+                      "name" : "getLastName",
+                      "hashCode" : "1cd51bb5dbcde8444fc1e33c75ae848d0cede5f1f582e592c9b7be6ce8efdbb0"
+                    }, {
+                      "name" : "getPets",
+                      "hashCode" : "1e097e209a7b539bdfb5f60cb6addd4b39277ba1b331fa0f11e8fe9eebb1b2c9"
+                    }, {
+                      "name" : "setCity",
+                      "hashCode" : "3d3d941350c7b3b9fd9609aefe8df1780cc476042ed05e097c40957c6e594624"
+                    }, {
+                      "name" : "getPetsInternal",
+                      "hashCode" : "3e72c7b9af263e066cacfa9c2eac2713fcb5ea47baab091fa6a9180a18865db4"
+                    }, {
+                      "name" : "getAddress",
+                      "hashCode" : "5573407abdfa6b436e238b4ea2095d4050cb7bd7453fb686178eb3cde66fce48"
+                    }, {
+                      "name" : "getId",
+                      "hashCode" : "63f07a53e7ae4182628419563261410a15625bb9afe92510af70d9e167b5d9ad"
+                    }, {
+                      "name" : "getFirstName",
+                      "hashCode" : "7256daa5d089b787f523d7bcd258a2c9fa80aca43e994e6942ccbc51eb0826f8"
+                    }, {
+                      "name" : "setTelephone",
+                      "hashCode" : "95d92fedc282ff5874a1bbea3d609e6628f9ca6b4d92e0d5eb214c0dd4426f3e"
+                    }, {
+                      "name" : "setLastName",
+                      "hashCode" : "97319494541cb2557fcb0a54543419a99bb6695386409490064403aca0f8fa55"
+                    }, {
+                      "name" : "setAddress",
+                      "hashCode" : "afbb05a7e7a32af2ca795b8cfc54e452c7244c60b7c87acd3b6b8f90f4e34aa4"
+                    }, {
+                      "name" : "setFirstName",
+                      "hashCode" : "b2220761a0dcc0d767feb771ae2ba3cc8a23b264703a924b42df3ac707cc1bec"
+                    }, {
+                      "name" : "addPet",
+                      "hashCode" : "d10c4d5a04249ad340ca842723f8f49f13dce51aa5c02a36912dba4a06816c33"
+                    }, {
+                      "name" : "getCity",
+                      "hashCode" : "e4003e6adebdc3925ecf99bca31b0fa7d9f1f3c19556865265889f500182ba8c"
+                    } ]
+                  }, {
+                    "name" : "Pet",
+                    "methods" : [ {
+                      "name" : "getOwner",
+                      "hashCode" : "0db8cee148bb196652f2778644f4f019a4e451869f19202803647781b9a64f96"
+                    }, {
+                      "name" : "setType",
+                      "hashCode" : "1c68388cf502b445b03ddfb7232d8f09356566614d8ce181ffde74f3b15f14ad"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "2872a67fc491a57181988046ae9739072a7dae09b67edbd02b2cc28faf087848"
+                    }, {
+                      "name" : "setBirthDate",
+                      "hashCode" : "2ac7c1d50008ddbb030061ce2dc496b752235cf72f2e87f6e45e1d8e3bf1228d"
+                    }, {
+                      "name" : "toString",
+                      "hashCode" : "519a1785d5851da855cacdb04d8516e394f97d4f6fe66bfc69751af3840d7d83"
+                    }, {
+                      "name" : "setName",
+                      "hashCode" : "85f1d9eb4e783cbed531c06c69bfff2aabac33aea4d480b8d89ba3a7a1256a91"
+                    }, {
+                      "name" : "setOwner",
+                      "hashCode" : "a0d3a40a923f3284c2bcb0700539070fccdcfdf3c3cea153053366b41cb224c7"
+                    }, {
+                      "name" : "getBirthDate",
+                      "hashCode" : "a61681c2e7d6333018a8a6bf413d82e592c22b681dc169cadc3648fd4cc96646"
+                    }, {
+                      "name" : "getId",
+                      "hashCode" : "b473bedb8022211570d376b982c237c138b10e009b3c53ad6619d80b6fa455d5"
+                    }, {
+                      "name" : "getType",
+                      "hashCode" : "cd40a11ac146f7dd0f75c0b9321f9e92c940ff20c45a4f9cea38c5e36cd9ff9b"
+                    }, {
+                      "name" : "getName",
+                      "hashCode" : "cde1b1e11f5f61a5b3d26f062fd30a83de7fd0ff4989229bf77a1a07ceacd6bc"
+                    } ]
+                  }, {
+                    "name" : "PetType",
+                    "methods" : [ {
+                      "name" : "getName",
+                      "hashCode" : "6315bbc26245e2dab3d4ebcdb5b88fd66ec452d6d7d020cbb0c5541726414af2"
+                    }, {
+                      "name" : "getId",
+                      "hashCode" : "85a594e1e266a90453d9b67440b533e2a8962244855c468032b50c820099d67c"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "995e6202eaf33c340c03d26dd7a3e96b052b9cb8203894c532e85a1d64689f7f"
+                    } ]
                   } ]
                 }, {
-                  "name" : "SQLConnectionHandler",
-                  "methods" : [ {
-                    "name" : "createDatabase",
-                    "hashCode" : "add6b7c9487e285cb08bd11208dec851f1e73b6e4a337835b333f29a9b59c407"
+                  "name" : "web",
+                  "subPackages" : [ ],
+                  "classes" : [ {
+                    "name" : "OwnerResource",
+                    "methods" : [ {
+                      "name" : "findOwner",
+                      "hashCode" : "36aa125cd0b018424c5890aaf10987d6fd9e3ff8b246369f51e2372345a953fd"
+                    }, {
+                      "name" : "createOwner",
+                      "hashCode" : "5f4bae3b1804319dbf29c9cd97e2cdb493998174071da86857d294b4d7d870d6"
+                    }, {
+                      "name" : "findAll",
+                      "hashCode" : "ee0372499f5fb3ccf6c61d7323bf593a3105dac2ce01ca63112259bd58edf65b"
+                    } ]
                   }, {
-                    "name" : "disconnect",
-                    "hashCode" : "ce8f8b85e0fb0629658df0418c050521ee7ea66ee3552b1dd7d0860f90fe8117"
+                    "name" : "PetRequest",
+                    "methods" : [ {
+                      "name" : "setName",
+                      "hashCode" : "46fb8543cd5cb36887bbd9949cd1feb9cbe59de59433ad0aba2f7dbbe6c4d8c5"
+                    }, {
+                      "name" : "getBirthDate",
+                      "hashCode" : "4ae1a28e45f91ab4cb696d357f0ce5a311e25a8e20af95489279f691fe9245b1"
+                    }, {
+                      "name" : "setBirthDate",
+                      "hashCode" : "652b2fc1f73c5bd88a6f0c622a6f80254adc97e823609fe4fe8a8e18939b6b02"
+                    }, {
+                      "name" : "getName",
+                      "hashCode" : "8d473b99b0e67479ff089d2564499139e9909a26d9522d959136c0986d172094"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "afc4e4bf40ec808e345d28dce2ff514a1b4b808639371b8a6512895a8769bce5"
+                    }, {
+                      "name" : "setTypeId",
+                      "hashCode" : "c986441d4a4740c378b270757b92060ffe64c8520629b71cef9c8d2096fe1255"
+                    }, {
+                      "name" : "setId",
+                      "hashCode" : "ed4e569b316187ea6290215ba5326f4c5cf53611eb4d2b904af6f06a48ce2326"
+                    }, {
+                      "name" : "getTypeId",
+                      "hashCode" : "f6f8b159510c222e65095ac8ddd6ec1b65d45c9d1d3b9d291e2dfbf36f4f8715"
+                    } ]
                   }, {
-                    "name" : "connect",
-                    "hashCode" : "f6576f4c545ee315e49c65605dcc851f96bf49e80845ce0ce3c958b45a87557e"
+                    "name" : "PetResource",
+                    "methods" : [ {
+                      "name" : "getPetTypes",
+                      "hashCode" : "6ac6e4c7f0dd30cc44d87e3b41dd2c3c7151e1b544dd21814deb1abb59aa2fd0"
+                    }, {
+                      "name" : "processCreationForm",
+                      "hashCode" : "80be13552df27ac58ada493733515ff64d92945209a15eb6bb0cbceb4763bf87"
+                    }, {
+                      "name" : "save",
+                      "hashCode" : "e76f75990a91478c6f50cc61a18878a1a7e3560d86b3d8b21e76dbb4f9fa1670"
+                    } ]
                   } ]
-                } ]
+                } ],
+                "classes" : [ ]
               } ],
-              "classes" : [ {
-                "name" : "JDBCExample",
-                "methods" : [ {
-                  "name" : "start",
-                  "hashCode" : "70bb60fab08e07532ce6e79de333541bc498a7f448c99d934685603d2f06ed8b"
-                }, {
-                  "name" : "runQueries",
-                  "hashCode" : "c5fc10c742e58f3e344816a079e65b2c2c49b28a36659a7a0c20070a66210656"
-                } ]
-              } ]
-            }, {
-              "name" : "util",
-              "subPackages" : [ ],
-              "classes" : [ {
-                "name" : "RandomNumberGenerator",
-                "methods" : [ {
-                  "name" : "getRandomNumber",
-                  "hashCode" : "c66b6f4c8acbfa4a65837d721344387bcb7ad2ffa2f733ff44370abccb599c66"
-                } ]
-              } ]
+              "classes" : [ ]
             } ],
-            "classes" : [ {
-              "name" : "Main$DatabaseTask",
-              "methods" : [ {
-                "name" : "run",
-                "hashCode" : "4b4c314927bd5061592c8c5a6a194a054216f8fa4e0324f5304ea1179bae2776"
-              } ]
-            }, {
-              "name" : "Main$ApplicationTask",
-              "methods" : [ {
-                "name" : "run",
-                "hashCode" : "97aca15b161345d9f5de793fbde8192a8b16b47138e9dc18d3b76a8b3c7b13d7"
-              } ]
-            } ]
+            "classes" : [ ]
+          } ],
+          "classes" : [ ]
+        } ],
+        "classes" : [ ]
+      } ]
+    } ]
+  }, {
+    "ipAddress" : "172.18.0.16",
+    "hostName" : "64fce5ae0e62",
+    "applications" : [ {
+      "name" : "spring-petclinic-vets-service",
+      "language" : "java",
+      "instanceId" : "1",
+      "packages" : [ {
+        "name" : "org",
+        "subPackages" : [ {
+          "name" : "springframework",
+          "subPackages" : [ {
+            "name" : "samples",
+            "subPackages" : [ {
+              "name" : "petclinic",
+              "subPackages" : [ {
+                "name" : "vets",
+                "subPackages" : [ {
+                  "name" : "model",
+                  "subPackages" : [ ],
+                  "classes" : [ {
+                    "name" : "Specialty",
+                    "methods" : [ {
+                      "name" : "getId",
+                      "hashCode" : "116ef1e6abc29b3e9e07c22dcbf3a58dad3d09fd0e1b27a7862bdec8c5c07c38"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "a3cd5a4e804d49c3c7e72f91c13ad856f438be336c6ae999ec49aa83249cca31"
+                    }, {
+                      "name" : "getName",
+                      "hashCode" : "ffe8dabc6bc2a463b6a47cbe1d87ab596486e45bde5f60c735cbb2d4bf91ab02"
+                    } ]
+                  }, {
+                    "name" : "Vet",
+                    "methods" : [ {
+                      "name" : "getLastName",
+                      "hashCode" : "2320fd483f88f4acb0e0da3d7a18e057d1520f87e8430b43a250d8ba994636cd"
+                    }, {
+                      "name" : "getSpecialtiesInternal",
+                      "hashCode" : "44bea7629559707d35d100e9b244d30f55b261080ab5fe723ef7ed7154213f8d"
+                    }, {
+                      "name" : "getNrOfSpecialties",
+                      "hashCode" : "479924108421820a65ee4087f8b9337adb5db02f047a292973e130e149a0c1ba"
+                    }, {
+                      "name" : "getSpecialties",
+                      "hashCode" : "572c7155475074035e6601db7853090d100f6220e36cd4df4f0653753692aa87"
+                    }, {
+                      "name" : "getFirstName",
+                      "hashCode" : "c257ce515ff4c62dac1cd18d81ed8bcc074ba2dcbd44b1f444ece0dac886f3b9"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "c63cc9c48cdbefadfbddb3627424888ef4cf69c31c5fcdb8ef14aa241fd27158"
+                    }, {
+                      "name" : "getId",
+                      "hashCode" : "f8cac3e2d29413223facf591d7f7095104036aefc2493f335559fb6605ac71ea"
+                    } ]
+                  } ]
+                }, {
+                  "name" : "web",
+                  "subPackages" : [ ],
+                  "classes" : [ {
+                    "name" : "VetResource",
+                    "methods" : [ {
+                      "name" : "showResourcesVetList",
+                      "hashCode" : "f5db1fc5d578c10c51fe615cdd1691c5c8109ee902d897db58697ba1cc70c4c6"
+                    } ]
+                  } ]
+                } ],
+                "classes" : [ ]
+              } ],
+              "classes" : [ ]
+            } ],
+            "classes" : [ ]
+          } ],
+          "classes" : [ ]
+        } ],
+        "classes" : [ ]
+      } ]
+    } ]
+  }, {
+    "ipAddress" : "172.18.0.17",
+    "hostName" : "69f6f0c3923e",
+    "applications" : [ {
+      "name" : "spring-petclinic-visits-service",
+      "language" : "java",
+      "instanceId" : "1",
+      "packages" : [ {
+        "name" : "org",
+        "subPackages" : [ {
+          "name" : "springframework",
+          "subPackages" : [ {
+            "name" : "samples",
+            "subPackages" : [ {
+              "name" : "petclinic",
+              "subPackages" : [ {
+                "name" : "visits",
+                "subPackages" : [ {
+                  "name" : "model",
+                  "subPackages" : [ ],
+                  "classes" : [ {
+                    "name" : "Visit",
+                    "methods" : [ {
+                      "name" : "$default$date",
+                      "hashCode" : "2b1abbfa7dd19c0d9f764987eeac9767155a6a7ee9f758f0e9e21ccf8af9ef59"
+                    }, {
+                      "name" : "setPetId",
+                      "hashCode" : "4e86e8214f20a5cd85cc77103fafa1bb91f13e342684853700adc09c0b622368"
+                    }, {
+                      "name" : "getPetId",
+                      "hashCode" : "8ffd3b894cb858bce5f23848dcf95707904ae41b403f051d41e2d665aeddd4e6"
+                    }, {
+                      "name" : "getDescription",
+                      "hashCode" : "a2945a18c5d465b3c5e42549ff3e85cd484537399ad5d7db88ec8d72dcb69fc9"
+                    }, {
+                      "name" : "getId",
+                      "hashCode" : "bc637303b2d139774e78bc48b8aa5e2db146fd509633e02275aa980b857bf907"
+                    }, {
+                      "name" : "getDate",
+                      "hashCode" : "c27eed85122900f871e96b31d601f8a3abeec070b8fcf0aa9bda319edf777447"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "d8cf597f22d32264484b317c5f2c8ab3a2185a834c16acfc4745782bef1d7737"
+                    } ]
+                  } ]
+                }, {
+                  "name" : "web",
+                  "subPackages" : [ ],
+                  "classes" : [ {
+                    "name" : "VisitResource",
+                    "methods" : [ {
+                      "name" : "visitsMultiGet",
+                      "hashCode" : "624f286ab0407132650fd383d7447f2b07ec759a1193092b5401891835561aed"
+                    }, {
+                      "name" : "visits",
+                      "hashCode" : "7d763974214c246993ec36de53e2fa6b4bab208d960d160737020a4ec0790f23"
+                    }, {
+                      "name" : "create",
+                      "hashCode" : "e92e86a98b305a10ae9663a92e264df85eb8dd9c51821d984690414d64964573"
+                    } ]
+                  }, {
+                    "name" : "VisitResource$Visits",
+                    "methods" : [ {
+                      "name" : "getItems",
+                      "hashCode" : "7ea3ffb19cc9692b52f6b86badf422ba8af0ef9e2163e65e33fca58e24e28659"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "c996f4e1c546256de611111cd689d31bdb36ab47309067bf96f58ff58050bbfd"
+                    } ]
+                  } ]
+                } ],
+                "classes" : [ ]
+              } ],
+              "classes" : [ ]
+            } ],
+            "classes" : [ ]
           } ],
           "classes" : [ ]
         } ],

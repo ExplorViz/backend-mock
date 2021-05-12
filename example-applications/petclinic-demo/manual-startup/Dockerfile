@@ -1,6 +1,7 @@
 FROM adoptopenjdk/openjdk11:alpine
 
-ENV LANDSCAPE_TOKEN=sample-token
+ENV LANDSCAPE_TOKEN=token
+ENV LANDSCAPE_SECRET=secret
 ENV OC_COLLECTOR_ADDRESS=oc-collector:55678
 
 ARG INSPECTIT_UPDATER=inspectit-updater.sh

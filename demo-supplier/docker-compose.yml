@@ -1,0 +1,18 @@
+version: "3.5"
+services:
+
+  ## Demo-Supplier ##
+
+  demo-supplier:
+    container_name: explorviz-demo-supplier
+    image: explorviz/demo-supplier:latest
+    networks:
+      - explorviz
+    ports:
+      - 8082:8082
+      - 8083:8083
+      - 8084:8084
+
+networks:
+  explorviz:
+    name: explorviz

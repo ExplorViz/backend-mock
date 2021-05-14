@@ -4,7 +4,6 @@ services:
   ocelot-agent:
     image: inspectit/inspectit-ocelot-agent:1.8.1
     container_name: ocelot-agent
-    mem_limit: 128M
     networks:
       - explorviz
     volumes:
@@ -19,12 +18,16 @@ services:
       - 18080:18080
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN=copy-from-frontend
+      - LANDSCAPE_SECRET=copy-from-frontend
+      - OC_COLLECTOR_ADDRESS=oc-collector:55678
     volumes:
       - agent-vol:/agent
-      - ./inspectit-docker.yml:/agent/inspectit.yml
     entrypoint: ["sh", "-c", "
+    ./inspectit-updater.sh &&
     java
-    -Dinspectit.config.file-based.path=\"/agent/\"
+    -Dinspectit.config.file-based.path=\"/inspectit/\"
     -javaagent:/agent/inspectit-ocelot-agent.jar
     -jar /app.jar"]
 

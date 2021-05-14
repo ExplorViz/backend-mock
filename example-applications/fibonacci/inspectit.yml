@@ -18,6 +18,7 @@ inspectit:
             start-span: true
             attributes:
               landscape_token: landscape_token_attr
+              token_secret: token_secret_attr
               application_name: application_name_attr
               application_language: application_language_attr
               application_instance_id: application_instance_id_attr
@@ -29,7 +30,12 @@ inspectit:
             action: a_assign_value
             constant-input:
               # Replace with generated token
-              value: "sample-token"
+              value: "token"
+          token_secret_attr:
+            action: a_assign_value
+            constant-input:
+              # Replace with generated secret
+              value: "secret"
           application_name_attr:
             action: a_assign_value
             constant-input:

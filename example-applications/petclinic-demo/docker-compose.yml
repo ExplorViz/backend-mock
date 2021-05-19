@@ -2,7 +2,7 @@ version: "3.5"
 services:
 
   ocelot-agent:
-    image: inspectit/inspectit-ocelot-agent:1.8.1
+    image: inspectit/inspectit-ocelot-agent:1.7
     container_name: ocelot-agent
     networks:
       - explorviz
@@ -19,8 +19,8 @@ services:
     networks:
       - explorviz
     environment:
-      - LANDSCAPE_TOKEN=copy-from-frontend
-      - LANDSCAPE_SECRET=copy-from-frontend
+      - LANDSCAPE_TOKEN=c64bea29-0260-4673-9a6b-304f4c047568
+      - LANDSCAPE_SECRET=MF1wdKxqKc0bu9q6
       - OC_COLLECTOR_ADDRESS=oc-collector:55678
     volumes:
       - agent-vol:/agent

@@ -87,3 +87,28 @@ traceApp.get(`${traceRootUrl}/${petclinicDistributedToken}/dynamic`, function(re
 });
 
 // END Petclinic-Distributed Sample
+
+// BEGIN Petclinic Sample
+
+const petclinicDistributedToken = "19844195-7235-4254-a17b-0f7fb49adb0a";
+const petclinicDistributedFilePrefix = "petclinic";
+let structurePetclinicDistributed = {};
+let dynamicPetclinicDistributed = {};
+
+fs.readFile(`./${petclinicDistributedFilePrefix}-structure.json`, (err, json) => {
+  structurePetclinicDistributed = JSON.parse(json);
+});
+
+fs.readFile(`./${petclinicDistributedFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicPetclinicDistributed = JSON.parse(json);
+});
+
+landscapeApp.get(`${landscapeRootUrl}/${petclinicDistributedToken}/structure`, function(req, res) {
+  res.json(structurePetclinicDistributed);
+});
+
+traceApp.get(`${traceRootUrl}/${petclinicDistributedToken}/dynamic`, function(req, res) {
+  res.json(dynamicPetclinicDistributed);
+});
+
+// END Petclinic Sample

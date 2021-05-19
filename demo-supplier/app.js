@@ -1,34 +1,19 @@
-var express = require('express');
-var fs = require('fs');
-var cors = require('cors')
+const express = require('express');
+const fs = require('fs');
+const cors = require('cors')
 
-var landscapeApp = express();
-var traceApp = express();
-var userApp = express();
+const landscapeApp = express();
+const traceApp = express();
+const userApp = express();
 
-var landscapePort = 8082;
-var tracePort = 8083; 
-var userPort = 8084;
+// Disable caching to prevent HTTP 304
+landscapeApp.disable('etag');
+traceApp.disable('etag');
+userApp.disable('etag');
 
-var structure = {};
-var dynamic = {};
-var user = {};
-
-var landscapeRootUrl = "/v2/landscapes";
-var traceRootUrl = "/v2/landscapes";
-var userRootUrl = "/user/:uid/token";
-
-fs.readFile('./structure.json', (err, json) => {
-  structure = JSON.parse(json);
-});
-
-fs.readFile('./dynamic.json', (err, json) => {
-  dynamic = JSON.parse(json);
-});
-
-fs.readFile('./user.json', (err, json) => {
-  user = JSON.parse(json);
-});
+const landscapePort = 8082;
+const tracePort = 8083; 
+const userPort = 8084;
 
 traceApp.use(cors());
 landscapeApp.use(cors());
@@ -38,14 +23,67 @@ traceApp.listen(tracePort, () => {});
 landscapeApp.listen(landscapePort, () => {});
 userApp.listen(userPort, () => {});
 
-landscapeApp.get(`${landscapeRootUrl}/:token/structure`, function(req, res) {
-  res.json(structure);
-});
+let user = {};
 
-traceApp.get(`${traceRootUrl}/:token/dynamic`, function(req, res) {
-  res.json(dynamic);
+const landscapeRootUrl = "/v2/landscapes";
+const traceRootUrl = "/v2/landscapes";
+const userRootUrl = "/user/:uid/token";
+
+
+fs.readFile('./user.json', (err, json) => {
+  user = JSON.parse(json);
 });
 
 userApp.get(`${userRootUrl}`, function(req, res) {
   res.json(user);
 });
+
+// BEGIN Fibonacci Sample
+
+const fibonacciToken = "17844195-6144-4254-a17b-0f7fb49adb0a";
+const fibonacciFilePrefix = "fibonacci";
+let structureFibonacci = {};
+let dynamicFibonacci = {};
+
+fs.readFile(`./${fibonacciFilePrefix}-structure.json`, (err, json) => {
+  structureFibonacci = JSON.parse(json);
+});
+
+fs.readFile(`./${fibonacciFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicFibonacci = JSON.parse(json);
+});
+
+landscapeApp.get(`${landscapeRootUrl}/${fibonacciToken}/structure`, function(req, res) {
+  res.json(structureFibonacci);
+});
+
+traceApp.get(`${traceRootUrl}/${fibonacciToken}/dynamic`, function(req, res) {
+  res.json(dynamicFibonacci);
+});
+
+// END Fibonacci Sample
+
+// BEGIN Petclinic-Distributed Sample
+
+const petclinicDistributedToken = "26844195-7235-4254-a17b-0f7fb49adb0a";
+const petclinicDistributedFilePrefix = "petclinic-distributed";
+let structurePetclinicDistributed = {};
+let dynamicPetclinicDistributed = {};
+
+fs.readFile(`./${petclinicDistributedFilePrefix}-structure.json`, (err, json) => {
+  structurePetclinicDistributed = JSON.parse(json);
+});
+
+fs.readFile(`./${petclinicDistributedFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicPetclinicDistributed = JSON.parse(json);
+});
+
+landscapeApp.get(`${landscapeRootUrl}/${petclinicDistributedToken}/structure`, function(req, res) {
+  res.json(structurePetclinicDistributed);
+});
+
+traceApp.get(`${traceRootUrl}/${petclinicDistributedToken}/dynamic`, function(req, res) {
+  res.json(dynamicPetclinicDistributed);
+});
+
+// END Petclinic-Distributed Sample

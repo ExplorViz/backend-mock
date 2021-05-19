@@ -90,25 +90,25 @@ traceApp.get(`${traceRootUrl}/${petclinicDistributedToken}/dynamic`, function(re
 
 // BEGIN Petclinic Sample
 
-const petclinicDistributedToken = "19844195-7235-4254-a17b-0f7fb49adb0a";
-const petclinicDistributedFilePrefix = "petclinic";
-let structurePetclinicDistributed = {};
-let dynamicPetclinicDistributed = {};
+const petclinicToken = "19844195-7235-4254-a17b-0f7fb49adb0a";
+const petclinicFilePrefix = "petclinic";
+let structurePetclinic = {};
+let dynamicPetclinic = {};
 
-fs.readFile(`./${petclinicDistributedFilePrefix}-structure.json`, (err, json) => {
-  structurePetclinicDistributed = JSON.parse(json);
+fs.readFile(`./${petclinicFilePrefix}-structure.json`, (err, json) => {
+  structurePetclinic = JSON.parse(json);
 });
 
-fs.readFile(`./${petclinicDistributedFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicPetclinicDistributed = JSON.parse(json);
+fs.readFile(`./${petclinicFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicPetclinic = JSON.parse(json);
 });
 
-landscapeApp.get(`${landscapeRootUrl}/${petclinicDistributedToken}/structure`, function(req, res) {
-  res.json(structurePetclinicDistributed);
+landscapeApp.get(`${landscapeRootUrl}/${petclinicToken}/structure`, function(req, res) {
+  res.json(structurePetclinic);
 });
 
-traceApp.get(`${traceRootUrl}/${petclinicDistributedToken}/dynamic`, function(req, res) {
-  res.json(dynamicPetclinicDistributed);
+traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function(req, res) {
+  res.json(dynamicPetclinic);
 });
 
 // END Petclinic Sample

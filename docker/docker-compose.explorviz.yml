@@ -18,7 +18,7 @@ services:
       - QUARKUS_REDIS_HOSTS=redis://redis-adapter:6379
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=TRACE
+      - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## Landscape-Service ##
 
@@ -36,7 +36,7 @@ services:
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=TRACE
+      - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## Trace-Service ##
 
@@ -54,7 +54,7 @@ services:
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=TRACE
+      - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## User-Service ##
 

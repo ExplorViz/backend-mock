@@ -11,6 +11,60 @@ inspectit:
           matcher-mode: STARTS_WITH_IGNORE_CASE
 
     rules:
+      'r_apacheclient_servicegraph_propagation':
+        enabled: false
+          
+      'r_apacheclient_servicegraph_record':
+        enabled: false
+      
+      'r_apacheclient_tracing':
+        enabled: false
+          
+      'r_apacheclient_propagation':
+        enabled: false
+          
+      'r_httpurlconnection_http_metric':
+        enabled: false
+          
+      'r_httpurlconnection_down_propagation':
+        enabled: false
+          
+      'r_httpurlconnection_up_propagation':
+        enabled: false
+          
+      'r_httpurlconnection_servicegraph_propagation':
+        enabled: false
+      
+      'r_httpurlconnection_servicegraph_record':
+        enabled: false
+          
+      'r_httpurlconnection_tracing_start':
+        enabled: false
+          
+      'r_httpurlconnection_tracing_end':
+        enabled: false
+          
+      'r_servletapi_http_metric':
+        enabled: false
+          
+      'r_servletapi_downPropagation':
+        enabled: false
+          
+      'r_servletapi_servlet_filter_upPropagation':
+        enabled: false
+          
+      'r_servletapi_servletresponse_upPropagation':
+        enabled: false
+          
+      'r_servletapi_servicegraph_propagation':
+        enabled: false
+          
+      'r_servletapi_servicegraph_record':
+        enabled: false
+          
+      'r_servletapi_tracing':
+        enabled: false 
+
       r_all_methods_no_input_return:
         scopes:
           s_allClasses: true

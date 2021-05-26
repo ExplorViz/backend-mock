@@ -2,7 +2,7 @@ version: "3.5"
 services:
 
   ocelot-agent:
-    image: inspectit/inspectit-ocelot-agent:1.7
+    image: inspectit/inspectit-ocelot-agent:1.9.0
     container_name: ocelot-agent
     networks:
       - explorviz
@@ -15,19 +15,15 @@ services:
     depends_on: 
       - ocelot-agent
     ports: 
-      - 18080:18080
+      - 18080:8080
     networks:
       - explorviz
-    environment:
-      - LANDSCAPE_TOKEN=c64bea29-0260-4673-9a6b-304f4c047568
-      - LANDSCAPE_SECRET=MF1wdKxqKc0bu9q6
-      - OC_COLLECTOR_ADDRESS=oc-collector:55678
     volumes:
       - agent-vol:/agent
+      - ./inspectit.yml:/agent/inspectit.yml
     entrypoint: ["sh", "-c", "
-    ./inspectit-updater.sh &&
     java
-    -Dinspectit.config.file-based.path=\"/inspectit/\"
+    -Dinspectit.config.file-based.path=\"/agent/\"
     -javaagent:/agent/inspectit-ocelot-agent.jar
     -jar /app.jar"]
 

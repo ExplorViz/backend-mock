@@ -1,0 +1,52 @@
+inspectit:
+
+  tags:
+    extra:
+      landscape_token: 'token3'
+      token_secret: 'secret'
+      application_name: 'petclinic-discovery-service'
+      application_instance_id: 0
+      application_language: 'java'
+
+  tracing:
+    add-common-tags: ALWAYS
+
+  metrics:
+    enabled: false
+
+  instrumentation:
+    scopes:
+      s_allClasses:
+        type: 
+          name: org.springframework.samples
+          matcher-mode: STARTS_WITH_IGNORE_CASE
+
+    rules:
+      r_all_methods_no_input_return:
+        scopes:
+          s_allClasses: true
+        tracing:
+          start-span: true
+          attributes:
+            java.fqn: method_fqn_attr
+        entry:
+          method_fqn_attr:
+            action: a_get_method_fqn
+    
+    actions:
+      a_get_method_fqn:
+        input:
+          _methodName: String
+          _class: Class
+        value: "new StringBuilder(_class.getName()).append('.').append(_methodName).toString()"
+          
+  logging:
+    debug: true
+    trace: false
+
+  exporters:
+    tracing:
+      open-census-agent:
+        address: "oc-collector:55678"
+        service-name: "OC Agent Local"
+        use-insecure: true

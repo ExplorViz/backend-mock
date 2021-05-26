@@ -1,0 +1,150 @@
+version: '3.5'
+
+services:
+
+  ocelot-agent:
+    image: inspectit/inspectit-ocelot-agent:1.9.0
+    container_name: ocelot-agent
+    #mem_limit: 128M
+    volumes:
+      - agent-vol:/agent
+    networks:
+      - explorviz
+
+  config-server:
+    image: explorviz/spring-petclinic-config-server
+    container_name: config-server
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-config-server.yml:/agent/inspectit.yml
+    ports:
+     - 18888:8888
+    entrypoint: ["sh", "-c", "
+    java
+    -Dinspectit.config.file-based.path=\"/agent/\"
+    -javaagent:/agent/inspectit-ocelot-agent.jar
+     org.springframework.boot.loader.JarLauncher"]
+
+  discovery-server:
+    image: explorviz/spring-petclinic-discovery-server
+    container_name: discovery-server
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    depends_on:
+      - config-server
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-discovery-server.yml:/agent/inspectit.yml
+    entrypoint: ["sh", "-c", "
+      ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- && 
+      java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path=\"/agent/\"
+      org.springframework.boot.loader.JarLauncher"]
+    ports:
+     - 18761:8761
+
+  customers-service:
+    image: explorviz/spring-petclinic-customers-service
+    container_name: customers-service
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    depends_on:
+     - config-server
+     - discovery-server
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-customer-service.yml:/agent/inspectit.yml
+    entrypoint: ["sh", "-c", "
+      ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- && 
+      java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path=\"/agent/\" 
+      org.springframework.boot.loader.JarLauncher"]
+    ports:
+    - 18081:8081
+
+  visits-service:
+    image: explorviz/spring-petclinic-visits-service
+    container_name: visits-service
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    depends_on:
+      - config-server
+      - discovery-server
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-visits-service.yml:/agent/inspectit.yml
+    entrypoint: ["sh", "-c", "
+      ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- && 
+      java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path=\"/agent/\"
+      org.springframework.boot.loader.JarLauncher"]
+    ports:
+     - 18082:8082
+
+  vets-service:
+    image: explorviz/spring-petclinic-vets-service
+    container_name: vets-service
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    depends_on:
+     - config-server
+     - discovery-server
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-vets-service.yml:/agent/inspectit.yml
+    entrypoint: ["sh", "-c", "
+      ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- && 
+      java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path=\"/agent/\"
+      org.springframework.boot.loader.JarLauncher"]
+    ports:
+     - 18083:8083
+
+  api-gateway:
+    image: explorviz/spring-petclinic-api-gateway
+    container_name: api-gateway
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    depends_on:
+     - config-server
+     - discovery-server
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-api-gateway.yml:/agent/inspectit.yml
+    entrypoint: ["sh", "-c", "
+      ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- && 
+      java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path=\"/agent/\"
+      org.springframework.boot.loader.JarLauncher"]
+    ports:
+     - 18080:8080
+
+
+  admin-server:
+    image: explorviz/spring-petclinic-admin-server
+    container_name: admin-server
+    #mem_limit: 512M
+    networks:
+      - explorviz
+    depends_on:
+     - config-server
+     - discovery-server
+    volumes:
+      - agent-vol:/agent
+      - ./inspectit/inspectit-admin-server.yml:/agent/inspectit.yml
+    entrypoint: ["sh", "-c", "
+      ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- && 
+      java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path=\"/agent/\"
+      org.springframework.boot.loader.JarLauncher"]
+    ports:
+     - 19090:9090
+
+volumes:
+  agent-vol:
+
+networks:
+  explorviz:
+    name: explorviz

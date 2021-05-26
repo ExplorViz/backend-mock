@@ -1,5 +1,18 @@
 inspectit:
 
+  tags:
+    extra:
+      landscape_token: 'token2'
+      token_secret: 'secret'
+      application_name: 'petclinic-demo'
+      application_instance_id: 0
+      application_language: 'java'
+
+
+
+  tracing:
+    add-common-tags: ALWAYS
+
   metrics:
     enabled: false
 
@@ -17,68 +30,21 @@ inspectit:
         tracing:
           start-span: true
           attributes:
-            landscape_token: landscape_token_attr
-            token_secret: token_secret_attr
-            application_name: application_name_attr
-            application_language: application_language_attr
-            application_instance_id: application_instance_id_attr
-            host_name: host_name_attr
-            host_ip: host_ip_attr
-            method_fqn: method_fqn_attr
+            java.fqn: method_fqn_attr
         entry:
-          landscape_token_attr:
-            action: a_assign_value
-            constant-input:
-              # Replace with generated token
-              value: "landscape-token"
-          token_secret_attr:
-            action: a_assign_value
-            constant-input:
-              # Replace with generated secret
-              value: "landscape-secret"
-          application_name_attr:
-            action: a_assign_value
-            constant-input:
-              value: "spring pet clinic"
-          application_instance_id_attr:
-            action: a_assign_value
-            constant-input:
-              value: "0"
-          application_language_attr:
-            action: a_assign_value
-            constant-input:
-              value: "java"
-          host_name_attr:
-            action: a_get_host_name
-          host_ip_attr:
-            action: a_get_host_ip
           method_fqn_attr:
             action: a_get_method_fqn
-      
+    
     actions:
-      # Returns the name of the host
-      a_get_host_name:
-        imports:
-          - java.net.InetAddress
-        value-body: |
-          InetAddress ip = InetAddress.getLocalHost();
-          return ip.getHostName();
-
-      # Returns the IP address of the local adapter
-      a_get_host_ip:
-        imports:
-          - java.net.InetAddress
-        value-body: |
-          InetAddress ip = InetAddress.getLocalHost();
-          return ip.getHostAddress();
-
-      # Returns the FQN of the called method, delimited with dots. 
       a_get_method_fqn:
         input:
           _methodName: String
           _class: Class
         value: "new StringBuilder(_class.getName()).append('.').append(_methodName).toString()"
 
+
+
+          
   logging:
     debug: true
     trace: false

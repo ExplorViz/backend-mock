@@ -33,7 +33,7 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE: "LogAppendTime"
-      KAFKA_MESSAGE_MAX_BYTES: 2000000
+      KAFKA_MESSAGE_MAX_BYTES: 7000000
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
       KAFKA_CREATE_TOPICS: "cluster-dump-spans:1:1,explorviz-spans-structure:1:1,explorviz-spans-dynamic:1:1,token-events:1:1"
     depends_on:

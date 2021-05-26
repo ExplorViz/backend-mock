@@ -3,7 +3,7 @@ version: '3.5'
 services:
 
   ocelot-agent:
-    image: inspectit/inspectit-ocelot-agent:1.8.1
+    image: inspectit/inspectit-ocelot-agent:1.9.0
     container_name: ocelot-agent
     #mem_limit: 128M
     volumes:
@@ -11,10 +11,8 @@ services:
     networks:
       - explorviz
 
-
-
   config-server:
-    image: springcommunity/spring-petclinic-config-server
+    image: explorviz/spring-petclinic-config-server
     container_name: config-server
     #mem_limit: 512M
     networks:
@@ -30,9 +28,8 @@ services:
     -javaagent:/agent/inspectit-ocelot-agent.jar
      org.springframework.boot.loader.JarLauncher"]
 
-
   discovery-server:
-    image: springcommunity/spring-petclinic-discovery-server
+    image: explorviz/spring-petclinic-discovery-server
     container_name: discovery-server
     #mem_limit: 512M
     networks:
@@ -50,7 +47,7 @@ services:
      - 18761:8761
 
   customers-service:
-    image: springcommunity/spring-petclinic-customers-service
+    image: explorviz/spring-petclinic-customers-service
     container_name: customers-service
     #mem_limit: 512M
     networks:
@@ -69,7 +66,7 @@ services:
     - 18081:8081
 
   visits-service:
-    image: springcommunity/spring-petclinic-visits-service
+    image: explorviz/spring-petclinic-visits-service
     container_name: visits-service
     #mem_limit: 512M
     networks:
@@ -88,7 +85,7 @@ services:
      - 18082:8082
 
   vets-service:
-    image: springcommunity/spring-petclinic-vets-service
+    image: explorviz/spring-petclinic-vets-service
     container_name: vets-service
     #mem_limit: 512M
     networks:
@@ -107,7 +104,7 @@ services:
      - 18083:8083
 
   api-gateway:
-    image: springcommunity/spring-petclinic-api-gateway
+    image: explorviz/spring-petclinic-api-gateway
     container_name: api-gateway
     #mem_limit: 512M
     networks:
@@ -127,7 +124,7 @@ services:
 
 
   admin-server:
-    image: springcommunity/spring-petclinic-admin-server
+    image: explorviz/spring-petclinic-admin-server
     container_name: admin-server
     #mem_limit: 512M
     networks:

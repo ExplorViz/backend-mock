@@ -8,8 +8,6 @@ inspectit:
       application_instance_id: 0
       application_language: 'java'
 
-
-
   tracing:
     add-common-tags: ALWAYS
 
@@ -41,9 +39,6 @@ inspectit:
           _methodName: String
           _class: Class
         value: "new StringBuilder(_class.getName()).append('.').append(_methodName).toString()"
-
-
-
           
   logging:
     debug: true

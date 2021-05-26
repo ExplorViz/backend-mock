@@ -2,13 +2,11 @@ inspectit:
 
   tags:
     extra:
-      landscape_token: 'token2'
-      token_secret: 'secret'
+      landscape_token: 'token-copied-from-frontend'
+      token_secret: 'secret-copied-from-frontend'
       application_name: 'petclinic-demo'
       application_instance_id: 0
       application_language: 'java'
-
-
 
   tracing:
     add-common-tags: ALWAYS
@@ -41,10 +39,7 @@ inspectit:
           _methodName: String
           _class: Class
         value: "new StringBuilder(_class.getName()).append('.').append(_methodName).toString()"
-
-
-
-          
+  
   logging:
     debug: true
     trace: false
@@ -52,6 +47,6 @@ inspectit:
   exporters:
     tracing:
       open-census-agent:
-        address: "localhost:55678"
+        address: "oc-collector:55678"
         service-name: "OC Agent Local"
         use-insecure: true

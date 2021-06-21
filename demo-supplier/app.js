@@ -108,7 +108,42 @@ landscapeApp.get(`${landscapeRootUrl}/${petclinicToken}/structure`, function(req
 });
 
 traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function(req, res) {
-  res.json(dynamicPetclinic);
+    res.json(removeRandomTraces(dynamicPetclinic));
 });
 
 // END Petclinic Sample
+
+/**
+ * Shuffles array in place. ES6 version
+ * @param {Array} a items An array containing the items.
+ * https://stackoverflow.com/a/6274381
+ */
+ function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function removeRandomTraces(traceArray) {
+  const uniqueTraceIds = [];
+
+  for (const trace of traceArray) {
+    const traceId = trace["traceId"];
+    if(traceId && !uniqueTraceIds.includes(traceId)) {
+      uniqueTraceIds.push(traceId);
+    }
+  }
+
+  // remove random count of uniqueTraceIds
+
+  let itemsToRemove = uniqueTraceIds.length > 1 ? Math.floor(Math.random() * uniqueTraceIds.length) : 1;
+
+  let shuffledTraceIdArray = shuffle(uniqueTraceIds);
+  shuffledTraceIdArray.splice(itemsToRemove);
+
+  const randomizedTraces = traceArray.filter(trace => shuffledTraceIdArray.includes(trace["traceId"]));
+
+  return randomizedTraces;
+}

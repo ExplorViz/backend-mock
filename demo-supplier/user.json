@@ -1,5 +1,5 @@
 [
   {"value":"17844195-6144-4254-a17b-0f7fb49adb0a","ownerId":"github|123456","created":1551631224242,"alias":"Fibonacci Sample","sharedUsersIds":[]},
   {"value":"26844195-7235-4254-a17b-0f7fb49adb0a","ownerId":"github|123456","created":1510761244242,"alias":"Distributed Petclinic Sample","sharedUsersIds":[]},
-  {"value":"19844195-7235-4254-a17b-0f7fb49adb0a","ownerId":"github|123456","created":1589876888000,"alias":"Petclinic Sample","sharedUsersIds":[]}
+  {"value":"19844195-7235-4254-a17b-0f7fb49adb0a","ownerId":"github|123456","created":1589876888000,"alias":"Petclinic Sample (randomized trace count)","sharedUsersIds":[]}
 ]

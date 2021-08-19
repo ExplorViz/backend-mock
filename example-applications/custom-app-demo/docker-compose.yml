@@ -9,9 +9,9 @@ services:
     volumes:
       - agent-vol:/agent
 
-  spring-petclinic:
-    image: explorviz/spring-petclinic
-    container_name: spring-petclinic
+  sample-application:
+    image: explorviz/sample-application
+    container_name: sample-application
     depends_on: 
       - ocelot-agent
     ports: 

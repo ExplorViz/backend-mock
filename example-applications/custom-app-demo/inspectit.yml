@@ -4,7 +4,7 @@ inspectit:
     extra:
       landscape_token: 'token-copied-from-frontend'
       token_secret: 'secret-copied-from-frontend'
-      application_name: 'petclinic-demo'
+      application_name: 'sample-application'
       application_instance_id: 0
       application_language: 'java'
 
@@ -18,7 +18,7 @@ inspectit:
     scopes:
       s_allClasses:
         type: 
-          name: org.springframework.samples
+          name: net
           matcher-mode: STARTS_WITH_IGNORE_CASE
 
     rules:

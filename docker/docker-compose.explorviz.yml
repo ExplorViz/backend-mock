@@ -92,6 +92,11 @@ services:
       - 4200:80
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_URL=http://test:8082
+      - TRACE_URL=http://test2:8083
+      - USER_URL=http://localhost:8084
+      - COLLAB_URL=ws://localhost:8085
 
 networks:
   explorviz:

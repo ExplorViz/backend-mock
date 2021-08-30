@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "services": {
+      "description": "Service declaration for Docker",
+      "type": "object",
+      "items": {
+        "type": "object"
+      },
+      "properties": {
+        "adapter-service": {
+          "$ref": "file:adapter-service-schema.json"
+        },
+        "landscape-service": {
+          "$ref": "file:landscape-service-schema.json"
+        },
+        "trace-service": {
+          "$ref": "file:trace-service-schema.json"
+        },
+        "user-service": {
+          "$ref": "file:user-service-schema.json"
+        },
+        "collaborative-service": {
+          "$ref": "file:collaborative-service-schema.json"
+        },
+        "frontend": {
+          "$ref": "file:frontend-schema.json"
+        }
+      },
+      "required": ["adapter-service", "landscape-service", "trace-service", "user-service", "collaborative-service", "frontend"]
+    },
+    "networks": {
+      "description": "Network declaration for Docker-Compose network",
+      "type": "object",
+      "properties": {
+        "explorviz": {
+          "type": "object",
+          "properties": {
+            "name": { "enum": ["explorviz"] }
+          },
+          "required": ["name"]
+        }
+      },
+      "required": ["explorviz"]
+    }
+  },
+  "required": ["services", "networks"]
+}

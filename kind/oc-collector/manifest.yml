@@ -15,10 +15,10 @@ data:
         keepalive:
           server-parameters:
             max-connection-age: 120s
-            max-connection-age-grace: 30s            
+            max-connection-age-grace: 30s
     # only one exporter possible
     exporters:
-      kafka: 
+      kafka:
         brokers: ["kafka:9092"]
         topic: "cluster-dump-spans"
 
@@ -41,7 +41,7 @@ spec:
   selector:
     component: oc-collector
 ---
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: oc-collector
@@ -54,7 +54,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: opencensus 
+      app: opencensus
       component: oc-collector
   template:
     metadata:

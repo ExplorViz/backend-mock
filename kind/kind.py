@@ -22,7 +22,7 @@ def init():
 
     print('\n[*] adding bitnami helm repository')
     subprocess.run(['helm', 'repo', 'add', 'bitnami', 'https://charts.bitnami.com/bitnami'])
-    
+
 all_srvc = ['kafka', 'adapter', 'landscape', 'trace', 'user']
 
 def setup(services):
@@ -42,21 +42,21 @@ def setup(services):
         subprocess.run(['kubectl', 'wait', '--for=condition=Ready', '--timeout=360s', 'pod/kafka-0'])
         print('\n[*] Kafka is ready, creating topics...\n')
         subprocess.run(['./create_topics.sh'])
-    
+
     if 'adapter' in services:
         print('[*] Installing OpenCensus Collector\n')
         subprocess.run(['kubectl', 'create', '-f', 'oc-collector/manifest.yml'])
         print('\n[*] Installing Redis (Token Cache)\n')
         subprocess.run(['helm', 'install', '-f', 'redis-adapter/values.yml', 'redis-adapter', 'bitnami/redis'])
-    
+
     if 'landscape' in services:
         print('[*] Installing Cassandra (Landscape Structure)\n')
         subprocess.run(['helm', 'install', '-f', 'cassandra-structure/values.yml', 'cassandra-structure', 'bitnami/cassandra'])
-    
+
     if 'trace' in services:
         print('[*] Installing Cassandra (Traces)\n')
         subprocess.run(['helm', 'install', '-f', 'cassandra-traces/values.yml', 'cassandra-traces', 'bitnami/cassandra'])
-    
+
     if 'user' in services:
         print('[*] Installing MongoDB (Token) \n')
         subprocess.run(['helm', 'install', '-f', 'mongodb-token/values.yml', 'mongo-token', 'bitnami/mongodb'])
@@ -86,4 +86,3 @@ if __name__ == '__main__':
         setup(ns.services)
     else:
         parser().print_help()
-    

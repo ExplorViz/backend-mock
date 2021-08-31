@@ -1,5 +1,14 @@
 stages:
+  - test
   - deploy
+
+run-pre-commit:
+  stage: test
+  image: explorviz/pre-commit:latest
+  tags:
+    - exec-docker
+  script:
+    - pre-commit run --all-files --config .pre-commit-config.yaml
 
 build-petclinic:
   stage: deploy

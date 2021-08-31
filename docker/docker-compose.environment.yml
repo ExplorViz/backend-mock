@@ -11,7 +11,7 @@ services:
 
   zookeeper:
     image: zookeeper:3.6
-    container_name: zookeeper    
+    container_name: zookeeper
     ports:
       - "2181:2181"
     volumes:
@@ -23,7 +23,7 @@ services:
 
   kafka:
     container_name: kafka
-    image: wurstmeister/kafka    
+    image: wurstmeister/kafka
     ports:
       - "9091:9091"
     environment:
@@ -46,10 +46,10 @@ services:
   schema-registry:
     container_name: schema-registry
     image: confluentinc/cp-schema-registry:5.4.0
-    ports: 
+    ports:
       - "8081:8081"
       - "9021:9021"
-    environment: 
+    environment:
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:9092
       SCHEMA_REGISTRY_HOST_NAME: 127.0.0.1
     depends_on:
@@ -58,8 +58,8 @@ services:
       - schema-registry:/etc/schema-registry/secrets
     networks:
       - explorviz
-  
-  ## Open Census ##  
+
+  ## Open Census ##
 
   oc-collector:
     image: omnition/opencensus-collector:0.1.11
@@ -117,7 +117,7 @@ services:
       - explorviz
 
 # Volumes
-# Delete all ExplorViz volumes: 
+# Delete all ExplorViz volumes:
 # docker volume rm $(docker volume ls -f name=explorviz -q)
 
 volumes:

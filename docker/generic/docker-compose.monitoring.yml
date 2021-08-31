@@ -38,7 +38,7 @@ services:
       - 8080
     networks:
       - explorviz
-  
+
   grafana:
     image: grafana/grafana:latest
     container_name: monitoring_grafana

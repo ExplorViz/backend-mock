@@ -12,9 +12,9 @@ services:
   spring-petclinic:
     image: explorviz/spring-petclinic
     container_name: spring-petclinic
-    depends_on: 
+    depends_on:
       - ocelot-agent
-    ports: 
+    ports:
       - 18080:8080
     networks:
       - explorviz

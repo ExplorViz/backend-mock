@@ -8,7 +8,7 @@ run-pre-commit:
   tags:
     - exec-docker
   script:
-    - pre-commit run --all-files --config pre-commit/.pre-commit-config.yaml
+    - pre-commit run --all-files --config .pre-commit-config.yaml
 
 build-petclinic:
   stage: deploy

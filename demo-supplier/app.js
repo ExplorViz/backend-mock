@@ -12,7 +12,7 @@ traceApp.disable('etag');
 userApp.disable('etag');
 
 const landscapePort = 8082;
-const tracePort = 8083; 
+const tracePort = 8083;
 const userPort = 8084;
 
 traceApp.use(cors());

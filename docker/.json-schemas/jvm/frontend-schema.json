@@ -21,14 +21,14 @@
           "contains": {
             "enum": [
               "LANDSCAPE_URL=http://localhost:8082"
-            ]  
+            ]
           }
         },
         {
           "contains": {
             "enum": [
               "TRACE_URL=http://localhost:8083"
-            ]  
+            ]
           }
         }
         ,
@@ -36,7 +36,7 @@
           "contains": {
             "enum": [
               "USER_URL=http://localhost:8084"
-            ]  
+            ]
           }
         }
         ,
@@ -44,7 +44,7 @@
           "contains": {
             "enum": [
               "COLLAB_URL=ws://localhost:8085"
-            ]  
+            ]
           }
         }
       ]
@@ -52,4 +52,3 @@
   },
   "required": ["image", "networks", "ports", "environment"]
 }
-

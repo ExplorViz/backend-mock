@@ -17,7 +17,7 @@ inspectit:
   instrumentation:
     scopes:
       s_allClasses:
-        type: 
+        type:
           name: net
           matcher-mode: STARTS_WITH_IGNORE_CASE
 
@@ -32,14 +32,14 @@ inspectit:
         entry:
           method_fqn_attr:
             action: a_get_method_fqn
-    
+
     actions:
       a_get_method_fqn:
         input:
           _methodName: String
           _class: Class
         value: "new StringBuilder(_class.getName()).append('.').append(_methodName).toString()"
-  
+
   logging:
     debug: true
     trace: false

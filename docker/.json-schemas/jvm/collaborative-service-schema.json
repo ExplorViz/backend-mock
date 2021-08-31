@@ -21,7 +21,7 @@
           "contains": {
             "enum": [
               "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]  
+            ]
           }
         }
       ]
@@ -29,4 +29,3 @@
   },
   "required": ["image", "networks", "ports", "environment"]
 }
-

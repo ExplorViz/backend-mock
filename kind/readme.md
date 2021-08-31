@@ -66,5 +66,3 @@ Port    | Description
 32681   | HTTP API of the Trace-Service
 32682   | HTTP API of the User-Service
 31500   | Endpoint of the OpenCensus Collector
-
-

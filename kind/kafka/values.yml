@@ -1,5 +1,5 @@
 
-extraEnvVars: 
+extraEnvVars:
   - name: KAFKA_CFG_LOG_MESSAGE_TIMESTAMP_TYPE
     value: "LogAppendTime"
 

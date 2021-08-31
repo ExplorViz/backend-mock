@@ -21,14 +21,14 @@
           "contains": {
             "enum": [
               "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042"
-            ]  
+            ]
           }
         },
         {
           "contains": {
             "enum": [
               "QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra"
-            ]  
+            ]
           }
         }
         ,
@@ -36,7 +36,7 @@
           "contains": {
             "enum": [
               "QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra"
-            ]  
+            ]
           }
         }
         ,
@@ -44,7 +44,7 @@
           "contains": {
             "enum": [
               "QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10"
-            ]  
+            ]
           }
         }
         ,
@@ -52,7 +52,7 @@
           "contains": {
             "enum": [
               "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
-            ]  
+            ]
           }
         }
         ,
@@ -60,7 +60,7 @@
           "contains": {
             "enum": [
               "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
-            ]  
+            ]
           }
         }
         ,
@@ -68,7 +68,7 @@
           "contains": {
             "enum": [
               "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]  
+            ]
           }
         }
       ]
@@ -76,4 +76,3 @@
   },
   "required": ["image", "networks", "ports", "environment"]
 }
-

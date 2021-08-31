@@ -9,7 +9,7 @@ This repo contains different
 ## Pre-Commit Validation
 The CI pipeline for this repository uses pre-commit with different hooks to validate if changes to files follow well-defined rules.
 
-You can locally validate all files, therefore simulate the CI pipeline, with 
+You can locally validate all files, therefore simulate the CI pipeline, with
 
 ```docker run -ti -v $(pwd):/pre-commit explorviz/pre-commit```
 

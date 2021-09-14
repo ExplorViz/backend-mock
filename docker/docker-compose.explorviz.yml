@@ -15,9 +15,9 @@ services:
     networks:
       - explorviz
     environment:
-      - QUARKUS_REDIS_HOSTS=redis://redis-adapter:6379
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - QUARKUS_REDIS_HOSTS=redis://redis-adapter:${REDIS_ADAPTER_SERV_PORT}
+      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
       - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## Landscape-Service ##
@@ -28,14 +28,14 @@ services:
     networks:
       - explorviz
     ports:
-      - 8082:8080
+      - ${LANDSCAPE_SERV_PORT}:8080
     environment:
-      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
+      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
       - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## Trace-Service ##
@@ -44,16 +44,16 @@ services:
     container_name: trace-service
     image: explorviz/trace-service-jvm:latest
     ports:
-      - 8083:8080
+      - ${TRACE_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
-      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
+      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
       - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
       - EXPLORVIZ_LOG_LVL=DEBUG
 
@@ -63,12 +63,12 @@ services:
     container_name: user-service
     image: explorviz/user-service-jvm:latest
     ports:
-      - 8084:8080
+      - ${USER_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
-      - MP_MESSAGING_OUTGOING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017
+      - MP_MESSAGING_OUTGOING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:${MONGO_USER_SERV_PORT}
       - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## Collaborative-Service ##
@@ -77,7 +77,7 @@ services:
     container_name: collaborative-service
     image: explorviz/collaborative-service-jvm:latest
     ports:
-      - 8085:8080
+      - ${COLLAB_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
@@ -93,10 +93,10 @@ services:
     networks:
       - explorviz
     environment:
-      - LANDSCAPE_URL=http://localhost:8082
-      - TRACE_URL=http://localhost:8083
-      - USER_URL=http://localhost:8084
-      - COLLAB_URL=ws://localhost:8085
+      - LANDSCAPE_URL=http://localhost:${LANDSCAPE_SERV_PORT}
+      - TRACE_URL=http://localhost:${TRACE_SERV_PORT}
+      - USER_URL=http://localhost:${USER_SERV_PORT}
+      - COLLAB_URL=ws://localhost:${COLLAB_SERV_PORT}
 
 networks:
   explorviz:

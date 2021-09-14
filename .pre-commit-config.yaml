@@ -9,6 +9,10 @@ repos:
         verbose: true
       - id: trailing-whitespace
         verbose: true
+      - id: check-case-conflict
+        verbose: true
+      - id: fix-byte-order-marker
+        verbose: true
   - repo: https://github.com/sirosen/check-jsonschema
     rev: 0.4.1
     hooks:

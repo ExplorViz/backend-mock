@@ -89,7 +89,7 @@ services:
     container_name: explorviz-frontend
     image: explorviz/explorviz-frontend:dev
     ports:
-      - 4200:80
+      - ${FRONTEND_PORT}:80
     networks:
       - explorviz
     environment:

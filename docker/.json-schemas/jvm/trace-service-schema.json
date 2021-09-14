@@ -11,7 +11,7 @@
     "ports": {
       "type": "array",
       "items": [
-        { "enum": ["8083:8080"] }
+        { "enum": ["${TRACE_SERV_PORT}:8080"] }
       ]
     },
     "environment": {
@@ -20,7 +20,7 @@
         {
           "contains": {
             "enum": [
-              "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042"
+              "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}"
             ]
           }
         },
@@ -51,7 +51,7 @@
         {
           "contains": {
             "enum": [
-              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
+              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
             ]
           }
         }
@@ -59,7 +59,7 @@
         {
           "contains": {
             "enum": [
-              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
+              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
             ]
           }
         }

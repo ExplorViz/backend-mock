@@ -2,10 +2,9 @@ version: "3.5"
 services:
 
   prometheus:
-    image: prom/prometheus:v2.1.0
+    image: prom/prometheus:latest
     volumes:
       - ./prometheus/:/etc/prometheus/
-      - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -57,8 +56,6 @@ services:
     networks:
       - explorviz
 
-volumes:
-  prometheus_data: {}
 
 networks:
   explorviz:

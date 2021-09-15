@@ -1,0 +1,24 @@
+repos:
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: master  # Use the ref you want to point at
+    hooks:
+      - id: check-yaml
+        verbose: true
+        exclude: kind/
+      - id: end-of-file-fixer
+        verbose: true
+      - id: trailing-whitespace
+        verbose: true
+      - id: check-case-conflict
+        verbose: true
+      - id: fix-byte-order-marker
+        verbose: true
+  - repo: https://github.com/sirosen/check-jsonschema
+    rev: 0.4.1
+    hooks:
+      - id: check-jsonschema
+        name: "Check Docker-Compose-JVM Stack"
+        language: python
+        files: docker-compose\.explorviz\.yml
+        types: [yaml]
+        args: ["--schemafile", "docker/.json-schemas/jvm/main-schema.json"]

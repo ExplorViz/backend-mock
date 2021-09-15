@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "explorviz/trace-service-jvm:latest" },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    },
+    "ports": {
+      "type": "array",
+      "items": [
+        { "enum": ["${TRACE_SERV_PORT}:8080"] }
+      ]
+    },
+    "environment": {
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum": [
+              "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "EXPLORVIZ_LOG_LVL=DEBUG"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "required": ["image", "networks", "ports", "environment"]
+}

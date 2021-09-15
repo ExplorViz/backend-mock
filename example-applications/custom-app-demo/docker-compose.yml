@@ -12,9 +12,9 @@ services:
   sample-application:
     image: explorviz/sample-application
     container_name: sample-application
-    depends_on: 
+    depends_on:
       - ocelot-agent
-    ports: 
+    ports:
       - 18080:8080
     networks:
       - explorviz

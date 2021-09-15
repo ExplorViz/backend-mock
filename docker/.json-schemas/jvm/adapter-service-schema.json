@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "explorviz/adapter-service-jvm:latest" },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    },
+    "environment": {
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum": [
+              "QUARKUS_REDIS_HOSTS=redis://redis-adapter:${REDIS_ADAPTER_SERV_PORT}"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "EXPLORVIZ_LOG_LVL=DEBUG"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "required": ["image", "networks", "environment"]
+}

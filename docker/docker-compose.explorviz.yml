@@ -93,10 +93,10 @@ services:
     networks:
       - explorviz
     environment:
-      - LANDSCAPE_URL=http://localhost:${LANDSCAPE_SERV_PORT}
-      - TRACE_URL=http://localhost:${TRACE_SERV_PORT}
-      - USER_URL=http://localhost:${USER_SERV_PORT}
-      - COLLAB_URL=ws://localhost:${COLLAB_SERV_PORT}
+      - LANDSCAPE_URL=http://${FRONTEND_HOST_ADDRESS}:${LANDSCAPE_SERV_PORT}
+      - TRACE_URL=http://${FRONTEND_HOST_ADDRESS}:${TRACE_SERV_PORT}
+      - USER_URL=http://${FRONTEND_HOST_ADDRESS}:${USER_SERV_PORT}
+      - COLLAB_URL=ws://${FRONTEND_HOST_ADDRESS}:${COLLAB_SERV_PORT}
 
 networks:
   explorviz:

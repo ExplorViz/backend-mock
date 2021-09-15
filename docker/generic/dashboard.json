@@ -372,7 +372,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "kafka_consumer_fetch_manager_records_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\"}",
+          "expr": "kafka_consumer_fetch_manager_records_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{job}} ({{topic}})",
@@ -438,5 +438,5 @@
   "timezone": "",
   "title": "ExplorViz Services",
   "uid": "D4cxv0V7z",
-  "version": 7
+  "version": 8
 }

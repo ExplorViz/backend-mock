@@ -20,7 +20,7 @@
         {
           "contains": {
             "enum": [
-              "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}"
+              "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042"
             ]
           }
         },
@@ -51,7 +51,7 @@
         {
           "contains": {
             "enum": [
-              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
         }
@@ -59,7 +59,7 @@
         {
           "contains": {
             "enum": [
-              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
         }

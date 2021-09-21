@@ -180,9 +180,18 @@
         {
           "exemplar": true,
           "expr": "process_cpu_usage",
+          "hide": false,
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(process_cpu_usage)",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Total",
+          "refId": "B"
         }
       ],
       "title": "CPU Usage",
@@ -860,12 +869,12 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "ExplorViz Services",
   "uid": "D4cxv0V7z",
-  "version": 8
+  "version": 10
 }

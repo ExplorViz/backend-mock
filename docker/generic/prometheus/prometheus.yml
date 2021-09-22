@@ -28,8 +28,8 @@ scrape_configs:
   - job_name: 'adapter-service'
     static_configs:
       - targets:
-        - "host.docker.internal:8085" # dev-mode
-        - "adapter-service:8085"
+        - "host.docker.internal:8087" # dev-mode
+        - "adapter-service:8087"
 
   - job_name: 'landscape-service'
     static_configs:
@@ -48,3 +48,16 @@ scrape_configs:
       - targets:
         - "host.docker.internal:8084" # dev-mode
         - "user-service:8084"
+
+  - job_name: 'push-service'
+    static_configs:
+      - targets:
+        - "host.docker.internal:8086" # dev-mode
+        - "push-service:8086"
+
+
+  - job_name: 'collaborative-service'
+    static_configs:
+      - targets:
+        - "host.docker.internal:8085" # dev-mode
+        - "collaborative-service:8085"

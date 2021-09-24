@@ -35,7 +35,7 @@ services:
       KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE: "LogAppendTime"
       KAFKA_MESSAGE_MAX_BYTES: 7000000
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
-      KAFKA_CREATE_TOPICS: "cluster-dump-spans:1:1,explorviz-spans-structure:1:1,explorviz-spans-dynamic:1:1,token-events:1:1"
+      KAFKA_CREATE_TOPICS: "cluster-dump-spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1"
     depends_on:
       - zookeeper
     volumes:
@@ -112,6 +112,20 @@ services:
     volumes:
        - user-mongo-data:/data/db
        - user-mongo-configdb:/data/configdb
+    networks:
+      - explorviz
+
+  ## Backend Reverse Proxy (for replicas in docker-compose)
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./generic/backend-reverse-proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - ${TRACE_SERV_PORT}:${TRACE_SERV_PORT}
+      - ${LANDSCAPE_SERV_PORT}:${LANDSCAPE_SERV_PORT}
+    environment:
+      - NGINX_TRACE_PORT=${TRACE_SERV_PORT}
+      - NGINX_LANDSCAPE_PORT=${LANDSCAPE_SERV_PORT}
     networks:
       - explorviz
 

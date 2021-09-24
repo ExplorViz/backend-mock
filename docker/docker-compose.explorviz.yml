@@ -4,13 +4,14 @@
 
 # docker-compose -f docker-compose.explorviz.yml -f docker-compose.environment.yml down -v
 
+# docker-compose --env-file .env-custom -f docker-compose.environment.yml -f docker-compose.explorviz.yml up -d
+
 version: "3.5"
 services:
 
   ## Adapter-Service ##
 
   adapter-service:
-    container_name: adapter-service
     image: explorviz/adapter-service-jvm:latest
     networks:
       - explorviz
@@ -19,16 +20,16 @@ services:
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${ADAPTER_REPLICAS}
 
   ## Landscape-Service ##
 
   landscape-service:
-    container_name: landscape-service
     image: explorviz/landscape-service-jvm:latest
     networks:
       - explorviz
-    ports:
-      - ${LANDSCAPE_SERV_PORT}:8080
     environment:
       - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
@@ -37,14 +38,14 @@ services:
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${LANDSCAPE_REPLICAS}
 
   ## Trace-Service ##
 
   trace-service:
-    container_name: trace-service
     image: explorviz/trace-service-jvm:latest
-    ports:
-      - ${TRACE_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
@@ -56,6 +57,9 @@ services:
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${TRACE_REPLICAS}
 
   ## User-Service ##
 

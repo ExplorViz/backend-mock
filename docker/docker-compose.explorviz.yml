@@ -4,58 +4,62 @@
 
 # docker-compose -f docker-compose.explorviz.yml -f docker-compose.environment.yml down -v
 
+# docker-compose --env-file .env-custom -f docker-compose.environment.yml -f docker-compose.explorviz.yml up -d
+
 version: "3.5"
 services:
 
   ## Adapter-Service ##
 
   adapter-service:
-    container_name: adapter-service
     image: explorviz/adapter-service-jvm:latest
     networks:
       - explorviz
     environment:
-      - QUARKUS_REDIS_HOSTS=redis://redis-adapter:${REDIS_ADAPTER_SERV_PORT}
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - QUARKUS_REDIS_HOSTS=redis://redis-adapter:6379
+      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${ADAPTER_REPLICAS}
 
   ## Landscape-Service ##
 
   landscape-service:
-    container_name: landscape-service
     image: explorviz/landscape-service-jvm:latest
     networks:
       - explorviz
-    ports:
-      - ${LANDSCAPE_SERV_PORT}:8080
     environment:
-      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}
+      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${LANDSCAPE_REPLICAS}
 
   ## Trace-Service ##
 
   trace-service:
-    container_name: trace-service
     image: explorviz/trace-service-jvm:latest
-    ports:
-      - ${TRACE_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
-      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:${CASSANDRA_PORT}
+      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
+      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${TRACE_REPLICAS}
 
   ## User-Service ##
 
@@ -67,8 +71,8 @@ services:
     networks:
       - explorviz
     environment:
-      - MP_MESSAGING_OUTGOING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}
-      - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:${MONGO_USER_SERV_PORT}
+      - MP_MESSAGING_OUTGOING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017
       - EXPLORVIZ_LOG_LVL=DEBUG
 
   ## Collaborative-Service ##
@@ -93,10 +97,11 @@ services:
     networks:
       - explorviz
     environment:
-      - LANDSCAPE_URL=http://localhost:${LANDSCAPE_SERV_PORT}
-      - TRACE_URL=http://localhost:${TRACE_SERV_PORT}
-      - USER_URL=http://localhost:${USER_SERV_PORT}
-      - COLLAB_URL=ws://localhost:${COLLAB_SERV_PORT}
+      - LANDSCAPE_URL=http://${FRONTEND_HOST_NAME}:${LANDSCAPE_SERV_PORT}
+      - TRACE_URL=http://${FRONTEND_HOST_NAME}:${TRACE_SERV_PORT}
+      - USER_URL=http://${FRONTEND_HOST_NAME}:${USER_SERV_PORT}
+      - COLLAB_URL=ws://${FRONTEND_HOST_NAME}:${COLLAB_SERV_PORT}
+      - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
 
 networks:
   explorviz:

@@ -2,3 +2,4 @@ microk8s/
 test.db
 logDir
 jmeter.log
+.env-custom

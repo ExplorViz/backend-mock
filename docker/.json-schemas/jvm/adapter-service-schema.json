@@ -14,14 +14,14 @@
         {
           "contains": {
             "enum": [
-              "QUARKUS_REDIS_HOSTS=redis://redis-adapter:${REDIS_ADAPTER_SERV_PORT}"
+              "QUARKUS_REDIS_HOSTS=redis://redis-adapter:6379"
             ]
           }
         },
         {
           "contains": {
             "enum": [
-              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
         }
@@ -29,7 +29,7 @@
         {
           "contains": {
             "enum": [
-              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:${SCHEMA_REGISTRY_PORT}"
+              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
         }

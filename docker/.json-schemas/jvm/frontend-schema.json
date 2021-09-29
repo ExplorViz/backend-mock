@@ -20,14 +20,14 @@
         {
           "contains": {
             "enum": [
-              "LANDSCAPE_URL=http://localhost:${LANDSCAPE_SERV_PORT}"
+              "LANDSCAPE_URL=http://${FRONTEND_HOST_NAME}:${LANDSCAPE_SERV_PORT}"
             ]
           }
         },
         {
           "contains": {
             "enum": [
-              "TRACE_URL=http://localhost:${TRACE_SERV_PORT}"
+              "TRACE_URL=http://${FRONTEND_HOST_NAME}:${TRACE_SERV_PORT}"
             ]
           }
         }
@@ -35,7 +35,7 @@
         {
           "contains": {
             "enum": [
-              "USER_URL=http://localhost:${USER_SERV_PORT}"
+              "USER_URL=http://${FRONTEND_HOST_NAME}:${USER_SERV_PORT}"
             ]
           }
         }
@@ -43,7 +43,15 @@
         {
           "contains": {
             "enum": [
-              "COLLAB_URL=ws://localhost:${COLLAB_SERV_PORT}"
+              "COLLAB_URL=ws://${FRONTEND_HOST_NAME}:${COLLAB_SERV_PORT}"
+            ]
+          }
+        }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}"
             ]
           }
         }

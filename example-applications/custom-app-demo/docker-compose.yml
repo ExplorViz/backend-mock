@@ -18,6 +18,9 @@ services:
       - 18080:8080
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     volumes:
       - agent-vol:/agent
       - ./inspectit.yml:/agent/inspectit.yml

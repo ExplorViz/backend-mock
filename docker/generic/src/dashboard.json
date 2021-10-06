@@ -145,7 +145,59 @@
           },
           "unit": "percentunit"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*trace-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*landscape-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*adapter-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp"
+            },
+            "properties": []
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
@@ -167,7 +219,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "process_cpu_usage",
+          "expr": "sum by(job) (process_cpu_usage)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{job}}",
@@ -242,7 +294,68 @@
           },
           "unit": "decbytes"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*trace-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#5794F2",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*landscape-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*adapter-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "collaborative-service"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
@@ -283,308 +396,8 @@
       "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": null,
       "description": "Average number of records consumed per second (per service and topic)",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 8
-      },
-      "hiddenSeries": false,
-      "id": 4,
-      "interval": "5",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.1.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "kafka_consumer_fetch_manager_records_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "{{job}} ({{topic}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Record Consumption Rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:351",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:352",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "description": "Average number of bytes consumed per second (per service and topic)",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 8
-      },
-      "hiddenSeries": false,
-      "id": 11,
-      "interval": "5",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.1.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "kafka_consumer_fetch_manager_bytes_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "{{job}} ({{topic}})",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Byte Consumption Rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:351",
-          "format": "bytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:352",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMax": 1,
-            "axisSoftMin": 0,
-            "fillOpacity": 80,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineWidth": 1
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 0,
-        "y": 15
-      },
-      "id": 18,
-      "options": {
-        "barWidth": 0.97,
-        "groupWidth": 0.7,
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "orientation": "horizontal",
-        "showValue": "auto",
-        "stacking": "none",
-        "text": {},
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": " kafka_consumer_fetch_manager_bytes_consumed_rate\n/ ignoring(job) group_left\n  sum without(job)(kafka_consumer_fetch_manager_bytes_consumed_rate)",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Share between topics in %",
-      "transformations": [
-        {
-          "id": "labelsToFields",
-          "options": {
-            "valueLabel": "job"
-          }
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "client_id": true,
-              "cluster-dump-spans": true,
-              "explorviz-spans-dynamic": false,
-              "explorviz-spans-structure": false,
-              "instance": true,
-              "job": false,
-              "kafka_version": true,
-              "token-events": false,
-              "topic": true,
-              "trace-service-KSTREAM-AGGREGATE-STATE-STORE-0000000002-repartition": false
-            },
-            "indexByName": {},
-            "renameByName": {}
-          }
-        },
-        {
-          "id": "reduce",
-          "options": {
-            "labelsToFields": false,
-            "reducers": [
-              "lastNotNull"
-            ]
-          }
-        }
-      ],
-      "type": "barchart"
-    },
-    {
-      "datasource": null,
-      "description": "Token Event sent by the user service and received by the others.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -595,7 +408,7 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 0,
+            "fillOpacity": 10,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -608,8 +421,8 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
-            "spanNulls": false,
+            "showPoints": "never",
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -618,30 +431,135 @@
               "mode": "off"
             }
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "trace-service": {
+                  "color": "#1F60C4",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*trace-service.*"
+            },
+            "properties": [
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "fill": "solid"
+                }
               },
               {
-                "color": "red",
-                "value": 80
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*landscape-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*adapter-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "Per Instance"
+            },
+            "properties": [
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    0,
+                    10
+                  ],
+                  "fill": "dot"
+                }
+              }
+            ]
+          },
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "adapter-service:172.18.0.9:8087 (cluster-dump-spans)",
+                  "adapter-service (cluster-dump-spans)",
+                  "adapter-service:host.docker.internal:8087 (cluster-dump-spans)"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
               }
             ]
           }
-        },
-        "overrides": []
+        ]
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 7,
-        "y": 15
+        "w": 12,
+        "x": 0,
+        "y": 8
       },
-      "id": 20,
+      "id": 4,
+      "interval": "5",
       "options": {
         "legend": {
           "calcs": [],
@@ -656,22 +574,224 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "round(increase(kafka_consumer_fetch_manager_records_consumed_total{topic=\"token-events\"}[$__rate_interval]))",
+          "expr": "sum by(job, topic) (kafka_consumer_fetch_manager_records_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"})",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{job}}",
-          "refId": "A"
+          "legendFormat": "{{job}} ({{topic}})",
+          "refId": "Jointly"
         },
         {
           "exemplar": true,
-          "expr": "round(increase(kafka_producer_topic_record_send_total{topic=\"token-events\"}[$__rate_interval]))",
+          "expr": "kafka_consumer_fetch_manager_records_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{job}}",
-          "refId": "B"
+          "legendFormat": "{{job}}:{{instance}} ({{topic}})",
+          "refId": "Per Instance"
         }
       ],
-      "title": "Token Events",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Record Consumption Rate",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "description": "Average bytes consumed per second (per service and topic)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [
+            {
+              "options": {
+                "trace-service": {
+                  "color": "#1F60C4",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*trace-service.*"
+            },
+            "properties": [
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "fill": "solid"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*landscape-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*adapter-service.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "Per Instance"
+            },
+            "properties": [
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    0,
+                    10
+                  ],
+                  "fill": "dot"
+                }
+              }
+            ]
+          },
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "adapter-service (cluster-dump-spans)",
+                  "adapter-service:host.docker.internal:8087 (cluster-dump-spans)",
+                  "adapter-service:172.18.0.9:8087 (cluster-dump-spans)"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 22,
+      "interval": "5",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.1.3",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum by(job, topic) (kafka_consumer_fetch_manager_bytes_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{job}} ({{topic}})",
+          "refId": "Jointly"
+        },
+        {
+          "exemplar": true,
+          "expr": "kafka_consumer_fetch_manager_bytes_consumed_rate{topic!~\".*KSTREAM.*\", topic!=\"token-events\", topic=~\".+\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{job}}:{{instance}} ({{topic}})",
+          "refId": "Per Instance"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Byte Consumption Rate",
       "transformations": [],
       "type": "timeseries"
     },
@@ -701,10 +821,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 5,
         "w": 9,
-        "x": 15,
-        "y": 15
+        "x": 0,
+        "y": 16
       },
       "id": 21,
       "options": {
@@ -726,7 +846,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "round(increase(kafka_consumer_fetch_manager_records_consumed_total{topic=\"token-events\"}[$__range]))",
+          "expr": "sum by(job) (round(increase(kafka_consumer_fetch_manager_records_consumed_total{topic=\"token-events\"}[$__range])))",
           "hide": false,
           "interval": "",
           "legendFormat": "{{job}} received",
@@ -734,7 +854,7 @@
         },
         {
           "exemplar": true,
-          "expr": "round(increase(kafka_producer_topic_record_send_total{topic=\"token-events\"}[$__range]))",
+          "expr": "sum by(job) (round(increase(kafka_producer_topic_record_send_total{topic=\"token-events\"}[$__range])))",
           "hide": false,
           "interval": "",
           "legendFormat": "{{job}} sent",
@@ -764,13 +884,119 @@
             ]
           }
         },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*CLIENT_ERROR.*"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*SERVER_ERROR.*"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 7,
+        "x": 9,
+        "y": 16
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "8.1.3",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum by(job, outcome)\n (round(increase(http_server_requests_seconds_count{uri!~\"/q.*|/metrics/\", outcome != \"REDIRECTION\"}[$__range])))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{job}} {{outcome}}",
+          "refId": "B"
+        }
+      ],
+      "title": "HTTP Outcomes",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "Inbound requests per service. Includes scraping by prometheus.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
-        "w": 7,
-        "x": 0,
-        "y": 23
+        "h": 5,
+        "w": 8,
+        "x": 16,
+        "y": 16
       },
       "id": 13,
       "options": {
@@ -875,9 +1101,9 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 17,
-        "x": 7,
-        "y": 23
+        "w": 24,
+        "x": 0,
+        "y": 21
       },
       "id": 16,
       "options": {
@@ -904,112 +1130,6 @@
       ],
       "title": "Average HTTP Response TIme (Success)",
       "type": "timeseries"
-    },
-    {
-      "datasource": null,
-      "description": "Inbound requests per service. Includes scraping by prometheus.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*CLIENT_ERROR.*"
-            },
-            "properties": [
-              {
-                "id": "thresholds",
-                "value": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": null
-                    },
-                    {
-                      "color": "orange",
-                      "value": 1
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*SERVER_ERROR.*"
-            },
-            "properties": [
-              {
-                "id": "thresholds",
-                "value": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": null
-                    },
-                    {
-                      "color": "red",
-                      "value": 1
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 7,
-        "x": 0,
-        "y": 27
-      },
-      "id": 14,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "value_and_name"
-      },
-      "pluginVersion": "8.1.3",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "sum by(job, outcome)\n (round(increase(http_server_requests_seconds_count{uri!~\"/q.*|/metrics/\", outcome != \"REDIRECTION\"}[$__range])))",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "{{job}} {{outcome}}",
-          "refId": "B"
-        }
-      ],
-      "title": "HTTP Outcomes",
-      "type": "stat"
     }
   ],
   "refresh": false,
@@ -1020,12 +1140,12 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
-    "to": "now"
+    "from": "2021-10-06T07:08:27.776Z",
+    "to": "2021-10-06T07:12:44.714Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "ExplorViz Services",
   "uid": "D4cxv0V7z",
-  "version": 17
+  "version": 25
 }

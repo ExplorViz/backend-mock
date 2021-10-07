@@ -19,7 +19,7 @@ services:
     depends_on:
       - ocelot-agent
     ports:
-      - 18080:8080
+      - ${PETCLINIC_EXTERNAL_PORT}:8080
     networks:
       - explorviz
     environment:

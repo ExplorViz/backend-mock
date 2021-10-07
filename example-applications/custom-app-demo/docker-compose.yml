@@ -18,8 +18,6 @@ services:
     container_name: sample-application
     depends_on:
       - ocelot-agent
-    ports:
-      - 18080:8080
     networks:
       - explorviz
     environment:

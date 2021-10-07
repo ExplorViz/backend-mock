@@ -1,9 +1,13 @@
+# docker-compose --env-file .env-custom up -d
+
+# docker-compose --env-file .env-custom down -v
+
 version: "3.5"
 services:
 
   ocelot-agent:
     image: inspectit/inspectit-ocelot-agent:1.9.0
-    container_name: ocelot-agent
+    container_name: ocelot-agent-custom-app
     networks:
       - explorviz
     volumes:

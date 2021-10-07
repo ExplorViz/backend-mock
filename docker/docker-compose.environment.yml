@@ -4,6 +4,8 @@
 
 # docker-compose -f docker-compose.explorviz.yml -f docker-compose.environment.yml down -v
 
+# docker-compose --env-file .env-custom -f docker-compose.environment.yml -f docker-compose.explorviz.yml up -d
+
 version: "3.5"
 services:
 

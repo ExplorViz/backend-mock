@@ -17,6 +17,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-config-server.yml:/agent/inspectit.yml
@@ -34,6 +37,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     depends_on:
       - config-server
     volumes:
@@ -52,6 +58,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     depends_on:
      - config-server
      - discovery-server
@@ -71,6 +80,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     depends_on:
       - config-server
       - discovery-server
@@ -90,6 +102,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     depends_on:
      - config-server
      - discovery-server
@@ -109,6 +124,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     depends_on:
      - config-server
      - discovery-server
@@ -129,6 +147,9 @@ services:
     #mem_limit: 512M
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     depends_on:
      - config-server
      - discovery-server

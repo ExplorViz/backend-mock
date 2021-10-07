@@ -2,8 +2,8 @@ inspectit:
 
   tags:
     extra:
-      landscape_token: 'token3'
-      token_secret: 'secret'
+      landscape_token: ${LANDSCAPE_TOKEN_ID}
+      token_secret: ${LANDSCAPE_TOKEN_SECRET}
       application_name: 'petclinic-discovery-service'
       application_instance_id: 0
       application_language: 'java'

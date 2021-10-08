@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "omnition/opencensus-collector:0.1.11" },
     "container_name" : {"const": "oc-collector"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "enum" : ["${OC_COLLECTOR_PORT}:55678"]}

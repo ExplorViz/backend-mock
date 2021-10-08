@@ -45,49 +45,49 @@
           "required": ["name"]
         },
         "zookeeper-data-log": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-zookeeper-data-log"}
           },
           "required": ["name"]
         },
         "zookeeper-log": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-zookeeper-log"}
           },
           "required": ["name"]
         },
         "kafka": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-kafka"}
           },
           "required": ["name"]
         },
         "schema-registry": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-schema-registry"}
           },
           "required": ["name"]
         },
         "user-mongo-data": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-mongo-user-data"}
           },
           "required": ["name"]
         },
         "user-mongo-configdb": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-mongo-user-config"}
           },
           "required": ["name"]
         },
         "cassandra": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-cassandra"}
           },
           "required": ["name"]
         },
         "redis-adapter": {
-          "properties": { 
+          "properties": {
             "name" : {"const" : "explorviz-redis"}
           },
           "required": ["name"]

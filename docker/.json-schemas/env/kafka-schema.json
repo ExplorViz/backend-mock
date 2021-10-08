@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "wurstmeister/kafka" },
     "container_name" : {"const": "kafka"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "const" : "${KAFKA_EXT_PORT}:9091" }
@@ -24,7 +24,7 @@
       },
       "required": ["KAFKA_LISTENERS", "KAFKA_ADVERTISED_LISTENERS", "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP", "KAFKA_INTER_BROKER_LISTENER_NAME", "KAFKA_ZOOKEEPER_CONNECT", "KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE", "KAFKA_MESSAGE_MAX_BYTES", "KAFKA_AUTO_CREATE_TOPICS_ENABLE", "KAFKA_CREATE_TOPICS"]
     },
-    "depends_on": { 
+    "depends_on": {
       "type" : "array",
       "items": [
         { "const" : "zookeeper"}

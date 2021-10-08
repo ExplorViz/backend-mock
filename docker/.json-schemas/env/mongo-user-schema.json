@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "mongo" },
     "container_name" : {"const": "user-mongo"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "enum" : ["${MONGO_USER_SERV_PORT}:27017"]}

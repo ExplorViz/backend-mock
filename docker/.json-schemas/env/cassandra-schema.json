@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "bitnami/cassandra:3.11.10" },
     "container_name" : {"const": "cassandra-explorviz"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "enum" : ["${CASSANDRA_PORT}:9042"]}

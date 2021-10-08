@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "confluentinc/cp-schema-registry:5.4.0" },
     "container_name" : {"const": "schema-registry"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "enum" : ["${SCHEMA_REGISTRY_PORT}:8081"]}

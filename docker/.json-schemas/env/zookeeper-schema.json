@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "zookeeper:3.6" },
     "container_name" : {"const": "zookeeper"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "enum" : ["${ZOOKEEPER_PORT}:2181"]}

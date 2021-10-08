@@ -3,7 +3,7 @@
   "properties": {
     "image": { "const": "redis:alpine3.13" },
     "container_name" : {"const": "redis-adapter-service"},
-    "ports": { 
+    "ports": {
       "type" : "array",
       "items": [
         { "enum" : ["${REDIS_ADAPTER_SERV_PORT}:6379"]}

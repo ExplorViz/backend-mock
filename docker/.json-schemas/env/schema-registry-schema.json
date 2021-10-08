@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "confluentinc/cp-schema-registry:5.4.0" },
+    "container_name" : {"const": "schema-registry"},
+    "ports": {
+      "type" : "array",
+      "items": [
+        { "enum" : ["${SCHEMA_REGISTRY_PORT}:8081"]}
+      ]
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS" : { "enum" : ["PLAINTEXT://kafka:${KAFKA_INT_PORT}"]},
+        "SCHEMA_REGISTRY_HOST_NAME" : { "const" : "127.0.0.1" }
+      },
+      "required": [ "SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS", "SCHEMA_REGISTRY_HOST_NAME" ]
+    },
+    "depends_on" : {
+      "type" : "array",
+      "items": [
+        { "const" : "kafka"}
+      ]
+    },
+    "volumes": {
+      "type" : "array",
+      "items": [
+        { "enum" : ["schema-registry:/etc/schema-registry/secrets"] }
+      ]
+    },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    }
+  },
+  "required": ["image", "ports", "environment", "depends_on", "volumes", "networks"]
+}

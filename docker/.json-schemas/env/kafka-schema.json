@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "wurstmeister/kafka" },
+    "container_name" : {"const": "kafka"},
+    "ports": { 
+      "type" : "array",
+      "items": [
+        { "const" : "${KAFKA_EXT_PORT}:9091" }
+      ]
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "KAFKA_LISTENERS": { "const": "OUTSIDE://:${KAFKA_EXT_PORT},INSIDE://kafka:${KAFKA_INT_PORT}" },
+        "KAFKA_ADVERTISED_LISTENERS": { "const" : "OUTSIDE://localhost:${KAFKA_EXT_PORT},INSIDE://kafka:${KAFKA_INT_PORT}" },
+        "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP": { "const" : "INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT" },
+        "KAFKA_INTER_BROKER_LISTENER_NAME": { "const" : "INSIDE" },
+        "KAFKA_ZOOKEEPER_CONNECT": { "const" : "zookeeper:${ZOOKEEPER_PORT}" },
+        "KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE": { "const" : "LogAppendTime" },
+        "KAFKA_MESSAGE_MAX_BYTES": { "const" : 7000000 },
+        "KAFKA_AUTO_CREATE_TOPICS_ENABLE": { "const" : "false"},
+        "KAFKA_CREATE_TOPICS": { "const" : "cluster-dump-spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1" }
+      },
+      "required": ["KAFKA_LISTENERS", "KAFKA_ADVERTISED_LISTENERS", "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP", "KAFKA_INTER_BROKER_LISTENER_NAME", "KAFKA_ZOOKEEPER_CONNECT", "KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE", "KAFKA_MESSAGE_MAX_BYTES", "KAFKA_AUTO_CREATE_TOPICS_ENABLE", "KAFKA_CREATE_TOPICS"]
+    },
+    "depends_on": { 
+      "type" : "array",
+      "items": [
+        { "const" : "zookeeper"}
+      ]
+    },
+    "volumes": {
+      "type" : "array",
+      "items": [
+        { "const" : "kafka:/kafka"}
+      ]
+    },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    }
+  },
+  "required": ["image", "ports", "environment", "depends_on", "volumes", "networks"]
+}

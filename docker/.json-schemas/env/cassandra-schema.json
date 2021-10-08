@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "bitnami/cassandra:3.11.10" },
+    "container_name" : {"const": "cassandra-explorviz"},
+    "ports": { 
+      "type" : "array",
+      "items": [
+        { "enum" : ["${CASSANDRA_PORT}:9042"]}
+      ]
+    },
+    "environment": {
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum": [
+              "MAX_HEAP_SIZE=1G"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "HEAP_NEWSIZE=200M"
+            ]
+          }
+        }
+      ]
+    },
+    "volumes": {
+      "type" : "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum" : [
+              "cassandra:/bitnami"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum" : [
+              "./generic/cassandra:/docker-entrypoint-initdb.d"
+            ]
+          }
+        }
+      ]
+    },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    }
+  },
+  "required": ["image", "ports", "environment", "volumes", "networks"]
+}

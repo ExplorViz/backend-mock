@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "zookeeper:3.6" },
+    "container_name" : {"const": "zookeeper"},
+    "ports": { 
+      "type" : "array",
+      "items": [
+        { "enum" : ["${ZOOKEEPER_PORT}:2181"]}
+      ]
+    },
+    "volumes": {
+      "type" : "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum": [
+              "zookeeper-data:/data"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "zookeeper-data-log:/datalog"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "zookeeper-log:/logs"
+            ]
+          }
+        }
+      ]
+    },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    }
+  },
+  "required": ["image", "ports", "volumes", "networks"]
+}

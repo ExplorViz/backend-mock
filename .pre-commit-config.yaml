@@ -22,3 +22,9 @@ repos:
         files: docker-compose\.explorviz\.yml
         types: [yaml]
         args: ["--schemafile", "docker/.json-schemas/jvm/main-schema.json"]
+      - id: check-jsonschema
+        name: "Check Docker-Compose-Environment Stack"
+        language: python
+        files: docker-compose\.environment\.yml
+        types: [yaml]
+        args: ["--schemafile", "docker/.json-schemas/env/main-schema.json"]

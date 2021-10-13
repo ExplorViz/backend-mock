@@ -190,12 +190,6 @@
                 }
               }
             ]
-          },
-          {
-            "matcher": {
-              "id": "byRegexp"
-            },
-            "properties": []
           }
         ]
       },
@@ -523,32 +517,6 @@
                 }
               }
             ]
-          },
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "adapter-service:172.18.0.9:8087 (cluster-dump-spans)",
-                  "adapter-service (cluster-dump-spans)",
-                  "adapter-service:host.docker.internal:8087 (cluster-dump-spans)"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
           }
         ]
       },
@@ -720,32 +688,6 @@
                     10
                   ],
                   "fill": "dot"
-                }
-              }
-            ]
-          },
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "adapter-service (cluster-dump-spans)",
-                  "adapter-service:host.docker.internal:8087 (cluster-dump-spans)",
-                  "adapter-service:172.18.0.9:8087 (cluster-dump-spans)"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
                 }
               }
             ]
@@ -1140,12 +1082,12 @@
     "list": []
   },
   "time": {
-    "from": "2021-10-06T07:08:27.776Z",
-    "to": "2021-10-06T07:12:44.714Z"
+    "from": "now-15m",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "ExplorViz Services",
   "uid": "D4cxv0V7z",
-  "version": 25
+  "version": 29
 }

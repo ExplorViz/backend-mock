@@ -1,8 +1,8 @@
-# docker-compose -f docker-compose.explorviz.yml pull
+# docker-compose -f docker-compose.explorviz.native.yml pull
 
-# docker-compose -f docker-compose.explorviz.yml up -d
+# docker-compose -f docker-compose.explorviz.native.yml up -d
 
-# docker-compose -f docker-compose.explorviz.yml -f docker-compose.environment.yml down -v
+# docker-compose -f docker-compose.explorviz.native.yml -f docker-compose.environment.yml down -v
 
 version: "3.5"
 services:
@@ -19,16 +19,19 @@ services:
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${ADAPTER_REPLICAS}
 
   ## Landscape-Service ##
 
   landscape-service:
     container_name: landscape-service
     image: explorviz/landscape-service-native:latest
+    ports:
+      - 8082:8082
     networks:
       - explorviz
-    ports:
-      - 8082:8080
     environment:
       - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
@@ -37,6 +40,9 @@ services:
       - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${LANDSCAPE_REPLICAS}
 
   ## Trace-Service ##
 
@@ -44,7 +50,7 @@ services:
     container_name: trace-service
     image: explorviz/trace-service-native:latest
     ports:
-      - 8083:8080
+      - 8083:8083
     networks:
       - explorviz
     environment:
@@ -56,6 +62,9 @@ services:
       - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
       - EXPLORVIZ_LOG_LVL=DEBUG
+    deploy:
+      mode: replicated
+      replicas: ${TRACE_REPLICAS}
 
   ## User-Service ##
 
@@ -63,7 +72,7 @@ services:
     container_name: user-service
     image: explorviz/user-service-native:latest
     ports:
-      - 8084:8080
+      - ${USER_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
@@ -77,7 +86,7 @@ services:
     container_name: collaborative-service
     image: explorviz/collaborative-service-jvm:latest
     ports:
-      - 8085:8080
+      - ${COLLAB_SERV_PORT}:8080
     networks:
       - explorviz
     environment:
@@ -89,14 +98,15 @@ services:
     container_name: explorviz-frontend
     image: explorviz/explorviz-frontend:dev
     ports:
-      - 4200:80
+      - ${FRONTEND_PORT}:80
     networks:
       - explorviz
     environment:
-      - LANDSCAPE_URL=http://localhost:8082
-      - TRACE_URL=http://localhost:8083
-      - USER_URL=http://localhost:8084
-      - COLLAB_URL=ws://localhost:8085
+      - LANDSCAPE_URL=http://${FRONTEND_HOST_NAME}:${LANDSCAPE_SERV_PORT}
+      - TRACE_URL=http://${FRONTEND_HOST_NAME}:${TRACE_SERV_PORT}
+      - USER_URL=http://${FRONTEND_HOST_NAME}:${USER_SERV_PORT}
+      - COLLAB_URL=ws://${FRONTEND_HOST_NAME}:${COLLAB_SERV_PORT}
+      - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
 
 networks:
   explorviz:

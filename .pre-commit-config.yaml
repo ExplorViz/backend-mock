@@ -28,3 +28,9 @@ repos:
         files: docker-compose\.environment\.yml
         types: [yaml]
         args: ["--schemafile", "docker/.json-schemas/env/main-schema.json"]
+      - id: check-jsonschema
+        name: "Check Docker-Compose-Native Stack"
+        language: python
+        files: docker-compose\.explorviz\.native\.yml
+        types: [yaml]
+        args: ["--schemafile", "docker/.json-schemas/native/main-schema.json"]

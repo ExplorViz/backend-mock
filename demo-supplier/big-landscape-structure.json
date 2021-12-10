@@ -10,15 +10,20 @@
           "language":"java",
           "instanceId":"0",
           "packages":[
-            
-          ],
-          "classes":[
             {
-              "name":"class",
-              "methods":[
+              "name":"app-1-package",
+              "subPackages":[
+
+              ],
+              "classes":[
                 {
-                  "name":"method()",
-                  "hashCode":"app-1-method"
+                  "name":"class",
+                  "methods":[
+                    {
+                      "name":"method()",
+                      "hashCode":"app-1-method"
+                    }
+                  ]
                 }
               ]
             }
@@ -35,15 +40,20 @@
           "language":"java",
           "instanceId":"0",
           "packages":[
-            
-          ],
-          "classes":[
             {
-              "name":"class",
-              "methods":[
+              "name":"app-2-package",
+              "subPackages":[
+
+              ],
+              "classes":[
                 {
-                  "name":"method()",
-                  "hashCode":"app-2-method"
+                  "name":"class",
+                  "methods":[
+                    {
+                      "name":"method()",
+                      "hashCode":"app-2-method"
+                    }
+                  ]
                 }
               ]
             }
@@ -54,15 +64,20 @@
           "language":"java",
           "instanceId":"1",
           "packages":[
-            
-          ],
-          "classes":[
             {
-              "name":"class",
-              "methods":[
+              "name":"app-2-2-package",
+              "subPackages":[
+
+              ],
+              "classes":[
                 {
-                  "name":"method()",
-                  "hashCode":"app-2-2-method"
+                  "name":"class",
+                  "methods":[
+                    {
+                      "name":"method()",
+                      "hashCode":"app-2-2-method"
+                    }
+                  ]
                 }
               ]
             }
@@ -79,15 +94,20 @@
           "language":"java",
           "instanceId":"0",
           "packages":[
-            
-          ],
-          "classes":[
             {
-              "name":"class",
-              "methods":[
+              "name":"app-3-package",
+              "subPackages":[
+
+              ],
+              "classes":[
                 {
-                  "name":"method()",
-                  "hashCode":"app-3-method"
+                  "name":"class",
+                  "methods":[
+                    {
+                      "name":"method()",
+                      "hashCode":"app-3-method"
+                    }
+                  ]
                 }
               ]
             }
@@ -104,15 +124,50 @@
           "language":"java",
           "instanceId":"0",
           "packages":[
-            
-          ],
-          "classes":[
             {
-              "name":"class",
-              "methods":[
+              "name":"app-4-package",
+              "subPackages":[
+
+              ],
+              "classes":[
                 {
-                  "name":"method()",
-                  "hashCode":"app-4-method"
+                  "name":"class",
+                  "methods":[
+                    {
+                      "name":"method()",
+                      "hashCode":"app-4-method"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ipAddress":"172.20.0.5",
+      "hostName":"node-5",
+      "applications":[
+        {
+          "name":"app-5",
+          "language":"java",
+          "instanceId":"0",
+          "packages":[
+            {
+              "name":"app-5-package",
+              "subPackages":[
+
+              ],
+              "classes":[
+                {
+                  "name":"class",
+                  "methods":[
+                    {
+                      "name":"method()",
+                      "hashCode":"app-5-method"
+                    }
+                  ]
                 }
               ]
             }

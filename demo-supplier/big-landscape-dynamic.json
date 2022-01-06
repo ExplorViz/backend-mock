@@ -31,6 +31,64 @@
   {
     "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
     "startTime":1622025008957,
+    "traceId":"app-1-sub-to-app-2",
+    "endTime":1622025009111,
+    "duration":154,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
+        "traceId":"app-1-sub-to-app-2",
+        "spanId":"app-1-sub-to-app-2-source",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"app-1-method-sub"
+      },
+      {
+        "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
+        "traceId":"app-1-sub-to-app-2",
+        "spanId":"app-1-sub-to-app-2-target",
+        "parentSpanId":"app-1-sub-to-app-2-source",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"app-2-method"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
+    "startTime":1622025008957,
+    "traceId":"app-1-to-app-2-sub",
+    "endTime":1622025009111,
+    "duration":154,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
+        "traceId":"app-1-to-app-2-sub",
+        "spanId":"app-1-to-app-2-sub-source",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"app-1-method"
+      },
+      {
+        "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
+        "traceId":"app-1-to-app-2-sub",
+        "spanId":"app-1-to-app-2-sub-target",
+        "parentSpanId":"app-1-to-app-2-sub-source",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"app-2-method-sub"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"a87167e5-8ec1-4b98-830a-dba87d213bb0",
+    "startTime":1622025008957,
     "traceId":"app-2-to-app-3",
     "endTime":1622025009111,
     "duration":154,

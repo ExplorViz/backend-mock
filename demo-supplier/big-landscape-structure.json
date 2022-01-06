@@ -12,9 +12,23 @@
           "packages":[
             {
               "name":"app-1-package",
-              "subPackages":[
-
-              ],
+              "subPackages":[{
+                "name":"app-1-sub-package",
+                "subPackages":[
+  
+                ],
+                "classes":[
+                  {
+                    "name":"Class1Sub",
+                    "methods":[
+                      {
+                        "name":"method1Sub",
+                        "hashCode":"app-1-method-sub"
+                      }
+                    ]
+                  }
+                ]
+              }],
               "classes":[
                 {
                   "name":"Class1",
@@ -42,8 +56,23 @@
           "packages":[
             {
               "name":"app-2-package",
-              "subPackages":[
-
+              "subPackages":[{
+                  "name":"app-2-sub-package",
+                  "subPackages":[
+    
+                  ],
+                  "classes":[
+                    {
+                      "name":"Class2Sub",
+                      "methods":[
+                        {
+                          "name":"method2Sub",
+                          "hashCode":"app-2-method-sub"
+                        }
+                      ]
+                    }
+                  ]
+                }
               ],
               "classes":[
                 {

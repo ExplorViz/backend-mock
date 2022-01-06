@@ -15,7 +15,7 @@
               "subPackages":[{
                 "name":"app-1-sub-package",
                 "subPackages":[
-  
+
                 ],
                 "classes":[
                   {
@@ -59,7 +59,7 @@
               "subPackages":[{
                   "name":"app-2-sub-package",
                   "subPackages":[
-    
+
                   ],
                   "classes":[
                     {

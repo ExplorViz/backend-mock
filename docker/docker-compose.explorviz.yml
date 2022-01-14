@@ -91,7 +91,7 @@ services:
 
   frontend:
     container_name: explorviz-frontend
-    image: explorviz/explorviz-frontend:commu
+    image: explorviz/explorviz-frontend:dev
     ports:
       - ${FRONTEND_PORT}:80
     networks:

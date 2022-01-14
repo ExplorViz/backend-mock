@@ -24,3 +24,64 @@ scrape_configs:
 
     static_configs:
          - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100']
+
+  - job_name: 'adapter-service'
+    dns_sd_configs:
+      - names:
+          - "adapter-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+        - "host.docker.internal:8087" # dev-mode
+
+  - job_name: 'landscape-service'
+
+    dns_sd_configs:
+      - names:
+          - "landscape-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+        - "host.docker.internal:8082" # dev-mode
+
+  - job_name: 'trace-service'
+    dns_sd_configs:
+      - names:
+          - "trace-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+        - "host.docker.internal:8083" # dev-mode
+
+  - job_name: 'user-service'
+    dns_sd_configs:
+      - names:
+          - "user-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+        - "host.docker.internal:8084" # dev-mode
+
+  - job_name: 'push-service'
+    dns_sd_configs:
+      - names:
+          - "push-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+        - "host.docker.internal:8086" # dev-mode
+
+  - job_name: 'collaborative-service'
+    dns_sd_configs:
+      - names:
+          - "push-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+        - "host.docker.internal:8085" # dev-mode

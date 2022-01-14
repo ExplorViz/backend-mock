@@ -2,8 +2,8 @@ inspectit:
 
   tags:
     extra:
-      landscape_token: 'token-copied-from-frontend'
-      token_secret: 'secret-copied-from-frontend'
+      landscape_token: ${LANDSCAPE_TOKEN_ID}
+      token_secret: ${LANDSCAPE_TOKEN_SECRET}
       application_name: 'petclinic-demo'
       application_instance_id: 0
       application_language: 'java'

@@ -4,6 +4,8 @@
 
 # docker-compose -f docker-compose.explorviz.yml -f docker-compose.environment.yml down -v
 
+# docker-compose --env-file .env-custom -f docker-compose.environment.yml -f docker-compose.explorviz.yml up -d
+
 version: "3.5"
 services:
 
@@ -27,6 +29,7 @@ services:
     ports:
       - "${KAFKA_EXT_PORT}:9091"
     environment:
+      KAFKA_BROKER_ID: 1
       KAFKA_LISTENERS: OUTSIDE://:${KAFKA_EXT_PORT},INSIDE://kafka:${KAFKA_INT_PORT}
       KAFKA_ADVERTISED_LISTENERS: OUTSIDE://localhost:${KAFKA_EXT_PORT},INSIDE://kafka:${KAFKA_INT_PORT}
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT

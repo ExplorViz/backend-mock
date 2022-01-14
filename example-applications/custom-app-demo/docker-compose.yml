@@ -1,9 +1,13 @@
+# docker-compose --env-file .env-custom up -d
+
+# docker-compose --env-file .env-custom down -v
+
 version: "3.5"
 services:
 
   ocelot-agent:
     image: inspectit/inspectit-ocelot-agent:1.9.0
-    container_name: ocelot-agent
+    container_name: ocelot-agent-custom-app
     networks:
       - explorviz
     volumes:
@@ -14,10 +18,11 @@ services:
     container_name: sample-application
     depends_on:
       - ocelot-agent
-    ports:
-      - 18080:8080
     networks:
       - explorviz
+    environment:
+      - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
+      - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
     volumes:
       - agent-vol:/agent
       - ./inspectit.yml:/agent/inspectit.yml

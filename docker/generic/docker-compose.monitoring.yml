@@ -1,28 +1,34 @@
+# docker-compose --env-file ../.env -f docker-compose.monitoring.yml up -d
+
+# docker-compose --env-file ../.env -f docker-compose.monitoring.yml down -v
+
 version: "3.5"
 services:
 
   prometheus:
-    image: prom/prometheus:v2.1.0
+    image: prom/prometheus:latest
     volumes:
       - ./prometheus/:/etc/prometheus/
-      - prometheus_data:/prometheus
+      - prometheus-data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--web.console.libraries=/usr/share/prometheus/console_libraries'
       - '--web.console.templates=/usr/share/prometheus/consoles'
     expose:
-      - 9090
+      - ${MONITORING_PROMETHEUS_PORT}
     ports:
-      - 9090:9090
+      - ${MONITORING_PROMETHEUS_PORT}:${MONITORING_PROMETHEUS_PORT}
     networks:
       - explorviz
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   node-exporter:
     image: prom/node-exporter:latest
     container_name: monitoring_node_exporter
     expose:
-      - 9100
+      - ${MONITORING_NODE_EXPORTER_PORT}
     networks:
       - explorviz
 
@@ -35,7 +41,7 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     expose:
-      - 8080
+      - ${MONITORING_CADVISOR_PORT}
     networks:
       - explorviz
 
@@ -46,17 +52,23 @@ services:
     links:
       - prometheus:prometheus
     volumes:
-      - ./grafana:/var/lib/grafana
+      - ./grafana/data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./src:/var/lib/grafana/dashboards
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/dashboard.json
     ports:
-      - 3000:3000
+      - ${MONITORING_GRAFANA_PORT}:${MONITORING_GRAFANA_PORT}
     networks:
       - explorviz
-
 volumes:
-  prometheus_data: {}
+  prometheus-data:
+    name: explorviz-prometheus-data
 
 networks:
   explorviz:

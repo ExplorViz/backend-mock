@@ -113,6 +113,31 @@ traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function(req, res) {
 
 // END Petclinic Sample
 
+// BEGIN Big Landscape Sample
+
+const bigLandscapeToken = "a87167e5-8ec1-4b98-830a-dba87d213bb0";
+const bigLandscapeFilePrefix = "big-landscape";
+let structureBigLandscape = {};
+let dynamicBigLandscape = {};
+
+fs.readFile(`./${bigLandscapeFilePrefix}-structure.json`, (err, json) => {
+  structureBigLandscape = JSON.parse(json);
+});
+
+fs.readFile(`./${bigLandscapeFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicBigLandscape = JSON.parse(json);
+});
+
+landscapeApp.get(`${landscapeRootUrl}/${bigLandscapeToken}/structure`, function(req, res) {
+  res.json(structureBigLandscape);
+});
+
+traceApp.get(`${traceRootUrl}/${bigLandscapeToken}/dynamic`, function(req, res) {
+  res.json(dynamicBigLandscape);
+});
+
+// END Big Landscape Sample
+
 /**
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.

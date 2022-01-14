@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "nginx:latest" },
+    "ports": {
+      "type" : "array",
+      "items": [
+        { "enum" : ["${TRACE_SERV_PORT}:${TRACE_SERV_PORT}"]},
+        { "enum": ["${LANDSCAPE_SERV_PORT}:${LANDSCAPE_SERV_PORT}"]}
+      ]
+    },
+    "environment": {
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum": [
+              "NGINX_TRACE_PORT=${TRACE_SERV_PORT}"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "NGINX_LANDSCAPE_PORT=${LANDSCAPE_SERV_PORT}"
+            ]
+          }
+        }
+      ]
+    },
+    "volumes": {
+      "type" : "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum" : [
+              "./generic/backend-reverse-proxy:/etc/nginx/templates"
+            ]
+          }
+        }
+      ]
+    },
+    "networks": {
+      "type": "array",
+      "items": [
+        { "enum": ["explorviz"] }
+      ]
+    }
+  },
+  "required": ["image", "ports", "environment", "volumes", "networks"]
+}

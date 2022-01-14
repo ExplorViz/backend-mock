@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "services": {
+      "description": "Environment declaration for Docker",
+      "type": "object",
+      "items": {
+        "type": "object"
+      },
+      "properties": {
+        "zookeeper": {
+          "$ref": "file:docker/.json-schemas/env/zookeeper-schema.json"
+        },
+        "kafka": {
+          "$ref": "file:docker/.json-schemas/env/kafka-schema.json"
+        },
+        "schema-registry": {
+          "$ref": "file:docker/.json-schemas/env/schema-registry-schema.json"
+        },
+        "oc-collector": {
+          "$ref": "file:docker/.json-schemas/env/oc-collector-schema.json"
+        },
+        "redis-adapter": {
+          "$ref": "file:docker/.json-schemas/env/redis-adapter-schema.json"
+        },
+        "cassandra": {
+          "$ref": "file:docker/.json-schemas/env/cassandra-schema.json"
+        },
+        "mongo-user": {
+          "$ref": "file:docker/.json-schemas/env/mongo-user-schema.json"
+        },
+        "nginx": {
+          "$ref": "file:docker/.json-schemas/env/nginx-schema.json"
+        }
+      },
+      "required": ["zookeeper", "kafka", "schema-registry", "oc-collector", "redis-adapter"]
+    },
+    "volumes": {
+      "properties": {
+        "zookeeper-data": {
+          "properties": {
+            "name" : {"const" : "explorviz-zookeeper-data"}
+          },
+          "required": ["name"]
+        },
+        "zookeeper-data-log": {
+          "properties": {
+            "name" : {"const" : "explorviz-zookeeper-data-log"}
+          },
+          "required": ["name"]
+        },
+        "zookeeper-log": {
+          "properties": {
+            "name" : {"const" : "explorviz-zookeeper-log"}
+          },
+          "required": ["name"]
+        },
+        "kafka": {
+          "properties": {
+            "name" : {"const" : "explorviz-kafka"}
+          },
+          "required": ["name"]
+        },
+        "schema-registry": {
+          "properties": {
+            "name" : {"const" : "explorviz-schema-registry"}
+          },
+          "required": ["name"]
+        },
+        "user-mongo-data": {
+          "properties": {
+            "name" : {"const" : "explorviz-mongo-user-data"}
+          },
+          "required": ["name"]
+        },
+        "user-mongo-configdb": {
+          "properties": {
+            "name" : {"const" : "explorviz-mongo-user-config"}
+          },
+          "required": ["name"]
+        },
+        "cassandra": {
+          "properties": {
+            "name" : {"const" : "explorviz-cassandra"}
+          },
+          "required": ["name"]
+        },
+        "redis-adapter": {
+          "properties": {
+            "name" : {"const" : "explorviz-redis"}
+          },
+          "required": ["name"]
+        }
+      },
+      "required": [ "zookeeper-data", "zookeeper-data-log", "zookeeper-log", "kafka", "schema-registry", "user-mongo-data", "user-mongo-configdb", "cassandra", "redis-adapter" ]
+    },
+    "networks": {
+      "description": "Network declaration for Docker-Compose network",
+      "type": "object",
+      "properties": {
+        "explorviz": {
+          "type": "object",
+          "properties": {
+            "name": { "enum": ["explorviz"] }
+          },
+          "required": ["name"]
+        }
+      },
+      "required": ["explorviz"]
+    }
+  },
+  "required": ["services", "volumes", "networks"]
+}

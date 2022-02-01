@@ -38,7 +38,7 @@ services:
       KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE: "LogAppendTime"
       KAFKA_MESSAGE_MAX_BYTES: 7000000
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
-      KAFKA_CREATE_TOPICS: "cluster-dump-spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1"
+      KAFKA_CREATE_TOPICS: "cluster-dump-spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1,token-events-table:20:1"
     depends_on:
       - zookeeper
     volumes:
@@ -74,18 +74,6 @@ services:
       - "${OC_COLLECTOR_PORT}:55678"
     depends_on:
       - schema-registry
-    networks:
-      - explorviz
-
-  ## Adapter-Service ##
-
-  redis-adapter:
-    container_name: redis-adapter-service
-    image: redis:alpine3.13
-    ports:
-      - "${REDIS_ADAPTER_SERV_PORT}:6379"
-    volumes:
-      - redis-adapter:/data
     networks:
       - explorviz
 
@@ -153,8 +141,6 @@ volumes:
     name: explorviz-mongo-user-config
   cassandra:
     name: explorviz-cassandra
-  redis-adapter:
-    name: explorviz-redis
 
 networks:
   explorviz:

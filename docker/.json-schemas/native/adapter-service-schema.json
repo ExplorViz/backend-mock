@@ -14,22 +14,7 @@
         {
           "contains": {
             "enum": [
-              "QUARKUS_REDIS_HOSTS=redis://redis-adapter:6379"
-            ]
-          }
-        },
-        {
-          "contains": {
-            "enum": [
-              "MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
-            ]
-          }
-        }
-        ,
-        {
-          "contains": {
-            "enum": [
-              "EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
+              "QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
         }

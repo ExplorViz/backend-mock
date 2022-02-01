@@ -21,9 +21,6 @@
         "oc-collector": {
           "$ref": "file:docker/.json-schemas/env/oc-collector-schema.json"
         },
-        "redis-adapter": {
-          "$ref": "file:docker/.json-schemas/env/redis-adapter-schema.json"
-        },
         "cassandra": {
           "$ref": "file:docker/.json-schemas/env/cassandra-schema.json"
         },
@@ -34,7 +31,7 @@
           "$ref": "file:docker/.json-schemas/env/nginx-schema.json"
         }
       },
-      "required": ["zookeeper", "kafka", "schema-registry", "oc-collector", "redis-adapter"]
+      "required": ["zookeeper", "kafka", "schema-registry", "oc-collector"]
     },
     "volumes": {
       "properties": {
@@ -85,15 +82,9 @@
             "name" : {"const" : "explorviz-cassandra"}
           },
           "required": ["name"]
-        },
-        "redis-adapter": {
-          "properties": {
-            "name" : {"const" : "explorviz-redis"}
-          },
-          "required": ["name"]
         }
       },
-      "required": [ "zookeeper-data", "zookeeper-data-log", "zookeeper-log", "kafka", "schema-registry", "user-mongo-data", "user-mongo-configdb", "cassandra", "redis-adapter" ]
+      "required": [ "zookeeper-data", "zookeeper-data-log", "zookeeper-log", "kafka", "schema-registry", "user-mongo-data", "user-mongo-configdb", "cassandra"]
     },
     "networks": {
       "description": "Network declaration for Docker-Compose network",

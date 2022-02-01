@@ -15,9 +15,7 @@ services:
     networks:
       - explorviz
     environment:
-      - QUARKUS_REDIS_HOSTS=redis://redis-adapter:6379
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
     deploy:
       mode: replicated

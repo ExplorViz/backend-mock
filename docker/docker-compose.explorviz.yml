@@ -102,6 +102,7 @@ services:
   frontend:
     container_name: explorviz-frontend
     image: explorviz/explorviz-frontend:dev
+    #image: explorviz/explorviz-frontend:dev-noauth
     ports:
       - ${FRONTEND_PORT}:80
     networks:

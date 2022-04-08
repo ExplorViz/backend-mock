@@ -18,6 +18,7 @@ services:
     environment:
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true
     deploy:
       mode: replicated
       replicas: ${ADAPTER_REPLICAS}
@@ -50,8 +51,7 @@ services:
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
       - EXPLORVIZ_LOG_LVL=DEBUG
     deploy:

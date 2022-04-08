@@ -17,6 +17,7 @@ services:
     environment:
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true
     deploy:
       mode: replicated
       replicas: ${ADAPTER_REPLICAS}
@@ -26,8 +27,6 @@ services:
   landscape-service:
     container_name: landscape-service
     image: explorviz/landscape-service-native:latest
-    ports:
-      - 8082:8082
     networks:
       - explorviz
     environment:
@@ -46,8 +45,6 @@ services:
   trace-service:
     container_name: trace-service
     image: explorviz/trace-service-native:latest
-    ports:
-      - 8083:8083
     networks:
       - explorviz
     environment:
@@ -55,8 +52,7 @@ services:
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - MP_MESSAGING_INCOMING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_SCHEMA_REGISTRY_URL=http://schema-registry:8081
+      - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
       - EXPLORVIZ_LOG_LVL=DEBUG
     deploy:

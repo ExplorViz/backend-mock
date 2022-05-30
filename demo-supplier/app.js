@@ -138,6 +138,31 @@ traceApp.get(`${traceRootUrl}/${bigLandscapeToken}/dynamic`, function(req, res) 
 
 // END Big Landscape Sample
 
+// BEGIN Study Sample
+
+const studyToken = "36844495-7235-4254-a17b-0f7fb49adb0a";
+const studyFilePrefix = "study";
+let structureStudy = {};
+let dynamicStudy = {};
+
+fs.readFile(`./${studyFilePrefix}-structure.json`, (err, json) => {
+  structureStudy = JSON.parse(json);
+});
+
+fs.readFile(`./${studyFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicStudy = JSON.parse(json);
+});
+
+landscapeApp.get(`${landscapeRootUrl}/${studyToken}/structure`, function(req, res) {
+  res.json(structureStudy);
+});
+
+traceApp.get(`${traceRootUrl}/${studyToken}/dynamic`, function(req, res) {
+  res.json(dynamicStudy);
+});
+
+// END Study Sample
+
 /**
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.

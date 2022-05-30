@@ -15,7 +15,7 @@
         "parentSpanId":"",
         "startTime":1622025008957,
         "endTime":1622025009111,
-        "hashCode":"02a8588114390aaf055bd623f3e1281fda3d723ee79d30b2fa06cef716daf158"
+        "hashCode":"09bda9a0c731b0c78dd8f3561024901c0a53b2c0de09f8f1456d51bd1577a864"
       },
       {
         "landscapeToken":"token3",
@@ -25,6 +25,35 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"hash-test-akr-TestKlasse-testMethode"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"2627b1924b56v873d4025c2bdc58322b",
+    "endTime":1622025009111,
+    "duration":154,
+    "overallRequestCount":1,
+    "traceCount":100,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"2627b1924b56v873d4025c2bdc58322b",
+        "spanId":"d3e3e3ecf272a308",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"02a8588114390aaf055bd623f3e1281fda3d723ee79d30b2fa06cef716daf158"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"2627b1924b56v873d4025c2bdc58322b",
+        "spanId":"c4e963ecf675b308",
+        "parentSpanId":"d3e3e3ecf272a308",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"hash-test-marcel-TestKlasse-testMethode"
       }
     ]
   },

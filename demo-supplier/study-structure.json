@@ -263,6 +263,32 @@
         ]
       }
      ]
+  }, 
+  {
+    "ipAddress" : "172.21.0.12",
+    "hostName" : "b95a820db875",
+    "applications" : [ {
+      "name" : "test-marcel",
+      "language" : "java",
+      "instanceId" : "0",
+      "packages" : [ {
+        "name" : "org",
+        "subPackages" : [  ],
+            "classes" : [ 
+              {
+                "name" : "TestKlasse",
+                "methods" : [ 
+                  {
+                  "name" : "testMethode",
+                  "hashCode" : "hash-test-marcel-TestKlasse-testMethode"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+     ]
   }, {
     "ipAddress" : "172.20.1.13",
     "hostName" : "735a820db875",

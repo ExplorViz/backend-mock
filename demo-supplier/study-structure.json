@@ -27,7 +27,7 @@
                       "hashCode" : "0179b4eb56a4b6b65ca029e374fb4ef556c637358440755f8b8abecc2cf39fbb"
                     }, {
                       "name" : "findOwner",
-                      "hashCode" : "27fd46867bb15a2bdc47f40b42f59806e67b6a51fd169e8f905960a825f154c6"
+                      "hashCode" : "ownerfindowner"
                     }, {
                       "name" : "findAll",
                       "hashCode" : "cd504e729542807e6ed4bb19656d11f875c08f61dd531688d094715b7652ad0b"
@@ -171,6 +171,30 @@
                       "name" : "getId",
                       "hashCode" : "9f3e3a999320cf131373dd0536d55848bd800b75de28fa9d3543b3020b5d73e1"
                     } ]
+                  }, {
+                    "name" : "OwnerRepository",
+                    "methods" : [ {
+                      "name" : "findAll",
+                      "hashCode" : "ownerownerrepofindall"
+                    }, {
+                      "name" : "save",
+                      "hashCode" : "ownerownerreposave"
+                    }, {
+                      "name" : "findById",
+                      "hashCode" : "ownerownerrepofindbyid"
+                    } ]
+                  }, {
+                    "name" : "PetRepository",
+                    "methods" : [ {
+                      "name" : "findAll",
+                      "hashCode" : "petpetrepofindall"
+                    }, {
+                      "name" : "save",
+                      "hashCode" : "petpetreposave"
+                    }, {
+                      "name" : "findById",
+                      "hashCode" : "petpetrepofindbyid"
+                    } ]
                   } ]
                 } ],
                 "classes" : [ ]
@@ -237,61 +261,9 @@
         "classes" : [ ]
       } ]
     } ]
-  }, 
-  {
+  }, {
     "ipAddress" : "172.20.0.12",
     "hostName" : "865a820db875",
-    "applications" : [ {
-      "name" : "test-akr",
-      "language" : "java",
-      "instanceId" : "0",
-      "packages" : [ {
-        "name" : "org",
-        "subPackages" : [  ],
-            "classes" : [ 
-              {
-                "name" : "TestKlasse",
-                "methods" : [ 
-                  {
-                  "name" : "testMethode",
-                  "hashCode" : "hash-test-akr-TestKlasse-testMethode"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-     ]
-  }, 
-  {
-    "ipAddress" : "172.21.0.12",
-    "hostName" : "b95a820db875",
-    "applications" : [ {
-      "name" : "test-marcel",
-      "language" : "java",
-      "instanceId" : "0",
-      "packages" : [ {
-        "name" : "org",
-        "subPackages" : [  ],
-            "classes" : [ 
-              {
-                "name" : "TestKlasse",
-                "methods" : [ 
-                  {
-                  "name" : "testMethode",
-                  "hashCode" : "hash-test-marcel-TestKlasse-testMethode"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-     ]
-  }, {
-    "ipAddress" : "172.20.1.13",
-    "hostName" : "735a820db875",
     "applications" : [ {
       "name" : "petclinic-visits-service",
       "language" : "java",
@@ -347,6 +319,12 @@
                       "name" : "$default$date",
                       "hashCode" : "f6f145925fb0b18b714192ac21ad9ba33c958a1a52b0f7d30216209eba28d33d"
                     } ]
+                  }, {
+                    "name" : "VisitRepository",
+                    "methods" : [ {
+                      "name" : "findByPetId",
+                      "hashCode" : "visitvisitrepofindbypetid"
+                    } ]
                   } ]
                 }, {
                   "name" : "web",
@@ -364,7 +342,7 @@
                     "name" : "VisitResource",
                     "methods" : [ {
                       "name" : "visits",
-                      "hashCode" : "2759e0253e1776b1a7d5f26fe0bbd76cf3d3393daa0df571d0cabe179c1cc34c"
+                      "hashCode" : "visitvisitresourcevisits"
                     }, {
                       "name" : "visitsMultiGet",
                       "hashCode" : "be880db556ffb767b8649a27bdaa09613125cc7fb0d1a1da666490ea1f5efd1b"
@@ -554,13 +532,13 @@
                       "hashCode" : "50d8c1ac4ca24cc1d33213edf5c7225c72b6fea09d7c510b0dcb77564f60d615"
                     }, {
                       "name" : "getVisitsForPets",
-                      "hashCode" : "e42d832147c64fcc7e416706696406dc243f472c35a2bc541f8903efcb30078c"
+                      "hashCode" : "apivisitsservicegetvisitsforpets"
                     } ]
                   }, {
                     "name" : "CustomersServiceClient",
                     "methods" : [ {
                       "name" : "getOwner",
-                      "hashCode" : "9204fc84ce645f77882e897550329e9fde8987d5d2345e4c56afc405b14e1433"
+                      "hashCode" : "customersserviceclientgetowner"
                     } ]
                   } ]
                 }, {
@@ -572,10 +550,13 @@
                       "name" : "ApiGatewayController",
                       "methods" : [ {
                         "name" : "getOwnerDetails",
-                        "hashCode" : "9aa1e0c075226b01875948a88de07e8a369314b4543690782c9dd203b1b26ae9"
+                        "hashCode" : "apigatewaycontrollergetownerdetails"
                       }, {
                         "name" : "addVisitsToOwner",
                         "hashCode" : "ac9f9c55beaaad0fca7a65eeec668f55834a20e5077ef5f84fe2444c1b6af9a6"
+                      }, {
+                        "name" : "forwardFrontendRequest",
+                        "hashCode" : "apiapigatewayforwarfrontendrequest"
                       } ]
                     } ]
                   } ],
@@ -633,7 +614,7 @@
                       "hashCode" : "051e09a840116cae0f055c4cd2ef5a6fabfa737f47611d3dfb88c3c68eb33e91"
                     }, {
                       "name" : "showResourcesVetList",
-                      "hashCode" : "78169e61660714ed4b19295739fc6f3572768b2eeb8a7f6f642ed9015e1ddb81"
+                      "hashCode" : "vetvetresourceshowvetlist"
                     } ]
                   } ]
                 }, {
@@ -715,6 +696,12 @@
                       "name" : "setCache",
                       "hashCode" : "d874a76ad7a703e396f6768a51ce6283a3fdef958d0a3e8256f3da3cf95b98d0"
                     } ]
+                  }, {
+                    "name" : "VetRepository",
+                    "methods" : [ {
+                      "name" : "findAll",
+                      "hashCode" : "vetvetrepofindall"
+                    } ]
                   } ]
                 } ],
                 "classes" : [ ]
@@ -776,7 +763,7 @@
                 "name" : "OncePerRequestFilter",
                 "methods" : [ {
                   "name" : "doFilter(ServletRequest, ServletResponse, FilterChain)",
-                  "hashCode" : "13182333817a8d49d13e9cad64c9bf176080b73c0df4042db89c475c366e20b9"
+                  "hashCode" : "discoverydofilter"
                 } ]
               } ]
             } ],

@@ -757,13 +757,27 @@
           "subPackages" : [ {
             "name" : "web",
             "subPackages" : [ {
-              "name" : "filter",
+              "name" : "servicediscovery",
               "subPackages" : [ ],
               "classes" : [ {
-                "name" : "OncePerRequestFilter",
+                "name" : "RegisterResource",
                 "methods" : [ {
-                  "name" : "doFilter(ServletRequest, ServletResponse, FilterChain)",
+                  "name" : "register(String, String)",
                   "hashCode" : "discoverydofilter"
+                },
+                {
+                  "name" : "<init>",
+                  "hashCode" : "discoveryregisterinit"
+                } ]
+                },{
+                "name" : "LookupIpResource",
+                "methods" : [ {
+                  "name" : "getIpForServiceName(String)",
+                  "hashCode" : "discoverylookup"
+                },
+                {
+                  "name" : "<init>",
+                  "hashCode" : "discoverylookupinit"
                 } ]
               } ]
             } ],

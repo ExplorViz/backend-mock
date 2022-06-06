@@ -236,7 +236,7 @@
     "duration":1,
     "overallRequestCount":1,
     "traceCount":1,
-    "spanList":[      
+    "spanList":[
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner1",
@@ -245,7 +245,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"customersserviceclientgetowner"
-      },     
+      },
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner1",
@@ -263,7 +263,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"ownerownerrepofindbyid"
-      }      
+      }
     ]
   },
   {
@@ -274,7 +274,7 @@
     "duration":1,
     "overallRequestCount":1,
     "traceCount":1,
-    "spanList":[      
+    "spanList":[
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner2",
@@ -283,7 +283,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"customersserviceclientgetowner"
-      },     
+      },
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner2",
@@ -301,7 +301,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"ownerownerrepofindbyid"
-      }      
+      }
     ]
   },
   {
@@ -312,7 +312,7 @@
     "duration":1,
     "overallRequestCount":1,
     "traceCount":1,
-    "spanList":[      
+    "spanList":[
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner3",
@@ -321,7 +321,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"customersserviceclientgetowner"
-      },     
+      },
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner3",
@@ -339,7 +339,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"ownerownerrepofindbyid"
-      }      
+      }
     ]
   },
   {
@@ -1078,7 +1078,7 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"ownerrepoinit"
-      }      
+      }
     ]
   }
 ]

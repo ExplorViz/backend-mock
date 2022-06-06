@@ -604,7 +604,7 @@
             "methods" : [ {
               "name" : "getResponseCode()",
               "hashCode" : "cd35f41901328c8abfaca50c9829ecd7cdd19cbe74a59b751df58fabb9d0a3fe"
-            },         
+            },
             {
               "name" : "<init>",
               "hashCode" : "gatewayhttpurlconnectioninit"

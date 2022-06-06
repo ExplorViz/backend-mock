@@ -193,7 +193,7 @@
   {
     "landscapeToken":"token3",
     "startTime":1622025008957,
-    "traceId":"apigetownerdetailsToclientGetOwner",
+    "traceId":"apigetownerdetailsToclientGetOwnerip",
     "endTime":1622025009111,
     "duration":1,
     "overallRequestCount":1,
@@ -201,7 +201,7 @@
     "spanList":[
       {
         "landscapeToken":"token3",
-        "traceId":"apigetownerdetailsToclientGetOwner",
+        "traceId":"apigetownerdetailsToclientGetOwnerip",
         "spanId":"spanapigatewaycontrollergetownerdetails",
         "parentSpanId":"",
         "startTime":1622025008957,
@@ -210,7 +210,7 @@
       },
       {
         "landscapeToken":"token3",
-        "traceId":"apigetownerdetailsToclientGetOwner",
+        "traceId":"apigetownerdetailsToclientGetOwnerip",
         "spanId":"spancustomersserviceclientgetowner",
         "parentSpanId":"spanapigatewaycontrollergetownerdetails",
         "startTime":1622025008957,
@@ -219,18 +219,38 @@
       },
       {
         "landscapeToken":"token3",
-        "traceId":"apigetownerdetailsToclientGetOwner",
+        "traceId":"apigetownerdetailsToclientGetOwnerip",
         "spanId":"spandiscoverydofilter",
         "parentSpanId":"spancustomersserviceclientgetowner",
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"discoverylookup"
-      },
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetownerdetailsToclientGetOwner",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[      
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner",
-        "spanId":"spanownerfindowner",
-        "parentSpanId":"spandiscoverydofilter",
+        "spanId":"asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"customersserviceclientgetowner"
+      },     
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner",
+        "spanId":"asf123spanownerfindowner",
+        "parentSpanId":"asdqwrfspancustomersserviceclientgetowner",
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"ownerfindowner"
@@ -238,12 +258,50 @@
       {
         "landscapeToken":"token3",
         "traceId":"apigetownerdetailsToclientGetOwner",
-        "spanId":"spanownerownerrepofindbyid",
-        "parentSpanId":"spanownerfindowner",
+        "spanId":"d23fdspanownerownerrepofindbyid",
+        "parentSpanId":"asf123spanownerfindowner",
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"ownerownerrepofindbyid"
       }      
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetvisitsip",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisitsip",
+        "spanId":"spanapigatewaycontrollergetownerdetails",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apigatewaycontrollergetownerdetails"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisitsip",
+        "spanId":"spanapivisitsservicegetvisitsforpets",
+        "parentSpanId":"spanapigatewaycontrollergetownerdetails",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsservicegetvisitsforpets"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisitsip",
+        "spanId":"asdqwddiscoverydofilter",
+        "parentSpanId":"spanapivisitsservicegetvisitsforpets",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"discoverylookup"
+      }
     ]
   },
   {
@@ -258,17 +316,8 @@
       {
         "landscapeToken":"token3",
         "traceId":"apigetvisits",
-        "spanId":"spanapigatewaycontrollergetownerdetails",
+        "spanId":"asdasdspanapivisitsservicegetvisitsforpets",
         "parentSpanId":"",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"apigatewaycontrollergetownerdetails"
-      },
-      {
-        "landscapeToken":"token3",
-        "traceId":"apigetvisits",
-        "spanId":"spanapivisitsservicegetvisitsforpets",
-        "parentSpanId":"spanapigatewaycontrollergetownerdetails",
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"apivisitsservicegetvisitsforpets"
@@ -276,29 +325,11 @@
       {
         "landscapeToken":"token3",
         "traceId":"apigetvisits",
-        "spanId":"asdqwddiscoverydofilter",
-        "parentSpanId":"spanapivisitsservicegetvisitsforpets",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"discoverylookup"
-      }      ,
-      {
-        "landscapeToken":"token3",
-        "traceId":"apigetvisits",
-        "spanId":"asdqwdvisitvisitresourcevisits",
-        "parentSpanId":"asdqwddiscoverydofilter",
+        "spanId":"addddvisitvisitresourcevisits",
+        "parentSpanId":"asdasdspanapivisitsservicegetvisitsforpets",
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"visitvisitresourcevisits"
-      },
-      {
-        "landscapeToken":"token3",
-        "traceId":"apigetvisits",
-        "spanId":"asdqwdvisitvisitrepofindbypetid",
-        "parentSpanId":"asdqwdvisitvisitresourcevisits",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"visitvisitrepofindbypetid"
       }
     ]
   },
@@ -444,53 +475,6 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"discoverydofilter"
-      }
-    ]
-  },
-  {
-    "landscapeToken":"token3",
-    "startTime":1622025008957,
-    "traceId":"gatewayvetfindallvets",
-    "endTime":1622025009111,
-    "duration":1,
-    "overallRequestCount":1,
-    "traceCount":1,
-    "spanList":[
-      {
-        "landscapeToken":"token3",
-        "traceId":"gatewayvetfindallvets",
-        "spanId":"apiapigatewayforwarfrontendrequest",
-        "parentSpanId":"",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"apiapigatewayforwarfrontendrequest"
-      },
-      {
-        "landscapeToken":"token3",
-        "traceId":"gatewayvetfindallvets",
-        "spanId":"ads3tr3fdiscoverydofilter",
-        "parentSpanId":"apiapigatewayforwarfrontendrequest",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"discoverylookup"
-      },
-      {
-        "landscapeToken":"token3",
-        "traceId":"gatewayvetfindallvets",
-        "spanId":"ads3tr3fvetvetresourceshowvetlist",
-        "parentSpanId":"ads3tr3fdiscoverydofilter",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"vetvetresourceshowvetlist"
-      },
-      {
-        "landscapeToken":"token3",
-        "traceId":"gatewayvetfindallvets",
-        "spanId":"vetvetrepofindall",
-        "parentSpanId":"ads3tr3fvetvetresourceshowvetlist",
-        "startTime":1622025008957,
-        "endTime":1622025009111,
-        "hashCode":"vetvetrepofindall"
       }
     ]
   },

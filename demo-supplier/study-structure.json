@@ -31,6 +31,9 @@
                     }, {
                       "name" : "findAll",
                       "hashCode" : "cd504e729542807e6ed4bb19656d11f875c08f61dd531688d094715b7652ad0b"
+                    },{
+                      "name" : "<init>",
+                      "hashCode" : "ownerresourceinit"
                     } ]
                   }, {
                     "name" : "PetRequest",
@@ -182,6 +185,9 @@
                     }, {
                       "name" : "findById",
                       "hashCode" : "ownerownerrepofindbyid"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "ownerrepoinit"
                     } ]
                   }, {
                     "name" : "PetRepository",
@@ -255,7 +261,11 @@
             "methods" : [ {
               "name" : "getResponseCode()",
               "hashCode" : "93d513bc12ecd8f89737345e0137e18b21db1abc8b4e01227034b65152e0ff2b"
-            } ]
+            },{
+              "name" : "<init>",
+              "hashCode" : "costumerservicehttpurlconnectioninit"
+            }
+             ]
           } ]
         } ],
         "classes" : [ ]
@@ -343,6 +353,9 @@
                     "methods" : [ {
                       "name" : "visits",
                       "hashCode" : "visitvisitresourcevisits"
+                    },{
+                      "name" : "<init>",
+                      "hashCode" : "visitvisitresourceinit"
                     }, {
                       "name" : "visitsMultiGet",
                       "hashCode" : "be880db556ffb767b8649a27bdaa09613125cc7fb0d1a1da666490ea1f5efd1b"
@@ -371,6 +384,10 @@
             "methods" : [ {
               "name" : "getResponseCode()",
               "hashCode" : "83833db42e030d7d2825f7d79a66e37bd766e1bbebf178faf7065339f6fcdda4"
+            },
+            {
+              "name" : "<init>",
+              "hashCode" : "visitsservicehttpurlconnectioninit"
             } ]
           } ]
         } ],
@@ -533,12 +550,18 @@
                     }, {
                       "name" : "getVisitsForPets",
                       "hashCode" : "apivisitsservicegetvisitsforpets"
+                    }, {
+                      "name" : "<init>",
+                      "hashCode" : "apivisitsserviceinit"
                     } ]
                   }, {
                     "name" : "CustomersServiceClient",
                     "methods" : [ {
                       "name" : "getOwner",
                       "hashCode" : "customersserviceclientgetowner"
+                    },{
+                      "name" : "<init>",
+                      "hashCode" : "customersserviceinit"
                     } ]
                   } ]
                 }, {
@@ -555,8 +578,8 @@
                         "name" : "addVisitsToOwner",
                         "hashCode" : "ac9f9c55beaaad0fca7a65eeec668f55834a20e5077ef5f84fe2444c1b6af9a6"
                       }, {
-                        "name" : "forwardFrontendRequest",
-                        "hashCode" : "apiapigatewayforwarfrontendrequest"
+                        "name" : "<init>",
+                        "hashCode" : "apiapigatewayinit"
                       } ]
                     } ]
                   } ],
@@ -581,6 +604,10 @@
             "methods" : [ {
               "name" : "getResponseCode()",
               "hashCode" : "cd35f41901328c8abfaca50c9829ecd7cdd19cbe74a59b751df58fabb9d0a3fe"
+            },         
+            {
+              "name" : "<init>",
+              "hashCode" : "gatewayhttpurlconnectioninit"
             } ]
           } ]
         } ],
@@ -737,6 +764,10 @@
             "methods" : [ {
               "name" : "getResponseCode()",
               "hashCode" : "401caf59418cd5f36282bde89eabbd4ae84cba5a99b811763bc705f3b75a39ae"
+            },
+            {
+              "name" : "<init>",
+              "hashCode" : "vetsservicehttpurlconnectioninit"
             } ]
           } ]
         } ],
@@ -805,6 +836,10 @@
             "methods" : [ {
               "name" : "getResponseCode()",
               "hashCode" : "7ffec8334330359a81db433643dde6f15cccd77d6b698ae00a02fe975f1a1b84"
+            },
+            {
+              "name" : "<init>",
+              "hashCode" : "adminhttpurlconnectioninit"
             } ]
           } ]
         } ],

@@ -231,7 +231,7 @@
   {
     "landscapeToken":"token3",
     "startTime":1622025008957,
-    "traceId":"apigetownerdetailsToclientGetOwner",
+    "traceId":"apigetownerdetailsToclientGetOwner1",
     "endTime":1622025009111,
     "duration":1,
     "overallRequestCount":1,
@@ -239,7 +239,7 @@
     "spanList":[      
       {
         "landscapeToken":"token3",
-        "traceId":"apigetownerdetailsToclientGetOwner",
+        "traceId":"apigetownerdetailsToclientGetOwner1",
         "spanId":"asdqwrfspancustomersserviceclientgetowner",
         "parentSpanId":"",
         "startTime":1622025008957,
@@ -248,7 +248,7 @@
       },     
       {
         "landscapeToken":"token3",
-        "traceId":"apigetownerdetailsToclientGetOwner",
+        "traceId":"apigetownerdetailsToclientGetOwner1",
         "spanId":"asf123spanownerfindowner",
         "parentSpanId":"asdqwrfspancustomersserviceclientgetowner",
         "startTime":1622025008957,
@@ -257,7 +257,83 @@
       },
       {
         "landscapeToken":"token3",
-        "traceId":"apigetownerdetailsToclientGetOwner",
+        "traceId":"apigetownerdetailsToclientGetOwner1",
+        "spanId":"d23fdspanownerownerrepofindbyid",
+        "parentSpanId":"asf123spanownerfindowner",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerownerrepofindbyid"
+      }      
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetownerdetailsToclientGetOwner2",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[      
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner2",
+        "spanId":"asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"customersserviceclientgetowner"
+      },     
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner2",
+        "spanId":"asf123spanownerfindowner",
+        "parentSpanId":"asdqwrfspancustomersserviceclientgetowner",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerfindowner"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner2",
+        "spanId":"d23fdspanownerownerrepofindbyid",
+        "parentSpanId":"asf123spanownerfindowner",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerownerrepofindbyid"
+      }      
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetownerdetailsToclientGetOwner3",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[      
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner3",
+        "spanId":"asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"customersserviceclientgetowner"
+      },     
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner3",
+        "spanId":"asf123spanownerfindowner",
+        "parentSpanId":"asdqwrfspancustomersserviceclientgetowner",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerfindowner"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetownerdetailsToclientGetOwner3",
         "spanId":"d23fdspanownerownerrepofindbyid",
         "parentSpanId":"asf123spanownerfindowner",
         "startTime":1622025008957,
@@ -307,7 +383,7 @@
   {
     "landscapeToken":"token3",
     "startTime":1622025008957,
-    "traceId":"apigetvisits",
+    "traceId":"apigetvisits1",
     "endTime":1622025009111,
     "duration":1,
     "overallRequestCount":1,
@@ -315,7 +391,7 @@
     "spanList":[
       {
         "landscapeToken":"token3",
-        "traceId":"apigetvisits",
+        "traceId":"apigetvisits1",
         "spanId":"asdasdspanapivisitsservicegetvisitsforpets",
         "parentSpanId":"",
         "startTime":1622025008957,
@@ -324,7 +400,123 @@
       },
       {
         "landscapeToken":"token3",
-        "traceId":"apigetvisits",
+        "traceId":"apigetvisits1",
+        "spanId":"addddvisitvisitresourcevisits",
+        "parentSpanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourcevisits"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetvisits2",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits2",
+        "spanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsservicegetvisitsforpets"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits2",
+        "spanId":"addddvisitvisitresourcevisits",
+        "parentSpanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourcevisits"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetvisits3",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits3",
+        "spanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsservicegetvisitsforpets"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits3",
+        "spanId":"addddvisitvisitresourcevisits",
+        "parentSpanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourcevisits"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetvisits4",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits4",
+        "spanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsservicegetvisitsforpets"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits4",
+        "spanId":"addddvisitvisitresourcevisits",
+        "parentSpanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourcevisits"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apigetvisits5",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits5",
+        "spanId":"asdasdspanapivisitsservicegetvisitsforpets",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsservicegetvisitsforpets"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apigetvisits5",
         "spanId":"addddvisitvisitresourcevisits",
         "parentSpanId":"asdasdspanapivisitsservicegetvisitsforpets",
         "startTime":1622025008957,
@@ -560,16 +752,333 @@
         "startTime":1622025008957,
         "endTime":1622025009111,
         "hashCode":"discoverylookupinit"
-      },
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apiapigatewayinitinstance",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
       {
         "landscapeToken":"token3",
-        "traceId":"discoveryinstancelookup",
-        "spanId":"discoverylookupinit",
+        "traceId":"apiapigatewayinitinstance",
+        "spanId":"apiapigatewayinit",
         "parentSpanId":"",
         "startTime":1622025008957,
         "endTime":1622025009111,
-        "hashCode":"discoverylookupinit"
+        "hashCode":"apiapigatewayinit"
       }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"apicustomerserviceinit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"apicustomerserviceinit",
+        "spanId":"customersserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"customersserviceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apicustomerserviceinit",
+        "spanId":"customersserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"customersserviceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"apicustomerserviceinit",
+        "spanId":"customersserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"customersserviceinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"visitsserviceinit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitsserviceinit",
+        "spanId":"apivisitsserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsserviceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitsserviceinit",
+        "spanId":"apivisitsserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsserviceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitsserviceinit",
+        "spanId":"apivisitsserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsserviceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitsserviceinit",
+        "spanId":"apivisitsserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsserviceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitsserviceinit",
+        "spanId":"apivisitsserviceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"apivisitsserviceinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"visitvisitresourceinit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitvisitresourceinit",
+        "spanId":"visitvisitresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitvisitresourceinit",
+        "spanId":"visitvisitresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitvisitresourceinit",
+        "spanId":"visitvisitresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitvisitresourceinit",
+        "spanId":"visitvisitresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourceinit"
+      },
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitvisitresourceinit",
+        "spanId":"visitvisitresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitvisitresourceinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"visitsservicehttpurlconnectioninit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"visitsservicehttpurlconnectioninit",
+        "spanId":"visitsservicehttpurlconnectioninit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"visitsservicehttpurlconnectioninit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"gatewayhttpurlconnectioninit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"gatewayhttpurlconnectioninit",
+        "spanId":"gatewayhttpurlconnectioninit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"gatewayhttpurlconnectioninit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"vetsservicehttpurlconnectioninit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"vetsservicehttpurlconnectioninit",
+        "spanId":"vetsservicehttpurlconnectioninit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"vetsservicehttpurlconnectioninit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"costumerservicehttpurlconnectioninit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"costumerservicehttpurlconnectioninit",
+        "spanId":"costumerservicehttpurlconnectioninit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"costumerservicehttpurlconnectioninit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"adminhttpurlconnectioninit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"adminhttpurlconnectioninit",
+        "spanId":"adminhttpurlconnectioninit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"adminhttpurlconnectioninit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"ownerresourceinit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"ownerresourceinit",
+        "spanId":"ownerresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerresourceinit"
+      },{
+        "landscapeToken":"token3",
+        "traceId":"ownerresourceinit",
+        "spanId":"ownerresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerresourceinit"
+      },{
+        "landscapeToken":"token3",
+        "traceId":"ownerresourceinit",
+        "spanId":"ownerresourceinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerresourceinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken":"token3",
+    "startTime":1622025008957,
+    "traceId":"ownerrepoinit",
+    "endTime":1622025009111,
+    "duration":1,
+    "overallRequestCount":1,
+    "traceCount":1,
+    "spanList":[
+      {
+        "landscapeToken":"token3",
+        "traceId":"ownerrepoinit",
+        "spanId":"ownerrepoinit",
+        "parentSpanId":"",
+        "startTime":1622025008957,
+        "endTime":1622025009111,
+        "hashCode":"ownerrepoinit"
+      }      
     ]
   }
 ]

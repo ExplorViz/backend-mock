@@ -21,14 +21,14 @@
         "user-service": {
           "$ref": "file:docker/.json-schemas/jvm/user-service-schema.json"
         },
-        "collaborative-service": {
-          "$ref": "file:docker/.json-schemas/jvm/collaborative-service-schema.json"
+        "collaboration-service": {
+          "$ref": "file:docker/.json-schemas/jvm/collaboration-service-schema.json"
         },
         "frontend": {
           "$ref": "file:docker/.json-schemas/jvm/frontend-schema.json"
         }
       },
-      "required": ["adapter-service", "landscape-service", "trace-service", "user-service", "collaborative-service", "frontend"]
+      "required": ["adapter-service", "landscape-service", "trace-service", "user-service", "collaboration-service", "frontend"]
     },
     "networks": {
       "description": "Network declaration for Docker-Compose network",

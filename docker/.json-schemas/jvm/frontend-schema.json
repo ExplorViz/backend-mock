@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/explorviz-frontend:dev" },
+    "image": { "const": "explorviz/explorviz-frontend:dev-noauth" },
     "networks": {
       "type": "array",
       "items": [
@@ -43,15 +43,7 @@
         {
           "contains": {
             "enum": [
-              "COLLAB_URL=ws://${FRONTEND_HOST_NAME}:${COLLAB_PORT}"
-            ]
-          }
-        }
-        ,
-        {
-          "contains": {
-            "enum": [
-              "COLLABORATION_SERV_URL=http://${FRONTEND_HOST_NAME}:${COLLABORATION_PORT}"
+              "COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}"
             ]
           }
         }

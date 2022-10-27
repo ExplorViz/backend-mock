@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/user-service-jvm:latest" },
+    "image": { "const": "explorviz/user-service-jvm:dev" },
     "networks": {
       "type": "array",
       "items": [
@@ -11,6 +11,34 @@
     "environment": {
       "type": "array",
       "allOf": [
+        {
+          "contains": {
+            "enum": [
+              "QUARKUS_OIDC_ENABLED=false"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "INIT_TOKEN_ENABLED=true"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "INIT_TOKEN_VALUE=mytokenvalue"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "enum": [
+              "INIT_TOKEN_SECRET=mytokensecret"
+            ]
+          }
+        },
         {
           "contains": {
             "enum": [

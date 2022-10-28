@@ -28,7 +28,7 @@ services:
 
   demo-supplier:
     container_name: explorviz-demo-supplier
-    image: explorviz/demo-supplier:study
+    image: explorviz/demo-supplier
     #ports:
     #  - 8082:8082
     #  - 8083:8083

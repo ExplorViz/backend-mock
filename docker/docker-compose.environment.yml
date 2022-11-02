@@ -17,9 +17,9 @@ services:
     ports:
       - ${ZOOKEEPER_PORT}:2181
     volumes:
-       - zookeeper-data:/data
-       - zookeeper-data-log:/datalog
-       - zookeeper-log:/logs
+      - zookeeper-data:/data
+      - zookeeper-data-log:/datalog
+      - zookeeper-log:/logs
     networks:
       - explorviz
 
@@ -48,7 +48,7 @@ services:
 
   schema-registry:
     container_name: schema-registry
-    image: confluentinc/cp-schema-registry:5.4.0
+    image: confluentinc/cp-schema-registry:7.2.2
     ports:
       - ${SCHEMA_REGISTRY_PORT}:8081
     environment:
@@ -66,7 +66,7 @@ services:
   oc-collector:
     image: omnition/opencensus-collector:0.1.11
     container_name: oc-collector
-    command: ["--config=/etc/oc-collector-config.yaml"]
+    command: [ "--config=/etc/oc-collector-config.yaml" ]
     restart: on-failure
     volumes:
       - ./generic/oc-collector-config.yaml:/etc/oc-collector-config.yaml
@@ -101,8 +101,8 @@ services:
     ports:
       - ${MONGO_USER_SERV_PORT}:27017
     volumes:
-       - user-mongo-data:/data/db
-       - user-mongo-configdb:/data/configdb
+      - user-mongo-data:/data/db
+      - user-mongo-configdb:/data/configdb
     networks:
       - explorviz
 

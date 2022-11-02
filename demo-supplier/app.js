@@ -1,15 +1,16 @@
-const express = require('express');
-const fs = require('fs');
-const cors = require('cors')
+const express = require("express");
+const fs = require("fs");
+const cors = require("cors");
+const crypto = require("crypto");
 
 const landscapeApp = express();
 const traceApp = express();
 const userApp = express();
 
 // Disable caching to prevent HTTP 304
-landscapeApp.disable('etag');
-traceApp.disable('etag');
-userApp.disable('etag');
+landscapeApp.disable("etag");
+traceApp.disable("etag");
+userApp.disable("etag");
 
 const landscapePort = 8082;
 const tracePort = 8083;
@@ -29,12 +30,11 @@ const landscapeRootUrl = "/v2/landscapes";
 const traceRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
 
-
-fs.readFile('./user.json', (err, json) => {
+fs.readFile("./user.json", (err, json) => {
   user = JSON.parse(json);
 });
 
-userApp.get(`${userRootUrl}`, function(req, res) {
+userApp.get(`${userRootUrl}`, function (req, res) {
   res.json(user);
 });
 
@@ -53,11 +53,14 @@ fs.readFile(`./${fibonacciFilePrefix}-dynamic.json`, (err, json) => {
   dynamicFibonacci = JSON.parse(json);
 });
 
-landscapeApp.get(`${landscapeRootUrl}/${fibonacciToken}/structure`, function(req, res) {
-  res.json(structureFibonacci);
-});
+landscapeApp.get(
+  `${landscapeRootUrl}/${fibonacciToken}/structure`,
+  function (req, res) {
+    res.json(structureFibonacci);
+  }
+);
 
-traceApp.get(`${traceRootUrl}/${fibonacciToken}/dynamic`, function(req, res) {
+traceApp.get(`${traceRootUrl}/${fibonacciToken}/dynamic`, function (req, res) {
   res.json(dynamicFibonacci);
 });
 
@@ -70,21 +73,30 @@ const petclinicDistributedFilePrefix = "petclinic-distributed";
 let structurePetclinicDistributed = {};
 let dynamicPetclinicDistributed = {};
 
-fs.readFile(`./${petclinicDistributedFilePrefix}-structure.json`, (err, json) => {
-  structurePetclinicDistributed = JSON.parse(json);
-});
+fs.readFile(
+  `./${petclinicDistributedFilePrefix}-structure.json`,
+  (err, json) => {
+    structurePetclinicDistributed = JSON.parse(json);
+  }
+);
 
 fs.readFile(`./${petclinicDistributedFilePrefix}-dynamic.json`, (err, json) => {
   dynamicPetclinicDistributed = JSON.parse(json);
 });
 
-landscapeApp.get(`${landscapeRootUrl}/${petclinicDistributedToken}/structure`, function(req, res) {
-  res.json(structurePetclinicDistributed);
-});
+landscapeApp.get(
+  `${landscapeRootUrl}/${petclinicDistributedToken}/structure`,
+  function (req, res) {
+    res.json(structurePetclinicDistributed);
+  }
+);
 
-traceApp.get(`${traceRootUrl}/${petclinicDistributedToken}/dynamic`, function(req, res) {
-  res.json(dynamicPetclinicDistributed);
-});
+traceApp.get(
+  `${traceRootUrl}/${petclinicDistributedToken}/dynamic`,
+  function (req, res) {
+    res.json(dynamicPetclinicDistributed);
+  }
+);
 
 // END Petclinic-Distributed Sample
 
@@ -103,12 +115,15 @@ fs.readFile(`./${petclinicFilePrefix}-dynamic.json`, (err, json) => {
   dynamicPetclinic = JSON.parse(json);
 });
 
-landscapeApp.get(`${landscapeRootUrl}/${petclinicToken}/structure`, function(req, res) {
-  res.json(structurePetclinic);
-});
+landscapeApp.get(
+  `${landscapeRootUrl}/${petclinicToken}/structure`,
+  function (req, res) {
+    res.json(structurePetclinic);
+  }
+);
 
-traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function(req, res) {
-    res.json(removeRandomTraces(dynamicPetclinic));
+traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function (req, res) {
+  res.json(removeRandomTraces(dynamicPetclinic));
 });
 
 // END Petclinic Sample
@@ -128,13 +143,19 @@ fs.readFile(`./${bigLandscapeFilePrefix}-dynamic.json`, (err, json) => {
   dynamicBigLandscape = JSON.parse(json);
 });
 
-landscapeApp.get(`${landscapeRootUrl}/${bigLandscapeToken}/structure`, function(req, res) {
-  res.json(structureBigLandscape);
-});
+landscapeApp.get(
+  `${landscapeRootUrl}/${bigLandscapeToken}/structure`,
+  function (req, res) {
+    res.json(structureBigLandscape);
+  }
+);
 
-traceApp.get(`${traceRootUrl}/${bigLandscapeToken}/dynamic`, function(req, res) {
-  res.json(dynamicBigLandscape);
-});
+traceApp.get(
+  `${traceRootUrl}/${bigLandscapeToken}/dynamic`,
+  function (req, res) {
+    res.json(dynamicBigLandscape);
+  }
+);
 
 // END Big Landscape Sample
 
@@ -153,25 +174,180 @@ fs.readFile(`./${studyFilePrefix}-dynamic.json`, (err, json) => {
   dynamicStudy = JSON.parse(json);
 });
 
-landscapeApp.get(`${landscapeRootUrl}/${studyToken}/structure`, function(req, res) {
-  res.json(structureStudy);
-});
+landscapeApp.get(
+  `${landscapeRootUrl}/${studyToken}/structure`,
+  function (req, res) {
+    res.json(structureStudy);
+  }
+);
 
-traceApp.get(`${traceRootUrl}/${studyToken}/dynamic`, function(req, res) {
+traceApp.get(`${traceRootUrl}/${studyToken}/dynamic`, function (req, res) {
   res.json(dynamicStudy);
 });
 
 // END Study Sample
+
+// BEGIN Increasing SL Sample
+
+const increasingSLToken = "12444195-6144-4254-a17b-0f7fb49adb0a";
+const increasingSLFilePrefix = "petclinic";
+let structureIncreasingSL = {};
+let dynamicIncreasingSL = {};
+
+fs.readFile(`./${increasingSLFilePrefix}-structure.json`, (err, json) => {
+  structureIncreasingSL = JSON.parse(json);
+});
+
+fs.readFile(`./${increasingSLFilePrefix}-dynamic.json`, (err, json) => {
+  dynamicIncreasingSL = JSON.parse(json);
+});
+
+let previousStructure = null;
+let topLevelPackageCounter = 0;
+let artificialTopLevelPackageScaffold = {
+  name: "1",
+  subPackages: [],
+  classes: [],
+};
+
+landscapeApp.get(
+  `${landscapeRootUrl}/${increasingSLToken}/structure`,
+  async (req, res) => {
+    if (previousStructure) {
+      const node = structureIncreasingSL.nodes[0];
+      const app = node.applications[0];
+      const package = app.packages[0];
+
+      const newStructure = addTopLevelPackageToFirstApplication(
+        package,
+        previousStructure
+      );
+      previousStructure = JSON.parse(JSON.stringify(newStructure));
+    } else {
+      previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
+    }
+    res.json(previousStructure);
+  }
+);
+
+traceApp.get(
+  `${traceRootUrl}/${increasingSLToken}/dynamic`,
+  function (req, res) {
+    res.json(dynamicIncreasingSL);
+  }
+);
+
+// END Increasing SL Sample
+
+function addTopLevelPackageToFirstApplication(structureRecord) {
+  const oldTopLevelPackages = [];
+
+  const node = structureRecord.nodes[0];
+  const app = node.applications[0];
+
+  for (let package of app.packages) {
+    oldTopLevelPackages.push(JSON.parse(JSON.stringify(package)));
+  }
+
+  const newTopLevelPackage = JSON.parse(
+    JSON.stringify(artificialTopLevelPackageScaffold)
+  );
+
+  newTopLevelPackage.name = topLevelPackageCounter.toString();
+  newTopLevelPackage.subPackages = oldTopLevelPackages;
+
+  app.packages = [newTopLevelPackage];
+
+  topLevelPackageCounter++;
+
+  return structureRecord;
+}
+
+function addTopLevelPackageToFirstApplication(
+  topLevelPackage,
+  structureRecord
+) {
+  const deepCopyPackage = JSON.parse(JSON.stringify(topLevelPackage));
+  recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
+
+  const node = structureRecord.nodes[0];
+  const app = node.applications[0];
+
+  const newTopLevelPackage = JSON.parse(
+    JSON.stringify(artificialTopLevelPackageScaffold)
+  );
+
+  newTopLevelPackage.name = topLevelPackageCounter.toString();
+
+  newTopLevelPackage.subPackages = [deepCopyPackage];
+
+  const siblingWithRandomHashCodes = JSON.stringify(newTopLevelPackage);
+
+  app.packages.push(JSON.parse(siblingWithRandomHashCodes));
+
+  topLevelPackageCounter++;
+
+  return structureRecord;
+}
+
+function addSiblingPackageToFirstApplication(structureRecord) {
+  const topLevelPackages = [];
+
+  const node = structureRecord.nodes[0];
+  const app = node.applications[0];
+
+  for (let package of app.packages) {
+    topLevelPackages.push(JSON.parse(JSON.stringify(package)));
+  }
+
+  const newTopLevelPackage = JSON.parse(
+    JSON.stringify(artificialTopLevelPackageScaffold)
+  );
+
+  newTopLevelPackage.name = topLevelPackageCounter.toString();
+
+  for (let package of topLevelPackages) {
+    recursivelyRandomizeAllHashCodesOfPackages(package);
+  }
+
+  newTopLevelPackage.subPackages = topLevelPackages;
+
+  const siblingWithRandomHashCodes = JSON.stringify(newTopLevelPackage);
+
+  app.packages.push(JSON.parse(siblingWithRandomHashCodes));
+
+  topLevelPackageCounter++;
+
+  return structureRecord;
+}
+
+function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord) {
+  for (let clazz of topLevelPackageRecord.classes) {
+    for (let method of clazz.methods) {
+      const secret = "abcdefg";
+      const hash = crypto
+        .createHmac("sha256", secret)
+        .update("MyFancyMessageMega")
+        .digest("hex");
+
+      method.hashCode = hash;
+    }
+  }
+
+  for (let subPackage of topLevelPackageRecord.subPackages) {
+    recursivelyRandomizeAllHashCodesOfPackages(subPackage);
+  }
+}
 
 /**
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.
  * https://stackoverflow.com/a/6274381
  */
- function shuffle(a) {
+function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
 }
@@ -181,19 +357,24 @@ function removeRandomTraces(traceArray) {
 
   for (const trace of traceArray) {
     const traceId = trace["traceId"];
-    if(traceId && !uniqueTraceIds.includes(traceId)) {
+    if (traceId && !uniqueTraceIds.includes(traceId)) {
       uniqueTraceIds.push(traceId);
     }
   }
 
   // remove random count of uniqueTraceIds
 
-  let itemsToRemove = uniqueTraceIds.length > 1 ? Math.floor(Math.random() * uniqueTraceIds.length) : 1;
+  let itemsToRemove =
+    uniqueTraceIds.length > 1
+      ? Math.floor(Math.random() * uniqueTraceIds.length)
+      : 1;
 
   let shuffledTraceIdArray = shuffle(uniqueTraceIds);
   shuffledTraceIdArray.splice(itemsToRemove);
 
-  const randomizedTraces = traceArray.filter(trace => shuffledTraceIdArray.includes(trace["traceId"]));
+  const randomizedTraces = traceArray.filter((trace) =>
+    shuffledTraceIdArray.includes(trace["traceId"])
+  );
 
   return randomizedTraces;
 }

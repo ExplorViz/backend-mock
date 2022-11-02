@@ -2,10 +2,6 @@ stages:
   - test
   - deploy
 
-workflow:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
 run-pre-commit:
   stage: test
   image: explorviz/pre-commit:latest

@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
 const crypto = require("crypto");
+const compression = require("compression");
 
 const landscapeApp = express();
 const traceApp = express();
@@ -11,6 +12,10 @@ const userApp = express();
 landscapeApp.disable("etag");
 traceApp.disable("etag");
 userApp.disable("etag");
+
+landscapeApp.use(compression());
+traceApp.use(compression());
+userApp.use(compression());
 
 const landscapePort = 8082;
 const tracePort = 8083;

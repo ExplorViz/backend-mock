@@ -38,7 +38,7 @@ services:
       KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE: "LogAppendTime"
       KAFKA_MESSAGE_MAX_BYTES: 7000000
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
-      KAFKA_CREATE_TOPICS: "cluster-dump-spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1,token-events-table:20:1"
+      KAFKA_CREATE_TOPICS: "otlp_spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1,token-events-table:20:1"
     depends_on:
       - zookeeper
     volumes:
@@ -63,15 +63,16 @@ services:
 
   ## Open Census ##
 
-  oc-collector:
-    image: omnition/opencensus-collector:0.1.11
-    container_name: oc-collector
-    command: [ "--config=/etc/oc-collector-config.yaml" ]
+  otel-collector:
+    image: otel/opentelemetry-collector
+    container_name: otel-collector
+    command: [ "--config=/etc/otel-collector-config.yaml" ]
     restart: on-failure
     volumes:
-      - ./generic/oc-collector-config.yaml:/etc/oc-collector-config.yaml
+      - ./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
       - ${OC_COLLECTOR_PORT}:55678
+      - 55679:55679 # zPages
     depends_on:
       - schema-registry
     networks:

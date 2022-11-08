@@ -1,0 +1,28 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: :55678
+
+exporters:
+  kafka:
+    brokers:
+      - kafka:9092
+    topic: otlp_spans
+
+  logging:
+    loglevel: debug
+
+extensions:
+  zpages:
+    endpoint: :55679
+
+service:
+  extensions:
+    - zpages
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+      exporters: 
+        - kafka

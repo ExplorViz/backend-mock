@@ -25,7 +25,7 @@ build-petclinic-amd64:
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
     - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME:amd64
 
-build-demo-supplier:
+build-demo-supplier-amd64:
   stage: deploy
   tags:
     - exec-docker
@@ -42,7 +42,7 @@ build-demo-supplier:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGA/demo-supplier
+    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGA/demo-supplier:amd64
 
 deploy-multi-arch:
   image:
@@ -68,3 +68,10 @@ deploy-multi-arch:
       --platforms ${MANIFEST_PLATFORMS}
       --template ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:ARCH
       --target ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:latest
+    - ./manifest-tool
+      --username ${DOCKERHUB_USER}
+      --password ${DOCKERHUB_PASSWORD}
+      push from-args
+      --platforms ${MANIFEST_PLATFORMS}
+      --template ${DOCKERHUB_ORGA}/demo-supplier:ARCH
+      --target ${DOCKERHUB_ORGA}/demo-supplier:latest

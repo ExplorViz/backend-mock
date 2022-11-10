@@ -1,12 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "omnition/opencensus-collector:0.1.11" },
-    "container_name" : {"const": "oc-collector"},
+    "image": { "const": "otel/opentelemetry-collector" },
+    "container_name" : {"const": "otel-collector"},
     "ports": {
       "type" : "array",
       "items": [
-        { "enum" : ["${OC_COLLECTOR_PORT}:55678"]}
+        { "enum" : ["${OTEL_COLLECTOR_PORT}:55678"]},
+        { "enum" : ["${OTEL_COLLECTOR_ZPAGES_PORT}:55679"]}
       ]
     },
     "depends_on": {
@@ -18,7 +19,7 @@
     "volumes": {
       "type" : "array",
       "items": [
-        { "enum" : ["./generic/oc-collector-config.yaml:/etc/oc-collector-config.yaml"] }
+        { "enum" : ["./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml"] }
       ]
     },
     "networks": {

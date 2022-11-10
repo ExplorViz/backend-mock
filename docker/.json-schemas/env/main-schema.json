@@ -18,8 +18,8 @@
         "schema-registry": {
           "$ref": "file:docker/.json-schemas/env/schema-registry-schema.json"
         },
-        "oc-collector": {
-          "$ref": "file:docker/.json-schemas/env/oc-collector-schema.json"
+        "otel-collector": {
+          "$ref": "file:docker/.json-schemas/env/otel-collector-schema.json"
         },
         "cassandra": {
           "$ref": "file:docker/.json-schemas/env/cassandra-schema.json"
@@ -31,7 +31,7 @@
           "$ref": "file:docker/.json-schemas/env/nginx-schema.json"
         }
       },
-      "required": ["zookeeper", "kafka", "schema-registry", "oc-collector"]
+      "required": ["zookeeper", "kafka", "schema-registry", "otel-collector"]
     },
     "volumes": {
       "properties": {

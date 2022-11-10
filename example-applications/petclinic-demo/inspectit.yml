@@ -49,5 +49,5 @@ inspectit:
       service-name: "Ocelot Otel Exporter"
       otlp:
         enabled: true
-        endpoint: "http://otel-collector:55678"        
+        endpoint: "http://otel-collector:55678"
         protocol: grpc

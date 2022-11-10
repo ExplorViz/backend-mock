@@ -71,8 +71,8 @@ services:
     volumes:
       - ./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
-      - ${OC_COLLECTOR_PORT}:55678
-      - 55679:55679 # zPages
+      - ${OTEL_COLLECTOR_PORT}:55678
+      - ${OTEL_COLLECTOR_ZPAGES_PORT}:55679 # zPages
     depends_on:
       - schema-registry
     networks:

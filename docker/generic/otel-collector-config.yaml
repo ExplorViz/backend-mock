@@ -25,5 +25,5 @@ service:
     traces:
       receivers:
         - otlp
-      exporters: 
+      exporters:
         - kafka

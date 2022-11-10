@@ -12,12 +12,12 @@ services:
   ## Adapter-Service ##
 
   adapter-service:
-    image: explorviz/adapter-service-jvm:latest
+    image: explorviz/adapter-service-jvm:otel
     networks:
       - explorviz
     environment:
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_LOG_LVL=TRACE
       - EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true
     deploy:
       mode: replicated
@@ -26,7 +26,7 @@ services:
   ## Landscape-Service ##
 
   landscape-service:
-    image: explorviz/landscape-service-jvm:latest
+    image: explorviz/landscape-service-jvm:otel
     #ports:
     #- ${LANDSCAPE_PORT}:8080
     networks:
@@ -37,7 +37,7 @@ services:
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_LOG_LVL=TRACE
     deploy:
       mode: replicated
       replicas: ${LANDSCAPE_REPLICAS}
@@ -45,7 +45,7 @@ services:
   ## Trace-Service ##
 
   trace-service:
-    image: explorviz/trace-service-jvm:latest
+    image: explorviz/trace-service-jvm:otel
     #ports:
     #- ${TRACE_PORT}:8080
     networks:
@@ -67,7 +67,7 @@ services:
   user-service:
     container_name: user-service
     # image: explorviz/user-service-jvm:latest
-    image: explorviz/user-service-jvm:dev
+    image: explorviz/user-service-jvm:otel
     #ports:
     #- ${USER_PORT}:8080
     networks:

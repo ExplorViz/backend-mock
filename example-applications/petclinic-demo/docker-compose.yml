@@ -28,11 +28,7 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit.yml:/agent/inspectit.yml
-    entrypoint: ["sh", "-c", "
-    java
-    -Dinspectit.config.file-based.path=\"/agent/\"
-    -javaagent:/agent/inspectit-ocelot-agent.jar
-    -jar /app.jar"]
+    entrypoint: ["sh", "-c", "java -Dinspectit.config.file-based.path=\"/agent/\" -javaagent:/agent/inspectit-ocelot-agent.jar -jar /app.jar"]
 
 volumes:
   agent-vol:

@@ -20,7 +20,7 @@
         "KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE": { "const" : "LogAppendTime" },
         "KAFKA_MESSAGE_MAX_BYTES": { "const" : 7000000 },
         "KAFKA_AUTO_CREATE_TOPICS_ENABLE": { "const" : "false"},
-        "KAFKA_CREATE_TOPICS": { "const" : "cluster-dump-spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1,token-events-table:20:1" }
+        "KAFKA_CREATE_TOPICS": { "const" : "otlp_spans:20:1,explorviz-spans-structure:20:1,explorviz-spans-dynamic:20:1,token-events:20:1,token-events-table:20:1" }
       },
       "required": ["KAFKA_LISTENERS", "KAFKA_ADVERTISED_LISTENERS", "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP", "KAFKA_INTER_BROKER_LISTENER_NAME", "KAFKA_ZOOKEEPER_CONNECT", "KAFKA_LOG_MESSAGE_TIMESTAMP_TYPE", "KAFKA_MESSAGE_MAX_BYTES", "KAFKA_AUTO_CREATE_TOPICS_ENABLE", "KAFKA_CREATE_TOPICS"]
     },

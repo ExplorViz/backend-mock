@@ -6,7 +6,7 @@ version: "3.5"
 services:
 
   ocelot-agent:
-    image: inspectit/inspectit-ocelot-agent:1.9.0
+    image: inspectit/inspectit-ocelot-agent:2.1.1
     container_name: ocelot-agent-petclinic
     networks:
       - explorviz

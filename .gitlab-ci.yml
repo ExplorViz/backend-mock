@@ -51,6 +51,8 @@ deploy-multi-arch:
   stage: add-manifest
   tags:
     - exec-docker
+  only:
+    - schedules
   variables:
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
   before_script:
@@ -75,3 +77,4 @@ deploy-multi-arch:
       --platforms ${MANIFEST_PLATFORMS}
       --template ${DOCKERHUB_ORGA}/demo-supplier:ARCH
       --target ${DOCKERHUB_ORGA}/demo-supplier:latest
+

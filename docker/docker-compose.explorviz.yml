@@ -66,7 +66,7 @@ services:
   ## User-Service ##
 
   user-service:
-    container_name: user-service
+    hostname: user-service
     # image: explorviz/user-service-jvm:latest
     image: explorviz/user-service-jvm:dev
     #ports:
@@ -85,7 +85,7 @@ services:
   ## Collaboration-Service ##
 
   collaboration-service:
-    container_name: collaboration-service
+    hostname: collaboration-service
     image: explorviz/collaboration-service-jvm:latest
     #ports:
     #- ${COLLABORATION_PORT}:4444
@@ -97,7 +97,7 @@ services:
   ## Frontend ##
 
   frontend:
-    container_name: explorviz-frontend
+    hostname: explorviz-frontend
     #image: explorviz/explorviz-frontend:dev
     image: explorviz/explorviz-frontend:dev-noauth
     ports:

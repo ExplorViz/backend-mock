@@ -77,4 +77,3 @@ deploy-multi-arch:
       --platforms ${MANIFEST_PLATFORMS}
       --template ${DOCKERHUB_ORGA}/demo-supplier:ARCH
       --target ${DOCKERHUB_ORGA}/demo-supplier:latest
-

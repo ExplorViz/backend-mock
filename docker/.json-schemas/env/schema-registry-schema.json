@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "confluentinc/cp-schema-registry:7.2.2" },
+    "image": { "const": "confluentinc/cp-schema-registry:7.3.0" },
     "container_name" : {"const": "schema-registry"},
     "ports": {
       "type" : "array",

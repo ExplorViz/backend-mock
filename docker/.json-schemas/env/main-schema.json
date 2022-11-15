@@ -9,9 +9,6 @@
         "type": "object"
       },
       "properties": {
-        "zookeeper": {
-          "$ref": "file:docker/.json-schemas/env/zookeeper-schema.json"
-        },
         "kafka": {
           "$ref": "file:docker/.json-schemas/env/kafka-schema.json"
         },
@@ -31,31 +28,31 @@
           "$ref": "file:docker/.json-schemas/env/nginx-schema.json"
         }
       },
-      "required": ["zookeeper", "kafka", "schema-registry", "otel-collector"]
+      "required": ["kafka", "schema-registry", "otel-collector"]
     },
     "volumes": {
       "properties": {
-        "zookeeper-data": {
+        "kafka-data": {
           "properties": {
-            "name" : {"const" : "explorviz-zookeeper-data"}
+            "name" : {"const" : "explorviz-kafka-data"}
           },
           "required": ["name"]
         },
-        "zookeeper-data-log": {
+        "kafka-secrets": {
           "properties": {
-            "name" : {"const" : "explorviz-zookeeper-data-log"}
+            "name" : {"const" : "explorviz-kafka-secrets"}
           },
           "required": ["name"]
         },
-        "zookeeper-log": {
+        "init-kafka-data": {
           "properties": {
-            "name" : {"const" : "explorviz-zookeeper-log"}
+            "name" : {"const" : "explorviz-init-kafka-data"}
           },
           "required": ["name"]
         },
-        "kafka": {
+        "init-kafka-secrets": {
           "properties": {
-            "name" : {"const" : "explorviz-kafka"}
+            "name" : {"const" : "explorviz-init-kafka-secrets"}
           },
           "required": ["name"]
         },
@@ -84,7 +81,7 @@
           "required": ["name"]
         }
       },
-      "required": [ "zookeeper-data", "zookeeper-data-log", "zookeeper-log", "kafka", "schema-registry", "user-mongo-data", "user-mongo-configdb", "cassandra"]
+      "required": ["kafka-data", "kafka-secrets", "init-kafka-data", "init-kafka-secrets",  "schema-registry", "user-mongo-data", "user-mongo-configdb", "cassandra"]
     },
     "networks": {
       "description": "Network declaration for Docker-Compose network",

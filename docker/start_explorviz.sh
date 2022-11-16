@@ -4,6 +4,10 @@ echo "Starting ExplorViz software stack ..."
 
 docker compose -f docker-compose.environment.yml up -d
 
+# Remove stopped containers which initialized Kafka and Cassandra
+docker rm $(docker ps -a --filter name=init-kafka -q)
+docker rm $(docker ps -a --filter name=init-cassandra -q)
+
 # Add `-n` flag to start Quarkus-native Docker containers
 while getopts ":n" option; do
    case $option in

@@ -4,9 +4,6 @@ echo "Starting ExplorViz software stack ..."
 
 docker compose -f docker-compose.environment.yml up -d
 
-# Remove stopped initialization container for kafka as it is no longer needed
-docker rm $(docker ps -a --filter name=init-kafka -q)
-
 # Add `-n` flag to start Quarkus-native Docker containers
 while getopts ":n" option; do
    case $option in

@@ -37,9 +37,9 @@ services:
     volumes:
       - kafka-data:/var/lib/kafka/data
       - kafka-secrets:/etc/kafka/secrets
-      - ./kafka_kraft_init.sh:/tmp/update_run.sh
+      - ./generic/kafka/kafka_kraft_init.sh:/tmp/update_run.sh
     command: "bash -c 'if [ ! -f /tmp/update_run.sh ]; then echo \"ERROR: Did you forget the kafka_kraft_init.sh file that came with this docker-compose.yml file?\" && exit 1 ; else /tmp/update_run.sh && /etc/confluent/docker/run ; fi'"
-    healthcheck:       
+    healthcheck:
       test: ["CMD", "kafka-topics", "--bootstrap-server", "kafka:${KAFKA_INT_PORT}", "--list"]
       interval: 15s
       timeout: 10s
@@ -105,6 +105,8 @@ services:
       - ${OTEL_COLLECTOR_PORT}:55678
       - ${OTEL_COLLECTOR_ZPAGES_PORT}:55679 # zPages
     depends_on:
+      schema-registry:
+        condition: service_started
       cassandra:
         condition: service_healthy
     networks:

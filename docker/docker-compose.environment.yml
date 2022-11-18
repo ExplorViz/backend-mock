@@ -52,27 +52,14 @@ services:
     depends_on:
       kafka:
         condition: service_healthy
+    environment:
+      - KAFKA_INT_PORT
     entrypoint: [ '/bin/sh', '-c' ]
     volumes:
       - init-kafka-data:/var/lib/kafka/data
       - init-kafka-secrets:/etc/kafka/secrets
-    command: |
-      "
-      echo -e 'Creating kafka topics'
-
-      kafka-topics --bootstrap-server kafka:${KAFKA_INT_PORT} --create --if-not-exists --topic otlp_spans --replication-factor 1 --partitions 20
-
-      kafka-topics --bootstrap-server kafka:${KAFKA_INT_PORT} --create --if-not-exists --topic explorviz-spans-structure --replication-factor 1 --partitions 20
-
-      kafka-topics --bootstrap-server kafka:${KAFKA_INT_PORT} --create --if-not-exists --topic explorviz-spans-dynamic --replication-factor 1 --partitions 20
-
-      kafka-topics --bootstrap-server kafka:${KAFKA_INT_PORT} --create --if-not-exists --topic token-events --replication-factor 1 --partitions 20
-
-      kafka-topics --bootstrap-server kafka:${KAFKA_INT_PORT} --create --if-not-exists --topic token-events-table --replication-factor 1 --partitions 20
-
-      echo -e 'Successfully created the following topics:'
-      kafka-topics --bootstrap-server kafka:${KAFKA_INT_PORT} --list
-      "
+      - ./generic/kafka/init_kafka_topics.sh:/tmp/init_kafka_topics.sh
+    command: "/tmp/init_kafka_topics.sh"
     networks:
       - explorviz
 

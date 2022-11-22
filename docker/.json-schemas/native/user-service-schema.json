@@ -4,15 +4,7 @@
     "image": { "const": "explorviz/user-service-native:latest" },
     "networks": {
       "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
-    },
-    "ports": {
-      "type": "array",
-      "items": [
-        { "enum": ["${USER_SERV_PORT}:8080"] }
-      ]
+      "items": [{ "enum": ["explorviz"] }]
     },
     "environment": {
       "type": "array",
@@ -30,17 +22,14 @@
               "QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017"
             ]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]
+            "enum": ["EXPLORVIZ_LOG_LVL=DEBUG"]
           }
         }
       ]
     }
   },
-  "required": ["image", "networks", "ports", "environment"]
+  "required": ["image", "networks", "environment"]
 }

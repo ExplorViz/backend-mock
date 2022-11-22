@@ -157,6 +157,9 @@ services:
   adapter-service-jvm:
     image: explorviz/adapter-service-jvm:latest
     profiles: ["jvm"]
+    depends_on:
+      init-kafka:
+        condition: service_completed_successfully
     networks:
       - explorviz
     environment:
@@ -227,6 +230,9 @@ services:
     # image: explorviz/user-service-jvm:latest
     image: explorviz/user-service-jvm:dev
     profiles: ["jvm"]
+    depends_on:
+      init-kafka:
+        condition: service_completed_successfully
     #ports:
     #- ${USER_PORT}:8080
     networks:
@@ -290,6 +296,9 @@ services:
     container_name: adapter-service
     image: explorviz/adapter-service-native:latest
     profiles: ["native"]
+    depends_on:
+      init-kafka:
+        condition: service_completed_successfully
     networks:
       - explorviz
     environment:
@@ -355,6 +364,9 @@ services:
     container_name: user-service
     image: explorviz/user-service-native:latest
     profiles: ["native"]
+    depends_on:
+      init-kafka:
+        condition: service_completed_successfully
     #ports:
     #- ${USER_PORT}:8080
     networks:

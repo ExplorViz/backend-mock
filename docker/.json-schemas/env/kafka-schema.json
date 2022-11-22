@@ -2,27 +2,24 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "confluentinc/cp-kafka:7.3.0" },
-    "hostname" : {"const": "kafka"},
+    "hostname": { "const": "kafka" },
     "ports": {
-      "type" : "array",
+      "type": "array",
       "items": [
-        { "const" : "${KAFKA_EXT_PORT}:${KAFKA_EXT_PORT}" },
-        { "const" : "${KAFKA_JMX_PORT}:${KAFKA_JMX_PORT}" }
+        { "const": "${KAFKA_EXT_PORT}:${KAFKA_EXT_PORT}" },
+        { "const": "${KAFKA_JMX_PORT}:${KAFKA_JMX_PORT}" }
       ]
     },
     "volumes": {
-      "type" : "array",
+      "type": "array",
       "items": [
-        { "const" : "kafka-data:/var/lib/kafka/data"},
-        { "const" : "kafka-secrets:/etc/kafka/secrets"},
-        { "const" : "./kafka_kraft_init.sh:/tmp/update_run.sh"}
+        { "const": "kafka-data:/var/lib/kafka/data" },
+        { "const": "kafka-secrets:/etc/kafka/secrets" }
       ]
     },
     "networks": {
       "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
+      "items": [{ "enum": ["explorviz"] }]
     }
   },
   "required": ["image", "ports", "volumes", "networks"]

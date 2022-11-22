@@ -4,15 +4,11 @@
     "image": { "const": "explorviz/explorviz-frontend:dev" },
     "networks": {
       "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
+      "items": [{ "enum": ["explorviz"] }]
     },
     "ports": {
       "type": "array",
-      "items": [
-        { "enum": ["${FRONTEND_PORT}:80"] }
-      ]
+      "items": [{ "enum": ["${FRONTEND_PORT}:80"] }]
     },
     "environment": {
       "type": "array",
@@ -30,29 +26,22 @@
               "TRACE_URL=http://${FRONTEND_HOST_NAME}:${TRACE_SERV_PORT}"
             ]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "USER_URL=http://${FRONTEND_HOST_NAME}:${USER_SERV_PORT}"
-            ]
+            "enum": ["USER_URL=http://${FRONTEND_HOST_NAME}:${USER_SERV_PORT}"]
           }
-        }
-        ,
+        },
         {
           "contains": {
             "enum": [
               "COLLAB_URL=ws://${FRONTEND_HOST_NAME}:${COLLAB_SERV_PORT}"
             ]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}"
-            ]
+            "enum": ["FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}"]
           }
         }
       ]

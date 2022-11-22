@@ -4,65 +4,46 @@
     "image": { "const": "explorviz/trace-service-native:latest" },
     "networks": {
       "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
+      "items": [{ "enum": ["explorviz"] }]
     },
     "environment": {
       "type": "array",
       "allOf": [
         {
           "contains": {
-            "enum": [
-              "QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042"
-            ]
+            "enum": ["QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042"]
           }
         },
         {
           "contains": {
-            "enum": [
-              "QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra"
-            ]
+            "enum": ["QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra"]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra"
-            ]
+            "enum": ["QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra"]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10"
-            ]
+            "enum": ["QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10"]
           }
-        }
-        ,
+        },
         {
           "contains": {
             "enum": [
               "QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000"
-            ]
+            "enum": ["EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000"]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]
+            "enum": ["EXPLORVIZ_LOG_LVL=DEBUG"]
           }
         }
       ]

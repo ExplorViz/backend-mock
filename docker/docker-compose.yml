@@ -384,6 +384,7 @@ services:
 #region Observability
 
   prometheus:
+    hostname: prometheus
     image: prom/prometheus:latest
     profiles: ["observability"]
     volumes:
@@ -418,9 +419,6 @@ services:
     profiles: ["observability"]
     depends_on:
       - prometheus
-    user: "$UID:$GID"
-    links:
-      - prometheus:prometheus
     volumes:
       - grafana-data:/var/lib/grafana
       - ./observability/grafana/provisioning:/etc/grafana/provisioning

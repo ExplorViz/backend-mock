@@ -14,18 +14,15 @@ rule_files:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus'
 
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-
+  - job_name: 'kafka-lag-exporter'
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-
     static_configs:
-         - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100']
+      - targets: ['kafka-lag-exporter:8000']
 
   - job_name: 'adapter-service'
+    metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:
           - "adapter-service"
@@ -36,7 +33,7 @@ scrape_configs:
         - "host.docker.internal:8087" # dev-mode
 
   - job_name: 'landscape-service'
-
+    metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:
           - "landscape-service"
@@ -47,6 +44,7 @@ scrape_configs:
         - "host.docker.internal:8082" # dev-mode
 
   - job_name: 'trace-service'
+    metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:
           - "trace-service"
@@ -57,6 +55,7 @@ scrape_configs:
         - "host.docker.internal:8083" # dev-mode
 
   - job_name: 'user-service'
+    metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:
           - "user-service"
@@ -67,6 +66,7 @@ scrape_configs:
         - "host.docker.internal:8084" # dev-mode
 
   - job_name: 'push-service'
+    metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:
           - "push-service"
@@ -77,6 +77,7 @@ scrape_configs:
         - "host.docker.internal:8086" # dev-mode
 
   - job_name: 'collaborative-service'
+    metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:
           - "push-service"

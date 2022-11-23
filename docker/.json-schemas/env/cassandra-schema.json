@@ -31,11 +31,7 @@
           }
         }
       ]
-    },
-    "networks": {
-      "type": "array",
-      "items": [{ "enum": ["explorviz"] }]
     }
   },
-  "required": ["image", "ports", "environment", "volumes", "networks"]
+  "required": ["image", "ports", "environment", "volumes"]
 }

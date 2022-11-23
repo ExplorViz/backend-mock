@@ -2,10 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "explorviz/adapter-service-native:latest" },
-    "networks": {
-      "type": "array",
-      "items": [{ "enum": ["explorviz"] }]
-    },
     "environment": {
       "type": "array",
       "allOf": [
@@ -21,8 +17,16 @@
             "enum": ["EXPLORVIZ_LOG_LVL=DEBUG"]
           }
         }
+        ,
+        {
+          "contains": {
+            "enum": [
+              "EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true"
+            ]
+          }
+        }
       ]
     }
   },
-  "required": ["image", "networks", "environment"]
+  "required": ["image", "environment"]
 }

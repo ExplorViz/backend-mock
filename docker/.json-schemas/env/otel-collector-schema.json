@@ -21,13 +21,7 @@
       "items": [
         { "enum" : ["./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml"] }
       ]
-    },
-    "networks": {
-      "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
     }
   },
-  "required": ["image", "ports", "depends_on", "volumes", "networks"]
+  "required": ["image", "ports", "depends_on", "volumes"]
 }

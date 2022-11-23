@@ -2,10 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "explorviz/explorviz-frontend:dev" },
-    "networks": {
-      "type": "array",
-      "items": [{ "enum": ["explorviz"] }]
-    },
     "ports": {
       "type": "array",
       "items": [{ "enum": ["${FRONTEND_PORT}:80"] }]
@@ -72,5 +68,5 @@
       ]
     }
   },
-  "required": ["image", "networks", "ports", "environment"]
+  "required": ["image", "ports", "environment"]
 }

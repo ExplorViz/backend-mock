@@ -145,7 +145,7 @@
       "description": "Network declaration for Docker-Compose network",
       "type": "object",
       "properties": {
-        "explorviz": {
+        "default": {
           "type": "object",
           "properties": {
             "name": { "enum": ["explorviz"] }
@@ -153,7 +153,7 @@
           "required": ["name"]
         }
       },
-      "required": ["explorviz"]
+      "required": ["default"]
     }
   },
   "required": ["services", "volumes", "networks"]

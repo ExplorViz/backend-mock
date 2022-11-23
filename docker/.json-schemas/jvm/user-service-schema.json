@@ -2,12 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "explorviz/user-service-jvm:dev" },
-    "networks": {
-      "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
-    },
     "environment": {
       "type": "array",
       "allOf": [
@@ -64,5 +58,5 @@
       ]
     }
   },
-  "required": ["image", "networks", "environment"]
+  "required": ["image", "environment"]
 }

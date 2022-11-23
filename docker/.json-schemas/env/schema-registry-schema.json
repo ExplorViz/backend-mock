@@ -41,10 +41,6 @@
     "volumes": {
       "type": "array",
       "items": [{ "enum": ["schema-registry:/etc/schema-registry/secrets"] }]
-    },
-    "networks": {
-      "type": "array",
-      "items": [{ "enum": ["explorviz"] }]
     }
   },
   "required": [
@@ -52,7 +48,6 @@
     "ports",
     "environment",
     "depends_on",
-    "volumes",
-    "networks"
+    "volumes"
   ]
 }

@@ -16,11 +16,7 @@
         { "const": "kafka-data:/var/lib/kafka/data" },
         { "const": "kafka-secrets:/etc/kafka/secrets" }
       ]
-    },
-    "networks": {
-      "type": "array",
-      "items": [{ "enum": ["explorviz"] }]
     }
   },
-  "required": ["image", "ports", "volumes", "networks"]
+  "required": ["image", "ports", "volumes"]
 }

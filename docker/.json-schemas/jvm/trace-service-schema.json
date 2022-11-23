@@ -2,12 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "explorviz/trace-service-jvm:latest" },
-    "networks": {
-      "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
-    },
     "environment": {
       "type": "array",
       "allOf": [
@@ -68,5 +62,5 @@
       ]
     }
   },
-  "required": ["image", "networks", "environment"]
+  "required": ["image", "environment"]
 }

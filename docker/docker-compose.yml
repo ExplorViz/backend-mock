@@ -381,14 +381,14 @@ services:
 
 #endregion ExplorViz Native
 
-#region Observability
+#region monitoring
 
   prometheus:
     hostname: prometheus
     image: prom/prometheus:latest
-    profiles: ["observability"]
+    profiles: ["monitoring"]
     volumes:
-      - ./observability/prometheus/:/etc/prometheus/
+      - ./monitoring/prometheus/:/etc/prometheus/
       - prometheus-data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -405,24 +405,24 @@ services:
   kafka-lag-exporter:
     hostname: kafka-lag-exporter
     image: seglo/kafka-lag-exporter:0.8.2
-    profiles: ["observability"]
+    profiles: ["monitoring"]
     depends_on:
       init-kafka:
         condition: service_completed_successfully
     volumes:
-      - ./observability/kafka-lag-exporter:/opt/docker/conf
+      - ./monitoring/kafka-lag-exporter:/opt/docker/conf
     command: "bin/kafka-lag-exporter -Dconfig.file=/opt/docker/conf/application.conf"
 
   grafana:
     image: grafana/grafana:latest
     hostname: grafana
-    profiles: ["observability"]
+    profiles: ["monitoring"]
     depends_on:
       - prometheus
     volumes:
       - grafana-data:/var/lib/grafana
-      - ./observability/grafana/provisioning:/etc/grafana/provisioning
-      - ./observability/grafana/src:/var/lib/grafana/dashboards
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./monitoring/grafana/src:/var/lib/grafana/dashboards
     environment:
       - GF_AUTH_DISABLE_LOGIN_FORM=true
       - GF_AUTH_ANONYMOUS_ENABLED=true
@@ -433,7 +433,7 @@ services:
     ports:
       - ${MONITORING_GRAFANA_PORT}:${MONITORING_GRAFANA_PORT}
 
-#endregion Observability
+#endregion monitoring
 
 
 #region Volumes + Network

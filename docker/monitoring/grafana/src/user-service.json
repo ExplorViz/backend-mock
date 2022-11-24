@@ -104,7 +104,7 @@
         "x": 0,
         "y": 1
       },
-      "id": 2,
+      "id": 6,
       "options": {
         "legend": {
           "calcs": [],
@@ -126,7 +126,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by(job) (up{job=~\"trace-service\"})",
+          "expr": "sum by(job) (up{job=~\"user-service\"})",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -139,13 +139,15 @@
       "type": "timeseries"
     },
     {
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 10
       },
-      "id": 6,
+      "id": 2,
+      "panels": [],
       "title": "Kafka",
       "type": "row"
     },
@@ -154,40 +156,11 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "Token Event sent by the user service and received by the others.",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 20,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -207,24 +180,28 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 6,
+        "w": 5,
         "x": 0,
         "y": 11
       },
       "id": 8,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
+        "text": {},
+        "textMode": "auto"
       },
+      "pluginVersion": "9.2.6",
       "targets": [
         {
           "datasource": {
@@ -232,20 +209,52 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (member_host, topic) (kafka_consumergroup_group_lag{group=~\"trace.*\"})",
-          "legendFormat": "__auto",
+          "exemplar": true,
+          "expr": "sum by(job) (round(increase(kafka_consumer_fetch_manager_records_consumed_total{topic=\"token-events\"}[$__range])))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{job}} received",
           "range": true,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum by(job) (round(increase(kafka_producer_topic_record_send_total{topic=\"token-events\"}[$__range])))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{job}} sent",
+          "range": true,
+          "refId": "B"
         }
       ],
-      "title": "Consumer Lag (per instance & topic)",
-      "type": "timeseries"
+      "title": "Token Events",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 10,
+      "panels": [],
+      "title": "HTTP",
+      "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "Inbound requests per service. Includes scraping by prometheus.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -266,6 +275,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 2,
             "pointSize": 5,
             "scaleDistribution": {
@@ -299,12 +311,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 11
+        "h": 6,
+        "w": 19,
+        "x": 0,
+        "y": 18
       },
-      "id": 10,
+      "id": 12,
       "options": {
         "legend": {
           "calcs": [],
@@ -317,6 +329,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "9.2.4",
       "targets": [
         {
           "datasource": {
@@ -324,13 +337,16 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (topic) (kafka_consumergroup_group_topic_sum_lag{group=~\"trace.*\"})",
-          "legendFormat": "__auto",
+          "exemplar": true,
+          "expr": "http_server_requests_seconds_count{job=\"user-service\", uri!~\"/q.*\", outcome != \"REDIRECTION\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "instance: {{instance}}, URI: {{uri}}, Method: {{method}}, HTTP Status: {{status}}",
           "range": true,
-          "refId": "A"
+          "refId": "B"
         }
       ],
-      "title": "Consumer Lag (topic)",
+      "title": "HTTP Requests",
       "type": "timeseries"
     }
   ],
@@ -342,13 +358,13 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Trace-Service",
-  "uid": "rMrRpmOVk",
-  "version": 7,
+  "title": "User-Service",
+  "uid": "ZqLZpiO4z",
+  "version": 2,
   "weekStart": ""
 }

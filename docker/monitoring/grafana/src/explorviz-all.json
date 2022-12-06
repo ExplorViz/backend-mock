@@ -381,7 +381,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "collaborative-service"
+              "options": "collaboration-service"
             },
             "properties": [
               {

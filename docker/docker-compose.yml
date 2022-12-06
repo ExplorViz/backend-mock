@@ -370,11 +370,11 @@ services:
       - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017
       - EXPLORVIZ_LOG_LVL=DEBUG
 
-  ## Collaborative-Service ##
+  ## Collaboration-Service ##
 
   collaboration-service:
     hostname: collaboration-service
-    image: explorviz/collaboration-service-jvm:latest
+    image: explorviz/collaboration-service-native:latest
     profiles: ["native"]
     #ports:
     #- ${COLLABORATION_PORT}:4444

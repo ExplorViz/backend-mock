@@ -54,8 +54,8 @@
         "user-service": {
           "$ref": "file:docker/.json-schemas/native/user-service-schema.json"
         },
-        "collaborative-service": {
-          "$ref": "file:docker/.json-schemas/native/collaborative-service-schema.json"
+        "collaboration-service": {
+          "$ref": "file:docker/.json-schemas/native/collaboration-service-schema.json"
         },
         "frontend": {
           "$ref": "file:docker/.json-schemas/native/frontend-schema.json"
@@ -75,7 +75,7 @@
         "landscape-service",
         "trace-service",
         "user-service",
-        "collaborative-service",
+        "collaboration-service",
         "frontend"
       ]
     },

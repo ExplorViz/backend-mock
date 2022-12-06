@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "mongo" },
+    "image": { "const": "mongo:6.0" },
     "container_name" : {"const": "user-mongo"},
     "ports": {
       "type" : "array",

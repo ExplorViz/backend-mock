@@ -76,7 +76,7 @@ scrape_configs:
       - targets:
         - "host.docker.internal:8086" # dev-mode
 
-  - job_name: 'collaborative-service'
+  - job_name: 'collaboration-service'
     metrics_path: '/q/metrics'
     dns_sd_configs:
       - names:

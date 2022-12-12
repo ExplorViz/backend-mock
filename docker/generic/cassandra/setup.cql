@@ -37,7 +37,5 @@ CREATE TABLE IF NOT EXISTS explorviz.span_structure
     application_language text,
     instance_id          text,
     method_fqn           text,
-    PRIMARY KEY ((landscape_token), hash_code)
+    PRIMARY KEY (landscape_token, timestamp)
 );
-
-CREATE INDEX IF NOT EXISTS timestamp_index ON explorviz.span_structure (timestamp);

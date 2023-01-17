@@ -105,8 +105,9 @@ services:
       - MAX_HEAP_SIZE=1G
       - HEAP_NEWSIZE=200M
     volumes:
-      - ./generic/cassandra/setup.cql:/setup.cql
+      - ./generic/cassandra/custom-entrypoint.sh:/usr/local/bin/custom-entrypoint.sh
       - cassandra:/var/lib/cassandra
+    entrypoint: ["/usr/local/bin/custom-entrypoint.sh"]
     healthcheck:
       test: ["CMD", "cqlsh", "-u cassandra", "-p cassandra" ,"-e describe keyspaces"]
       interval: 15s

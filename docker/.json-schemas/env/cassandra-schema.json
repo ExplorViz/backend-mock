@@ -27,7 +27,22 @@
       "allOf": [
         {
           "contains": {
-            "enum": ["./generic/cassandra/setup.cql:/setup.cql"]
+            "enum": ["./generic/cassandra/custom-entrypoint.sh:/usr/local/bin/custom-entrypoint.sh"]
+          }
+        },
+        {
+          "contains": {
+            "enum": ["cassandra:/var/lib/cassandra"]
+          }
+        }
+      ]
+    },
+    "entrypoint": {
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "enum": ["/usr/local/bin/custom-entrypoint.sh"]
           }
         }
       ]

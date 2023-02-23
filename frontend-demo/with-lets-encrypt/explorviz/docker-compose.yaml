@@ -1,0 +1,33 @@
+version: "3.5"
+services:
+
+  collaboration-service:
+    container_name: collaboration-service
+    image: explorviz/collaboration-service-jvm:latest
+    environment:
+      - EXPLORVIZ_LOG_LVL=DEBUG
+
+  frontend:
+    container_name: explorviz-frontend
+    image: explorviz/explorviz-frontend:dev-noauth
+    environment:
+      - VIRTUAL_HOST=${LETSENCRYPT_HOSTNAME}
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOSTNAME}
+      - FRONTEND_HOST_URL=https://${FRONTEND_HOST_NAME}
+      - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
+      - LANDSCAPE_URL=http://${LANDSCAPE_HOSTNAME}:${LANDSCAPE_PORT}
+      - TRACE_URL=http://${TRACE_HOSTNAME}:${TRACE_PORT}
+      - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
+      - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
+      - COLLABORATION_SOCKET_PATH=/v2/vr/
+      - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
+      - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
+      - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
+
+  demo-supplier:
+    container_name: explorviz-demo-supplier
+    image: explorviz/demo-supplier
+
+networks:
+  default:
+    name: nginx-proxy

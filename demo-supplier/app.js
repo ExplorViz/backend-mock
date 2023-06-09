@@ -142,35 +142,6 @@ function addTopLevelPackageToFirstApplication(
   return structureRecord;
 }
 
-function addSiblingPackageToFirstApplication(structureRecord) {
-  const topLevelPackages = [];
-
-  const node = structureRecord.nodes[0];
-  const app = node.applications[0];
-
-  for (let package of app.packages) {
-    topLevelPackages.push(structuredClone(package));
-  }
-
-  const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
-
-  newTopLevelPackage.name = topLevelPackageCounter.toString();
-
-  for (let package of topLevelPackages) {
-    recursivelyRandomizeAllHashCodesOfPackages(package);
-  }
-
-  newTopLevelPackage.subPackages = topLevelPackages;
-
-  const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
-
-  app.packages.push(siblingWithRandomHashCodes);
-
-  topLevelPackageCounter++;
-
-  return structureRecord;
-}
-
 function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord) {
   for (let clazz of topLevelPackageRecord.classes) {
     for (let method of clazz.methods) {

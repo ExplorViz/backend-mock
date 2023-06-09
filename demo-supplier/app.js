@@ -65,9 +65,9 @@ createLandscapeSample({
         package,
         previousStructure
       );
-      previousStructure = JSON.parse(JSON.stringify(newStructure));
+      previousStructure = structuredClone(newStructure);
     } else {
-      previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
+      previousStructure = structuredClone(structureIncreasingSL);
     }
 
     return previousStructure;
@@ -124,12 +124,10 @@ function addTopLevelPackageToFirstApplication(structureRecord) {
   const app = node.applications[0];
 
   for (let package of app.packages) {
-    oldTopLevelPackages.push(JSON.parse(JSON.stringify(package)));
+    oldTopLevelPackages.push(structuredClone(package));
   }
 
-  const newTopLevelPackage = JSON.parse(
-    JSON.stringify(artificialTopLevelPackageScaffold)
-  );
+  const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
 
   newTopLevelPackage.name = topLevelPackageCounter.toString();
   newTopLevelPackage.subPackages = oldTopLevelPackages;
@@ -145,23 +143,21 @@ function addTopLevelPackageToFirstApplication(
   topLevelPackage,
   structureRecord
 ) {
-  const deepCopyPackage = JSON.parse(JSON.stringify(topLevelPackage));
+  const deepCopyPackage = structuredClone(topLevelPackage);
   recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
 
   const node = structureRecord.nodes[0];
   const app = node.applications[0];
 
-  const newTopLevelPackage = JSON.parse(
-    JSON.stringify(artificialTopLevelPackageScaffold)
-  );
+  const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
 
   newTopLevelPackage.name = topLevelPackageCounter.toString();
 
   newTopLevelPackage.subPackages = [deepCopyPackage];
 
-  const siblingWithRandomHashCodes = JSON.stringify(newTopLevelPackage);
+  const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
 
-  app.packages.push(JSON.parse(siblingWithRandomHashCodes));
+  app.packages.push(siblingWithRandomHashCodes);
 
   topLevelPackageCounter++;
 
@@ -175,12 +171,10 @@ function addSiblingPackageToFirstApplication(structureRecord) {
   const app = node.applications[0];
 
   for (let package of app.packages) {
-    topLevelPackages.push(JSON.parse(JSON.stringify(package)));
+    topLevelPackages.push(structuredClone(package));
   }
 
-  const newTopLevelPackage = JSON.parse(
-    JSON.stringify(artificialTopLevelPackageScaffold)
-  );
+  const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
 
   newTopLevelPackage.name = topLevelPackageCounter.toString();
 
@@ -190,9 +184,9 @@ function addSiblingPackageToFirstApplication(structureRecord) {
 
   newTopLevelPackage.subPackages = topLevelPackages;
 
-  const siblingWithRandomHashCodes = JSON.stringify(newTopLevelPackage);
+  const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
 
-  app.packages.push(JSON.parse(siblingWithRandomHashCodes));
+  app.packages.push(siblingWithRandomHashCodes);
 
   topLevelPackageCounter++;
 

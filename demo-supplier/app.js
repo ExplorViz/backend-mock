@@ -83,8 +83,8 @@ let artificialTopLevelPackageScaffold = {
   const increasingSLToken = "12444195-6144-4254-a17b-0f7fb49adb0a";
   const increasingSLFilePrefix = "petclinic";
 
-  const structureIncreasingSL = JSON.parse(await readFile(`./${increasingSLFilePrefix}-structure.json`));
-  const dynamicIncreasingSL = JSON.parse(await readFile(`./${increasingSLFilePrefix}-dynamic.json`));
+  const structureIncreasingSL = JSON.parse(await readFile(`demo-data/${increasingSLFilePrefix}-structure.json`));
+  const dynamicIncreasingSL = JSON.parse(await readFile(`demo-data/${increasingSLFilePrefix}-dynamic.json`));
 
   landscapeApp.get(
     `${landscapeRootUrl}/${increasingSLToken}/structure`,
@@ -119,8 +119,8 @@ let artificialTopLevelPackageScaffold = {
  * @param {{filePrefix: string; token: string; removeTraces?: boolean}} options 
  */
 async function createLandscapeSample({filePrefix, token, removeTraces}) {
-  const structureData = JSON.parse(await readFile(`./${filePrefix}-structure.json`));
-  const dynamicData = JSON.parse(await readFile(`./${filePrefix}-structure.json`));
+  const structureData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
+  const dynamicData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
 
   landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) => res.json(structureData));
   traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) => {

@@ -1,5 +1,4 @@
 const express = require("express");
-const fs = require("fs");
 const { readFile } = require("fs/promises");
 const cors = require("cors");
 const crypto = require("crypto");

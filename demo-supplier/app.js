@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const { readFile } = require("fs/promises");
 const cors = require("cors");
 const crypto = require("crypto");
 const compression = require("compression");
@@ -43,170 +44,33 @@ userApp.get(`${userRootUrl}`, function (req, res) {
   res.json(user);
 });
 
-// BEGIN Fibonacci Sample
-
-const fibonacciToken = "17844195-6144-4254-a17b-0f7fb49adb0a";
-const fibonacciFilePrefix = "fibonacci";
-let structureFibonacci = {};
-let dynamicFibonacci = {};
-
-fs.readFile(`./${fibonacciFilePrefix}-structure.json`, (err, json) => {
-  structureFibonacci = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "fibonacci",
+  token: "17844195-6144-4254-a17b-0f7fb49adb0a"
 });
 
-fs.readFile(`./${fibonacciFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicFibonacci = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "petclinic-distributed",
+  token: "26844195-7235-4254-a17b-0f7fb49adb0a"
 });
 
-landscapeApp.get(
-  `${landscapeRootUrl}/${fibonacciToken}/structure`,
-  function (req, res) {
-    res.json(structureFibonacci);
-  }
-);
-
-traceApp.get(`${traceRootUrl}/${fibonacciToken}/dynamic`, function (req, res) {
-  res.json(dynamicFibonacci);
+createLandscapeSample({
+  filePrefix: "petclinic",
+  token: "19844195-7235-4254-a17b-0f7fb49adb0a",
+  removeTraces: true
 });
 
-// END Fibonacci Sample
-
-// BEGIN Petclinic-Distributed Sample
-
-const petclinicDistributedToken = "26844195-7235-4254-a17b-0f7fb49adb0a";
-const petclinicDistributedFilePrefix = "petclinic-distributed";
-let structurePetclinicDistributed = {};
-let dynamicPetclinicDistributed = {};
-
-fs.readFile(
-  `./${petclinicDistributedFilePrefix}-structure.json`,
-  (err, json) => {
-    structurePetclinicDistributed = JSON.parse(json);
-  }
-);
-
-fs.readFile(`./${petclinicDistributedFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicPetclinicDistributed = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "big-landscape",
+  token: "a87167e5-8ec1-4b98-830a-dba87d213bb0"
 });
 
-landscapeApp.get(
-  `${landscapeRootUrl}/${petclinicDistributedToken}/structure`,
-  function (req, res) {
-    res.json(structurePetclinicDistributed);
-  }
-);
-
-traceApp.get(
-  `${traceRootUrl}/${petclinicDistributedToken}/dynamic`,
-  function (req, res) {
-    res.json(dynamicPetclinicDistributed);
-  }
-);
-
-// END Petclinic-Distributed Sample
-
-// BEGIN Petclinic Sample
-
-const petclinicToken = "19844195-7235-4254-a17b-0f7fb49adb0a";
-const petclinicFilePrefix = "petclinic";
-let structurePetclinic = {};
-let dynamicPetclinic = {};
-
-fs.readFile(`./${petclinicFilePrefix}-structure.json`, (err, json) => {
-  structurePetclinic = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "study",
+  token: "36844495-7235-4254-a17b-0f7fb49adb0a"
 });
-
-fs.readFile(`./${petclinicFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicPetclinic = JSON.parse(json);
-});
-
-landscapeApp.get(
-  `${landscapeRootUrl}/${petclinicToken}/structure`,
-  function (req, res) {
-    res.json(structurePetclinic);
-  }
-);
-
-traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function (req, res) {
-  res.json(removeRandomTraces(dynamicPetclinic));
-});
-
-// END Petclinic Sample
-
-// BEGIN Big Landscape Sample
-
-const bigLandscapeToken = "a87167e5-8ec1-4b98-830a-dba87d213bb0";
-const bigLandscapeFilePrefix = "big-landscape";
-let structureBigLandscape = {};
-let dynamicBigLandscape = {};
-
-fs.readFile(`./${bigLandscapeFilePrefix}-structure.json`, (err, json) => {
-  structureBigLandscape = JSON.parse(json);
-});
-
-fs.readFile(`./${bigLandscapeFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicBigLandscape = JSON.parse(json);
-});
-
-landscapeApp.get(
-  `${landscapeRootUrl}/${bigLandscapeToken}/structure`,
-  function (req, res) {
-    res.json(structureBigLandscape);
-  }
-);
-
-traceApp.get(
-  `${traceRootUrl}/${bigLandscapeToken}/dynamic`,
-  function (req, res) {
-    res.json(dynamicBigLandscape);
-  }
-);
-
-// END Big Landscape Sample
-
-// BEGIN Study Sample
-
-const studyToken = "36844495-7235-4254-a17b-0f7fb49adb0a";
-const studyFilePrefix = "study";
-let structureStudy = {};
-let dynamicStudy = {};
-
-fs.readFile(`./${studyFilePrefix}-structure.json`, (err, json) => {
-  structureStudy = JSON.parse(json);
-});
-
-fs.readFile(`./${studyFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicStudy = JSON.parse(json);
-});
-
-landscapeApp.get(
-  `${landscapeRootUrl}/${studyToken}/structure`,
-  function (req, res) {
-    res.json(structureStudy);
-  }
-);
-
-traceApp.get(`${traceRootUrl}/${studyToken}/dynamic`, function (req, res) {
-  res.json(dynamicStudy);
-});
-
-// END Study Sample
 
 // BEGIN Increasing SL Sample
-
-const increasingSLToken = "12444195-6144-4254-a17b-0f7fb49adb0a";
-const increasingSLFilePrefix = "petclinic";
-let structureIncreasingSL = {};
-let dynamicIncreasingSL = {};
-
-fs.readFile(`./${increasingSLFilePrefix}-structure.json`, (err, json) => {
-  structureIncreasingSL = JSON.parse(json);
-});
-
-fs.readFile(`./${increasingSLFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicIncreasingSL = JSON.parse(json);
-});
-
 let previousStructure = null;
 let topLevelPackageCounter = 0;
 let artificialTopLevelPackageScaffold = {
@@ -215,34 +79,57 @@ let artificialTopLevelPackageScaffold = {
   classes: [],
 };
 
-landscapeApp.get(
-  `${landscapeRootUrl}/${increasingSLToken}/structure`,
-  async (req, res) => {
-    if (previousStructure) {
-      const node = structureIncreasingSL.nodes[0];
-      const app = node.applications[0];
-      const package = app.packages[0];
+(async () => {
+  const increasingSLToken = "12444195-6144-4254-a17b-0f7fb49adb0a";
+  const increasingSLFilePrefix = "petclinic";
 
-      const newStructure = addTopLevelPackageToFirstApplication(
-        package,
-        previousStructure
-      );
-      previousStructure = JSON.parse(JSON.stringify(newStructure));
-    } else {
-      previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
+  const structureIncreasingSL = JSON.parse(await readFile(`./${increasingSLFilePrefix}-structure.json`));
+  const dynamicIncreasingSL = JSON.parse(await readFile(`./${increasingSLFilePrefix}-dynamic.json`));
+
+  landscapeApp.get(
+    `${landscapeRootUrl}/${increasingSLToken}/structure`,
+    (req, res) => {
+      if (previousStructure) {
+        const node = structureIncreasingSL.nodes[0];
+        const app = node.applications[0];
+        const package = app.packages[0];
+  
+        const newStructure = addTopLevelPackageToFirstApplication(
+          package,
+          previousStructure
+        );
+        previousStructure = JSON.parse(JSON.stringify(newStructure));
+      } else {
+        previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
+      }
+      res.json(previousStructure);
     }
-    res.json(previousStructure);
-  }
-);
+  );
 
-traceApp.get(
-  `${traceRootUrl}/${increasingSLToken}/dynamic`,
-  function (req, res) {
-    res.json(dynamicIncreasingSL);
-  }
-);
-
+  traceApp.get(
+    `${traceRootUrl}/${increasingSLToken}/dynamic`,
+    (req, res) => res.json(dynamicIncreasingSL)
+  );
+})();
 // END Increasing SL Sample
+
+/**
+ * Create a sample landscape for the ExplorViz demo.
+ * Loads the data and sets up express routes.
+ * @param {{filePrefix: string; token: string; removeTraces?: boolean}} options 
+ */
+async function createLandscapeSample({filePrefix, token, removeTraces}) {
+  const structureData = JSON.parse(await readFile(`./${filePrefix}-structure.json`));
+  const dynamicData = JSON.parse(await readFile(`./${filePrefix}-structure.json`));
+
+  landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) => res.json(structureData));
+  traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) => {
+    if (removeTraces) {
+      return res.json(removeRandomTraces(dynamicData));
+    }
+    res.json(dynamicData)
+  });
+}
 
 function addTopLevelPackageToFirstApplication(structureRecord) {
   const oldTopLevelPackages = [];

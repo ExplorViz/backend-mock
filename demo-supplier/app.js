@@ -6,13 +6,13 @@ const compression = require("compression");
 
 const landscapeApp = createExpressApplication(8082);
 const traceApp = createExpressApplication(8083);
+const userApp = createExpressApplication(8084);
 
 const landscapeRootUrl = "/v2/landscapes";
 const traceRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
 
 (async () => {
-  const userApp = createExpressApplication(8084);
   const user = JSON.parse(await readFile("./user.json"));
   userApp.get(`${userRootUrl}`, (req, res) => res.json(user));
 })();
@@ -30,7 +30,7 @@ createLandscapeSample({
 createLandscapeSample({
   filePrefix: "petclinic",
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
-  removeTraces: true
+  traceModifier: removeRandomTraces
 });
 
 createLandscapeSample({
@@ -52,38 +52,27 @@ let artificialTopLevelPackageScaffold = {
   classes: [],
 };
 
-(async () => {
-  const increasingSLToken = "12444195-6144-4254-a17b-0f7fb49adb0a";
-  const increasingSLFilePrefix = "petclinic";
+createLandscapeSample({
+  filePrefix: "petclinic",
+  token: "12444195-6144-4254-a17b-0f7fb49adb0a",
+  structureModifier: () => {
+    if (previousStructure) {
+      const node = structureIncreasingSL.nodes[0];
+      const app = node.applications[0];
+      const package = app.packages[0];
 
-  const structureIncreasingSL = JSON.parse(await readFile(`demo-data/${increasingSLFilePrefix}-structure.json`));
-  const dynamicIncreasingSL = JSON.parse(await readFile(`demo-data/${increasingSLFilePrefix}-dynamic.json`));
-
-  landscapeApp.get(
-    `${landscapeRootUrl}/${increasingSLToken}/structure`,
-    (req, res) => {
-      if (previousStructure) {
-        const node = structureIncreasingSL.nodes[0];
-        const app = node.applications[0];
-        const package = app.packages[0];
-
-        const newStructure = addTopLevelPackageToFirstApplication(
-          package,
-          previousStructure
-        );
-        previousStructure = JSON.parse(JSON.stringify(newStructure));
-      } else {
-        previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
-      }
-      res.json(previousStructure);
+      const newStructure = addTopLevelPackageToFirstApplication(
+        package,
+        previousStructure
+      );
+      previousStructure = JSON.parse(JSON.stringify(newStructure));
+    } else {
+      previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
     }
-  );
 
-  traceApp.get(
-    `${traceRootUrl}/${increasingSLToken}/dynamic`,
-    (req, res) => res.json(dynamicIncreasingSL)
-  );
-})();
+    return previousStructure;
+  }
+});
 // END Increasing SL Sample
 
 /**
@@ -105,21 +94,27 @@ function createExpressApplication(port) {
 }
 
 /**
+ * @typedef {(data: any) => any} DataModifier
+ */
+
+/**
  * Create a sample landscape for the ExplorViz demo.
  * Loads the data and sets up express routes.
- * @param {{filePrefix: string; token: string; removeTraces?: boolean}} options
+ * @param {{filePrefix: string; token: string; traceModifier?: DataModifier, structureModifier?: DataModifier}} options
  */
-async function createLandscapeSample({filePrefix, token, removeTraces}) {
+async function createLandscapeSample({filePrefix, token, traceModifier, structureModifier}) {
   const structureData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
   const dynamicData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
 
-  landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) => res.json(structureData));
-  traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) => {
-    if (removeTraces) {
-      return res.json(removeRandomTraces(dynamicData));
-    }
-    res.json(dynamicData)
-  });
+  landscapeApp.get(
+    `${landscapeRootUrl}/${token}/structure`,
+    (req, res) => res.json(structureModifier ? structureModifier(structureData) : structureData)
+  );
+
+  traceApp.get(
+    `${traceRootUrl}/${token}/dynamic`,
+    (req, res) => res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
+  );
 }
 
 function addTopLevelPackageToFirstApplication(structureRecord) {

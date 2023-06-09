@@ -67,7 +67,7 @@ let artificialTopLevelPackageScaffold = {
         const node = structureIncreasingSL.nodes[0];
         const app = node.applications[0];
         const package = app.packages[0];
-  
+
         const newStructure = addTopLevelPackageToFirstApplication(
           package,
           previousStructure
@@ -89,7 +89,7 @@ let artificialTopLevelPackageScaffold = {
 
 /**
  * Creates and configures a express application instance.
- * @param {number} port 
+ * @param {number} port
  * @returns a express application instance
  */
 function createExpressApplication(port) {
@@ -108,7 +108,7 @@ function createExpressApplication(port) {
 /**
  * Create a sample landscape for the ExplorViz demo.
  * Loads the data and sets up express routes.
- * @param {{filePrefix: string; token: string; removeTraces?: boolean}} options 
+ * @param {{filePrefix: string; token: string; removeTraces?: boolean}} options
  */
 async function createLandscapeSample({filePrefix, token, removeTraces}) {
   const structureData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));

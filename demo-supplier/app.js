@@ -117,28 +117,6 @@ async function createLandscapeSample({filePrefix, token, traceModifier, structur
   );
 }
 
-function addTopLevelPackageToFirstApplication(structureRecord) {
-  const oldTopLevelPackages = [];
-
-  const node = structureRecord.nodes[0];
-  const app = node.applications[0];
-
-  for (let package of app.packages) {
-    oldTopLevelPackages.push(structuredClone(package));
-  }
-
-  const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
-
-  newTopLevelPackage.name = topLevelPackageCounter.toString();
-  newTopLevelPackage.subPackages = oldTopLevelPackages;
-
-  app.packages = [newTopLevelPackage];
-
-  topLevelPackageCounter++;
-
-  return structureRecord;
-}
-
 function addTopLevelPackageToFirstApplication(
   topLevelPackage,
   structureRecord

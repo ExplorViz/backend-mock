@@ -5,30 +5,9 @@ const cors = require("cors");
 const crypto = require("crypto");
 const compression = require("compression");
 
-const landscapeApp = express();
-const traceApp = express();
-const userApp = express();
-
-// Disable caching to prevent HTTP 304
-landscapeApp.disable("etag");
-traceApp.disable("etag");
-userApp.disable("etag");
-
-landscapeApp.use(compression());
-traceApp.use(compression());
-userApp.use(compression());
-
-const landscapePort = 8082;
-const tracePort = 8083;
-const userPort = 8084;
-
-traceApp.use(cors());
-landscapeApp.use(cors());
-userApp.use(cors());
-
-traceApp.listen(tracePort, () => {});
-landscapeApp.listen(landscapePort, () => {});
-userApp.listen(userPort, () => {});
+const landscapeApp = createExpressApplication(8082);
+const traceApp = createExpressApplication(8083);
+const userApp = createExpressApplication(8084);
 
 let user = {};
 
@@ -112,6 +91,24 @@ let artificialTopLevelPackageScaffold = {
   );
 })();
 // END Increasing SL Sample
+
+/**
+ * Creates and configures a express application instance.
+ * @param {number} port 
+ * @returns a express application instance
+ */
+function createExpressApplication(port) {
+  const app = express();
+
+  // Disable caching to prevent HTTP 304
+  app.disable("etag");
+
+  app.use(compression());
+  app.use(cors());
+  app.listen(port, () => {});
+
+  return app;
+}
 
 /**
  * Create a sample landscape for the ExplorViz demo.

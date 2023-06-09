@@ -7,21 +7,16 @@ const compression = require("compression");
 
 const landscapeApp = createExpressApplication(8082);
 const traceApp = createExpressApplication(8083);
-const userApp = createExpressApplication(8084);
-
-let user = {};
 
 const landscapeRootUrl = "/v2/landscapes";
 const traceRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
 
-fs.readFile("./user.json", (err, json) => {
-  user = JSON.parse(json);
-});
-
-userApp.get(`${userRootUrl}`, function (req, res) {
-  res.json(user);
-});
+(async () => {
+  const userApp = createExpressApplication(8084);
+  const user = JSON.parse(await readFile("./user.json"));
+  userApp.get(`${userRootUrl}`, (req, res) => res.json(user));
+})();
 
 createLandscapeSample({
   filePrefix: "fibonacci",

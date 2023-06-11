@@ -43,38 +43,79 @@ createLandscapeSample({
   token: "36844495-7235-4254-a17b-0f7fb49adb0a"
 });
 
-// BEGIN Increasing SL Sample
-let previousStructure = null;
-let topLevelPackageCounter = 0;
-let artificialTopLevelPackageScaffold = {
-  name: "1",
-  subPackages: [],
-  classes: [],
-};
+{ // BEGIN Increasing SL Sample
+  const artificialTopLevelPackageScaffold = {
+    name: "1",
+    subPackages: [],
+    classes: [],
+  };
+  let previousStructure = null;
+  let topLevelPackageCounter = 0;
 
-createLandscapeSample({
-  filePrefix: "petclinic",
-  token: "12444195-6144-4254-a17b-0f7fb49adb0a",
-  structureModifier: (structureData) => {
-    if (!previousStructure) {
-      previousStructure = structuredClone(structureData);
+  createLandscapeSample({
+    filePrefix: "petclinic",
+    token: "12444195-6144-4254-a17b-0f7fb49adb0a",
+    structureModifier: (structureData) => {
+      if (!previousStructure) {
+        previousStructure = structuredClone(structureData);
+        return previousStructure;
+      }
+
+      const node = structureData.nodes[0];
+      const app = node.applications[0];
+      const package = app.packages[0];
+
+      const newStructure = addTopLevelPackageToFirstApplication(
+        package,
+        previousStructure
+      );
+      previousStructure = structuredClone(newStructure);
+
       return previousStructure;
     }
+  });
 
-    const node = structureData.nodes[0];
+  function addTopLevelPackageToFirstApplication(
+    topLevelPackage,
+    structureRecord
+  ) {
+    const deepCopyPackage = structuredClone(topLevelPackage);
+    recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
+
+    const node = structureRecord.nodes[0];
     const app = node.applications[0];
-    const package = app.packages[0];
 
-    const newStructure = addTopLevelPackageToFirstApplication(
-      package,
-      previousStructure
-    );
-    previousStructure = structuredClone(newStructure);
+    const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
+    newTopLevelPackage.name = topLevelPackageCounter.toString();
+    newTopLevelPackage.subPackages = [deepCopyPackage];
 
-    return previousStructure;
+    const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
+
+    app.packages.push(siblingWithRandomHashCodes);
+
+    topLevelPackageCounter++;
+
+    return structureRecord;
   }
-});
-// END Increasing SL Sample
+
+  function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord) {
+    for (let clazz of topLevelPackageRecord.classes) {
+      for (let method of clazz.methods) {
+        const secret = "abcdefg";
+        const hash = crypto
+          .createHmac("sha256", secret)
+          .update("MyFancyMessageMega")
+          .digest("hex");
+
+        method.hashCode = hash;
+      }
+    }
+
+    for (let subPackage of topLevelPackageRecord.subPackages) {
+      recursivelyRandomizeAllHashCodesOfPackages(subPackage);
+    }
+  }
+} // END Increasing SL Sample
 
 /**
  * Creates and configures a express application instance.
@@ -116,49 +157,6 @@ async function createLandscapeSample({filePrefix, token, traceModifier, structur
     `${traceRootUrl}/${token}/dynamic`,
     (req, res) => res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
-}
-
-function addTopLevelPackageToFirstApplication(
-  topLevelPackage,
-  structureRecord
-) {
-  const deepCopyPackage = structuredClone(topLevelPackage);
-  recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
-
-  const node = structureRecord.nodes[0];
-  const app = node.applications[0];
-
-  const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
-
-  newTopLevelPackage.name = topLevelPackageCounter.toString();
-
-  newTopLevelPackage.subPackages = [deepCopyPackage];
-
-  const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
-
-  app.packages.push(siblingWithRandomHashCodes);
-
-  topLevelPackageCounter++;
-
-  return structureRecord;
-}
-
-function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord) {
-  for (let clazz of topLevelPackageRecord.classes) {
-    for (let method of clazz.methods) {
-      const secret = "abcdefg";
-      const hash = crypto
-        .createHmac("sha256", secret)
-        .update("MyFancyMessageMega")
-        .digest("hex");
-
-      method.hashCode = hash;
-    }
-  }
-
-  for (let subPackage of topLevelPackageRecord.subPackages) {
-    recursivelyRandomizeAllHashCodesOfPackages(subPackage);
-  }
 }
 
 /**

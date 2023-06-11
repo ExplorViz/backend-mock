@@ -44,11 +44,6 @@ createLandscapeSample({
 });
 
 { // BEGIN Increasing SL Sample
-  const artificialTopLevelPackageScaffold = {
-    name: "1",
-    subPackages: [],
-    classes: [],
-  };
   let previousStructure = null;
   let topLevelPackageCounter = 0;
 
@@ -85,9 +80,11 @@ createLandscapeSample({
     const node = structureRecord.nodes[0];
     const app = node.applications[0];
 
-    const newTopLevelPackage = structuredClone(artificialTopLevelPackageScaffold);
-    newTopLevelPackage.name = topLevelPackageCounter.toString();
-    newTopLevelPackage.subPackages = [deepCopyPackage];
+    const newTopLevelPackage = {
+      name: topLevelPackageCounter.toString(),
+      subPackages: [deepCopyPackage],
+      classes: [],
+    };
 
     const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
 

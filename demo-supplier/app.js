@@ -55,20 +55,21 @@ let artificialTopLevelPackageScaffold = {
 createLandscapeSample({
   filePrefix: "petclinic",
   token: "12444195-6144-4254-a17b-0f7fb49adb0a",
-  structureModifier: () => {
-    if (previousStructure) {
-      const node = structureIncreasingSL.nodes[0];
-      const app = node.applications[0];
-      const package = app.packages[0];
-
-      const newStructure = addTopLevelPackageToFirstApplication(
-        package,
-        previousStructure
-      );
-      previousStructure = structuredClone(newStructure);
-    } else {
-      previousStructure = structuredClone(structureIncreasingSL);
+  structureModifier: (structureData) => {
+    if (!previousStructure) {
+      previousStructure = structuredClone(structureData);
+      return previousStructure;
     }
+
+    const node = structureData.nodes[0];
+    const app = node.applications[0];
+    const package = app.packages[0];
+
+    const newStructure = addTopLevelPackageToFirstApplication(
+      package,
+      previousStructure
+    );
+    previousStructure = structuredClone(newStructure);
 
     return previousStructure;
   }

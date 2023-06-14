@@ -25,6 +25,8 @@ services:
       - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
       - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
       - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
+      - VSCODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
+      - NO_AUTH_USER_NICKNAME=user-1
 
   demo-supplier:
     container_name: explorviz-demo-supplier

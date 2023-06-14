@@ -46,7 +46,8 @@ inspectit:
 
   exporters:
     tracing:
-      open-census-agent:
-        address: "oc-collector:55678"
-        service-name: "OC Agent Local"
-        use-insecure: true
+      service-name: "Ocelot Otel Exporter"
+      otlp:
+        enabled: true
+        endpoint: "http://otel-collector:55678"
+        protocol: grpc

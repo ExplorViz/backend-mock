@@ -19,31 +19,32 @@ const userRootUrl = "/user/:uid/token";
 
 createLandscapeSample({
   filePrefix: "fibonacci",
-  token: "17844195-6144-4254-a17b-0f7fb49adb0a"
+  token: "17844195-6144-4254-a17b-0f7fb49adb0a",
 });
 
 createLandscapeSample({
   filePrefix: "petclinic-distributed",
-  token: "26844195-7235-4254-a17b-0f7fb49adb0a"
+  token: "26844195-7235-4254-a17b-0f7fb49adb0a",
 });
 
 createLandscapeSample({
   filePrefix: "petclinic",
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
-  traceModifier: removeRandomTraces
+  traceModifier: removeRandomTraces,
 });
 
 createLandscapeSample({
   filePrefix: "big-landscape",
-  token: "a87167e5-8ec1-4b98-830a-dba87d213bb0"
+  token: "a87167e5-8ec1-4b98-830a-dba87d213bb0",
 });
 
 createLandscapeSample({
   filePrefix: "study",
-  token: "36844495-7235-4254-a17b-0f7fb49adb0a"
+  token: "36844495-7235-4254-a17b-0f7fb49adb0a",
 });
 
-{ // BEGIN Increasing SL Sample
+{
+  // BEGIN Increasing SL Sample
   let previousStructure = null;
   let topLevelPackageCounter = 0;
 
@@ -67,7 +68,7 @@ createLandscapeSample({
       previousStructure = structuredClone(newStructure);
 
       return previousStructure;
-    }
+    },
   });
 
   function addTopLevelPackageToFirstApplication(
@@ -141,18 +142,27 @@ function createExpressApplication(port) {
  * Loads the data and sets up express routes.
  * @param {{filePrefix: string; token: string; traceModifier?: DataModifier, structureModifier?: DataModifier}} options
  */
-async function createLandscapeSample({filePrefix, token, traceModifier, structureModifier}) {
-  const structureData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
-  const dynamicData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
-
-  landscapeApp.get(
-    `${landscapeRootUrl}/${token}/structure`,
-    (req, res) => res.json(structureModifier ? structureModifier(structureData) : structureData)
+async function createLandscapeSample({
+  filePrefix,
+  token,
+  traceModifier,
+  structureModifier,
+}) {
+  const structureData = JSON.parse(
+    await readFile(`demo-data/${filePrefix}-structure.json`)
+  );
+  const dynamicData = JSON.parse(
+    await readFile(`demo-data/${filePrefix}-dynamic.json`)
   );
 
-  traceApp.get(
-    `${traceRootUrl}/${token}/dynamic`,
-    (req, res) => res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
+  landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) =>
+    res.json(
+      structureModifier ? structureModifier(structureData) : structureData
+    )
+  );
+
+  traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) =>
+    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
 }
 

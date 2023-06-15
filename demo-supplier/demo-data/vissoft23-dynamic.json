@@ -165,6 +165,209 @@
   {
     "landscapeToken": "token3",
     "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
+    "traceId": "ownerrepoinitownermodel",
+    "endTime": 1622025009111,
+    "duration": 1,
+    "overallRequestCount": 1,
+    "traceCount": 1,
+    "spanList": [
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asdqwrfspancustomersserviceclientgetowner",
+        "parentSpanId": "",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownerownerrepofindall"
+      },
+      {
+        "landscapeToken": "token3",
+        "traceId": "ownerrepoinitownermodel",
+        "spanId": "asf123spanownermodelinit",
+        "parentSpanId": "asdqwrfspancustomersserviceclientgetowner",
+        "startTime": 1622025008957,
+        "endTime": 1622025009111,
+        "hashCode": "ownermodelinit"
+      }
+    ]
+  },
+  {
+    "landscapeToken": "token3",
+    "startTime": 1622025008957,
     "traceId": "apigetownerdetailsToclientGetOwner2",
     "endTime": 1622025009111,
     "duration": 1,

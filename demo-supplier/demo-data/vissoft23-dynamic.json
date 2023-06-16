@@ -391,15 +391,6 @@
         "startTime": 1622025008957,
         "endTime": 1622025009111,
         "hashCode": "ownerresourcefindall"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "apigetownerdetailsToclientGetOwner2",
-        "spanId": "d23fdspanownerownerrepofindall",
-        "parentSpanId": "asf123spanownerresourcefindall",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "ownerownerrepofindall"
       }
     ]
   },
@@ -429,15 +420,6 @@
         "startTime": 1622025008957,
         "endTime": 1622025009111,
         "hashCode": "ownerresourcefindall"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "apigetownerdetailsToclientGetOwner3",
-        "spanId": "d23fdspanownerownerrepofindall",
-        "parentSpanId": "asf123spanownerresourcefindall",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "ownerownerrepofindall"
       }
     ]
   },
@@ -701,24 +683,6 @@
         "startTime": 1622025008957,
         "endTime": 1622025009111,
         "hashCode": "customersserviceinit"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "apicustomerserviceinit",
-        "spanId": "customersserviceinit",
-        "parentSpanId": "",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "customersserviceinit"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "apicustomerserviceinit",
-        "spanId": "customersserviceinit",
-        "parentSpanId": "",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "customersserviceinit"
       }
     ]
   },
@@ -731,42 +695,6 @@
     "overallRequestCount": 1,
     "traceCount": 1,
     "spanList": [
-      {
-        "landscapeToken": "token3",
-        "traceId": "visitsserviceinit",
-        "spanId": "apivisitsserviceinit",
-        "parentSpanId": "",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "apivisitsserviceinit"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "visitsserviceinit",
-        "spanId": "apivisitsserviceinit",
-        "parentSpanId": "",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "apivisitsserviceinit"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "visitsserviceinit",
-        "spanId": "apivisitsserviceinit",
-        "parentSpanId": "",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "apivisitsserviceinit"
-      },
-      {
-        "landscapeToken": "token3",
-        "traceId": "visitsserviceinit",
-        "spanId": "apivisitsserviceinit",
-        "parentSpanId": "",
-        "startTime": 1622025008957,
-        "endTime": 1622025009111,
-        "hashCode": "apivisitsserviceinit"
-      },
       {
         "landscapeToken": "token3",
         "traceId": "visitsserviceinit",

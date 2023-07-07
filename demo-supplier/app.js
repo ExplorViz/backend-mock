@@ -5,7 +5,8 @@ const compression = require("compression");
 const {
   removeRandomTraces,
   recursivelyRandomizeAllHashCodesOfPackages,
-  copyPackageAndTraces
+  copyPackageAndTraces,
+  createRandomHex
 } = require("./utils.js");
 
 const landscapeApp = createExpressApplication(8082);
@@ -65,12 +66,12 @@ createLandscapeSample({
     app.name = "large-demo-landscape";
 
     app.packages.unshift({
-      name: "classes",
+      name: "changing",
       subPackages: [],
-      classes: [{
-        name: "Class0",
+      classes: Array.from({length:12}, () => ({
+        name: "C" + createRandomHex(6),
         methods: []
-      }]
+      }))
     });
 
     for (let i=0; i<15; i++) {
@@ -82,18 +83,12 @@ createLandscapeSample({
         classes: []
       });
 
-      traces.push(...removeRandomTraces(newTraces));
+      traces.push(...newTraces);
     }
   },
   structureModifier: (structure) => {
-    const package = structure.nodes[0].applications[0].packages[0];
-    if (package.classes.length > 10) {
-      package.classes.length = 0;
-    }
-    package.classes.push({
-      name: `Class${package.classes.length}`,
-      methods: []
-    });
+    const changingPackage = structure.nodes[0].applications[0].packages[0];
+    changingPackage.classes.forEach(c => c.name = "C" + createRandomHex(6));
     return structure;
   }
 });

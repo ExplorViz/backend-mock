@@ -1,8 +1,12 @@
 const express = require("express");
-const { readFile } = require("fs/promises");
+const { readFile } = require("node:fs/promises");
 const cors = require("cors");
-const crypto = require("crypto");
 const compression = require("compression");
+const {
+  removeRandomTraces,
+  recursivelyRandomizeAllHashCodesOfPackages,
+  copyPackageAndTraces
+} = require("./utils.js");
 
 const landscapeApp = createExpressApplication(8082);
 const traceApp = createExpressApplication(8083);
@@ -48,10 +52,55 @@ createLandscapeSample({
   token: "12444195-6144-4254-a17b-asdgfewefg",
 });
 
+createLandscapeSample({
+  filePrefix: "petclinic",
+  token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
+  initializer: (structure, traces) => {
+    const originalTraces = structuredClone(traces);
+
+    const node = structure.nodes[0];
+    const app = node.applications[0];
+    const package = app.packages[0];
+
+    app.name = "large-demo-landscape";
+
+    app.packages.unshift({
+      name: "classes",
+      subPackages: [],
+      classes: [{
+        name: "Class0",
+        methods: []
+      }]
+    });
+
+    for (let i=0; i<15; i++) {
+      const { packageCopy, newTraces } = copyPackageAndTraces(package, originalTraces);
+
+      app.packages.push({
+        name: `petclinic${i}`,
+        subPackages: [packageCopy],
+        classes: []
+      });
+
+      traces.push(...removeRandomTraces(newTraces));
+    }
+  },
+  structureModifier: (structure) => {
+    const package = structure.nodes[0].applications[0].packages[0];
+    if (package.classes.length > 10) {
+      package.classes.length = 0;
+    }
+    package.classes.push({
+      name: `Class${package.classes.length}`,
+      methods: []
+    });
+    return structure;
+  }
+});
+
 {
   // BEGIN Increasing SL Sample
   let previousStructure = null;
-  let topLevelPackageCounter = 0;
 
   createLandscapeSample({
     filePrefix: "petclinic",
@@ -70,7 +119,7 @@ createLandscapeSample({
         package,
         previousStructure
       );
-      previousStructure = structuredClone(newStructure);
+      previousStructure = newStructure;
 
       return previousStructure;
     },
@@ -87,36 +136,14 @@ createLandscapeSample({
     const app = node.applications[0];
 
     const newTopLevelPackage = {
-      name: topLevelPackageCounter.toString(),
+      name: `copy${app.packages.length - 1}`,
       subPackages: [deepCopyPackage],
       classes: [],
     };
 
-    const siblingWithRandomHashCodes = structuredClone(newTopLevelPackage);
-
-    app.packages.push(siblingWithRandomHashCodes);
-
-    topLevelPackageCounter++;
+    app.packages.push(newTopLevelPackage);
 
     return structureRecord;
-  }
-
-  function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord) {
-    for (let clazz of topLevelPackageRecord.classes) {
-      for (let method of clazz.methods) {
-        const secret = "abcdefg";
-        const hash = crypto
-          .createHmac("sha256", secret)
-          .update("MyFancyMessageMega")
-          .digest("hex");
-
-        method.hashCode = hash;
-      }
-    }
-
-    for (let subPackage of topLevelPackageRecord.subPackages) {
-      recursivelyRandomizeAllHashCodesOfPackages(subPackage);
-    }
   }
 } // END Increasing SL Sample
 
@@ -145,13 +172,20 @@ function createExpressApplication(port) {
 /**
  * Create a sample landscape for the ExplorViz demo.
  * Loads the data and sets up express routes.
- * @param {{filePrefix: string; token: string; traceModifier?: DataModifier, structureModifier?: DataModifier}} options
+ * @param {{
+ *  filePrefix: string;
+ *  token: string;
+ *  traceModifier?: DataModifier,
+ *  structureModifier?: DataModifier,
+ *  initializer?: (structure, trace) => void
+ * }} options
  */
 async function createLandscapeSample({
   filePrefix,
   token,
   traceModifier,
   structureModifier,
+  initializer
 }) {
   const structureData = JSON.parse(
     await readFile(`demo-data/${filePrefix}-structure.json`)
@@ -159,6 +193,9 @@ async function createLandscapeSample({
   const dynamicData = JSON.parse(
     await readFile(`demo-data/${filePrefix}-dynamic.json`)
   );
+
+  structureData.landscapeToken = token;
+  initializer?.(structureData, dynamicData);
 
   landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) =>
     res.json(
@@ -169,44 +206,4 @@ async function createLandscapeSample({
   traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) =>
     res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
-}
-
-/**
- * Shuffles array in place. ES6 version
- * @param {Array} a items An array containing the items.
- * https://stackoverflow.com/a/6274381
- */
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function removeRandomTraces(traceArray) {
-  const uniqueTraceIds = [];
-
-  for (const trace of traceArray) {
-    const traceId = trace["traceId"];
-    if (traceId && !uniqueTraceIds.includes(traceId)) {
-      uniqueTraceIds.push(traceId);
-    }
-  }
-
-  // remove random count of uniqueTraceIds
-
-  let itemsToRemove =
-    uniqueTraceIds.length > 1
-      ? Math.floor(Math.random() * uniqueTraceIds.length)
-      : 1;
-
-  let shuffledTraceIdArray = shuffle(uniqueTraceIds);
-  shuffledTraceIdArray.splice(itemsToRemove);
-
-  const randomizedTraces = traceArray.filter((trace) =>
-    shuffledTraceIdArray.includes(trace["traceId"])
-  );
-
-  return randomizedTraces;
 }

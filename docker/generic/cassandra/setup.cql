@@ -25,8 +25,10 @@ CREATE TABLE IF NOT EXISTS explorviz.span_by_traceid
     trace_id        bigint,
     span_id         bigint,
     parent_span_id  bigint,
-    start_time      bigint,
-    end_time        bigint,
+    start_time_s    int,
+    start_time_ns   int,
+    end_time_s      int,
+    end_time_ns     int,
     method_hash     bigint,
     PRIMARY KEY ((landscape_token, trace_id), span_id) // parent_span_id as first clustering key to find parent=0 quickly?
 );
@@ -49,6 +51,8 @@ CREATE TABLE IF NOT EXISTS explorviz.trace_by_time
     landscape_token uuid,
     start_time_s    int,
     start_time_ns   int,
+    end_time_s      int,
+    end_time_ns     int,
     trace_id        bigint,
     PRIMARY KEY ((landscape_token, start_time_s), start_time_ns, trace_id)
 );

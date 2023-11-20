@@ -7,8 +7,7 @@
 version: "3.5"
 
 services:
-
-#region Environment
+  #region Environment
 
   ## Kafka ##
 
@@ -21,28 +20,35 @@ services:
       - "${KAFKA_JMX_PORT}:${KAFKA_JMX_PORT}"
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
-      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka:${KAFKA_INT_PORT},PLAINTEXT_HOST://localhost:${KAFKA_EXT_PORT}'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:${KAFKA_INT_PORT},PLAINTEXT_HOST://localhost:${KAFKA_EXT_PORT}"
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_JMX_PORT: ${KAFKA_JMX_PORT}
       KAFKA_JMX_HOSTNAME: localhost
-      KAFKA_PROCESS_ROLES: 'broker,controller'
+      KAFKA_PROCESS_ROLES: "broker,controller"
       KAFKA_MESSAGE_MAX_BYTES: 10485880
       KAFKA_NODE_ID: 1
-      KAFKA_CONTROLLER_QUORUM_VOTERS: '1@kafka:29093'
-      KAFKA_LISTENERS: 'PLAINTEXT://kafka:${KAFKA_INT_PORT},CONTROLLER://kafka:29093,PLAINTEXT_HOST://0.0.0.0:${KAFKA_EXT_PORT}'
-      KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
-      KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:29093"
+      KAFKA_LISTENERS: "PLAINTEXT://kafka:${KAFKA_INT_PORT},CONTROLLER://kafka:29093,PLAINTEXT_HOST://0.0.0.0:${KAFKA_EXT_PORT}"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
     volumes:
       - kafka-data:/var/lib/kafka/data
       - kafka-secrets:/etc/kafka/secrets
       - ./generic/kafka/kafka_kraft_init.sh:/tmp/update_run.sh
-    command: "bash -c 'if [ ! -f /tmp/update_run.sh ]; then echo \"ERROR: Did you forget the kafka_kraft_init.sh file that came with this docker-compose.yml file?\" && exit 1 ; else /tmp/update_run.sh && /etc/confluent/docker/run ; fi'"
+    command: 'bash -c ''if [ ! -f /tmp/update_run.sh ]; then echo "ERROR: Did you forget the kafka_kraft_init.sh file that came with this docker-compose.yml file?" && exit 1 ; else /tmp/update_run.sh && /etc/confluent/docker/run ; fi'''
     healthcheck:
-      test: ["CMD", "kafka-topics", "--bootstrap-server", "kafka:${KAFKA_INT_PORT}", "--list"]
+      test:
+        [
+          "CMD",
+          "kafka-topics",
+          "--bootstrap-server",
+          "kafka:${KAFKA_INT_PORT}",
+          "--list",
+        ]
       interval: 15s
       timeout: 10s
       retries: 10
@@ -55,7 +61,7 @@ services:
         condition: service_healthy
     environment:
       - KAFKA_INT_PORT
-    entrypoint: [ '/bin/sh', '-c' ]
+    entrypoint: ["/bin/sh", "-c"]
     volumes:
       - init-kafka-data:/var/lib/kafka/data
       - init-kafka-secrets:/etc/kafka/secrets
@@ -83,7 +89,7 @@ services:
     image: otel/opentelemetry-collector
     hostname: otel-collector
     profiles: ["env"]
-    command: [ "--config=/etc/otel-collector-config.yaml" ]
+    command: ["--config=/etc/otel-collector-config.yaml"]
     restart: on-failure
     volumes:
       - ./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml
@@ -109,21 +115,28 @@ services:
       - cassandra:/var/lib/cassandra
     entrypoint: ["/usr/local/bin/custom-entrypoint.sh"]
     healthcheck:
-      test: ["CMD", "cqlsh", "-u cassandra", "-p cassandra" ,"-e describe keyspaces"]
+      test:
+        [
+          "CMD",
+          "cqlsh",
+          "-u cassandra",
+          "-p cassandra",
+          "-e describe keyspaces",
+        ]
       interval: 15s
       timeout: 10s
       retries: 10
 
   init-cassandra:
-      image: cassandra:3.11.14
-      profiles: ["env", "init-env"]
-      depends_on:
-        cassandra:
-          condition: service_healthy
-      volumes:
+    image: cassandra:3.11.14
+    profiles: ["env", "init-env"]
+    depends_on:
+      cassandra:
+        condition: service_healthy
+    volumes:
       - ./generic/cassandra/setup.cql:/setup.cql
       - init-cassandra:/var/lib/cassandra
-      command: "cqlsh cassandra-explorviz -f /setup.cql"
+    command: "cqlsh cassandra-explorviz -f /setup.cql"
 
   ## User-Service ##
 
@@ -137,10 +150,9 @@ services:
       - user-mongo-data:/data/db
       - user-mongo-configdb:/data/configdb
 
-#endregion Environment
+  #endregion Environment
 
-
-#region ExplorViz JVM
+  #region ExplorViz JVM
 
   ## Adapter-Service ##
 
@@ -255,11 +267,11 @@ services:
       - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
       - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
       - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
+      - VSCODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
 
-#endregion ExplorViz JVM
+  #endregion ExplorViz JVM
 
-
-#region ExplorViz Native
+  #region ExplorViz Native
 
   ## Adapter-Service ##
 
@@ -351,9 +363,9 @@ services:
       - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
       - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
 
-#endregion ExplorViz Native
+  #endregion ExplorViz Native
 
-#region monitoring
+  #region monitoring
 
   prometheus:
     hostname: prometheus
@@ -363,10 +375,10 @@ services:
       - ./monitoring/prometheus/:/etc/prometheus/
       - prometheus-data:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
-      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
     expose:
       - ${MONITORING_PROMETHEUS_PORT}
     ports:
@@ -409,12 +421,10 @@ services:
 
 #endregion monitoring
 
-
 #region Volumes + Network
 
 # Delete all ExplorViz volumes:
 # docker volume rm $(docker volume ls -f name=explorviz -q)
-
 
 volumes:
   kafka-data:
@@ -443,5 +453,4 @@ volumes:
 networks:
   default:
     name: explorviz
-
 #endregion Volumes + Network

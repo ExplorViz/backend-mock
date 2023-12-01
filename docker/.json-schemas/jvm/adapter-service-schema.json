@@ -11,21 +11,15 @@
               "QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]
+            "enum": ["EXPLORVIZ_LOG_LVL=DEBUG"]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true"
-            ]
+            "enum": ["EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true"]
           }
         }
       ]

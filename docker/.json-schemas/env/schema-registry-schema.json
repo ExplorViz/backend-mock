@@ -43,11 +43,5 @@
       "items": [{ "enum": ["schema-registry:/etc/schema-registry/secrets"] }]
     }
   },
-  "required": [
-    "image",
-    "ports",
-    "environment",
-    "depends_on",
-    "volumes"
-  ]
+  "required": ["image", "ports", "environment", "depends_on", "volumes"]
 }

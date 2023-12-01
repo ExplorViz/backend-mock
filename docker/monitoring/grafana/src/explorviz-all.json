@@ -81,9 +81,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -581,10 +579,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -770,10 +765,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -957,10 +949,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -1134,10 +1123,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -1312,10 +1298,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -1486,10 +1469,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -1659,10 +1639,7 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    0,
-                    10
-                  ],
+                  "dash": [0, 10],
                   "fill": "dot"
                 }
               }
@@ -2024,9 +2001,7 @@
             "justifyMode": "auto",
             "orientation": "auto",
             "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
+              "calcs": ["lastNotNull"],
               "fields": "",
               "values": false
             },
@@ -2134,9 +2109,7 @@
             "justifyMode": "auto",
             "orientation": "auto",
             "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
+              "calcs": ["lastNotNull"],
               "fields": "",
               "values": false
             },

@@ -1,6 +1,6 @@
 # my global config
 global:
-  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
   evaluation_interval: 15s # By default, scrape targets every 15 seconds.
   # scrape_timeout is set to the global default (10s).
 
@@ -15,14 +15,14 @@ rule_files:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
 
-  - job_name: 'kafka-lag-exporter'
+  - job_name: "kafka-lag-exporter"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
-      - targets: ['kafka-lag-exporter:8000']
+      - targets: ["kafka-lag-exporter:8000"]
 
-  - job_name: 'adapter-service'
-    metrics_path: '/q/metrics'
+  - job_name: "adapter-service"
+    metrics_path: "/q/metrics"
     dns_sd_configs:
       - names:
           - "adapter-service"
@@ -30,10 +30,10 @@ scrape_configs:
         port: 8080
     static_configs:
       - targets:
-        - "host.docker.internal:8087" # dev-mode
+          - "host.docker.internal:8087" # dev-mode
 
-  - job_name: 'landscape-service'
-    metrics_path: '/q/metrics'
+  - job_name: "landscape-service"
+    metrics_path: "/q/metrics"
     dns_sd_configs:
       - names:
           - "landscape-service"
@@ -41,10 +41,10 @@ scrape_configs:
         port: 8080
     static_configs:
       - targets:
-        - "host.docker.internal:8082" # dev-mode
+          - "host.docker.internal:8082" # dev-mode
 
-  - job_name: 'trace-service'
-    metrics_path: '/q/metrics'
+  - job_name: "trace-service"
+    metrics_path: "/q/metrics"
     dns_sd_configs:
       - names:
           - "trace-service"
@@ -52,10 +52,10 @@ scrape_configs:
         port: 8080
     static_configs:
       - targets:
-        - "host.docker.internal:8083" # dev-mode
+          - "host.docker.internal:8083" # dev-mode
 
-  - job_name: 'user-service'
-    metrics_path: '/q/metrics'
+  - job_name: "user-service"
+    metrics_path: "/q/metrics"
     dns_sd_configs:
       - names:
           - "user-service"
@@ -63,10 +63,10 @@ scrape_configs:
         port: 8080
     static_configs:
       - targets:
-        - "host.docker.internal:8084" # dev-mode
+          - "host.docker.internal:8084" # dev-mode
 
-  - job_name: 'push-service'
-    metrics_path: '/q/metrics'
+  - job_name: "push-service"
+    metrics_path: "/q/metrics"
     dns_sd_configs:
       - names:
           - "push-service"
@@ -74,10 +74,10 @@ scrape_configs:
         port: 8080
     static_configs:
       - targets:
-        - "host.docker.internal:8086" # dev-mode
+          - "host.docker.internal:8086" # dev-mode
 
-  - job_name: 'collaboration-service'
-    metrics_path: '/q/metrics'
+  - job_name: "collaboration-service"
+    metrics_path: "/q/metrics"
     dns_sd_configs:
       - names:
           - "push-service"
@@ -85,4 +85,4 @@ scrape_configs:
         port: 8080
     static_configs:
       - targets:
-        - "host.docker.internal:8085" # dev-mode
+          - "host.docker.internal:8085" # dev-mode

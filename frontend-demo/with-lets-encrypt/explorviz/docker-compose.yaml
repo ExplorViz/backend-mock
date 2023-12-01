@@ -1,11 +1,11 @@
 version: "3.5"
 services:
-
   collaboration-service:
-    container_name: collaboration-service
-    image: explorviz/collaboration-service-jvm:latest
+    hostname: collaboration-service-js
+    image: explorviz/collaboration-service-js:latest
     environment:
-      - EXPLORVIZ_LOG_LVL=DEBUG
+      - REDIS_HOST=redis-collab
+      - REDIS_PORT=6379
 
   frontend:
     container_name: explorviz-frontend
@@ -19,7 +19,6 @@ services:
       - TRACE_URL=http://${TRACE_HOSTNAME}:${TRACE_PORT}
       - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
       - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
-      - COLLABORATION_SOCKET_PATH=/v2/vr/
       - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
       - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
       - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}

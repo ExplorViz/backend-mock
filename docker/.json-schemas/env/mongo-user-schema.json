@@ -2,28 +2,22 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "mongo:6.0" },
-    "container_name" : {"const": "user-mongo"},
+    "container_name": { "const": "user-mongo" },
     "ports": {
-      "type" : "array",
-      "items": [
-        { "enum" : ["${MONGO_USER_SERV_PORT}:27017"]}
-      ]
+      "type": "array",
+      "items": [{ "enum": ["${MONGO_USER_SERV_PORT}:27017"] }]
     },
     "volumes": {
-      "type" : "array",
+      "type": "array",
       "allOf": [
         {
           "contains": {
-            "enum": [
-              "user-mongo-data:/data/db"
-            ]
+            "enum": ["user-mongo-data:/data/db"]
           }
         },
         {
           "contains": {
-            "enum": [
-              "user-mongo-configdb:/data/configdb"
-            ]
+            "enum": ["user-mongo-configdb:/data/configdb"]
           }
         }
       ]

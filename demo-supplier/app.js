@@ -6,7 +6,7 @@ const {
   removeRandomTraces,
   recursivelyRandomizeAllHashCodesOfPackages,
   copyPackageAndTraces,
-  createRandomHex
+  createRandomHex,
 } = require("./utils.js");
 
 const landscapeApp = createExpressApplication(8082);
@@ -68,19 +68,22 @@ createLandscapeSample({
     app.packages.unshift({
       name: "changing",
       subPackages: [],
-      classes: Array.from({length:12}, () => ({
+      classes: Array.from({ length: 12 }, () => ({
         name: "C" + createRandomHex(6),
-        methods: []
-      }))
+        methods: [],
+      })),
     });
 
-    for (let i=0; i<15; i++) {
-      const { packageCopy, newTraces } = copyPackageAndTraces(package, originalTraces);
+    for (let i = 0; i < 15; i++) {
+      const { packageCopy, newTraces } = copyPackageAndTraces(
+        package,
+        originalTraces,
+      );
 
       app.packages.push({
         name: `petclinic${i}`,
         subPackages: [packageCopy],
-        classes: []
+        classes: [],
       });
 
       traces.push(...newTraces);
@@ -88,9 +91,9 @@ createLandscapeSample({
   },
   structureModifier: (structure) => {
     const changingPackage = structure.nodes[0].applications[0].packages[0];
-    changingPackage.classes.forEach(c => c.name = "C" + createRandomHex(6));
+    changingPackage.classes.forEach((c) => (c.name = "C" + createRandomHex(6)));
     return structure;
-  }
+  },
 });
 
 {
@@ -112,7 +115,7 @@ createLandscapeSample({
 
       const newStructure = addTopLevelPackageToFirstApplication(
         package,
-        previousStructure
+        previousStructure,
       );
       previousStructure = newStructure;
 
@@ -122,7 +125,7 @@ createLandscapeSample({
 
   function addTopLevelPackageToFirstApplication(
     topLevelPackage,
-    structureRecord
+    structureRecord,
   ) {
     const deepCopyPackage = structuredClone(topLevelPackage);
     recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
@@ -180,13 +183,13 @@ async function createLandscapeSample({
   token,
   traceModifier,
   structureModifier,
-  initializer
+  initializer,
 }) {
   const structureData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-structure.json`)
+    await readFile(`demo-data/${filePrefix}-structure.json`),
   );
   const dynamicData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-dynamic.json`)
+    await readFile(`demo-data/${filePrefix}-dynamic.json`),
   );
 
   structureData.landscapeToken = token;
@@ -194,11 +197,11 @@ async function createLandscapeSample({
 
   landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) =>
     res.json(
-      structureModifier ? structureModifier(structureData) : structureData
-    )
+      structureModifier ? structureModifier(structureData) : structureData,
+    ),
   );
 
   traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) =>
-    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
+    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData),
   );
 }

@@ -1,12 +1,11 @@
 inspectit:
-
   tags:
     extra:
       landscape_token: ${LANDSCAPE_TOKEN_ID}
       token_secret: ${LANDSCAPE_TOKEN_SECRET}
-      application_name: 'petclinic-api-gateway'
+      application_name: "petclinic-api-gateway"
       application_instance_id: 0
-      application_language: 'java'
+      application_language: "java"
 
   tracing:
     add-common-tags: ALWAYS

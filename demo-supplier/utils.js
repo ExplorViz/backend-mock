@@ -1,5 +1,6 @@
 exports.removeRandomTraces = removeRandomTraces;
-exports.recursivelyRandomizeAllHashCodesOfPackages = recursivelyRandomizeAllHashCodesOfPackages;
+exports.recursivelyRandomizeAllHashCodesOfPackages =
+  recursivelyRandomizeAllHashCodesOfPackages;
 exports.copyPackageAndTraces = copyPackageAndTraces;
 exports.createRandomHex = createRandomHex;
 
@@ -17,7 +18,7 @@ function shuffle(a) {
 }
 
 function removeRandomTraces(traceArray) {
-  const uniqueTraceIds = new Set(traceArray.map(trace => trace["traceId"]));
+  const uniqueTraceIds = new Set(traceArray.map((trace) => trace["traceId"]));
 
   // remove random count of uniqueTraceIds
 
@@ -31,7 +32,7 @@ function removeRandomTraces(traceArray) {
   const remainingTraceIds = new Set(shuffledTraceIdArray);
 
   const randomizedTraces = traceArray.filter((trace) =>
-    remainingTraceIds.has(trace["traceId"])
+    remainingTraceIds.has(trace["traceId"]),
   );
 
   return randomizedTraces;
@@ -44,7 +45,10 @@ function removeRandomTraces(traceArray) {
  * @param {Map<string, string> | undefined} hashMap
  * @returns {Map<string, string> | undefined}
  */
-function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord, hashMap) {
+function recursivelyRandomizeAllHashCodesOfPackages(
+  topLevelPackageRecord,
+  hashMap,
+) {
   for (let clazz of topLevelPackageRecord.classes) {
     for (let method of clazz.methods) {
       const newHash = createRandomHex(64);
@@ -62,11 +66,14 @@ function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord, hashM
   }
 
   return hashMap;
-};
+}
 
 function copyPackageAndTraces(package, traces) {
   const packageCopy = structuredClone(package);
-  const hashMap = recursivelyRandomizeAllHashCodesOfPackages(packageCopy, new Map());
+  const hashMap = recursivelyRandomizeAllHashCodesOfPackages(
+    packageCopy,
+    new Map(),
+  );
   const newTraces = duplicateTraces(traces);
 
   // Switch traces to the new package:
@@ -81,9 +88,9 @@ function copyPackageAndTraces(package, traces) {
 
   return {
     packageCopy,
-    newTraces
+    newTraces,
   };
-};
+}
 
 function duplicateTraces(traces) {
   const tracesCopy = structuredClone(traces);
@@ -126,7 +133,7 @@ function duplicateTraces(traces) {
  */
 function createRandomHex(length) {
   let id = "";
-  for (let i=0; i<length; i++) {
+  for (let i = 0; i < length; i++) {
     id += Math.floor(Math.random() * 16).toString(16);
   }
   return id;

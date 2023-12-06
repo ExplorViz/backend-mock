@@ -36,10 +36,10 @@
         "user-service-jvm": {
           "$ref": "file:docker/.json-schemas/jvm/user-service-schema.json"
         },
-        "collaboration-service-jvm": {
+        "collaboration-service-js": {
           "$ref": "file:docker/.json-schemas/jvm/collaboration-service-schema.json"
         },
-        "frontend-dev": {
+        "frontend": {
           "$ref": "file:docker/.json-schemas/jvm/frontend-schema.json"
         },
         "adapter-service": {
@@ -53,12 +53,6 @@
         },
         "user-service": {
           "$ref": "file:docker/.json-schemas/native/user-service-schema.json"
-        },
-        "collaboration-service": {
-          "$ref": "file:docker/.json-schemas/native/collaboration-service-schema.json"
-        },
-        "frontend": {
-          "$ref": "file:docker/.json-schemas/native/frontend-schema.json"
         }
       },
       "required": [
@@ -69,14 +63,12 @@
         "landscape-service-jvm",
         "trace-service-jvm",
         "user-service-jvm",
-        "collaboration-service-jvm",
-        "frontend-dev",
+        "collaboration-service-js",
+        "frontend",
         "adapter-service",
         "landscape-service",
         "trace-service",
-        "user-service",
-        "collaboration-service",
-        "frontend"
+        "user-service"
       ]
     },
     "volumes": {

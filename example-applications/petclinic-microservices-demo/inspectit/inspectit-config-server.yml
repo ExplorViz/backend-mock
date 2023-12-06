@@ -1,12 +1,11 @@
 inspectit:
-
   tags:
     extra:
       landscape_token: ${LANDSCAPE_TOKEN_ID}
       token_secret: ${LANDSCAPE_TOKEN_SECRET}
-      application_name: 'petclinic-config-server'
+      application_name: "petclinic-config-server"
       application_instance_id: 0
-      application_language: 'java'
+      application_language: "java"
 
   tracing:
     add-common-tags: ALWAYS
@@ -46,7 +45,8 @@ inspectit:
 
   exporters:
     tracing:
-      open-census-agent:
-        address: "oc-collector:55678"
-        service-name: "OC Agent Local"
-        use-insecure: true
+      service-name: "Ocelot Otel Exporter"
+      otlp:
+        enabled: true
+        endpoint: "http://otel-collector:55678"
+        protocol: grpc

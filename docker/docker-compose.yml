@@ -150,7 +150,57 @@ services:
       - user-mongo-data:/data/db
       - user-mongo-configdb:/data/configdb
 
+  ## Collaboration-Service-Js ##
+
+  redis-collab:
+    image: redis:7.2.2
+    ports:
+      - "6379:6379"
+
   #endregion Environment
+
+  #region ExplorViz General
+
+  ## Collaboration-Service ##
+
+  collaboration-service-js:
+    hostname: collaboration-service-js
+    image: explorviz/collaboration-service-js:latest
+    profiles: ["jvm", "native"]
+    #ports:
+    #- ${COLLABORATION_PORT}:4444
+    environment:
+      - REDIS_HOST=redis-collab
+      - REDIS_PORT=6379
+
+  ## Frontend ##
+
+  frontend:
+    hostname: explorviz-frontend
+    #image: explorviz/explorviz-frontend:dev
+    image: explorviz/explorviz-frontend:dev-noauth
+    profiles: ["jvm", "native"]
+    depends_on:
+      - landscape-service-jvm
+      - trace-service-jvm
+      - user-service-jvm
+      - collaboration-service-js
+    ports:
+      - ${FRONTEND_PORT}:80
+    environment:
+      - FRONTEND_HOST_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
+      - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
+      - LANDSCAPE_URL=http://${LANDSCAPE_HOSTNAME}:${LANDSCAPE_PORT}
+      - TRACE_URL=http://${TRACE_HOSTNAME}:${TRACE_PORT}
+      - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
+      - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
+      - VSCODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
+      - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
+      - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
+      - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
+      - NO_AUTH_USER_NICKNAME=${NO_AUTH_USER_NICKNAME}
+
+  #endregion ExplorViz General
 
   #region ExplorViz JVM
 
@@ -232,43 +282,6 @@ services:
       - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017
       - EXPLORVIZ_LOG_LVL=DEBUG
 
-  ## Collaboration-Service ##
-
-  collaboration-service-jvm:
-    hostname: collaboration-service
-    image: explorviz/collaboration-service-jvm:latest
-    profiles: ["jvm"]
-    #ports:
-    #- ${COLLABORATION_PORT}:4444
-    environment:
-      - EXPLORVIZ_LOG_LVL=DEBUG
-
-  ## Frontend ##
-
-  frontend-dev:
-    hostname: explorviz-frontend
-    #image: explorviz/explorviz-frontend:dev
-    image: explorviz/explorviz-frontend:dev-noauth
-    profiles: ["jvm"]
-    depends_on:
-      - span-service-jvm
-      - user-service-jvm
-      - collaboration-service-jvm
-    ports:
-      - ${FRONTEND_PORT}:80
-    environment:
-      - FRONTEND_HOST_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
-      - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
-      - LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
-      - TRACE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
-      - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
-      - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
-      - COLLABORATION_SOCKET_PATH=/v2/vr/
-      - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
-      - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
-      - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
-      - VSCODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
-
   #endregion ExplorViz JVM
 
   #region ExplorViz Native
@@ -327,41 +340,6 @@ services:
       - MP_MESSAGING_OUTGOING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017
       - EXPLORVIZ_LOG_LVL=DEBUG
-
-  ## Collaboration-Service ##
-
-  collaboration-service:
-    hostname: collaboration-service
-    image: explorviz/collaboration-service-native:latest
-    profiles: ["native"]
-    #ports:
-    #- ${COLLABORATION_PORT}:4444
-    environment:
-      - EXPLORVIZ_LOG_LVL=DEBUG
-
-  ## Frontend ##
-
-  frontend:
-    hostname: explorviz-frontend
-    image: explorviz/explorviz-frontend:dev
-    profiles: ["native"]
-    depends_on:
-      - span-service
-      - user-service
-      - collaboration-service
-    ports:
-      - ${FRONTEND_PORT}:80
-    environment:
-      - FRONTEND_HOST_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
-      - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
-      - LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
-      - TRACE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
-      - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
-      - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
-      - COLLABORATION_SOCKET_PATH=/v2/vr/
-      - AUTH0_LOGO_URL=${AUTH0_LOGO_URL}
-      - AUTH0_CALLBACK_URL=${AUTH0_CALLBACK_URL}
-      - AUTH0_LOGOUT_URL=${AUTH0_LOGOUT_URL}
 
   #endregion ExplorViz Native
 

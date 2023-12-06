@@ -43,26 +43,26 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
-Use `kind.py setup <services>` to deploy the software required software for all services given in `<services>`. Multiple services can be given at once, e.g.,  `kind.py setup kafka adapter landscape`. Apache Kafka and the schema registry are deployed separately from services, with `kind.py setup kafka`. Additionally, `kind.py setup all` can be used to deploy the complete software stack for all services.
+Use `kind.py setup <services>` to deploy the software required software for all services given in `<services>`. Multiple services can be given at once, e.g., `kind.py setup kafka adapter landscape`. Apache Kafka and the schema registry are deployed separately from services, with `kind.py setup kafka`. Additionally, `kind.py setup all` can be used to deploy the complete software stack for all services.
 
 Based on the services given, the following software is deployed
 
-Service     | Deployed Software
----         | ---
-kafka       | Apache Kafka with single broker, Confluent Schema Registry  (additionally creates all topics)
-adapter     | OpenCensus Collector, Redis (Token Cache)
-landscape   | Apache Cassandra (Landscape Structure)
-trace       | Apache Cassandra (Traces)
-user        | MongoDB (Token)
-all         | All of the above
+| Service   | Deployed Software                                                                            |
+| --------- | -------------------------------------------------------------------------------------------- |
+| kafka     | Apache Kafka with single broker, Confluent Schema Registry (additionally creates all topics) |
+| adapter   | OpenCensus Collector, Redis (Token Cache)                                                    |
+| landscape | Apache Cassandra (Landscape Structure)                                                       |
+| trace     | Apache Cassandra (Traces)                                                                    |
+| user      | MongoDB (Token)                                                                              |
+| all       | All of the above                                                                             |
 
 ## Ports
 
 The following ports are forwarded to the host system.
 
-Port    | Description
----     | ---
-32680   | HTTP API of the Landscape-Service
-32681   | HTTP API of the Trace-Service
-32682   | HTTP API of the User-Service
-31500   | Endpoint of the OpenCensus Collector
+| Port  | Description                          |
+| ----- | ------------------------------------ |
+| 32680 | HTTP API of the Landscape-Service    |
+| 32681 | HTTP API of the Trace-Service        |
+| 32682 | HTTP API of the User-Service         |
+| 31500 | Endpoint of the OpenCensus Collector |

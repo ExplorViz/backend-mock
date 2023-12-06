@@ -3,16 +3,14 @@
 # docker-compose --env-file .env-custom down -v
 
 version: "3.5"
-
 services:
   ocelot-agent:
     image: inspectit/inspectit-ocelot-agent:2.1.1
-    container_name: ocelot-agent-petclinic-microservices
-    #mem_limit: 128M
-    volumes:
-      - agent-vol:/agent
+    container_name: ocelot-agent-petclinic
     networks:
       - explorviz
+    volumes:
+      - agent-vol:/agent
 
   config-server:
     image: explorviz/spring-petclinic-config-server
@@ -23,19 +21,18 @@ services:
     environment:
       - LANDSCAPE_TOKEN_ID=${LANDSCAPE_TOKEN_ID}
       - LANDSCAPE_TOKEN_SECRET=${LANDSCAPE_TOKEN_SECRET}
+    depends_on:
+      - ocelot-agent
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-config-server.yml:/agent/inspectit.yml
     ports:
       - 18888:8888
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        java
-        -Dinspectit.config.file-based.path="/agent/"
-        -javaagent:/agent/inspectit-ocelot-agent.jar
-        org.springframework.boot.loader.JarLauncher',
+        'java -Dinspectit.config.file-based.path="/agent/"-javaagent:/agent/inspectit-ocelot-agent.jar org.springframework.boot.loader.JarLauncher',
       ]
 
   discovery-server:
@@ -52,13 +49,11 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-discovery-server.yml:/agent/inspectit.yml
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- &&
-        java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/"
-        org.springframework.boot.loader.JarLauncher',
+        './dockerize -wait=tcp://config-server:8888 -timeout=60s -- && java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/" org.springframework.boot.loader.JarLauncher',
       ]
     ports:
       - 18761:8761
@@ -78,13 +73,11 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-customer-service.yml:/agent/inspectit.yml
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- &&
-        java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/"
-        org.springframework.boot.loader.JarLauncher',
+        './dockerize -wait=tcp://config-server:8888 -timeout=60s -- && java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/" org.springframework.boot.loader.JarLauncher',
       ]
     ports:
       - 18081:8081
@@ -104,13 +97,11 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-visits-service.yml:/agent/inspectit.yml
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- &&
-        java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/"
-        org.springframework.boot.loader.JarLauncher',
+        './dockerize -wait=tcp://config-server:8888 -timeout=60s -- && java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/" org.springframework.boot.loader.JarLauncher',
       ]
     ports:
       - 18082:8082
@@ -130,13 +121,11 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-vets-service.yml:/agent/inspectit.yml
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- &&
-        java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/"
-        org.springframework.boot.loader.JarLauncher',
+        './dockerize -wait=tcp://config-server:8888 -timeout=60s -- && java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/" org.springframework.boot.loader.JarLauncher',
       ]
     ports:
       - 18083:8083
@@ -156,13 +145,11 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-api-gateway.yml:/agent/inspectit.yml
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- &&
-        java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/"
-        org.springframework.boot.loader.JarLauncher',
+        './dockerize -wait=tcp://config-server:8888 -timeout=60s -- && java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/" org.springframework.boot.loader.JarLauncher',
       ]
     ports:
       - 18080:8080
@@ -182,13 +169,11 @@ services:
     volumes:
       - agent-vol:/agent
       - ./inspectit/inspectit-admin-server.yml:/agent/inspectit.yml
-    entrypoint: [
+    entrypoint:
+      [
         "sh",
         "-c",
-        '
-        ./dockerize -wait=tcp://config-server:8888 -timeout=60s -- &&
-        java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/"
-        org.springframework.boot.loader.JarLauncher',
+        './dockerize -wait=tcp://config-server:8888 -timeout=60s -- && java -javaagent:/agent/inspectit-ocelot-agent.jar -Dinspectit.config.file-based.path="/agent/" org.springframework.boot.loader.JarLauncher',
       ]
     ports:
       - 19090:9090

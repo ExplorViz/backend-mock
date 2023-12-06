@@ -16,13 +16,13 @@
         {
           "contains": {
             "enum": [
-              "LANDSCAPE_URL=http://${LANDSCAPE_HOSTNAME}:${LANDSCAPE_PORT}"
+              "LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}"
             ]
           }
         },
         {
           "contains": {
-            "enum": ["TRACE_URL=http://${TRACE_HOSTNAME}:${TRACE_PORT}"]
+            "enum": ["TRACE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}"]
           }
         },
         {

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "redis:7.2.2" },
+    "expose": {
+      "type": "array",
+      "items": [{ "const": 6379 }]
+    },
+    "volumes": {
+      "type": "array",
+      "items": [{ "enum": ["schema-registry:/etc/schema-registry/secrets"] }]
+    }
+  },
+  "required": ["image", "expose"]
+}

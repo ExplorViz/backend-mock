@@ -154,8 +154,8 @@ services:
 
   redis-collab:
     image: redis:7.2.2
-    ports:
-      - "6379:6379"
+    expose:
+      - 6379
 
   #endregion Environment
 
@@ -181,8 +181,7 @@ services:
     image: explorviz/explorviz-frontend:dev-noauth
     profiles: ["jvm", "native"]
     depends_on:
-      - landscape-service-jvm
-      - trace-service-jvm
+      - span-service-jvm
       - user-service-jvm
       - collaboration-service-js
     ports:
@@ -190,8 +189,8 @@ services:
     environment:
       - FRONTEND_HOST_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
       - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
-      - LANDSCAPE_URL=http://${LANDSCAPE_HOSTNAME}:${LANDSCAPE_PORT}
-      - TRACE_URL=http://${TRACE_HOSTNAME}:${TRACE_PORT}
+      - LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
+      - TRACE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
       - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
       - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
       - VSCODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}

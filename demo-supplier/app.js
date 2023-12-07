@@ -23,11 +23,6 @@ const userRootUrl = "/user/:uid/token";
 })();
 
 createLandscapeSample({
-  filePrefix: "fibonacci",
-  token: "17844195-6144-4254-a17b-0f7fb49adb0a",
-});
-
-createLandscapeSample({
   filePrefix: "petclinic-distributed",
   token: "26844195-7235-4254-a17b-0f7fb49adb0a",
 });
@@ -77,7 +72,7 @@ createLandscapeSample({
     for (let i = 0; i < 15; i++) {
       const { packageCopy, newTraces } = copyPackageAndTraces(
         package,
-        originalTraces,
+        originalTraces
       );
 
       app.packages.push({
@@ -115,7 +110,7 @@ createLandscapeSample({
 
       const newStructure = addTopLevelPackageToFirstApplication(
         package,
-        previousStructure,
+        previousStructure
       );
       previousStructure = newStructure;
 
@@ -125,7 +120,7 @@ createLandscapeSample({
 
   function addTopLevelPackageToFirstApplication(
     topLevelPackage,
-    structureRecord,
+    structureRecord
   ) {
     const deepCopyPackage = structuredClone(topLevelPackage);
     recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
@@ -186,10 +181,10 @@ async function createLandscapeSample({
   initializer,
 }) {
   const structureData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-structure.json`),
+    await readFile(`demo-data/${filePrefix}-structure.json`)
   );
   const dynamicData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-dynamic.json`),
+    await readFile(`demo-data/${filePrefix}-dynamic.json`)
   );
 
   structureData.landscapeToken = token;
@@ -197,11 +192,11 @@ async function createLandscapeSample({
 
   landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) =>
     res.json(
-      structureModifier ? structureModifier(structureData) : structureData,
-    ),
+      structureModifier ? structureModifier(structureData) : structureData
+    )
   );
 
   traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) =>
-    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData),
+    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
 }

@@ -178,8 +178,7 @@ services:
   frontend:
     hostname: explorviz-frontend
     #image: explorviz/explorviz-frontend:dev
-    #image: explorviz/explorviz-frontend:dev-noauth
-    image: explorviz/explorviz-frontend:72bb4d1f-noauth
+    image: explorviz/explorviz-frontend:dev-noauth
     profiles: ["jvm", "native"]
     depends_on:
       - span-service-jvm
@@ -229,7 +228,7 @@ services:
 
   span-service-jvm:
     hostname: span-service
-    image: explorviz/span-service-jvm:1201-209829da
+    image: explorviz/span-service-jvm:latest
     profiles: ["jvm"]
     depends_on:
       init-kafka:

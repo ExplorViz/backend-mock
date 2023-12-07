@@ -22,7 +22,7 @@
                       "methods": [
                         {
                           "name": "method1Sub",
-                          "hashCode": "app-1-method-sub"
+                          "methodHash": "app-1-method-sub"
                         }
                       ]
                     }
@@ -35,7 +35,7 @@
                   "methods": [
                     {
                       "name": "method1",
-                      "hashCode": "app-1-method"
+                      "methodHash": "app-1-method"
                     }
                   ]
                 }
@@ -66,7 +66,7 @@
                       "methods": [
                         {
                           "name": "method2Sub",
-                          "hashCode": "app-2-method-sub"
+                          "methodHash": "app-2-method-sub"
                         }
                       ]
                     }
@@ -79,7 +79,7 @@
                   "methods": [
                     {
                       "name": "method2",
-                      "hashCode": "app-2-method"
+                      "methodHash": "app-2-method"
                     }
                   ]
                 }
@@ -101,7 +101,7 @@
                   "methods": [
                     {
                       "name": "method-2-2",
-                      "hashCode": "app-2-2-method"
+                      "methodHash": "app-2-2-method"
                     }
                   ]
                 }
@@ -129,7 +129,7 @@
                   "methods": [
                     {
                       "name": "method3",
-                      "hashCode": "app-3-method"
+                      "methodHash": "app-3-method"
                     }
                   ]
                 }
@@ -169,19 +169,19 @@
                                   "methods": [
                                     {
                                       "name": "getSpecialtiesInternal",
-                                      "hashCode": "0037afe3ae49a59223eefde2380c127d55636271a8171959d5f0c6395176547f"
+                                      "methodHash": "0037afe3ae49a59223eefde2380c127d55636271a8171959d5f0c6395176547f"
                                     },
                                     {
                                       "name": "getSpecialties",
-                                      "hashCode": "99460736f622b0c4918ee75e84a80618d479e237f0820e910007cc8477468768"
+                                      "methodHash": "99460736f622b0c4918ee75e84a80618d479e237f0820e910007cc8477468768"
                                     },
                                     {
                                       "name": "getNrOfSpecialties",
-                                      "hashCode": "b407139914ab6192d4d16e12e67cab20cff6bdc976e7db749d21c2448885cd1e"
+                                      "methodHash": "b407139914ab6192d4d16e12e67cab20cff6bdc976e7db749d21c2448885cd1e"
                                     },
                                     {
                                       "name": "<init>",
-                                      "hashCode": "ee024f710488def1f768937e35c6a5017dbaae027c66e90c371913a31706f1a9"
+                                      "methodHash": "ee024f710488def1f768937e35c6a5017dbaae027c66e90c371913a31706f1a9"
                                     }
                                   ]
                                 },
@@ -190,7 +190,7 @@
                                   "methods": [
                                     {
                                       "name": "<init>",
-                                      "hashCode": "1301af06d665e0708b236d232ac946de4c3a297e3d7e98469621145708d124ef"
+                                      "methodHash": "1301af06d665e0708b236d232ac946de4c3a297e3d7e98469621145708d124ef"
                                     }
                                   ]
                                 },
@@ -199,7 +199,7 @@
                                   "methods": [
                                     {
                                       "name": "showVetList",
-                                      "hashCode": "4a7bc48cc3365d80f04a77075f454bb0b4623f7663736fcfac891138eec394c2"
+                                      "methodHash": "4a7bc48cc3365d80f04a77075f454bb0b4623f7663736fcfac891138eec394c2"
                                     }
                                   ]
                                 },
@@ -208,11 +208,11 @@
                                   "methods": [
                                     {
                                       "name": "<init>",
-                                      "hashCode": "74889a4e5af552356bd62c67dd0f920d5d524b31273bad88127291c215b7828b"
+                                      "methodHash": "74889a4e5af552356bd62c67dd0f920d5d524b31273bad88127291c215b7828b"
                                     },
                                     {
                                       "name": "getVetList",
-                                      "hashCode": "c08a9a5653bb88de1d1848f5198642fb54eacb50bfb67167c1d84b02fb65e20e"
+                                      "methodHash": "c08a9a5653bb88de1d1848f5198642fb54eacb50bfb67167c1d84b02fb65e20e"
                                     }
                                   ]
                                 }
@@ -227,7 +227,7 @@
                                   "methods": [
                                     {
                                       "name": "<init>",
-                                      "hashCode": "0c4c9f4c5d726736552e07820af03c132ea302b96ddaf090dddf291bb541dabe"
+                                      "methodHash": "0c4c9f4c5d726736552e07820af03c132ea302b96ddaf090dddf291bb541dabe"
                                     }
                                   ]
                                 },
@@ -236,35 +236,35 @@
                                   "methods": [
                                     {
                                       "name": "processCreationForm",
-                                      "hashCode": "1372a3fd5c6217ce4f2b058921676786d3e2844791749e7d3fccccbb951261d1"
+                                      "methodHash": "1372a3fd5c6217ce4f2b058921676786d3e2844791749e7d3fccccbb951261d1"
                                     },
                                     {
                                       "name": "initFindForm",
-                                      "hashCode": "312f0d7f852fbcb6a319cdf8a4a6c8764562bddb32ed86b4357b2f043a92ebc5"
+                                      "methodHash": "312f0d7f852fbcb6a319cdf8a4a6c8764562bddb32ed86b4357b2f043a92ebc5"
                                     },
                                     {
                                       "name": "processFindForm",
-                                      "hashCode": "33992ac2e163b6172f6b2a794e06bd20244bb28a6816d32c5d7200d6bfc30eb2"
+                                      "methodHash": "33992ac2e163b6172f6b2a794e06bd20244bb28a6816d32c5d7200d6bfc30eb2"
                                     },
                                     {
                                       "name": "initUpdateOwnerForm",
-                                      "hashCode": "42b0d6c85bb94022ec003027f7da36608127bb637c24f4029f8fe1222579e7a9"
+                                      "methodHash": "42b0d6c85bb94022ec003027f7da36608127bb637c24f4029f8fe1222579e7a9"
                                     },
                                     {
                                       "name": "showOwner",
-                                      "hashCode": "5f5ce91e2cbc7cef9dde22281bf4d237754de2daa75c5712c0d18caa7be16dcc"
+                                      "methodHash": "5f5ce91e2cbc7cef9dde22281bf4d237754de2daa75c5712c0d18caa7be16dcc"
                                     },
                                     {
                                       "name": "processUpdateOwnerForm",
-                                      "hashCode": "85e6b086a9f66e62c84f7360ad289f39a189807b35b35767f23950e594746826"
+                                      "methodHash": "85e6b086a9f66e62c84f7360ad289f39a189807b35b35767f23950e594746826"
                                     },
                                     {
                                       "name": "setAllowedFields",
-                                      "hashCode": "9552ba1afee4257924dc6e39510912e34eaa586da94c0335f9f24db3e611a077"
+                                      "methodHash": "9552ba1afee4257924dc6e39510912e34eaa586da94c0335f9f24db3e611a077"
                                     },
                                     {
                                       "name": "initCreationForm",
-                                      "hashCode": "9c480f8219140cb03f745b2bae9a21e3b744aef3e4221c02c0afedccddc5f94b"
+                                      "methodHash": "9c480f8219140cb03f745b2bae9a21e3b744aef3e4221c02c0afedccddc5f94b"
                                     }
                                   ]
                                 },
@@ -273,27 +273,27 @@
                                   "methods": [
                                     {
                                       "name": "getVisits",
-                                      "hashCode": "16906f814c6a14bb38f03c953e59430b5e7eef94d83ae1e50d4a9d6ef32236d7"
+                                      "methodHash": "16906f814c6a14bb38f03c953e59430b5e7eef94d83ae1e50d4a9d6ef32236d7"
                                     },
                                     {
                                       "name": "getType",
-                                      "hashCode": "3baa0a733c010015452d7963caa1af4981cb5c6da3170aeb61d422810eee5ae8"
+                                      "methodHash": "3baa0a733c010015452d7963caa1af4981cb5c6da3170aeb61d422810eee5ae8"
                                     },
                                     {
                                       "name": "<init>",
-                                      "hashCode": "5d2f220befd648b08bd47f523285de2b3d7c903318f21308a6af532a1cf3b268"
+                                      "methodHash": "5d2f220befd648b08bd47f523285de2b3d7c903318f21308a6af532a1cf3b268"
                                     },
                                     {
                                       "name": "getBirthDate",
-                                      "hashCode": "922e730ddb3cabc91f1e01a729b898fe501c7402597ba918ef87387d2c155003"
+                                      "methodHash": "922e730ddb3cabc91f1e01a729b898fe501c7402597ba918ef87387d2c155003"
                                     },
                                     {
                                       "name": "setVisitsInternal",
-                                      "hashCode": "9a35e710d700a332aaddaf734c8602a046bb06da21998b25c2906638723bdcd6"
+                                      "methodHash": "9a35e710d700a332aaddaf734c8602a046bb06da21998b25c2906638723bdcd6"
                                     },
                                     {
                                       "name": "getVisitsInternal",
-                                      "hashCode": "b4f7ddc2be73749052a8badf48d6a9e90a4c890133e5007e2cb5e85ca430b48a"
+                                      "methodHash": "b4f7ddc2be73749052a8badf48d6a9e90a4c890133e5007e2cb5e85ca430b48a"
                                     }
                                   ]
                                 },
@@ -302,39 +302,39 @@
                                   "methods": [
                                     {
                                       "name": "getPets",
-                                      "hashCode": "3eca334b5925e211d88aa926f33809d8dd839173179a3df1bbed2ed1ddc78e38"
+                                      "methodHash": "3eca334b5925e211d88aa926f33809d8dd839173179a3df1bbed2ed1ddc78e38"
                                     },
                                     {
                                       "name": "getTelephone",
-                                      "hashCode": "67ee8f6baa0e02043286cddd27e743706a289f1b3b091c321922326f3a1dad73"
+                                      "methodHash": "67ee8f6baa0e02043286cddd27e743706a289f1b3b091c321922326f3a1dad73"
                                     },
                                     {
                                       "name": "setAddress",
-                                      "hashCode": "70406cdda0c5bef5f33bb01557b4f8f173cf68b41ad32da6fd0ca68eea9e09a3"
+                                      "methodHash": "70406cdda0c5bef5f33bb01557b4f8f173cf68b41ad32da6fd0ca68eea9e09a3"
                                     },
                                     {
                                       "name": "getCity",
-                                      "hashCode": "80f52c3e570640f240af748b20a9170447d416d1caca75546617f2f30cce19a5"
+                                      "methodHash": "80f52c3e570640f240af748b20a9170447d416d1caca75546617f2f30cce19a5"
                                     },
                                     {
                                       "name": "getPetsInternal",
-                                      "hashCode": "834c2ac553372d194f3506f34761311c03038c3bad20e5bbedb5fc278bb76a4e"
+                                      "methodHash": "834c2ac553372d194f3506f34761311c03038c3bad20e5bbedb5fc278bb76a4e"
                                     },
                                     {
                                       "name": "setCity",
-                                      "hashCode": "84cf0102568bf8693d3d7fba528c9c10682b9180c033071e7deb5e033ca78d1a"
+                                      "methodHash": "84cf0102568bf8693d3d7fba528c9c10682b9180c033071e7deb5e033ca78d1a"
                                     },
                                     {
                                       "name": "setTelephone",
-                                      "hashCode": "a626306313a35d259704a16e9c67f2237650008ab944a8f6ae1f2f6bbf1d62ae"
+                                      "methodHash": "a626306313a35d259704a16e9c67f2237650008ab944a8f6ae1f2f6bbf1d62ae"
                                     },
                                     {
                                       "name": "<init>",
-                                      "hashCode": "b3778f2ad39d46f47eb03cbfbbfaf1146ccc9aecf487ebde17ed2a8860e493c3"
+                                      "methodHash": "b3778f2ad39d46f47eb03cbfbbfaf1146ccc9aecf487ebde17ed2a8860e493c3"
                                     },
                                     {
                                       "name": "getAddress",
-                                      "hashCode": "d3bc4f9e89960511533f5f7243f12ecf5f46ed6313b62bc888e539738f31bd02"
+                                      "methodHash": "d3bc4f9e89960511533f5f7243f12ecf5f46ed6313b62bc888e539738f31bd02"
                                     }
                                   ]
                                 }
@@ -349,19 +349,19 @@
                                   "methods": [
                                     {
                                       "name": "setId",
-                                      "hashCode": "4cbf831632abf4e64627396a312c8387179bdd013e87fbea9550bf785bd0e88f"
+                                      "methodHash": "4cbf831632abf4e64627396a312c8387179bdd013e87fbea9550bf785bd0e88f"
                                     },
                                     {
                                       "name": "getId",
-                                      "hashCode": "73dd230f414632478b20448f3e4fb9eca839a04a487c9d57d7e820d538a1664e"
+                                      "methodHash": "73dd230f414632478b20448f3e4fb9eca839a04a487c9d57d7e820d538a1664e"
                                     },
                                     {
                                       "name": "<init>",
-                                      "hashCode": "f787d42a3b0fbab8c59940dfcd829413874e1d465bdf59f10b76c24af5d0c045"
+                                      "methodHash": "f787d42a3b0fbab8c59940dfcd829413874e1d465bdf59f10b76c24af5d0c045"
                                     },
                                     {
                                       "name": "isNew",
-                                      "hashCode": "f9c0558d631bc39983a60c3bd90bfbd0e36d9fc34b9e3c8eb8adc777ff517730"
+                                      "methodHash": "f9c0558d631bc39983a60c3bd90bfbd0e36d9fc34b9e3c8eb8adc777ff517730"
                                     }
                                   ]
                                 },
@@ -370,23 +370,23 @@
                                   "methods": [
                                     {
                                       "name": "<init>",
-                                      "hashCode": "805ee106886f8c647dea4898b23def53748d7e7fee2f04a4fd7883c40d7c6103"
+                                      "methodHash": "805ee106886f8c647dea4898b23def53748d7e7fee2f04a4fd7883c40d7c6103"
                                     },
                                     {
                                       "name": "setLastName",
-                                      "hashCode": "9e382ccf06675c411ceb95b63fae79168e868b42034e3a6e2628829aae9b5ea8"
+                                      "methodHash": "9e382ccf06675c411ceb95b63fae79168e868b42034e3a6e2628829aae9b5ea8"
                                     },
                                     {
                                       "name": "getLastName",
-                                      "hashCode": "b0fad571fd5f22b8fcfb740c81247978bd8a950edca77f45294567de125228e9"
+                                      "methodHash": "b0fad571fd5f22b8fcfb740c81247978bd8a950edca77f45294567de125228e9"
                                     },
                                     {
                                       "name": "setFirstName",
-                                      "hashCode": "c1ddaab46f4fe042f1ad70853b9f24b4a6a7b44c4599a671ca4890a36ce090aa"
+                                      "methodHash": "c1ddaab46f4fe042f1ad70853b9f24b4a6a7b44c4599a671ca4890a36ce090aa"
                                     },
                                     {
                                       "name": "getFirstName",
-                                      "hashCode": "ffaf1832f45155027514b9bec988c3e4e31b61dd5896d47d3f696cbe5eeea86a"
+                                      "methodHash": "ffaf1832f45155027514b9bec988c3e4e31b61dd5896d47d3f696cbe5eeea86a"
                                     }
                                   ]
                                 },
@@ -395,15 +395,15 @@
                                   "methods": [
                                     {
                                       "name": "getName",
-                                      "hashCode": "ba74b3ca07b3fa7c3218f74e1f0cf2f6df9db2e4b3d174612f34aaccc7857bd7"
+                                      "methodHash": "ba74b3ca07b3fa7c3218f74e1f0cf2f6df9db2e4b3d174612f34aaccc7857bd7"
                                     },
                                     {
                                       "name": "<init>",
-                                      "hashCode": "ee8c762ab008efc490f09e119686c7b03e624d749976ad16a5d5be5d8c04b6e5"
+                                      "methodHash": "ee8c762ab008efc490f09e119686c7b03e624d749976ad16a5d5be5d8c04b6e5"
                                     },
                                     {
                                       "name": "toString",
-                                      "hashCode": "ff01babd6484b213c38787fe1c7f75e246c319078950ba4a6d4991aeee5c2697"
+                                      "methodHash": "ff01babd6484b213c38787fe1c7f75e246c319078950ba4a6d4991aeee5c2697"
                                     }
                                   ]
                                 }
@@ -418,7 +418,7 @@
                                   "methods": [
                                     {
                                       "name": "welcome",
-                                      "hashCode": "551a2b80d7cf7adaf2d5adb29fc852684a28e9edf54b7a15b6fd6a63409a44dc"
+                                      "methodHash": "551a2b80d7cf7adaf2d5adb29fc852684a28e9edf54b7a15b6fd6a63409a44dc"
                                     }
                                   ]
                                 }
@@ -442,7 +442,7 @@
                               "methods": [
                                 {
                                   "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
-                                  "hashCode": "c4986588cc4cecd50374aa6be9a5d99124eb3c10a25d28959b792f5a4e5fceca"
+                                  "methodHash": "c4986588cc4cecd50374aa6be9a5d99124eb3c10a25d28959b792f5a4e5fceca"
                                 }
                               ]
                             }
@@ -475,7 +475,7 @@
                               "methods": [
                                 {
                                   "name": "executeQuery()",
-                                  "hashCode": "4ef716b88c2564a38d923fda94f23905bfcaa880c9e0bcbd084e73bb793c65ef"
+                                  "methodHash": "4ef716b88c2564a38d923fda94f23905bfcaa880c9e0bcbd084e73bb793c65ef"
                                 }
                               ]
                             }
@@ -512,7 +512,7 @@
                   "methods": [
                     {
                       "name": "method5",
-                      "hashCode": "app-5-method"
+                      "methodHash": "app-5-method"
                     }
                   ]
                 }

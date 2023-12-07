@@ -178,7 +178,8 @@ services:
   frontend:
     hostname: explorviz-frontend
     #image: explorviz/explorviz-frontend:dev
-    image: explorviz/explorviz-frontend:dev-noauth
+    #image: explorviz/explorviz-frontend:dev-noauth
+    image: explorviz/explorviz-frontend:72bb4d1f-noauth
     profiles: ["jvm", "native"]
     depends_on:
       - span-service-jvm
@@ -228,7 +229,7 @@ services:
 
   span-service-jvm:
     hostname: span-service
-    image: explorviz/span-service-jvm:latest
+    image: explorviz/span-service-jvm:1201-209829da
     profiles: ["jvm"]
     depends_on:
       init-kafka:
@@ -250,7 +251,7 @@ services:
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
-      - EXPLORVIZ_SPAN_API_TIME_RANGES_ENABLED=false
+      - EXPLORVIZ_SPAN_API_TIME_RANGES_ENABLED=true
     deploy:
       mode: replicated
       replicas: ${SPAN_REPLICAS}

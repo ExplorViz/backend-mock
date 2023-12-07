@@ -12,6 +12,9 @@
         "kafka": {
           "$ref": "file:docker/.json-schemas/env/kafka-schema.json"
         },
+        "redis-collab": {
+          "$ref": "file:docker/.json-schemas/env/redis-schema.json"
+        },
         "schema-registry": {
           "$ref": "file:docker/.json-schemas/env/schema-registry-schema.json"
         },
@@ -27,11 +30,8 @@
         "adapter-service-jvm": {
           "$ref": "file:docker/.json-schemas/jvm/adapter-service-schema.json"
         },
-        "landscape-service-jvm": {
-          "$ref": "file:docker/.json-schemas/jvm/landscape-service-schema.json"
-        },
-        "trace-service-jvm": {
-          "$ref": "file:docker/.json-schemas/jvm/trace-service-schema.json"
+        "span-service-jvm": {
+          "$ref": "file:docker/.json-schemas/jvm/span-service-schema.json"
         },
         "user-service-jvm": {
           "$ref": "file:docker/.json-schemas/jvm/user-service-schema.json"
@@ -45,11 +45,8 @@
         "adapter-service": {
           "$ref": "file:docker/.json-schemas/native/adapter-service-schema.json"
         },
-        "landscape-service": {
-          "$ref": "file:docker/.json-schemas/native/landscape-service-schema.json"
-        },
-        "trace-service": {
-          "$ref": "file:docker/.json-schemas/native/trace-service-schema.json"
+        "span-service": {
+          "$ref": "file:docker/.json-schemas/native/span-service-schema.json"
         },
         "user-service": {
           "$ref": "file:docker/.json-schemas/native/user-service-schema.json"
@@ -57,17 +54,16 @@
       },
       "required": [
         "kafka",
+        "redis-collab",
         "schema-registry",
         "otel-collector",
         "adapter-service-jvm",
-        "landscape-service-jvm",
-        "trace-service-jvm",
+        "span-service-jvm",
         "user-service-jvm",
         "collaboration-service-js",
         "frontend",
         "adapter-service",
-        "landscape-service",
-        "trace-service",
+        "span-service",
         "user-service"
       ]
     },

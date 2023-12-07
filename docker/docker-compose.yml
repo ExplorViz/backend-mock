@@ -2,7 +2,7 @@
 # Alternative (example): COMPOSE_PROFILES=env,native docker compose up -d
 
 # Remove init-containers: COMPOSE_PROFILES=init-env docker compose rm -v -f
-# Caution: Landscape- and Trace-Service depend on stopped init-containers upon startup
+# Caution: Span-Service depends on stopped init-containers upon startup
 
 version: "3.5"
 
@@ -99,7 +99,7 @@ services:
     depends_on:
       - schema-registry
 
-  ## Cassandra for Landscape and Trace Service ##
+  ## Cassandra for Span Service ##
 
   cassandra:
     image: cassandra:3.11.14
@@ -154,8 +154,8 @@ services:
 
   redis-collab:
     image: redis:7.2.2
-    ports:
-      - "6379:6379"
+    expose:
+      - 6379
 
   #endregion Environment
 
@@ -181,8 +181,7 @@ services:
     image: explorviz/explorviz-frontend:dev-noauth
     profiles: ["jvm", "native"]
     depends_on:
-      - landscape-service-jvm
-      - trace-service-jvm
+      - span-service-jvm
       - user-service-jvm
       - collaboration-service-js
     ports:
@@ -190,8 +189,8 @@ services:
     environment:
       - FRONTEND_HOST_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
       - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
-      - LANDSCAPE_URL=http://${LANDSCAPE_HOSTNAME}:${LANDSCAPE_PORT}
-      - TRACE_URL=http://${TRACE_HOSTNAME}:${TRACE_PORT}
+      - LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
+      - TRACE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
       - USER_URL=http://${USER_HOSTNAME}:${USER_PORT}
       - COLLABORATION_URL=http://${COLLABORATION_HOSTNAME}:${COLLABORATION_PORT}
       - VSCODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
@@ -225,11 +224,11 @@ services:
       mode: replicated
       replicas: ${ADAPTER_REPLICAS}
 
-  ## Landscape-Service ##
+  ## Span-Service ##
 
-  landscape-service-jvm:
-    hostname: landscape-service
-    image: explorviz/landscape-service-jvm:latest
+  span-service-jvm:
+    hostname: span-service
+    image: explorviz/span-service-jvm:latest
     profiles: ["jvm"]
     depends_on:
       init-kafka:
@@ -243,7 +242,7 @@ services:
       schema-registry:
         condition: service_started
     #ports:
-    #- ${LANDSCAPE_PORT}:8080
+    #- ${SPAN_PORT}:8080
     environment:
       - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
@@ -251,40 +250,10 @@ services:
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_SPAN_API_TIME_RANGES_ENABLED=true
     deploy:
       mode: replicated
-      replicas: ${LANDSCAPE_REPLICAS}
-
-  ## Trace-Service ##
-
-  trace-service-jvm:
-    hostname: trace-service
-    image: explorviz/trace-service-jvm:latest
-    profiles: ["jvm"]
-    depends_on:
-      init-kafka:
-        condition: service_completed_successfully
-      init-cassandra:
-        condition: service_completed_successfully
-      kafka:
-        condition: service_healthy
-      cassandra:
-        condition: service_healthy
-      schema-registry:
-        condition: service_started
-    #ports:
-    #- ${TRACE_PORT}:8080
-    environment:
-      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
-      - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
-      - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
-      - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
-      - EXPLORVIZ_LOG_LVL=DEBUG
-    deploy:
-      mode: replicated
-      replicas: ${TRACE_REPLICAS}
+      replicas: ${SPAN_REPLICAS}
 
   ## User-Service ##
 
@@ -334,11 +303,11 @@ services:
       mode: replicated
       replicas: ${ADAPTER_REPLICAS}
 
-  ## Landscape-Service ##
+  ## Span-Service ##
 
-  landscape-service:
-    hostname: landscape-service
-    image: explorviz/landscape-service-native:latest
+  span-service:
+    hostname: span-service
+    image: explorviz/span-service-native:latest
     profiles: ["native"]
     depends_on:
       init-kafka:
@@ -352,32 +321,10 @@ services:
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
       - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_SPAN_API_TIME_RANGES_ENABLED=true
     deploy:
       mode: replicated
-      replicas: ${LANDSCAPE_REPLICAS}
-
-  ## Trace-Service ##
-
-  trace-service:
-    hostname: trace-service
-    image: explorviz/trace-service-native:latest
-    profiles: ["native"]
-    depends_on:
-      init-kafka:
-        condition: service_completed_successfully
-      init-cassandra:
-        condition: service_completed_successfully
-    environment:
-      - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
-      - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
-      - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
-      - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
-      - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000
-      - EXPLORVIZ_LOG_LVL=DEBUG
-    deploy:
-      mode: replicated
-      replicas: ${TRACE_REPLICAS}
+      replicas: ${SPAN_REPLICAS}
 
   ## User-Service ##
 

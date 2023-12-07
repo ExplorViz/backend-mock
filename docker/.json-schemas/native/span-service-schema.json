@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/trace-service-native:latest" },
+    "image": { "const": "explorviz/span-service-native:latest" },
     "environment": {
       "type": "array",
       "allOf": [
@@ -30,11 +30,6 @@
             "enum": [
               "QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
-          }
-        },
-        {
-          "contains": {
-            "enum": ["EXPLORVIZ_KAFKA_STREAMS_MAX_RECORDS_SIZE=2000000"]
           }
         },
         {

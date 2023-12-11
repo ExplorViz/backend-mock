@@ -17,7 +17,7 @@ inspectit:
     scopes:
       s_allClasses:
         type:
-          name: net
+          name: net.sourceforge.plantuml
           matcher-mode: STARTS_WITH_IGNORE_CASE
 
     rules:

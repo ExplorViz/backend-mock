@@ -23,6 +23,11 @@ const userRootUrl = "/user/:uid/token";
 })();
 
 createLandscapeSample({
+  filePrefix: "plantuml",
+  token: "7cd8a9a7-b840-4735-9ef0-2dbbfa01c039",
+});
+
+createLandscapeSample({
   filePrefix: "petclinic-distributed",
   token: "26844195-7235-4254-a17b-0f7fb49adb0a",
 });

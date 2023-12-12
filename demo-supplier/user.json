@@ -47,5 +47,12 @@
     "created": 1688137535000,
     "alias": "Large Landscape Sample",
     "sharedUsersIds": []
+  },
+  {
+    "value": "7cd8a9a7-b840-4735-9ef0-2dbbfa01c039",
+    "ownerId": "github|123456",
+    "created": 1702387519682,
+    "alias": "PlantUML - Sequence Diagram",
+    "sharedUsersIds": []
   }
 ]

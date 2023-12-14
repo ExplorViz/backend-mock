@@ -13,6 +13,15 @@ CREATE TABLE IF NOT EXISTS explorviz.span_by_time
   span_id         text,
   trace_id        text, /* to be able to select full trace from span_by_traceid? */
   PRIMARY KEY ((landscape_token, start_time), method_hash, span_id)
+);
+
+/* Count Spans in a specific time bucket of ten seconds */
+CREATE TABLE IF NOT EXISTS explorviz.span_count_per_time_bucket_and_token
+(
+  landscape_token UUID,
+  ten_second_epoch bigint,
+  span_count counter,
+  PRIMARY KEY (landscape_token, ten_second_epoch)
   );
 
 /* SELECT trace_id FROM traceid_by_time WHERE landscape_token = X AND start_time_s = X; */

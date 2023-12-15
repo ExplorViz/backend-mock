@@ -229,7 +229,7 @@ services:
 
   span-service-jvm:
     hostname: span-service
-    image: explorviz/span-service-jvm:1215-5925c2ce
+    image: explorviz/span-service-jvm:1215-bfc4e513
     profiles: ["jvm"]
     depends_on:
       init-kafka:
@@ -250,7 +250,7 @@ services:
       - QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra
       - QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10
       - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=DEBUG
+      - EXPLORVIZ_LOG_LVL=TRACE
       - EXPLORVIZ_SPAN_API_TIME_RANGES_ENABLED=true
     deploy:
       mode: replicated

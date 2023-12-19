@@ -11,7 +11,7 @@ services:
 
   frontend:
     container_name: explorviz-frontend
-    image: explorviz/explorviz-frontend:f9df67ac-noauth
+    image: explorviz/explorviz-frontend:dev-noauth
     ports:
       - ${FRONTEND_PORT}:80
     extra_hosts:
@@ -32,7 +32,7 @@ services:
 
   demo-supplier:
     container_name: explorviz-demo-supplier
-    image: explorviz/demo-supplier:timestamp-update
+    image: explorviz/demo-supplier:latest
     #ports:
     #  - 8082:8082
     #  - 8083:8083

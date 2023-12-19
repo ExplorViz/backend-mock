@@ -34,7 +34,7 @@ function removeRandomTraces(traceArray) {
   const remainingTraceIds = new Set(shuffledTraceIdArray);
 
   const randomizedTraces = traceArray.filter((trace) =>
-    remainingTraceIds.has(trace["traceId"])
+    remainingTraceIds.has(trace["traceId"]),
   );
 
   return randomizedTraces;
@@ -49,7 +49,7 @@ function removeRandomTraces(traceArray) {
  */
 function recursivelyRandomizeAllHashCodesOfPackages(
   topLevelPackageRecord,
-  hashMap
+  hashMap,
 ) {
   for (let clazz of topLevelPackageRecord.classes) {
     for (let method of clazz.methods) {
@@ -74,7 +74,7 @@ function copyPackageAndTraces(package, traces) {
   const packageCopy = structuredClone(package);
   const hashMap = recursivelyRandomizeAllHashCodesOfPackages(
     packageCopy,
-    new Map()
+    new Map(),
   );
   const newTraces = duplicateTraces(traces);
 

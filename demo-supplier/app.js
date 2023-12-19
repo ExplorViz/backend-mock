@@ -7,14 +7,14 @@ const {
   recursivelyRandomizeAllHashCodesOfPackages,
   copyPackageAndTraces,
   createRandomHex,
+  calculateTenSecondLaterNeighbourTimestamp,
 } = require("./utils.js");
+const { time } = require("node:console");
 
-const landscapeApp = createExpressApplication(8082);
-const traceApp = createExpressApplication(8083);
+const spanApp = createExpressApplication(8083);
 const userApp = createExpressApplication(8084);
 
-const landscapeRootUrl = "/v2/landscapes";
-const traceRootUrl = "/v2/landscapes";
+const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
 
 (async () => {
@@ -36,6 +36,17 @@ createLandscapeSample({
   filePrefix: "petclinic",
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
   traceModifier: removeRandomTraces,
+  timestampModifier: (latestTimestandEpochMilli) => {
+    const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
+      parseInt(latestTimestandEpochMilli)
+    );
+    const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+
+    return {
+      epochMilli: nextTimestampMilli,
+      spanCount: randomSpanCount,
+    };
+  },
 });
 
 createLandscapeSample({
@@ -44,15 +55,11 @@ createLandscapeSample({
 });
 
 createLandscapeSample({
-  filePrefix: "study",
-  token: "36844495-7235-4254-a17b-0f7fb49adb0a",
-});
-
-createLandscapeSample({
   filePrefix: "vissoft23",
   token: "12444195-6144-4254-a17b-asdgfewefg",
 });
 
+// BEGIN BIG SL Sample
 createLandscapeSample({
   filePrefix: "petclinic",
   token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
@@ -77,7 +84,7 @@ createLandscapeSample({
     for (let i = 0; i < 15; i++) {
       const { packageCopy, newTraces } = copyPackageAndTraces(
         package,
-        originalTraces,
+        originalTraces
       );
 
       app.packages.push({
@@ -95,6 +102,7 @@ createLandscapeSample({
     return structure;
   },
 });
+// END BIG SL Sample
 
 {
   // BEGIN Increasing SL Sample
@@ -115,17 +123,28 @@ createLandscapeSample({
 
       const newStructure = addTopLevelPackageToFirstApplication(
         package,
-        previousStructure,
+        previousStructure
       );
       previousStructure = newStructure;
 
       return previousStructure;
     },
+    timestampModifier: (latestTimestandEpochMilli) => {
+      const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
+        parseInt(latestTimestandEpochMilli)
+      );
+      const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+
+      return {
+        epochMilli: nextTimestampMilli,
+        spanCount: randomSpanCount,
+      };
+    },
   });
 
   function addTopLevelPackageToFirstApplication(
     topLevelPackage,
-    structureRecord,
+    structureRecord
   ) {
     const deepCopyPackage = structuredClone(topLevelPackage);
     recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
@@ -175,6 +194,7 @@ function createExpressApplication(port) {
  *  token: string;
  *  traceModifier?: DataModifier,
  *  structureModifier?: DataModifier,
+ *  timestampModifier?: DataModifier,
  *  initializer?: (structure, trace) => void
  * }} options
  */
@@ -183,25 +203,45 @@ async function createLandscapeSample({
   token,
   traceModifier,
   structureModifier,
+  timestampModifier,
   initializer,
 }) {
   const structureData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-structure.json`),
+    await readFile(`demo-data/${filePrefix}-structure.json`)
   );
   const dynamicData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-dynamic.json`),
+    await readFile(`demo-data/${filePrefix}-dynamic.json`)
+  );
+  const timestampData = JSON.parse(
+    await readFile(`demo-data/${filePrefix}-timestamp.json`)
   );
 
   structureData.landscapeToken = token;
   initializer?.(structureData, dynamicData);
 
-  landscapeApp.get(`${landscapeRootUrl}/${token}/structure`, (req, res) =>
+  spanApp.get(`${spanRootUrl}/${token}/structure`, (req, res) =>
     res.json(
-      structureModifier ? structureModifier(structureData) : structureData,
-    ),
+      structureModifier ? structureModifier(structureData) : structureData
+    )
   );
 
-  traceApp.get(`${traceRootUrl}/${token}/dynamic`, (req, res) =>
-    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData),
+  spanApp.get(`${spanRootUrl}/${token}/dynamic`, (req, res) =>
+    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
+
+  spanApp.get(`${spanRootUrl}/${token}/timestamps`, (req, res) => {
+    const potentialLatestTimestamp = req.query.newest;
+    if (potentialLatestTimestamp && timestampModifier) {
+      const newTimestamp = timestampModifier(potentialLatestTimestamp);
+
+      if (newTimestamp) {
+        timestampData.push(newTimestamp);
+        res.json([newTimestamp]);
+      } else {
+        res.json([]);
+      }
+    } else {
+      res.json(timestampData);
+    }
+  });
 }

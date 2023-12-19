@@ -178,7 +178,7 @@ services:
   frontend:
     hostname: explorviz-frontend
     #image: explorviz/explorviz-frontend:dev
-    image: explorviz/explorviz-frontend:1c1461f9-noauth
+    image: explorviz/explorviz-frontend:f9df67ac-noauth
     profiles: ["jvm", "native"]
     depends_on:
       - span-service-jvm

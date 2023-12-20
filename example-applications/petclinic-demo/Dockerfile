@@ -1,6 +1,6 @@
 ## BEGIN Build stage
 
-FROM eclipse-temurin:21-jdk as build
+FROM eclipse-temurin:17-jdk as build
 
 RUN apt update \
   && apt install -y wget \
@@ -20,7 +20,7 @@ RUN cd /petclinic && ./mvnw package -q && mv target/*.jar /app.jar
 
 ## BEGIN Publish stage
 
-FROM eclipse-temurin:21-alpine
+FROM eclipse-temurin:17-alpine
 COPY --from=build /app.jar /app.jar
 CMD java -jar app.jar
 

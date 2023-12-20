@@ -1,6 +1,6 @@
 stages:
   - test
-  - deploy
+  - publish
   - add-manifest
 
 run-pre-commit:
@@ -12,7 +12,7 @@ run-pre-commit:
     - pre-commit run --all-files --config .pre-commit-config.yaml
 
 build-petclinic:
-  stage: deploy
+  stage: publish
   tags:
     - exec-docker
   image:
@@ -28,7 +28,7 @@ build-petclinic:
     - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME
 
 build-petclinic-amd64:
-  stage: deploy
+  stage: publish
   tags:
     - exec-docker
   only:
@@ -42,7 +42,7 @@ build-petclinic-amd64:
     - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME:amd64
 
 build-demo-supplier-amd64:
-  stage: deploy
+  stage: publish
   tags:
     - exec-docker
   image:
@@ -60,7 +60,7 @@ build-demo-supplier-amd64:
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
     - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGA/demo-supplier:amd64
 
-deploy-multi-arch:
+publish-multi-arch:
   image:
     name: curlimages/curl:latest
     entrypoint: [""]

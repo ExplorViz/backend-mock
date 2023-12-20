@@ -3,6 +3,8 @@ exports.recursivelyRandomizeAllHashCodesOfPackages =
   recursivelyRandomizeAllHashCodesOfPackages;
 exports.copyPackageAndTraces = copyPackageAndTraces;
 exports.createRandomHex = createRandomHex;
+exports.calculateTenSecondLaterNeighbourTimestamp =
+  calculateTenSecondLaterNeighbourTimestamp;
 
 /**
  * Shuffles array in place. ES6 version
@@ -137,4 +139,8 @@ function createRandomHex(length) {
     id += Math.floor(Math.random() * 16).toString(16);
   }
   return id;
+}
+
+function calculateTenSecondLaterNeighbourTimestamp(epochMilli) {
+  return epochMilli + 10000;
 }

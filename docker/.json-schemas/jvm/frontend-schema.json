@@ -15,9 +15,7 @@
       "allOf": [
         {
           "contains": {
-            "enum": [
-              "LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}"
-            ]
+            "enum": ["LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}"]
           }
         },
         {

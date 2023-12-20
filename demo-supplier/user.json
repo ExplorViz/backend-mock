@@ -10,7 +10,7 @@
     "value": "19844195-7235-4254-a17b-0f7fb49adb0a",
     "ownerId": "github|123456",
     "created": 1589876888000,
-    "alias": "Petclinic Sample (randomized trace count)",
+    "alias": "Petclinic Sample (Random traces and increasing, unrelated timestamps)",
     "sharedUsersIds": []
   },
   {
@@ -21,17 +21,10 @@
     "sharedUsersIds": []
   },
   {
-    "value": "36844495-7235-4254-a17b-0f7fb49adb0a",
-    "ownerId": "github|123456",
-    "created": 1589876888000,
-    "alias": "Study Landscape Sample",
-    "sharedUsersIds": []
-  },
-  {
     "value": "12444195-6144-4254-a17b-0f7fb49adb0a",
     "ownerId": "github|123456",
     "created": 1589876888000,
-    "alias": "Increasing Landscape Sample",
+    "alias": "Expanding Sample (Expanding structure and increasing, unrelated timestamps)",
     "sharedUsersIds": []
   },
   {

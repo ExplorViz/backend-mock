@@ -1,9 +1,6 @@
 # Change active Docker profiles in .env file
 # Alternative (example): COMPOSE_PROFILES=env,native docker compose up -d
 
-# Remove init-containers: COMPOSE_PROFILES=init-env docker compose rm -v -f
-# Caution: Span-Service depends on stopped init-containers upon startup
-
 version: "3.5"
 
 services:

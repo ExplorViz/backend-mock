@@ -28,6 +28,11 @@ createLandscapeSample({
 });
 
 createLandscapeSample({
+  filePrefix: "petclinic-scattered",
+  token: "gcd8ada7-b840-4735-9ef0-2dbbfa01c039",
+});
+
+createLandscapeSample({
   filePrefix: "petclinic-distributed",
   token: "26844195-7235-4254-a17b-0f7fb49adb0a",
 });
@@ -38,7 +43,7 @@ createLandscapeSample({
   traceModifier: removeRandomTraces,
   timestampModifier: (latestTimestandEpochMilli) => {
     const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
-      parseInt(latestTimestandEpochMilli),
+      parseInt(latestTimestandEpochMilli)
     );
     const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
 
@@ -84,7 +89,7 @@ createLandscapeSample({
     for (let i = 0; i < 15; i++) {
       const { packageCopy, newTraces } = copyPackageAndTraces(
         package,
-        originalTraces,
+        originalTraces
       );
 
       app.packages.push({
@@ -123,7 +128,7 @@ createLandscapeSample({
 
       const newStructure = addTopLevelPackageToFirstApplication(
         package,
-        previousStructure,
+        previousStructure
       );
       previousStructure = newStructure;
 
@@ -131,7 +136,7 @@ createLandscapeSample({
     },
     timestampModifier: (latestTimestandEpochMilli) => {
       const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
-        parseInt(latestTimestandEpochMilli),
+        parseInt(latestTimestandEpochMilli)
       );
       const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
 
@@ -144,7 +149,7 @@ createLandscapeSample({
 
   function addTopLevelPackageToFirstApplication(
     topLevelPackage,
-    structureRecord,
+    structureRecord
   ) {
     const deepCopyPackage = structuredClone(topLevelPackage);
     recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
@@ -207,13 +212,13 @@ async function createLandscapeSample({
   initializer,
 }) {
   const structureData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-structure.json`),
+    await readFile(`demo-data/${filePrefix}-structure.json`)
   );
   const dynamicData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-dynamic.json`),
+    await readFile(`demo-data/${filePrefix}-dynamic.json`)
   );
   const timestampData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-timestamp.json`),
+    await readFile(`demo-data/${filePrefix}-timestamp.json`)
   );
 
   structureData.landscapeToken = token;
@@ -221,12 +226,12 @@ async function createLandscapeSample({
 
   spanApp.get(`${spanRootUrl}/${token}/structure`, (req, res) =>
     res.json(
-      structureModifier ? structureModifier(structureData) : structureData,
-    ),
+      structureModifier ? structureModifier(structureData) : structureData
+    )
   );
 
   spanApp.get(`${spanRootUrl}/${token}/dynamic`, (req, res) =>
-    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData),
+    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
 
   spanApp.get(`${spanRootUrl}/${token}/timestamps`, (req, res) => {

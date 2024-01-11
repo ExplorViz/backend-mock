@@ -42,10 +42,14 @@ createLandscapeSample({
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
   traceModifier: removeRandomTraces,
   timestampModifier: (latestTimestandEpochMilli) => {
-    const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
+    let nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
       parseInt(latestTimestandEpochMilli)
     );
-    const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+    let randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+
+    if (Math.random() > 0.85) {
+      nextTimestampMilli += 10000;
+    }
 
     return {
       epochMilli: nextTimestampMilli,

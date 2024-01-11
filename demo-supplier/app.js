@@ -47,7 +47,7 @@ createLandscapeSample({
     );
     let randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
 
-    if (Math.random() > 0.85) {
+    if (Math.random() > 0.75) {
       nextTimestampMilli += 10000;
     }
 

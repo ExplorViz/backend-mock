@@ -10,7 +10,7 @@
     "value": "19844195-7235-4254-a17b-0f7fb49adb0a",
     "ownerId": "github|123456",
     "created": 1589876888000,
-    "alias": "Petclinic Sample (Random traces and increasing, unrelated timestamps)",
+    "alias": "Petclinic Sample (Random traces and increasing, unrelated timestamps (with random gaps))",
     "sharedUsersIds": []
   },
   {

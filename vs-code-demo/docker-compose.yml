@@ -36,7 +36,7 @@ services:
   redis-collab:
     image: redis:7.2.2
     expose:
-      - ${REDIS_PORT} 
+      - ${REDIS_PORT}
 
   vs-code-backend:
     container_name: vs-code-backend

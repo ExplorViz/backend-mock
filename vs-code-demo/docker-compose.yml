@@ -10,19 +10,21 @@ services:
       # necessary for mixed content (= iframe of frontend) that is not served via HTTPS
       - "frontend:localhost"
     environment:
-      - VS_CODE_BACKEND_URL=http://localhost:3000
-      - FRONTEND_URL=http://localhost:4200
+      - VS_CODE_BACKEND_URL=http://localhost:${VSCODE_PORT}
+      - FRONTEND_URL=http://localhost:${FRONTEND_PORT}
     volumes:
       - ./spring-petclinic-microservices:/home/petclinic-microservices
     command: --port 80
 
   collaboration-service:
     container_name: collaboration-service
-    image: explorviz/collaboration-service-jvm:latest
+    image: explorviz/collaboration-service-js:latest
     ports:
       - ${COLLABORATION_PORT}:4444
     environment:
       - EXPLORVIZ_LOG_LVL=DEBUG
+      - REDIS_HOST=${REDIS_HOSTNAME}
+      - REDIS_PORT=${REDIS_PORT}
 
   demo-supplier:
     container_name: explorviz-demo-supplier
@@ -35,7 +37,7 @@ services:
   redis-collab:
     image: redis:7.2.2
     expose:
-      - 6379
+      - ${REDIS_PORT} 
 
   vs-code-backend:
     container_name: vs-code-backend
@@ -43,7 +45,7 @@ services:
     environment:
       - EXPERIMENT_MODE=true
     ports:
-      - 3000:3000
+      - ${VSCODE_PORT}:3000
 
   frontend:
     image: explorviz/explorviz-frontend:dev-noauth

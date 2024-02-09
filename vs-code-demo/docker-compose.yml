@@ -31,7 +31,6 @@ services:
     image: explorviz/demo-supplier:latest
     ports:
       - ${LANDSCAPE_PORT}:8082
-      - ${TRACE_PORT}:8083
       - ${USER_PORT}:8084
 
   redis-collab:

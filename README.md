@@ -14,6 +14,8 @@ The CI pipeline for this repository uses pre-commit with different hooks to vali
 
 You can locally validate all files, therefore simulate the CI pipeline, with
 
-`docker run --rm -ti -v $(pwd):/pre-commit explorviz/pre-commit`
+```sh
+docker run --rm -ti -v $(pwd):/pre-commit explorviz/pre-commit
+```
 
 The resulting container will run the defined [pre-commit hooks](https://github.com/ExplorViz/deployment/tree/master/.pre-commit-config.yaml) and **also** modify files if necessary. You might need to run this command multiple times.

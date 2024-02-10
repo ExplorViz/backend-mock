@@ -9,7 +9,7 @@ services:
       # necessary for mixed content (= iframe of frontend) that is not served via HTTPS
       - "frontend:localhost"
     environment:
-      - VS_CODE_BACKEND_URL=http://localhost:${VSCODE_PORT}
+      - VS_CODE_BACKEND_URL=http://${VSCODE_HOSTNAME}:${VSCODE_PORT}
       - FRONTEND_URL=http://localhost:${FRONTEND_PORT}
     volumes:
       - ./projects:/home/workspace/projects

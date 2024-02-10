@@ -13,7 +13,7 @@ services:
       - VS_CODE_BACKEND_URL=http://localhost:${VSCODE_PORT}
       - FRONTEND_URL=http://localhost:${FRONTEND_PORT}
     volumes:
-      - ./projects:/home/workspace
+      - ./projects:/home/workspace/projects
     command: --port 80
 
   collaboration-service:

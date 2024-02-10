@@ -10,7 +10,7 @@ services:
       - "frontend:localhost"
     environment:
       - VS_CODE_BACKEND_URL=http://${VSCODE_HOSTNAME}:${VSCODE_PORT}
-      - FRONTEND_URL=http://localhost:${FRONTEND_PORT}
+      - FRONTEND_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
     volumes:
       - ./projects:/home/workspace/projects
     command: --port 80

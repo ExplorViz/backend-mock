@@ -1,2 +1,4 @@
 # Don't version the yaml-files in the projects to avoid problems with the pre-commit checks
 projects/**/*.yml
+
+**/target/

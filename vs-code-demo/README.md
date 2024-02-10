@@ -4,7 +4,7 @@
 
 To start the stack:
 
-``sh
+```sh
 docker compose up
 ```
 
@@ -12,9 +12,9 @@ docker compose up
 
 Copy the project in the projects-directory:
 
-``sh
+```sh
 cp -pr <project> projects/
-```
+``
 
 ## Find project in VSCode
 

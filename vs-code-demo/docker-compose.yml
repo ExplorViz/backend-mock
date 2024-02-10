@@ -13,7 +13,7 @@ services:
       - VS_CODE_BACKEND_URL=http://localhost:${VSCODE_PORT}
       - FRONTEND_URL=http://localhost:${FRONTEND_PORT}
     volumes:
-      - ./spring-petclinic-microservices:/home/petclinic-microservices
+      - ./projects:/home/workspace
     command: --port 80
 
   collaboration-service:

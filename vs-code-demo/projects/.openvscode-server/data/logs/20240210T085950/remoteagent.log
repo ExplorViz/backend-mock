@@ -1,0 +1,20 @@
+2024-02-10 08:59:50.795 [info]
+
+
+
+
+2024-02-10 08:59:50.805 [info] Extension host agent started.
+2024-02-10 08:59:50.911 [info] Started initializing default profile extensions in extensions installation folder. file:///home/workspace/.openvscode-server/extensions
+2024-02-10 08:59:51.102 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/workspace/.openvscode-server/extensions
+2024-02-10 08:59:56.677 [warning] No ptyHost heartbeat after 6 seconds
+2024-02-10 08:59:59.295 [info] [192.168.65.1][3c74a07a][ManagementConnection] New connection established.
+2024-02-10 08:59:59.315 [info] [192.168.65.1][614e76db][ExtensionHostConnection] New connection established.
+2024-02-10 08:59:59.459 [warning] Using the in-memory credential store as the operating system's credential store could not be accessed. Please see https://aka.ms/vscode-server-keyring on how to set this up. Details: libsecret-1.so.0: cannot open shared object file: No such file or directory
+2024-02-10 09:00:01.160 [info] [192.168.65.1][614e76db][ExtensionHostConnection] <92> Launched Extension Host Process.
+2024-02-10 09:00:09.835 [info] [192.168.65.1][3c74a07a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-02-10 09:00:09.892 [info] [192.168.65.1][614e76db][ExtensionHostConnection] <92> Extension Host Process exited with code: 0, signal: null.
+2024-02-10 09:00:10.879 [info] [192.168.65.1][bce6d7e9][ManagementConnection] New connection established.
+2024-02-10 09:00:10.884 [info] [192.168.65.1][2c1b214c][ExtensionHostConnection] New connection established.
+2024-02-10 09:00:10.897 [info] [192.168.65.1][2c1b214c][ExtensionHostConnection] <136> Launched Extension Host Process.
+2024-02-10 09:00:23.167 [info] [192.168.65.1][bce6d7e9][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-02-10 09:00:23.207 [info] [192.168.65.1][2c1b214c][ExtensionHostConnection] <136> Extension Host Process exited with code: 0, signal: null.

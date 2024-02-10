@@ -14,7 +14,7 @@ Copy the project in the projects-directory:
 
 ```sh
 cp -pr <project> projects/
-``
+```
 
 ## Find project in VSCode
 

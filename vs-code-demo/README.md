@@ -26,7 +26,7 @@ docker compose down -v
 
 Open VS Code in Browser:
 
-http://localhost:3001/?folder=/home/workspace/spring-petclinic-microservices
+http://localhost:3001/?folder=/home/workspace/projects/spring-petclinic-microservices
 
 ### VS Code instructions
 

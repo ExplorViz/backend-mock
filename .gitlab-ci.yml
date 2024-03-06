@@ -1,7 +1,7 @@
 stages:
   - test
   - publish
-  - add-manifest
+  - set-amd64-to-latest
 
 run-pre-commit:
   stage: test
@@ -10,22 +10,6 @@ run-pre-commit:
     - exec-docker
   script:
     - pre-commit run --all-files --config .pre-commit-config.yaml
-
-build-petclinic:
-  stage: publish
-  tags:
-    - exec-docker
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-      changes:
-        - demo-supplier/**/*
-  script:
-    - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME
 
 build-petclinic-amd64:
   stage: publish
@@ -64,13 +48,13 @@ publish-multi-arch:
   image:
     name: curlimages/curl:latest
     entrypoint: [""]
-  stage: add-manifest
+  stage: set-amd64-to-latest
   tags:
     - exec-docker
   only:
     - schedules
   variables:
-    MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
+    MANIFEST_PLATFORMS: "linux/amd64"
   before_script:
     - GHPRJ="https://github.com/estesp/manifest-tool"
     - VERSION="v1.0.3"

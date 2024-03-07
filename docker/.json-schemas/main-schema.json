@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "services": {
+      "description": "Declaration for Docker compose file",
+      "type": "object",
+      "items": {
+        "type": "object"
+      },
+      "properties": {
+        "kafka": {
+          "$ref": "file:docker/.json-schemas/env/kafka-schema.json"
+        },
+        "redis-collab": {
+          "$ref": "file:docker/.json-schemas/env/redis-schema.json"
+        },
+        "schema-registry": {
+          "$ref": "file:docker/.json-schemas/env/schema-registry-schema.json"
+        },
+        "otel-collector": {
+          "$ref": "file:docker/.json-schemas/env/otel-collector-schema.json"
+        },
+        "cassandra": {
+          "$ref": "file:docker/.json-schemas/env/cassandra-schema.json"
+        },
+        "mongo-user": {
+          "$ref": "file:docker/.json-schemas/env/mongo-user-schema.json"
+        },
+        "adapter-service-jvm": {
+          "$ref": "file:docker/.json-schemas/jvm/adapter-service-schema.json"
+        },
+        "span-service-jvm": {
+          "$ref": "file:docker/.json-schemas/jvm/span-service-schema.json"
+        },
+        "user-service-jvm": {
+          "$ref": "file:docker/.json-schemas/jvm/user-service-schema.json"
+        },
+        "collaboration-service-js": {
+          "$ref": "file:docker/.json-schemas/jvm/collaboration-service-schema.json"
+        },
+        "frontend": {
+          "$ref": "file:docker/.json-schemas/jvm/frontend-schema.json"
+        },
+        "adapter-service": {
+          "$ref": "file:docker/.json-schemas/native/adapter-service-schema.json"
+        },
+        "span-service": {
+          "$ref": "file:docker/.json-schemas/native/span-service-schema.json"
+        },
+        "user-service": {
+          "$ref": "file:docker/.json-schemas/native/user-service-schema.json"
+        }
+      },
+      "required": [
+        "kafka",
+        "redis-collab",
+        "schema-registry",
+        "otel-collector",
+        "adapter-service-jvm",
+        "span-service-jvm",
+        "user-service-jvm",
+        "collaboration-service-js",
+        "frontend",
+        "adapter-service",
+        "span-service",
+        "user-service"
+      ]
+    },
+    "volumes": {
+      "properties": {
+        "kafka-data": {
+          "properties": {
+            "name": { "const": "explorviz-kafka-data" }
+          },
+          "required": ["name"]
+        },
+        "kafka-secrets": {
+          "properties": {
+            "name": { "const": "explorviz-kafka-secrets" }
+          },
+          "required": ["name"]
+        },
+        "init-kafka-data": {
+          "properties": {
+            "name": { "const": "explorviz-init-kafka-data" }
+          },
+          "required": ["name"]
+        },
+        "init-kafka-secrets": {
+          "properties": {
+            "name": { "const": "explorviz-init-kafka-secrets" }
+          },
+          "required": ["name"]
+        },
+        "schema-registry": {
+          "properties": {
+            "name": { "const": "explorviz-schema-registry" }
+          },
+          "required": ["name"]
+        },
+        "user-mongo-data": {
+          "properties": {
+            "name": { "const": "explorviz-mongo-user-data" }
+          },
+          "required": ["name"]
+        },
+        "user-mongo-configdb": {
+          "properties": {
+            "name": { "const": "explorviz-mongo-user-config" }
+          },
+          "required": ["name"]
+        },
+        "cassandra": {
+          "properties": {
+            "name": { "const": "explorviz-cassandra" }
+          },
+          "required": ["name"]
+        }
+      },
+      "required": [
+        "kafka-data",
+        "kafka-secrets",
+        "init-kafka-data",
+        "init-kafka-secrets",
+        "schema-registry",
+        "user-mongo-data",
+        "user-mongo-configdb",
+        "cassandra"
+      ]
+    },
+    "networks": {
+      "description": "Network declaration for Docker-Compose network",
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "object",
+          "properties": {
+            "name": { "enum": ["explorviz"] }
+          },
+          "required": ["name"]
+        }
+      },
+      "required": ["default"]
+    }
+  },
+  "required": ["services", "volumes", "networks"]
+}

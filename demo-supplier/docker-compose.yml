@@ -1,6 +1,5 @@
 version: "3.5"
 services:
-
   ## Demo-Supplier ##
 
   demo-supplier:
@@ -9,7 +8,6 @@ services:
     networks:
       - explorviz
     ports:
-      - 8082:8082
       - 8083:8083
       - 8084:8084
 

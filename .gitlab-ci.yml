@@ -1,7 +1,7 @@
 stages:
   - test
-  - deploy
-  - add-manifest
+  - build-and-publish
+  - docker-manifest
 
 run-pre-commit:
   stage: test
@@ -12,7 +12,7 @@ run-pre-commit:
     - pre-commit run --all-files --config .pre-commit-config.yaml
 
 build-petclinic-amd64:
-  stage: deploy
+  stage: build-and-publish
   tags:
     - exec-docker
   only:
@@ -26,9 +26,11 @@ build-petclinic-amd64:
     - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME:amd64
 
 build-demo-supplier-amd64:
-  stage: deploy
+  stage: build-and-publish
   tags:
     - exec-docker
+  variables:
+    ARCH: "amd64"
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
@@ -42,17 +44,29 @@ build-demo-supplier-amd64:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGA/demo-supplier:amd64
+    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGA/demo-supplier:${ARCH}
 
-deploy-multi-arch:
+build-demo-supplier-arm64:
+  extends: build-demo-supplier-amd64
+  only:
+    - web
+  rules:
+  variables:
+    ARCH: "arm64"
+  tags:
+    - arm64
+
+publish-amd64-manifest:
   image:
     name: curlimages/curl:latest
     entrypoint: [""]
-  stage: add-manifest
+  stage: docker-manifest
   tags:
     - exec-docker
+  only:
+    - schedules
   variables:
-    MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
+    MANIFEST_PLATFORMS: "linux/amd64"
   before_script:
     - GHPRJ="https://github.com/estesp/manifest-tool"
     - VERSION="v1.0.3"
@@ -75,3 +89,10 @@ deploy-multi-arch:
       --platforms ${MANIFEST_PLATFORMS}
       --template ${DOCKERHUB_ORGA}/demo-supplier:ARCH
       --target ${DOCKERHUB_ORGA}/demo-supplier:latest
+
+publish-multi-arch-manifest:
+  extends: publish-amd64-manifest
+  only:
+    - web
+  variables:
+    MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"

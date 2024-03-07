@@ -1,25 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/collaboration-service-jvm:latest" },
-    "networks": {
-      "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
-    },
+    "image": { "const": "explorviz/collaboration-service-js:latest" },
     "environment": {
       "type": "array",
       "allOf": [
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]
+            "enum": ["REDIS_HOST=redis-collab"]
+          }
+        },
+        {
+          "contains": {
+            "enum": ["REDIS_PORT=6379"]
           }
         }
       ]
     }
   },
-  "required": ["image", "networks", "environment"]
+  "required": ["image", "environment"]
 }

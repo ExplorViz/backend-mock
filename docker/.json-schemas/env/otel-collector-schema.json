@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "image": { "const": "otel/opentelemetry-collector" },
+    "container_name": { "const": "otel-collector" },
+    "ports": {
+      "type": "array",
+      "items": [
+        { "enum": ["${OTEL_COLLECTOR_PORT}:55678"] },
+        { "enum": ["${OTEL_COLLECTOR_ZPAGES_PORT}:55679"] }
+      ]
+    },
+    "depends_on": {
+      "type": "array",
+      "items": [{ "const": "schema-registry" }]
+    },
+    "volumes": {
+      "type": "array",
+      "items": [
+        {
+          "enum": [
+            "./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml"
+          ]
+        }
+      ]
+    }
+  },
+  "required": ["image", "ports", "depends_on", "volumes"]
+}

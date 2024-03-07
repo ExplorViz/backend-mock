@@ -1,225 +1,132 @@
 const express = require("express");
-const fs = require("fs");
+const { readFile } = require("node:fs/promises");
 const cors = require("cors");
-const crypto = require("crypto");
 const compression = require("compression");
+const {
+  removeRandomTraces,
+  recursivelyRandomizeAllHashCodesOfPackages,
+  copyPackageAndTraces,
+  createRandomHex,
+  calculateTenSecondLaterNeighbourTimestamp,
+} = require("./utils.js");
+const { time } = require("node:console");
 
-const landscapeApp = express();
-const traceApp = express();
-const userApp = express();
+const spanApp = createExpressApplication(8083);
+const userApp = createExpressApplication(8084);
 
-// Disable caching to prevent HTTP 304
-landscapeApp.disable("etag");
-traceApp.disable("etag");
-userApp.disable("etag");
-
-landscapeApp.use(compression());
-traceApp.use(compression());
-userApp.use(compression());
-
-const landscapePort = 8082;
-const tracePort = 8083;
-const userPort = 8084;
-
-traceApp.use(cors());
-landscapeApp.use(cors());
-userApp.use(cors());
-
-traceApp.listen(tracePort, () => {});
-landscapeApp.listen(landscapePort, () => {});
-userApp.listen(userPort, () => {});
-
-let user = {};
-
-const landscapeRootUrl = "/v2/landscapes";
-const traceRootUrl = "/v2/landscapes";
+const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
 
-fs.readFile("./user.json", (err, json) => {
-  user = JSON.parse(json);
+(async () => {
+  const user = JSON.parse(await readFile("./user.json"));
+  userApp.get(`${userRootUrl}`, (req, res) => res.json(user));
+})();
+
+createLandscapeSample({
+  filePrefix: "plantuml",
+  token: "7cd8a9a7-b840-4735-9ef0-2dbbfa01c039",
 });
 
-userApp.get(`${userRootUrl}`, function (req, res) {
-  res.json(user);
+createLandscapeSample({
+  filePrefix: "petclinic-scattered",
+  token: "gcd8ada7-b840-4735-9ef0-2dbbfa01c039",
 });
 
-// BEGIN Fibonacci Sample
-
-const fibonacciToken = "17844195-6144-4254-a17b-0f7fb49adb0a";
-const fibonacciFilePrefix = "fibonacci";
-let structureFibonacci = {};
-let dynamicFibonacci = {};
-
-fs.readFile(`./${fibonacciFilePrefix}-structure.json`, (err, json) => {
-  structureFibonacci = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "petclinic-distributed",
+  token: "26844195-7235-4254-a17b-0f7fb49adb0a",
 });
 
-fs.readFile(`./${fibonacciFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicFibonacci = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "petclinic",
+  token: "19844195-7235-4254-a17b-0f7fb49adb0a",
+  traceModifier: removeRandomTraces,
+  timestampModifier: (latestTimestandEpochMilli) => {
+    let nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
+      parseInt(latestTimestandEpochMilli)
+    );
+    let randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+
+    if (Math.random() > 0.75) {
+      nextTimestampMilli += 10000;
+    }
+
+    return {
+      epochMilli: nextTimestampMilli,
+      spanCount: randomSpanCount,
+    };
+  },
 });
 
-landscapeApp.get(
-  `${landscapeRootUrl}/${fibonacciToken}/structure`,
-  function (req, res) {
-    res.json(structureFibonacci);
-  }
-);
-
-traceApp.get(`${traceRootUrl}/${fibonacciToken}/dynamic`, function (req, res) {
-  res.json(dynamicFibonacci);
+createLandscapeSample({
+  filePrefix: "big-landscape",
+  token: "a87167e5-8ec1-4b98-830a-dba87d213bb0",
 });
 
-// END Fibonacci Sample
-
-// BEGIN Petclinic-Distributed Sample
-
-const petclinicDistributedToken = "26844195-7235-4254-a17b-0f7fb49adb0a";
-const petclinicDistributedFilePrefix = "petclinic-distributed";
-let structurePetclinicDistributed = {};
-let dynamicPetclinicDistributed = {};
-
-fs.readFile(
-  `./${petclinicDistributedFilePrefix}-structure.json`,
-  (err, json) => {
-    structurePetclinicDistributed = JSON.parse(json);
-  }
-);
-
-fs.readFile(`./${petclinicDistributedFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicPetclinicDistributed = JSON.parse(json);
+createLandscapeSample({
+  filePrefix: "vissoft23",
+  token: "12444195-6144-4254-a17b-asdgfewefg",
 });
 
-landscapeApp.get(
-  `${landscapeRootUrl}/${petclinicDistributedToken}/structure`,
-  function (req, res) {
-    res.json(structurePetclinicDistributed);
-  }
-);
+// BEGIN BIG SL Sample
+createLandscapeSample({
+  filePrefix: "petclinic",
+  token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
+  initializer: (structure, traces) => {
+    const originalTraces = structuredClone(traces);
 
-traceApp.get(
-  `${traceRootUrl}/${petclinicDistributedToken}/dynamic`,
-  function (req, res) {
-    res.json(dynamicPetclinicDistributed);
-  }
-);
+    const node = structure.nodes[0];
+    const app = node.applications[0];
+    const package = app.packages[0];
 
-// END Petclinic-Distributed Sample
+    app.name = "large-demo-landscape";
 
-// BEGIN Petclinic Sample
+    app.packages.unshift({
+      name: "changing",
+      subPackages: [],
+      classes: Array.from({ length: 12 }, () => ({
+        name: "C" + createRandomHex(6),
+        methods: [],
+      })),
+    });
 
-const petclinicToken = "19844195-7235-4254-a17b-0f7fb49adb0a";
-const petclinicFilePrefix = "petclinic";
-let structurePetclinic = {};
-let dynamicPetclinic = {};
+    for (let i = 0; i < 15; i++) {
+      const { packageCopy, newTraces } = copyPackageAndTraces(
+        package,
+        originalTraces
+      );
 
-fs.readFile(`./${petclinicFilePrefix}-structure.json`, (err, json) => {
-  structurePetclinic = JSON.parse(json);
+      app.packages.push({
+        name: `petclinic${i}`,
+        subPackages: [packageCopy],
+        classes: [],
+      });
+
+      traces.push(...newTraces);
+    }
+  },
+  structureModifier: (structure) => {
+    const changingPackage = structure.nodes[0].applications[0].packages[0];
+    changingPackage.classes.forEach((c) => (c.name = "C" + createRandomHex(6)));
+    return structure;
+  },
 });
+// END BIG SL Sample
 
-fs.readFile(`./${petclinicFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicPetclinic = JSON.parse(json);
-});
+{
+  // BEGIN Increasing SL Sample
+  let previousStructure = null;
 
-landscapeApp.get(
-  `${landscapeRootUrl}/${petclinicToken}/structure`,
-  function (req, res) {
-    res.json(structurePetclinic);
-  }
-);
+  createLandscapeSample({
+    filePrefix: "petclinic",
+    token: "12444195-6144-4254-a17b-0f7fb49adb0a",
+    structureModifier: (structureData) => {
+      if (!previousStructure) {
+        previousStructure = structuredClone(structureData);
+        return previousStructure;
+      }
 
-traceApp.get(`${traceRootUrl}/${petclinicToken}/dynamic`, function (req, res) {
-  res.json(removeRandomTraces(dynamicPetclinic));
-});
-
-// END Petclinic Sample
-
-// BEGIN Big Landscape Sample
-
-const bigLandscapeToken = "a87167e5-8ec1-4b98-830a-dba87d213bb0";
-const bigLandscapeFilePrefix = "big-landscape";
-let structureBigLandscape = {};
-let dynamicBigLandscape = {};
-
-fs.readFile(`./${bigLandscapeFilePrefix}-structure.json`, (err, json) => {
-  structureBigLandscape = JSON.parse(json);
-});
-
-fs.readFile(`./${bigLandscapeFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicBigLandscape = JSON.parse(json);
-});
-
-landscapeApp.get(
-  `${landscapeRootUrl}/${bigLandscapeToken}/structure`,
-  function (req, res) {
-    res.json(structureBigLandscape);
-  }
-);
-
-traceApp.get(
-  `${traceRootUrl}/${bigLandscapeToken}/dynamic`,
-  function (req, res) {
-    res.json(dynamicBigLandscape);
-  }
-);
-
-// END Big Landscape Sample
-
-// BEGIN Study Sample
-
-const studyToken = "36844495-7235-4254-a17b-0f7fb49adb0a";
-const studyFilePrefix = "study";
-let structureStudy = {};
-let dynamicStudy = {};
-
-fs.readFile(`./${studyFilePrefix}-structure.json`, (err, json) => {
-  structureStudy = JSON.parse(json);
-});
-
-fs.readFile(`./${studyFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicStudy = JSON.parse(json);
-});
-
-landscapeApp.get(
-  `${landscapeRootUrl}/${studyToken}/structure`,
-  function (req, res) {
-    res.json(structureStudy);
-  }
-);
-
-traceApp.get(`${traceRootUrl}/${studyToken}/dynamic`, function (req, res) {
-  res.json(dynamicStudy);
-});
-
-// END Study Sample
-
-// BEGIN Increasing SL Sample
-
-const increasingSLToken = "12444195-6144-4254-a17b-0f7fb49adb0a";
-const increasingSLFilePrefix = "petclinic";
-let structureIncreasingSL = {};
-let dynamicIncreasingSL = {};
-
-fs.readFile(`./${increasingSLFilePrefix}-structure.json`, (err, json) => {
-  structureIncreasingSL = JSON.parse(json);
-});
-
-fs.readFile(`./${increasingSLFilePrefix}-dynamic.json`, (err, json) => {
-  dynamicIncreasingSL = JSON.parse(json);
-});
-
-let previousStructure = null;
-let topLevelPackageCounter = 0;
-let artificialTopLevelPackageScaffold = {
-  name: "1",
-  subPackages: [],
-  classes: [],
-};
-
-landscapeApp.get(
-  `${landscapeRootUrl}/${increasingSLToken}/structure`,
-  async (req, res) => {
-    if (previousStructure) {
-      const node = structureIncreasingSL.nodes[0];
+      const node = structureData.nodes[0];
       const app = node.applications[0];
       const package = app.packages[0];
 
@@ -227,159 +134,123 @@ landscapeApp.get(
         package,
         previousStructure
       );
-      previousStructure = JSON.parse(JSON.stringify(newStructure));
-    } else {
-      previousStructure = JSON.parse(JSON.stringify(structureIncreasingSL));
-    }
-    res.json(previousStructure);
+      previousStructure = newStructure;
+
+      return previousStructure;
+    },
+    timestampModifier: (latestTimestandEpochMilli) => {
+      const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(
+        parseInt(latestTimestandEpochMilli)
+      );
+      const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+
+      return {
+        epochMilli: nextTimestampMilli,
+        spanCount: randomSpanCount,
+      };
+    },
+  });
+
+  function addTopLevelPackageToFirstApplication(
+    topLevelPackage,
+    structureRecord
+  ) {
+    const deepCopyPackage = structuredClone(topLevelPackage);
+    recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
+
+    const node = structureRecord.nodes[0];
+    const app = node.applications[0];
+
+    const newTopLevelPackage = {
+      name: `copy${app.packages.length - 1}`,
+      subPackages: [deepCopyPackage],
+      classes: [],
+    };
+
+    app.packages.push(newTopLevelPackage);
+
+    return structureRecord;
   }
-);
+} // END Increasing SL Sample
 
-traceApp.get(
-  `${traceRootUrl}/${increasingSLToken}/dynamic`,
-  function (req, res) {
-    res.json(dynamicIncreasingSL);
-  }
-);
+/**
+ * Creates and configures a express application instance.
+ * @param {number} port
+ * @returns a express application instance
+ */
+function createExpressApplication(port) {
+  const app = express();
 
-// END Increasing SL Sample
+  // Disable caching to prevent HTTP 304
+  app.disable("etag");
 
-function addTopLevelPackageToFirstApplication(structureRecord) {
-  const oldTopLevelPackages = [];
+  app.use(compression());
+  app.use(cors());
+  app.listen(port, () => {});
 
-  const node = structureRecord.nodes[0];
-  const app = node.applications[0];
-
-  for (let package of app.packages) {
-    oldTopLevelPackages.push(JSON.parse(JSON.stringify(package)));
-  }
-
-  const newTopLevelPackage = JSON.parse(
-    JSON.stringify(artificialTopLevelPackageScaffold)
-  );
-
-  newTopLevelPackage.name = topLevelPackageCounter.toString();
-  newTopLevelPackage.subPackages = oldTopLevelPackages;
-
-  app.packages = [newTopLevelPackage];
-
-  topLevelPackageCounter++;
-
-  return structureRecord;
-}
-
-function addTopLevelPackageToFirstApplication(
-  topLevelPackage,
-  structureRecord
-) {
-  const deepCopyPackage = JSON.parse(JSON.stringify(topLevelPackage));
-  recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
-
-  const node = structureRecord.nodes[0];
-  const app = node.applications[0];
-
-  const newTopLevelPackage = JSON.parse(
-    JSON.stringify(artificialTopLevelPackageScaffold)
-  );
-
-  newTopLevelPackage.name = topLevelPackageCounter.toString();
-
-  newTopLevelPackage.subPackages = [deepCopyPackage];
-
-  const siblingWithRandomHashCodes = JSON.stringify(newTopLevelPackage);
-
-  app.packages.push(JSON.parse(siblingWithRandomHashCodes));
-
-  topLevelPackageCounter++;
-
-  return structureRecord;
-}
-
-function addSiblingPackageToFirstApplication(structureRecord) {
-  const topLevelPackages = [];
-
-  const node = structureRecord.nodes[0];
-  const app = node.applications[0];
-
-  for (let package of app.packages) {
-    topLevelPackages.push(JSON.parse(JSON.stringify(package)));
-  }
-
-  const newTopLevelPackage = JSON.parse(
-    JSON.stringify(artificialTopLevelPackageScaffold)
-  );
-
-  newTopLevelPackage.name = topLevelPackageCounter.toString();
-
-  for (let package of topLevelPackages) {
-    recursivelyRandomizeAllHashCodesOfPackages(package);
-  }
-
-  newTopLevelPackage.subPackages = topLevelPackages;
-
-  const siblingWithRandomHashCodes = JSON.stringify(newTopLevelPackage);
-
-  app.packages.push(JSON.parse(siblingWithRandomHashCodes));
-
-  topLevelPackageCounter++;
-
-  return structureRecord;
-}
-
-function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord) {
-  for (let clazz of topLevelPackageRecord.classes) {
-    for (let method of clazz.methods) {
-      const secret = "abcdefg";
-      const hash = crypto
-        .createHmac("sha256", secret)
-        .update("MyFancyMessageMega")
-        .digest("hex");
-
-      method.hashCode = hash;
-    }
-  }
-
-  for (let subPackage of topLevelPackageRecord.subPackages) {
-    recursivelyRandomizeAllHashCodesOfPackages(subPackage);
-  }
+  return app;
 }
 
 /**
- * Shuffles array in place. ES6 version
- * @param {Array} a items An array containing the items.
- * https://stackoverflow.com/a/6274381
+ * @typedef {(data: any) => any} DataModifier
  */
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
-function removeRandomTraces(traceArray) {
-  const uniqueTraceIds = [];
-
-  for (const trace of traceArray) {
-    const traceId = trace["traceId"];
-    if (traceId && !uniqueTraceIds.includes(traceId)) {
-      uniqueTraceIds.push(traceId);
-    }
-  }
-
-  // remove random count of uniqueTraceIds
-
-  let itemsToRemove =
-    uniqueTraceIds.length > 1
-      ? Math.floor(Math.random() * uniqueTraceIds.length)
-      : 1;
-
-  let shuffledTraceIdArray = shuffle(uniqueTraceIds);
-  shuffledTraceIdArray.splice(itemsToRemove);
-
-  const randomizedTraces = traceArray.filter((trace) =>
-    shuffledTraceIdArray.includes(trace["traceId"])
+/**
+ * Create a sample landscape for the ExplorViz demo.
+ * Loads the data and sets up express routes.
+ * @param {{
+ *  filePrefix: string;
+ *  token: string;
+ *  traceModifier?: DataModifier,
+ *  structureModifier?: DataModifier,
+ *  timestampModifier?: DataModifier,
+ *  initializer?: (structure, trace) => void
+ * }} options
+ */
+async function createLandscapeSample({
+  filePrefix,
+  token,
+  traceModifier,
+  structureModifier,
+  timestampModifier,
+  initializer,
+}) {
+  const structureData = JSON.parse(
+    await readFile(`demo-data/${filePrefix}-structure.json`)
+  );
+  const dynamicData = JSON.parse(
+    await readFile(`demo-data/${filePrefix}-dynamic.json`)
+  );
+  const timestampData = JSON.parse(
+    await readFile(`demo-data/${filePrefix}-timestamp.json`)
   );
 
-  return randomizedTraces;
+  structureData.landscapeToken = token;
+  initializer?.(structureData, dynamicData);
+
+  spanApp.get(`${spanRootUrl}/${token}/structure`, (req, res) =>
+    res.json(
+      structureModifier ? structureModifier(structureData) : structureData
+    )
+  );
+
+  spanApp.get(`${spanRootUrl}/${token}/dynamic`, (req, res) =>
+    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
+  );
+
+  spanApp.get(`${spanRootUrl}/${token}/timestamps`, (req, res) => {
+    const potentialLatestTimestamp = req.query.newest;
+    if (potentialLatestTimestamp && timestampModifier) {
+      const newTimestamp = timestampModifier(potentialLatestTimestamp);
+
+      if (newTimestamp) {
+        timestampData.push(newTimestamp);
+        res.json([newTimestamp]);
+      } else {
+        res.json([]);
+      }
+    } else {
+      res.json(timestampData);
+    }
+  });
 }

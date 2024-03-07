@@ -1,40 +1,47 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "confluentinc/cp-schema-registry:7.2.2" },
-    "container_name" : {"const": "schema-registry"},
+    "image": { "const": "confluentinc/cp-schema-registry:7.3.0" },
+    "container_name": { "const": "schema-registry" },
     "ports": {
-      "type" : "array",
-      "items": [
-        { "enum" : ["${SCHEMA_REGISTRY_PORT}:8081"]}
-      ]
+      "type": "array",
+      "items": [{ "enum": ["${SCHEMA_REGISTRY_PORT}:8081"] }]
     },
     "environment": {
       "type": "object",
       "properties": {
-        "SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS" : { "enum" : ["PLAINTEXT://kafka:${KAFKA_INT_PORT}"]},
-        "SCHEMA_REGISTRY_HOST_NAME" : { "const" : "127.0.0.1" }
+        "SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS": {
+          "enum": ["PLAINTEXT://kafka:${KAFKA_INT_PORT}"]
+        },
+        "SCHEMA_REGISTRY_HOST_NAME": { "const": "127.0.0.1" }
       },
-      "required": [ "SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS", "SCHEMA_REGISTRY_HOST_NAME" ]
-    },
-    "depends_on" : {
-      "type" : "array",
-      "items": [
-        { "const" : "kafka"}
+      "required": [
+        "SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS",
+        "SCHEMA_REGISTRY_HOST_NAME"
       ]
+    },
+    "depends_on": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kafka": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "type": "string"
+            }
+          },
+          "required": ["condition"],
+          "title": "Kafka"
+        }
+      },
+      "required": ["kafka"]
     },
     "volumes": {
-      "type" : "array",
-      "items": [
-        { "enum" : ["schema-registry:/etc/schema-registry/secrets"] }
-      ]
-    },
-    "networks": {
       "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
+      "items": [{ "enum": ["schema-registry:/etc/schema-registry/secrets"] }]
     }
   },
-  "required": ["image", "ports", "environment", "depends_on", "volumes", "networks"]
+  "required": ["image", "ports", "environment", "depends_on", "volumes"]
 }

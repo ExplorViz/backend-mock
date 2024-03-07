@@ -1,0 +1,52 @@
+inspectit:
+  tags:
+    extra:
+      landscape_token: ${LANDSCAPE_TOKEN_ID}
+      token_secret: ${LANDSCAPE_TOKEN_SECRET}
+      application_name: "plantuml-demo"
+      application_instance_id: 0
+      application_language: "java"
+
+  tracing:
+    add-common-tags: ALWAYS
+
+  metrics:
+    enabled: false
+
+  instrumentation:
+    scopes:
+      s_allClasses:
+        type:
+          name: net.sourceforge.plantuml
+          matcher-mode: STARTS_WITH_IGNORE_CASE
+
+    rules:
+      r_all_methods_no_input_return:
+        scopes:
+          s_allClasses: true
+        tracing:
+          start-span: true
+          attributes:
+            java.fqn: method_fqn_attr
+        entry:
+          method_fqn_attr:
+            action: a_get_method_fqn
+
+    actions:
+      a_get_method_fqn:
+        input:
+          _methodName: String
+          _class: Class
+        value: "new StringBuilder(_class.getName()).append('.').append(_methodName).toString()"
+
+  logging:
+    debug: true
+    trace: false
+
+  exporters:
+    tracing:
+      service-name: "Ocelot Otel Exporter"
+      otlp:
+        enabled: true
+        endpoint: "http://otel-collector:55678"
+        protocol: grpc

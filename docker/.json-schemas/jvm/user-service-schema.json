@@ -2,41 +2,27 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
     "image": { "const": "explorviz/user-service-jvm:dev" },
-    "networks": {
-      "type": "array",
-      "items": [
-        { "enum": ["explorviz"] }
-      ]
-    },
     "environment": {
       "type": "array",
       "allOf": [
         {
           "contains": {
-            "enum": [
-              "QUARKUS_OIDC_ENABLED=false"
-            ]
+            "enum": ["QUARKUS_OIDC_ENABLED=false"]
           }
         },
         {
           "contains": {
-            "enum": [
-              "INIT_TOKEN_ENABLED=true"
-            ]
+            "enum": ["INIT_TOKEN_ENABLED=true"]
           }
         },
         {
           "contains": {
-            "enum": [
-              "INIT_TOKEN_VALUE=mytokenvalue"
-            ]
+            "enum": ["INIT_TOKEN_VALUE=mytokenvalue"]
           }
         },
         {
           "contains": {
-            "enum": [
-              "INIT_TOKEN_SECRET=mytokensecret"
-            ]
+            "enum": ["INIT_TOKEN_SECRET=mytokensecret"]
           }
         },
         {
@@ -52,17 +38,14 @@
               "QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017"
             ]
           }
-        }
-        ,
+        },
         {
           "contains": {
-            "enum": [
-              "EXPLORVIZ_LOG_LVL=DEBUG"
-            ]
+            "enum": ["EXPLORVIZ_LOG_LVL=DEBUG"]
           }
         }
       ]
     }
   },
-  "required": ["image", "networks", "environment"]
+  "required": ["image", "environment"]
 }

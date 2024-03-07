@@ -1,0 +1,88 @@
+# my global config
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  # scrape_timeout is set to the global default (10s).
+
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+  # - "alert.rules"
+  # - "first.rules"
+  # - "second.rules"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+
+  - job_name: "kafka-lag-exporter"
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    static_configs:
+      - targets: ["kafka-lag-exporter:8000"]
+
+  - job_name: "adapter-service"
+    metrics_path: "/q/metrics"
+    dns_sd_configs:
+      - names:
+          - "adapter-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+          - "host.docker.internal:8087" # dev-mode
+
+  - job_name: "landscape-service"
+    metrics_path: "/q/metrics"
+    dns_sd_configs:
+      - names:
+          - "landscape-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+          - "host.docker.internal:8082" # dev-mode
+
+  - job_name: "trace-service"
+    metrics_path: "/q/metrics"
+    dns_sd_configs:
+      - names:
+          - "trace-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+          - "host.docker.internal:8083" # dev-mode
+
+  - job_name: "user-service"
+    metrics_path: "/q/metrics"
+    dns_sd_configs:
+      - names:
+          - "user-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+          - "host.docker.internal:8084" # dev-mode
+
+  - job_name: "push-service"
+    metrics_path: "/q/metrics"
+    dns_sd_configs:
+      - names:
+          - "push-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+          - "host.docker.internal:8086" # dev-mode
+
+  - job_name: "collaboration-service"
+    metrics_path: "/q/metrics"
+    dns_sd_configs:
+      - names:
+          - "push-service"
+        type: "A"
+        port: 8080
+    static_configs:
+      - targets:
+          - "host.docker.internal:8085" # dev-mode

@@ -48,7 +48,9 @@ build-demo-supplier-amd64:
 
 build-demo-supplier-arm64:
   extends: build-demo-supplier-amd64
-  when: manual
+  only:
+    - web
+  rules:
   variables:
     ARCH: "arm64"
   tags:
@@ -90,6 +92,8 @@ publish-amd64-manifest:
 
 publish-multi-arch-manifest:
   extends: publish-amd64-manifest
+  only:
+    - web
   variables:
     MANIFEST_PLATFORMS: "linux/amd64, linux/arm64"
   needs:

@@ -48,8 +48,7 @@ build-demo-supplier-amd64:
 
 build-demo-supplier-arm64:
   extends: build-demo-supplier-amd64
-  rules:
-    - allow_failure: true
+  when: manual
   variables:
     ARCH: "arm64"
   tags:

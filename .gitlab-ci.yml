@@ -50,6 +50,7 @@ build-demo-supplier-arm64:
   extends: build-demo-supplier-amd64
   only:
     - web
+  rules:
   variables:
     ARCH: "arm64"
   tags:

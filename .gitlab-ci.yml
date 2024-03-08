@@ -15,6 +15,8 @@ build-petclinic-amd64:
   stage: build-and-publish
   tags:
     - exec-docker
+  variables:
+    ARCH: "amd64"
   only:
     - schedules
   image:
@@ -23,7 +25,16 @@ build-petclinic-amd64:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME:amd64
+    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME:${ARCH}
+
+build-petclinic-arm64:
+  extends: build-petclinic-amd64
+  only:
+    - web
+  variables:
+    ARCH: "arm64"
+  tags:
+    - arm64
 
 build-demo-supplier-amd64:
   stage: build-and-publish

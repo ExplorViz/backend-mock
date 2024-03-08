@@ -58,7 +58,7 @@ build-demo-supplier-arm64:
 
 publish-amd64-manifest:
   image:
-    name: curlimages/curl:latest
+    name: mplatform/manifest-tool:alpine
     entrypoint: [""]
   stage: docker-manifest
   tags:
@@ -67,22 +67,15 @@ publish-amd64-manifest:
     - schedules
   variables:
     MANIFEST_PLATFORMS: "linux/amd64"
-  before_script:
-    - GHPRJ="https://github.com/estesp/manifest-tool"
-    - VERSION="v1.0.3"
-    - ARTIFACT="manifest-tool-linux-amd64"
-    - URL="$GHPRJ/releases/download/$VERSION/$ARTIFACT"
-    - curl -L -o manifest-tool $URL
-    - chmod +x manifest-tool
   script:
-    - ./manifest-tool
+    - manifest-tool
       --username ${DOCKERHUB_USER}
       --password ${DOCKERHUB_PASSWORD}
       push from-args
       --platforms ${MANIFEST_PLATFORMS}
       --template ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:ARCH
       --target ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:latest
-    - ./manifest-tool
+    - manifest-tool
       --username ${DOCKERHUB_USER}
       --password ${DOCKERHUB_PASSWORD}
       push from-args

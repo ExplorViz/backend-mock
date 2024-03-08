@@ -1,3 +1,5 @@
+include: "/.gitlab-ci-docker-manifest.yml"
+
 stages:
   - test
   - build-and-publish
@@ -67,35 +69,26 @@ build-demo-supplier-arm64:
   tags:
     - arm64
 
-publish-amd64-manifest:
-  image:
-    name: mplatform/manifest-tool:alpine
-    entrypoint: [""]
-  stage: docker-manifest
-  tags:
-    - exec-docker
-  only:
-    - schedules
+publish-amd64-manifest-demo-supplier:
+  extends: publish-docker-manifest
   variables:
+    DOCKERHUB_IMAGE_NAME: "demo-supplier"
     MANIFEST_PLATFORMS: "linux/amd64"
-  script:
-    - manifest-tool
-      --username ${DOCKERHUB_USER}
-      --password ${DOCKERHUB_PASSWORD}
-      push from-args
-      --platforms ${MANIFEST_PLATFORMS}
-      --template ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:ARCH
-      --target ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:latest
-    - manifest-tool
-      --username ${DOCKERHUB_USER}
-      --password ${DOCKERHUB_PASSWORD}
-      push from-args
-      --platforms ${MANIFEST_PLATFORMS}
-      --template ${DOCKERHUB_ORGA}/demo-supplier:ARCH
-      --target ${DOCKERHUB_ORGA}/demo-supplier:latest
 
-publish-multi-arch-manifest:
-  extends: publish-amd64-manifest
+publish-multi-arch-manifest-demo-supplier:
+  extends: publish-docker-manifest
+  tags:
+    - arm64
+  only:
+    - web
+  variables:
+    DOCKERHUB_IMAGE_NAME: "demo-supplier"
+    MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
+
+publish-multi-arch-manifest-petclinic:
+  extends: publish-docker-manifest
+  tags:
+    - arm64
   only:
     - web
   variables:

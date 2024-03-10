@@ -118,7 +118,7 @@ createLandscapeSample({
   let previousStructure = null;
 
   createLandscapeSample({
-    filePrefix: "petclinic",
+    filePrefix: "petclinic-distributed",
     token: "12444195-6144-4254-a17b-0f7fb49adb0a",
     structureModifier: (structureData) => {
       if (!previousStructure) {

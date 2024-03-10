@@ -56,10 +56,10 @@ function recursivelyRandomizeAllHashCodesOfPackages(
       const newHash = createRandomHex(64);
 
       if (hashMap) {
-        hashMap.set(method.hashCode, newHash);
+        hashMap.set(method.methodHash, newHash);
       }
 
-      method.hashCode = newHash;
+      method.methodHash = newHash;
     }
   }
 
@@ -81,9 +81,9 @@ function copyPackageAndTraces(package, traces) {
   // Switch traces to the new package:
   for (const trace of newTraces) {
     for (const span of trace.spanList) {
-      const newHash = hashMap.get(span.hashCode);
+      const newHash = hashMap.get(span.methodHash);
       if (newHash) {
-        span.hashCode = newHash;
+        span.methodHash = newHash;
       }
     }
   }

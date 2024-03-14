@@ -76,8 +76,7 @@ deploy-demo-supplier-arm64:
 
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+  needs: ["deploy-petclinic-amd64"]
   variables:
     SOURCE_TAG: "amd64"
     TARGET_TAG: "latest"
@@ -85,14 +84,9 @@ retag-petclinic-as-latest:
 retag-demo-supplier-as-latest:
   extends: .retag-dockerhub-image
   rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-      changes:
-        - demo-supplier/app.js
-        - demo-supplier/Dockerfile
-        - demo-supplier/package.json
-        - demo-supplier/user.json
     - if: $CI_PIPELINE_SOURCE == "web"
       when: never
+  needs: ["deploy-demo-supplier-amd64"]
   variables:
     IMAGE_NAME: "demo-supplier"
     SOURCE_TAG: "amd64"

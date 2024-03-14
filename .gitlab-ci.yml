@@ -99,7 +99,7 @@ publish-multi-arch-manifest-demo-supplier:
   tags:
     - arm64
   variables:
-    DOCKERHUB_IMAGE_NAME: "demo-supplier"
+    IMAGE_NAME: "demo-supplier"
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
 
 publish-multi-arch-manifest-petclinic:

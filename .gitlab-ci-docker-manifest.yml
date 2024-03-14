@@ -1,0 +1,19 @@
+publish-docker-manifest:
+  image:
+    name: mplatform/manifest-tool:alpine
+    entrypoint: [""]
+  stage: docker-manifest
+  tags:
+    - exec-docker
+  only:
+    - schedules
+  variables:
+    MANIFEST_PLATFORMS: "linux/amd64"
+  script:
+    - manifest-tool
+      --username ${DOCKERHUB_USER}
+      --password ${DOCKERHUB_PASSWORD}
+      push from-args
+      --platforms ${MANIFEST_PLATFORMS}
+      --template ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:ARCH
+      --target ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:latest

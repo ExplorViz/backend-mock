@@ -28,8 +28,8 @@ deploy-petclinic-amd64:
     - exec-docker
   variables:
     ARCH: "amd64"
-  only:
-    - schedules
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
@@ -43,8 +43,8 @@ deploy-petclinic-amd64:
 
 deploy-petclinic-arm64:
   extends: deploy-petclinic-amd64
-  only:
-    - web
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
   variables:
     ARCH: "arm64"
   tags:
@@ -70,9 +70,8 @@ deploy-demo-supplier-amd64:
 
 deploy-demo-supplier-arm64:
   extends: deploy-demo-supplier-amd64
-  only:
-    - web
   rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
   variables:
     ARCH: "arm64"
   tags:
@@ -80,8 +79,8 @@ deploy-demo-supplier-arm64:
 
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
-  only:
-    - schedules
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
   variables:
     SOURCE_TAG: "amd64"
     TARGET_TAG: "latest"
@@ -98,8 +97,6 @@ publish-multi-arch-manifest-demo-supplier:
   extends: .retag-as-multi-arch-dockerhub-image
   tags:
     - arm64
-  only:
-    - web
   variables:
     DOCKERHUB_IMAGE_NAME: "demo-supplier"
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
@@ -108,7 +105,5 @@ publish-multi-arch-manifest-petclinic:
   extends: .retag-as-multi-arch-dockerhub-image
   tags:
     - arm64
-  only:
-    - web
   variables:
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"

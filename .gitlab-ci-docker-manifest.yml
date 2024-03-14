@@ -20,9 +20,9 @@
   stage: deploy:retagging
   tags:
     - exec-docker
-  only:
-    - web
-    - pipelines
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
   variables:
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
     IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}

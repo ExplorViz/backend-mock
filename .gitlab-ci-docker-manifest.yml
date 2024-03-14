@@ -11,9 +11,9 @@ publish-docker-manifest:
     MANIFEST_PLATFORMS: "linux/amd64"
   script:
     - manifest-tool
-      --username ${DOCKERHUB_USER}
+      --username ${DOCKERHUB_USERNAME}
       --password ${DOCKERHUB_PASSWORD}
       push from-args
       --platforms ${MANIFEST_PLATFORMS}
-      --template ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:ARCH
-      --target ${DOCKERHUB_ORGA}/${DOCKERHUB_IMAGE_NAME}:latest
+      --template ${DOCKERHUB_ORGANIZATION}/${DOCKERHUB_IMAGE_NAME}:ARCH
+      --target ${DOCKERHUB_ORGANIZATION}/${DOCKERHUB_IMAGE_NAME}:latest

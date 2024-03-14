@@ -77,12 +77,16 @@ deploy-demo-supplier-arm64:
 
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
+  only:
+    - schedules
   variables:
     SOURCE_TAG: "amd64"
     TARGET_TAG: "latest"
 
 retag-demo-supplier-as-latest:
   extends: .retag-dockerhub-image
+  dependencies:
+    - deploy-demo-supplier-arm64
   variables:
     IMAGE_NAME: "demo-supplier"
     SOURCE_TAG: "amd64"

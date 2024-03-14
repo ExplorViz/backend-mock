@@ -2,8 +2,17 @@ include: "/.gitlab-ci-docker-manifest.yml"
 
 stages:
   - test
-  - build-and-publish
-  - docker-manifest
+  - deploy:images
+  - deploy:retagging
+
+.demo-supplier-rules: &demo_supplier_rules
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes:
+        - demo-supplier/app.js
+        - demo-supplier/Dockerfile
+        - demo-supplier/package.json
+        - demo-supplier/user.json
 
 run-pre-commit:
   stage: test
@@ -13,8 +22,8 @@ run-pre-commit:
   script:
     - pre-commit run --all-files --config .pre-commit-config.yaml
 
-build-petclinic-amd64:
-  stage: build-and-publish
+deploy-petclinic-amd64:
+  stage: deploy:images
   tags:
     - exec-docker
   variables:
@@ -27,10 +36,13 @@ build-petclinic-amd64:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:${ARCH}
+    - /kaniko/executor
+      --context=$CI_PROJECT_DIR/example-applications/petclinic-demo
+      --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile
+      --destination=$DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:${ARCH}
 
-build-petclinic-arm64:
-  extends: build-petclinic-amd64
+deploy-petclinic-arm64:
+  extends: deploy-petclinic-amd64
   only:
     - web
   variables:
@@ -38,8 +50,8 @@ build-petclinic-arm64:
   tags:
     - arm64
 
-build-demo-supplier-amd64:
-  stage: build-and-publish
+deploy-demo-supplier-amd64:
+  stage: deploy:images
   tags:
     - exec-docker
   variables:
@@ -47,20 +59,17 @@ build-demo-supplier-amd64:
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-      changes:
-        - demo-supplier/app.js
-        - demo-supplier/Dockerfile
-        - demo-supplier/package.json
-        - demo-supplier/user.json
+  <<: *demo_supplier_rules
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGANIZATION/demo-supplier:${ARCH}
+    - /kaniko/executor
+      --context=$CI_PROJECT_DIR/demo-supplier
+      --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile
+      --destination=$DOCKERHUB_ORGANIZATION/demo-supplier:${ARCH}
 
-build-demo-supplier-arm64:
-  extends: build-demo-supplier-amd64
+deploy-demo-supplier-arm64:
+  extends: deploy-demo-supplier-amd64
   only:
     - web
   rules:
@@ -69,14 +78,24 @@ build-demo-supplier-arm64:
   tags:
     - arm64
 
-publish-amd64-manifest-demo-supplier:
-  extends: publish-docker-manifest
+retag-petclinic-as-latest:
+  extends: .retag-dockerhub-image
+  only:
+    - schedules
   variables:
-    DOCKERHUB_IMAGE_NAME: "demo-supplier"
-    MANIFEST_PLATFORMS: "linux/amd64"
+    SOURCE_TAG: "amd64"
+    TARGET_TAG: "latest"
+
+retag-demo-supplier-as-latest:
+  extends: .retag-dockerhub-image
+  <<: *demo_supplier_rules
+  variables:
+    IMAGE_NAME: "demo-supplier"
+    SOURCE_TAG: "amd64"
+    TARGET_TAG: "latest"
 
 publish-multi-arch-manifest-demo-supplier:
-  extends: publish-docker-manifest
+  extends: .retag-as-multi-arch-dockerhub-image
   tags:
     - arm64
   only:
@@ -86,7 +105,7 @@ publish-multi-arch-manifest-demo-supplier:
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
 
 publish-multi-arch-manifest-petclinic:
-  extends: publish-docker-manifest
+  extends: .retag-as-multi-arch-dockerhub-image
   tags:
     - arm64
   only:

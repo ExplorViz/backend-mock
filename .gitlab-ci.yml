@@ -5,15 +5,6 @@ stages:
   - deploy:images
   - deploy:retagging
 
-.demo-supplier-rules: &demo_supplier_rules
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-      changes:
-        - demo-supplier/app.js
-        - demo-supplier/Dockerfile
-        - demo-supplier/package.json
-        - demo-supplier/user.json
-
 run-pre-commit:
   stage: test
   image: explorviz/pre-commit:latest
@@ -59,7 +50,13 @@ deploy-demo-supplier-amd64:
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
-  <<: *demo_supplier_rules
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes:
+        - demo-supplier/app.js
+        - demo-supplier/Dockerfile
+        - demo-supplier/package.json
+        - demo-supplier/user.json
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
@@ -87,7 +84,15 @@ retag-petclinic-as-latest:
 
 retag-demo-supplier-as-latest:
   extends: .retag-dockerhub-image
-  <<: *demo_supplier_rules
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+      changes:
+        - demo-supplier/app.js
+        - demo-supplier/Dockerfile
+        - demo-supplier/package.json
+        - demo-supplier/user.json
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: never
   variables:
     IMAGE_NAME: "demo-supplier"
     SOURCE_TAG: "amd64"

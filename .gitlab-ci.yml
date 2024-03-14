@@ -26,8 +26,8 @@ build-petclinic-amd64:
     entrypoint: [""]
   script:
     - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGA/$DOCKERHUB_IMAGE_NAME:${ARCH}
+    - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:${ARCH}
 
 build-petclinic-arm64:
   extends: build-petclinic-amd64
@@ -56,8 +56,8 @@ build-demo-supplier-amd64:
         - demo-supplier/user.json
   script:
     - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${DOCKERHUB_USER}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGA/demo-supplier:${ARCH}
+    - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGANIZATION/demo-supplier:${ARCH}
 
 build-demo-supplier-arm64:
   extends: build-demo-supplier-amd64

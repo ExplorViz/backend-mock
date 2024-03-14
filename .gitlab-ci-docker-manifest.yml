@@ -1,19 +1,37 @@
-publish-docker-manifest:
+.retag-dockerhub-image:
+  stage: deploy:retagging
+  tags:
+    - exec-docker
+  image:
+    name: gcr.io/go-containerregistry/crane:debug
+    entrypoint: [""]
+  variables:
+    IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}
+    SOURCE_TAG: "latest"
+    TARGET_TAG: $CI_COMMIT_SHORT_SHA
+  script:
+    - crane auth login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD "index.docker.io"
+    - crane cp $DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:$SOURCE_TAG $DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:$TARGET_TAG
+
+.retag-as-multi-arch-dockerhub-image:
   image:
     name: mplatform/manifest-tool:alpine
     entrypoint: [""]
-  stage: docker-manifest
+  stage: deploy:retagging
   tags:
     - exec-docker
   only:
-    - schedules
+    - web
+    - pipelines
   variables:
-    MANIFEST_PLATFORMS: "linux/amd64"
+    MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
+    IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}
+    TARGET_TAG: "latest"
   script:
     - manifest-tool
       --username ${DOCKERHUB_USERNAME}
       --password ${DOCKERHUB_PASSWORD}
       push from-args
       --platforms ${MANIFEST_PLATFORMS}
-      --template ${DOCKERHUB_ORGANIZATION}/${DOCKERHUB_IMAGE_NAME}:ARCH
-      --target ${DOCKERHUB_ORGANIZATION}/${DOCKERHUB_IMAGE_NAME}:latest
+      --template ${DOCKERHUB_ORGANIZATION}/${IMAGE_NAME}:ARCH
+      --target ${DOCKERHUB_ORGANIZATION}/${IMAGE_NAME}:${TARGET_TAG}

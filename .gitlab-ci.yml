@@ -2,8 +2,8 @@ include: "/.gitlab-ci-docker-manifest.yml"
 
 stages:
   - test
-  - build-and-publish
-  - docker-manifest
+  - deploy:images
+  - deploy:retagging
 
 run-pre-commit:
   stage: test
@@ -13,8 +13,8 @@ run-pre-commit:
   script:
     - pre-commit run --all-files --config .pre-commit-config.yaml
 
-build-petclinic-amd64:
-  stage: build-and-publish
+deploy-petclinic-amd64:
+  stage: deploy:images
   tags:
     - exec-docker
   variables:
@@ -27,9 +27,12 @@ build-petclinic-amd64:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/example-applications/petclinic-demo --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile --destination=$DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:${ARCH}
+    - /kaniko/executor
+      --context=$CI_PROJECT_DIR/example-applications/petclinic-demo
+      --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile
+      --destination=$DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:${ARCH}
 
-build-petclinic-arm64:
+deploy-petclinic-arm64:
   extends: build-petclinic-amd64
   only:
     - web
@@ -38,8 +41,8 @@ build-petclinic-arm64:
   tags:
     - arm64
 
-build-demo-supplier-amd64:
-  stage: build-and-publish
+deploy-demo-supplier-amd64:
+  stage: deploy:images
   tags:
     - exec-docker
   variables:
@@ -57,9 +60,12 @@ build-demo-supplier-amd64:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context=$CI_PROJECT_DIR/demo-supplier --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile --destination=$DOCKERHUB_ORGANIZATION/demo-supplier:${ARCH}
+    - /kaniko/executor
+      --context=$CI_PROJECT_DIR/demo-supplier
+      --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile
+      --destination=$DOCKERHUB_ORGANIZATION/demo-supplier:${ARCH}
 
-build-demo-supplier-arm64:
+deploy-demo-supplier-arm64:
   extends: build-demo-supplier-amd64
   only:
     - web
@@ -69,11 +75,18 @@ build-demo-supplier-arm64:
   tags:
     - arm64
 
-publish-amd64-manifest-demo-supplier:
-  extends: publish-docker-manifest
+retag-petclinic-as-latest:
+  extends: retag-dockerhub-image
   variables:
-    DOCKERHUB_IMAGE_NAME: "demo-supplier"
-    MANIFEST_PLATFORMS: "linux/amd64"
+    SOURCE_TAG: "amd64"
+    TARGET_TAG: "latest"
+
+retag-demo-supplier-as-latest:
+  extends: retag-dockerhub-image
+  variables:
+    IMAGE_NAME: "demo-supplier"
+    SOURCE_TAG: "amd64"
+    TARGET_TAG: "latest"
 
 publish-multi-arch-manifest-demo-supplier:
   extends: publish-docker-manifest

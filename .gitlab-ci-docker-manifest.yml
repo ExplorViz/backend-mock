@@ -30,11 +30,12 @@
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
     IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}
     TARGET_TAG: "latest"
+    TAG_PREFIX: ""
   script:
     - manifest-tool
       --username ${DOCKERHUB_USERNAME}
       --password ${DOCKERHUB_PASSWORD}
       push from-args
       --platforms ${MANIFEST_PLATFORMS}
-      --template ${DOCKERHUB_ORGANIZATION}/${IMAGE_NAME}:ARCH
+      --template ${DOCKERHUB_ORGANIZATION}/${IMAGE_NAME}:${TAG_PREFIX}ARCH
       --target ${DOCKERHUB_ORGANIZATION}/${IMAGE_NAME}:${TARGET_TAG}

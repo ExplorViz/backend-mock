@@ -123,3 +123,8 @@ trigger-collaboration-service:
   extends: .trigger-multi-project-pipeline
   variables:
     TRIGGERED_PROJECT: "collaboration-service-js"
+
+trigger-metrics-service:
+  extends: .trigger-multi-project-pipeline
+  variables:
+    TRIGGERED_PROJECT: "metrics-service"

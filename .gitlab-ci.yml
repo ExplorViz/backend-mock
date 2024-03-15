@@ -4,6 +4,7 @@ stages:
   - test
   - deploy:images
   - deploy:retagging
+  - multi-project-pipeline
 
 run-pre-commit:
   stage: test
@@ -74,15 +75,6 @@ deploy-demo-supplier-arm64:
   tags:
     - arm64
 
-trigger-multi-project-pipeline:
-  stage: deploy:images
-  rules:
-    - if: $MULTI_PROJECT_PIPELINE
-  trigger:
-    project: explorviz/collaboration-service-js
-    forward:
-      yaml_variables: true
-
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
   rules:
@@ -116,3 +108,12 @@ publish-multi-arch-manifest-demo-supplier:
 
 publish-multi-arch-manifest-petclinic:
   extends: .retag-as-multi-arch-dockerhub-image
+
+trigger-collaboration-service:
+  stage: multi-project-pipeline
+  rules:
+    - if: $MULTI_PROJECT_PIPELINE
+  trigger:
+    project: ExplorViz/code/collaboration-service-js
+    forward:
+      yaml_variables: true

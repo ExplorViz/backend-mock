@@ -20,8 +20,7 @@ deploy-petclinic-amd64:
   variables:
     ARCH: "amd64"
   rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
@@ -36,7 +35,7 @@ deploy-petclinic-amd64:
 deploy-petclinic-arm64:
   extends: deploy-petclinic-amd64
   rules:
-    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $MULTI_ARCH_BUILD
   variables:
     ARCH: "arm64"
   tags:
@@ -69,7 +68,7 @@ deploy-demo-supplier-amd64:
 deploy-demo-supplier-arm64:
   extends: deploy-demo-supplier-amd64
   rules:
-    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $MULTI_ARCH_BUILD
   variables:
     ARCH: "arm64"
   tags:
@@ -77,18 +76,12 @@ deploy-demo-supplier-arm64:
 
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "web"
-      when: never
   variables:
     SOURCE_TAG: "amd64"
     TARGET_TAG: "latest"
 
 retag-demo-supplier-as-latest:
   extends: .retag-dockerhub-image
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "web"
-      when: never
   variables:
     IMAGE_NAME: "demo-supplier"
     SOURCE_TAG: "amd64"

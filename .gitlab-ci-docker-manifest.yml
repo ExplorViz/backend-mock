@@ -5,6 +5,10 @@
   image:
     name: gcr.io/go-containerregistry/crane:debug
     entrypoint: [""]
+  rules:
+    - if: $MULTI_ARCH_BUILD
+      when: never
+    - when: on_success
   variables:
     IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}
     SOURCE_TAG: "latest"
@@ -21,8 +25,7 @@
   tags:
     - exec-docker
   rules:
-    - if: $CI_PIPELINE_SOURCE == "web"
-    - if: $CI_PIPELINE_SOURCE == "pipeline"
+    - if: $MULTI_ARCH_BUILD
   variables:
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
     IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}

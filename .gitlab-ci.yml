@@ -74,6 +74,15 @@ deploy-demo-supplier-arm64:
   tags:
     - arm64
 
+trigger-multi-project-pipeline:
+  stage: deploy:images
+  rules:
+    - if: $MULTI_PROJECT_PIPELINE
+  trigger:
+    project: explorviz/collaboration-service-js
+    forward:
+      yaml_variables: true
+
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
   rules:

@@ -1,10 +1,10 @@
 include: "/.gitlab-ci-docker-manifest.yml"
 
 stages:
+  - trigger-multi-project-pipeline
   - test
   - deploy:images
   - deploy:retagging
-  - multi-project-pipeline
 
 run-pre-commit:
   stage: test
@@ -109,11 +109,17 @@ publish-multi-arch-manifest-demo-supplier:
 publish-multi-arch-manifest-petclinic:
   extends: .retag-as-multi-arch-dockerhub-image
 
-trigger-collaboration-service:
-  stage: multi-project-pipeline
+.trigger-multi-project-pipeline:
+  stage: trigger-multi-project-pipeline
   rules:
     - if: $MULTI_PROJECT_PIPELINE
   trigger:
-    project: ExplorViz/code/collaboration-service-js
+    project: ExplorViz/code/$TRIGGERED_PROJECT
     forward:
-      yaml_variables: true
+      pipeline_variables: true
+
+
+trigger-collaboration-service:
+  extends: .trigger-multi-project-pipeline
+  variables:
+    TRIGGERED_PROJECT: "collaboration-service-js"

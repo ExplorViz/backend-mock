@@ -1,4 +1,4 @@
-include: "/.gitlab-ci-docker-manifest.yml"
+include: "/.gitlab-ci-explorviz-common.yml"
 
 stages:
   - test

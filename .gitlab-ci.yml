@@ -26,7 +26,7 @@ deploy-petclinic-arm64:
   rules:
     - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
   variables:
-    ARCH: "arm64"
+    DOCKERHUB_TAG: "arm64"
   tags:
     - arm64
 
@@ -49,7 +49,7 @@ deploy-demo-supplier-arm64:
   rules:
     - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
   variables:
-    ARCH: "arm64"
+    DOCKERHUB_TAG: "arm64"
   tags:
     - arm64
 

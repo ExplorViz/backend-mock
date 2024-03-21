@@ -8,7 +8,7 @@ default:
 .build-and-deploy:
   stage: deploy:images
   variables:
-    ARCH: "amd64"
+    DOCKERHUB_TAG: "amd64"
     DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR
     IMAGE_NAME: $DOCKERHUB_IMAGE_NAME
     DOCKERFILE_NAME: "Dockerfile"
@@ -23,7 +23,7 @@ default:
     - /kaniko/executor
       --context=$DOCKER_CONTEXT_PATH
       --dockerfile=${DOCKER_CONTEXT_PATH}/${DOCKERFILE_NAME}
-      --destination=$DOCKERHUB_ORGANIZATION/${IMAGE_NAME}:${ARCH}
+      --destination=$DOCKERHUB_ORGANIZATION/${IMAGE_NAME}:${DOCKERHUB_TAG}
 
 .retag-dockerhub-image:
   stage: deploy:retagging

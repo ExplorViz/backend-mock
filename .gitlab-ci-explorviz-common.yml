@@ -1,3 +1,32 @@
+variables:
+  DEFAULT_TAG: exec-docker
+
+default:
+  tags:
+    - $DEFAULT_TAG
+
+.build-and-deploy:
+  stage: deploy:images
+    tags:
+    - $DEFAULT_TAG
+  variables:
+    ARCH: "amd64"
+    DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR
+    IMAGE_NAME: $DOCKERHUB_IMAGE_NAME
+    DOCKERFILE_NAME: "Dockerfile"
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context=$DOCKER_CONTEXT_PATH
+      --dockerfile=${DOCKER_CONTEXT_PATH}/${DOCKERFILE_NAME}
+      --destination=$DOCKERHUB_ORGANIZATION/${IMAGE_NAME}:${ARCH}
+
 .retag-dockerhub-image:
   stage: deploy:retagging
   tags:
@@ -25,7 +54,7 @@
   tags:
     - exec-docker
   rules:
-    - if: $MULTI_ARCH_BUILD
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
   variables:
     MANIFEST_PLATFORMS: "linux/amd64,linux/arm64/v8"
     IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}

@@ -9,67 +9,45 @@ stages:
 run-pre-commit:
   stage: test
   image: explorviz/pre-commit:latest
-  tags:
-    - exec-docker
   script:
     - pre-commit run --all-files --config .pre-commit-config.yaml
 
 deploy-petclinic-amd64:
-  stage: deploy:images
-  tags:
-    - exec-docker
+  extends: .build-and-deploy
   variables:
-    ARCH: "amd64"
+    DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR/example-applications/petclinic-demo
   rules:
+    - if: $ARM64_BUILD
+      when: never
     - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
-  script:
-    - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor
-      --context=$CI_PROJECT_DIR/example-applications/petclinic-demo
-      --dockerfile=$CI_PROJECT_DIR/example-applications/petclinic-demo/Dockerfile
-      --destination=$DOCKERHUB_ORGANIZATION/$DOCKERHUB_IMAGE_NAME:${ARCH}
 
 deploy-petclinic-arm64:
   extends: deploy-petclinic-amd64
   rules:
-    - if: $MULTI_ARCH_BUILD
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
   variables:
     ARCH: "arm64"
   tags:
     - arm64
 
 deploy-demo-supplier-amd64:
-  stage: deploy:images
-  tags:
-    - exec-docker
+  extends: .build-and-deploy
   variables:
-    ARCH: "amd64"
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
+    DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR/demo-supplier
   rules:
+    - if: $ARM64_BUILD
+      when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
       changes:
         - demo-supplier/app.js
         - demo-supplier/Dockerfile
         - demo-supplier/package.json
         - demo-supplier/user.json
-  script:
-    - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$CONTAINER_REGISTRY_URL\":{\"auth\":\"$(echo -n ${DOCKERHUB_USERNAME}:${DOCKERHUB_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor
-      --context=$CI_PROJECT_DIR/demo-supplier
-      --dockerfile=$CI_PROJECT_DIR/demo-supplier/Dockerfile
-      --destination=$DOCKERHUB_ORGANIZATION/demo-supplier:${ARCH}
 
 deploy-demo-supplier-arm64:
   extends: deploy-demo-supplier-amd64
   rules:
-    - if: $MULTI_ARCH_BUILD
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
   variables:
     ARCH: "arm64"
   tags:
@@ -78,7 +56,7 @@ deploy-demo-supplier-arm64:
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
   rules:
-    - if: $MULTI_ARCH_BUILD
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
       when: never
     - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"
   variables:
@@ -88,7 +66,7 @@ retag-petclinic-as-latest:
 retag-demo-supplier-as-latest:
   extends: .retag-dockerhub-image
   rules:
-    - if: $MULTI_ARCH_BUILD
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
       when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
       changes:
@@ -117,7 +95,6 @@ publish-multi-arch-manifest-petclinic:
     project: ExplorViz/code/$TRIGGERED_PROJECT
     forward:
       pipeline_variables: true
-
 
 trigger-collaboration-service:
   extends: .trigger-multi-project-pipeline

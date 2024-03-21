@@ -7,8 +7,6 @@ default:
 
 .build-and-deploy:
   stage: deploy:images
-    tags:
-    - $DEFAULT_TAG
   variables:
     ARCH: "amd64"
     DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR
@@ -29,8 +27,6 @@ default:
 
 .retag-dockerhub-image:
   stage: deploy:retagging
-  tags:
-    - exec-docker
   image:
     name: gcr.io/go-containerregistry/crane:debug
     entrypoint: [""]
@@ -51,8 +47,6 @@ default:
     name: mplatform/manifest-tool:alpine
     entrypoint: [""]
   stage: deploy:retagging
-  tags:
-    - exec-docker
   rules:
     - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
   variables:

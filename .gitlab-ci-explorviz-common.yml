@@ -53,7 +53,7 @@ default:
     IMAGE_TAG: "latest"
   rules:
    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
-      when: never
+     when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:
     - ./gradlew clean assemble

@@ -16,6 +16,8 @@ default:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
   rules:
+    - if: $ARM64_BUILD
+      when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:
     - mkdir -p /kaniko/.docker
@@ -32,7 +34,7 @@ default:
     IMAGE_NAME: $DOCKERHUB_IMAGE_NAME_NATIVE
     IMAGE_TAG: "latest"
   rules:
-    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
+    - if: $ARM64_BUILD
       when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:
@@ -52,7 +54,7 @@ default:
     IMAGE_NAME: $DOCKERHUB_IMAGE_NAME
     IMAGE_TAG: "latest"
   rules:
-    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
+    - if: $ARM64_BUILD
       when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:

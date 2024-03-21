@@ -32,6 +32,8 @@ default:
     IMAGE_NAME: $DOCKERHUB_IMAGE_NAME_NATIVE
     IMAGE_TAG: "latest"
   rules:
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
+      when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:
     - ./gradlew clean assemble
@@ -50,6 +52,8 @@ default:
     IMAGE_NAME: $DOCKERHUB_IMAGE_NAME
     IMAGE_TAG: "latest"
   rules:
+   - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
+      when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:
     - ./gradlew clean assemble
@@ -68,9 +72,9 @@ default:
     name: gcr.io/go-containerregistry/crane:debug
     entrypoint: [""]
   rules:
-    - if: $MULTI_ARCH_BUILD
+    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
       when: never
-    - when: on_success
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   variables:
     IMAGE_NAME: ${DOCKERHUB_IMAGE_NAME}
     SOURCE_TAG: "latest"

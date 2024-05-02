@@ -14,7 +14,7 @@ RUN wget -q https://github.com/spring-projects/spring-petclinic/archive/9ecdc111
 
 WORKDIR /petclinic
 
-RUN cat /parameters-fix.txt >> build.gradle && ./gradlew assemble && mv build/libs/spring-petclinic-2.7.3.jar /app.jar
+RUN ./gradlew assemble && mv build/libs/spring-petclinic-2.7.3.jar /app.jar
 
 ## END Build stage
 

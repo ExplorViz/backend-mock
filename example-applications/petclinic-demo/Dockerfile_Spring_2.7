@@ -1,0 +1,27 @@
+## BEGIN Build stage
+
+FROM eclipse-temurin:11 as build
+
+RUN apt update \
+  && apt install -y wget \
+  && apt install -y unzip \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN wget -q https://github.com/spring-projects/spring-petclinic/archive/9ecdc1111e3da388a750ace41a125287d9620534.zip && \
+  unzip -q 9ecdc1111e3da388a750ace41a125287d9620534 && \
+  rm 9ecdc1111e3da388a750ace41a125287d9620534.zip && \
+  mv spring-petclinic-9ecdc1111e3da388a750ace41a125287d9620534 petclinic
+
+WORKDIR /petclinic
+
+RUN cat /parameters-fix.txt >> build.gradle && ./gradlew assemble && mv build/libs/spring-petclinic-2.7.3.jar /app.jar
+
+## END Build stage
+
+## BEGIN Publish stage
+
+FROM eclipse-temurin:11
+COPY --from=build /app.jar /app.jar
+CMD java -jar /app.jar
+
+## END Publish stage

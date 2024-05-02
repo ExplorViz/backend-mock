@@ -16,6 +16,7 @@ deploy-petclinic-amd64:
   extends: .build-and-deploy
   variables:
     DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR/example-applications/petclinic-demo
+    DOCKERFILE_NAME: Dockerfile_Spring_2.7
   rules:
     - if: $ARM64_BUILD
       when: never

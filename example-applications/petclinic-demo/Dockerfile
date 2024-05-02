@@ -1,6 +1,6 @@
 ## BEGIN Build stage
 
-FROM openjdk:17-slim as build
+FROM eclipse-temurin:17 as build
 
 RUN apt update \
   && apt install -y wget \
@@ -12,16 +12,19 @@ RUN wget -q https://github.com/spring-projects/spring-petclinic/archive/refs/hea
   rm main.zip && \
   mv spring-petclinic-main petclinic
 
-ENV MVNW_VERBOSE=true
+# https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention
+ADD parameters-fix.txt /parameters-fix.txt
 
-RUN cd /petclinic && ./mvnw package -q && mv target/*.jar /app.jar
+WORKDIR /petclinic
+
+RUN cat /parameters-fix.txt >> build.gradle && ./gradlew assemble && mv build/libs/spring-petclinic-3.2.0.jar /app.jar
 
 ## END Build stage
 
 ## BEGIN Publish stage
 
-FROM openjdk:17-slim
+FROM eclipse-temurin:17
 COPY --from=build /app.jar /app.jar
-CMD java -jar app.jar
+CMD java -jar /app.jar
 
 ## END Publish stage

@@ -28,7 +28,7 @@
         {
           "contains": {
             "enum": [
-              "./generic/cassandra/custom-entrypoint.sh:/usr/local/bin/custom-entrypoint.sh"
+              "./configurations/cassandra/custom-entrypoint.sh:/usr/local/bin/custom-entrypoint.sh"
             ]
           }
         },

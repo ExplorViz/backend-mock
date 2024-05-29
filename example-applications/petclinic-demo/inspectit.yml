@@ -3,7 +3,7 @@ inspectit:
     extra:
       landscape_token: ${LANDSCAPE_TOKEN_ID}
       token_secret: ${LANDSCAPE_TOKEN_SECRET}
-      application_name: "petclinic-demo"
+      application_name: "petclinic"
       application_instance_id: 0
       application_language: "java"
 

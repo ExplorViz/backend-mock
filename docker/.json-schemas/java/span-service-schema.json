@@ -1,41 +1,34 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/user-service-jvm:dev" },
+    "image": { "const": "explorviz/span-service-${EXPLORVIZ_JAVA_IMAGE_TYPE}:latest" },
     "environment": {
       "type": "array",
       "allOf": [
         {
           "contains": {
-            "enum": ["QUARKUS_OIDC_ENABLED=false"]
+            "enum": ["QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042"]
           }
         },
         {
           "contains": {
-            "enum": ["INIT_TOKEN_ENABLED=true"]
+            "enum": ["QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra"]
           }
         },
         {
           "contains": {
-            "enum": ["INIT_TOKEN_VALUE=mytokenvalue"]
+            "enum": ["QUARKUS_CASSANDRA_AUTH_PASSWORD=cassandra"]
           }
         },
         {
           "contains": {
-            "enum": ["INIT_TOKEN_SECRET=mytokensecret"]
-          }
-        },
-        {
-          "contains": {
-            "enum": [
-              "MP_MESSAGING_OUTGOING_TOKEN_EVENTS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
-            ]
+            "enum": ["QUARKUS_CASSANDRA_REQUEST_TIMEOUT=10"]
           }
         },
         {
           "contains": {
             "enum": [
-              "QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo-user:27017"
+              "QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081"
             ]
           }
         },

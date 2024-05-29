@@ -2,7 +2,6 @@
 
 # docker-compose --env-file .env-custom down -v
 
-version: "3.5"
 services:
   ocelot-agent:
     image: inspectit/inspectit-ocelot-agent:2.1.1
@@ -184,3 +183,4 @@ volumes:
 networks:
   explorviz:
     name: explorviz
+    external: true

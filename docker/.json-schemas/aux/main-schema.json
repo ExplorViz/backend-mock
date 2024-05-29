@@ -10,46 +10,22 @@
       },
       "properties": {
         "kafka": {
-          "$ref": "file:docker/.json-schemas/env/kafka-schema.json"
+          "$ref": "kafka-schema.json"
         },
         "redis-collab": {
-          "$ref": "file:docker/.json-schemas/env/redis-schema.json"
+          "$ref": "redis-schema.json"
         },
         "schema-registry": {
-          "$ref": "file:docker/.json-schemas/env/schema-registry-schema.json"
+          "$ref": "schema-registry-schema.json"
         },
         "otel-collector": {
-          "$ref": "file:docker/.json-schemas/env/otel-collector-schema.json"
+          "$ref": "otel-collector-schema.json"
         },
         "cassandra": {
-          "$ref": "file:docker/.json-schemas/env/cassandra-schema.json"
+          "$ref": "cassandra-schema.json"
         },
         "mongo-user": {
-          "$ref": "file:docker/.json-schemas/env/mongo-user-schema.json"
-        },
-        "adapter-service-jvm": {
-          "$ref": "file:docker/.json-schemas/jvm/adapter-service-schema.json"
-        },
-        "span-service-jvm": {
-          "$ref": "file:docker/.json-schemas/jvm/span-service-schema.json"
-        },
-        "user-service-jvm": {
-          "$ref": "file:docker/.json-schemas/jvm/user-service-schema.json"
-        },
-        "collaboration-service-js": {
-          "$ref": "file:docker/.json-schemas/jvm/collaboration-service-schema.json"
-        },
-        "frontend": {
-          "$ref": "file:docker/.json-schemas/jvm/frontend-schema.json"
-        },
-        "adapter-service": {
-          "$ref": "file:docker/.json-schemas/native/adapter-service-schema.json"
-        },
-        "span-service": {
-          "$ref": "file:docker/.json-schemas/native/span-service-schema.json"
-        },
-        "user-service": {
-          "$ref": "file:docker/.json-schemas/native/user-service-schema.json"
+          "$ref": "mongo-user-schema.json"
         }
       },
       "required": [
@@ -57,14 +33,8 @@
         "redis-collab",
         "schema-registry",
         "otel-collector",
-        "adapter-service-jvm",
-        "span-service-jvm",
-        "user-service-jvm",
-        "collaboration-service-js",
-        "frontend",
-        "adapter-service",
-        "span-service",
-        "user-service"
+        "cassandra",
+        "mongo-user"
       ]
     },
     "volumes": {

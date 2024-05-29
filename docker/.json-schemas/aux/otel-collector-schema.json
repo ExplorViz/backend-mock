@@ -19,7 +19,7 @@
       "items": [
         {
           "enum": [
-            "./generic/otel-collector-config.yaml:/etc/otel-collector-config.yaml"
+            "./configurations/otel-collector-config.yaml:/etc/otel-collector-config.yaml"
           ]
         }
       ]

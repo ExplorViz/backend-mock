@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "services": {
+      "description": "Declaration for Docker compose file",
+      "type": "object",
+      "items": {
+        "type": "object"
+      },
+      "properties": {
+        "adapter-service": {
+          "$ref": "adapter-service-schema.json"
+        },
+        "span-service": {
+          "$ref": "span-service-schema.json"
+        },
+        "user-service": {
+          "$ref": "user-service-schema.json"
+        }
+      },
+      "required": [
+        "adapter-service",
+        "span-service",
+        "user-service"
+      ]
+    }
+  },
+  "required": ["services"]
+}

@@ -1,0 +1,249 @@
+# Contains auxiliary software for ExplorViz
+
+# If you only want to use it without dockerized ExplorViz:
+
+# Start: `docker compose -f compose.aux.yaml --env-file ../.env up -d`
+# Stop and remove volumes: `docker compose -f compose.aux.yaml --env-file ../.env down -v`
+
+services:
+  #region Environment
+
+  ## Kafka ##
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.0
+    hostname: kafka
+    profiles: ["env"]
+    ports:
+      - "${KAFKA_EXT_PORT}:${KAFKA_EXT_PORT}"
+      - "${KAFKA_JMX_PORT}:${KAFKA_JMX_PORT}"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:${KAFKA_INT_PORT},PLAINTEXT_HOST://localhost:${KAFKA_EXT_PORT}"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_JMX_PORT: ${KAFKA_JMX_PORT}
+      KAFKA_JMX_HOSTNAME: localhost
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_MESSAGE_MAX_BYTES: 10485880
+      KAFKA_NODE_ID: 1
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:29093"
+      KAFKA_LISTENERS: "PLAINTEXT://kafka:${KAFKA_INT_PORT},CONTROLLER://kafka:29093,PLAINTEXT_HOST://0.0.0.0:${KAFKA_EXT_PORT}"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+      - kafka-secrets:/etc/kafka/secrets
+      - ./configurations/kafka/kafka_kraft_init.sh:/tmp/update_run.sh
+    command: 'bash -c ''if [ ! -f /tmp/update_run.sh ]; then echo "ERROR: Did you forget the kafka_kraft_init.sh file that came with this docker-compose.yml file?" && exit 1 ; else /tmp/update_run.sh && /etc/confluent/docker/run ; fi'''
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "kafka-topics",
+          "--bootstrap-server",
+          "kafka:${KAFKA_INT_PORT}",
+          "--list",
+        ]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  init-kafka:
+    image: confluentinc/cp-kafka:7.3.0
+    profiles: ["env", "init-env"]
+    depends_on:
+      kafka:
+        condition: service_healthy
+    environment:
+      - KAFKA_INT_PORT
+    entrypoint: ["/bin/sh", "-c"]
+    volumes:
+      - init-kafka-data:/var/lib/kafka/data
+      - init-kafka-secrets:/etc/kafka/secrets
+      - ./configurations/kafka/init_kafka_topics.sh:/tmp/init_kafka_topics.sh
+    command: "/tmp/init_kafka_topics.sh"
+
+  schema-registry:
+    hostname: schema-registry
+    image: confluentinc/cp-schema-registry:7.3.0
+    profiles: ["env"]
+    depends_on:
+      kafka:
+        condition: service_healthy
+    ports:
+      - ${SCHEMA_REGISTRY_PORT}:8081
+    environment:
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:${KAFKA_INT_PORT}
+      SCHEMA_REGISTRY_HOST_NAME: 127.0.0.1
+    volumes:
+      - schema-registry:/etc/schema-registry/secrets
+
+  ## Open Telemetry ##
+
+  otel-collector:
+    image: otel/opentelemetry-collector
+    hostname: otel-collector
+    profiles: ["env"]
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    restart: on-failure
+    volumes:
+      - ./configurations/otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    ports:
+      - ${OTEL_COLLECTOR_PORT}:55678
+      - ${OTEL_COLLECTOR_ZPAGES_PORT}:55679 # zPages
+    depends_on:
+      - schema-registry
+
+  ## Cassandra for Span Service ##
+
+  cassandra:
+    image: cassandra:3.11.14
+    hostname: cassandra-explorviz
+    profiles: ["env"]
+    ports:
+      - ${CASSANDRA_PORT}:9042
+    environment:
+      - MAX_HEAP_SIZE=1G
+      - HEAP_NEWSIZE=200M
+    volumes:
+      - ./configurations/cassandra/custom-entrypoint.sh:/usr/local/bin/custom-entrypoint.sh
+      - cassandra:/var/lib/cassandra
+    entrypoint: ["/usr/local/bin/custom-entrypoint.sh"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "cqlsh",
+          "-u cassandra",
+          "-p cassandra",
+          "-e describe keyspaces",
+        ]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  init-cassandra:
+    image: cassandra:3.11.14
+    profiles: ["env", "init-env"]
+    depends_on:
+      cassandra:
+        condition: service_healthy
+    volumes:
+      - ./configurations/cassandra/setup.cql:/setup.cql
+      - init-cassandra:/var/lib/cassandra
+    command: "cqlsh cassandra-explorviz -f /setup.cql"
+
+  ## User-Service ##
+
+  mongo-user:
+    image: mongo:6.0
+    hostname: user-mongo
+    profiles: ["env"]
+    ports:
+      - ${MONGO_USER_SERV_PORT}:27017
+    volumes:
+      - user-mongo-data:/data/db
+      - user-mongo-configdb:/data/configdb
+
+  ## Collaboration-Service-Js ##
+
+  redis-collab:
+    image: redis:7.2.2
+    expose:
+      - 6379
+
+  #endregion Environment
+
+  #region monitoring
+
+  prometheus:
+    hostname: prometheus
+    image: prom/prometheus:latest
+    profiles: ["monitoring"]
+    volumes:
+      - ./configurations/monitoring/prometheus/:/etc/prometheus/
+      - prometheus-data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+    expose:
+      - ${MONITORING_PROMETHEUS_PORT}
+    ports:
+      - ${MONITORING_PROMETHEUS_PORT}:${MONITORING_PROMETHEUS_PORT}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  kafka-lag-exporter:
+    hostname: kafka-lag-exporter
+    image: seglo/kafka-lag-exporter:0.8.2
+    profiles: ["monitoring"]
+    depends_on:
+      init-kafka:
+        condition: service_completed_successfully
+      kafka:
+        condition: service_started
+    volumes:
+      - ./configurations/monitoring/kafka-lag-exporter:/opt/docker/conf
+    command: "bin/kafka-lag-exporter -Dconfig.file=/opt/docker/conf/application.conf"
+
+  grafana:
+    image: grafana/grafana:latest
+    hostname: grafana
+    profiles: ["monitoring"]
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./configurations/monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./configurations/monitoring/grafana/src:/var/lib/grafana/dashboards
+    environment:
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/explorviz-all.json
+    ports:
+      - ${MONITORING_GRAFANA_PORT}:${MONITORING_GRAFANA_PORT}
+
+#endregion monitoring
+
+#region Volumes + Network
+
+# Delete all ExplorViz volumes:
+# docker volume rm $(docker volume ls -f name=explorviz -q)
+
+volumes:
+  kafka-data:
+    name: explorviz-kafka-data
+  kafka-secrets:
+    name: explorviz-kafka-secrets
+  init-kafka-data:
+    name: explorviz-init-kafka-data
+  init-kafka-secrets:
+    name: explorviz-init-kafka-secrets
+  schema-registry:
+    name: explorviz-schema-registry
+  user-mongo-data:
+    name: explorviz-mongo-user-data
+  user-mongo-configdb:
+    name: explorviz-mongo-user-config
+  cassandra:
+    name: explorviz-cassandra
+  init-cassandra:
+    name: explorviz-init-cassandra
+  prometheus-data:
+    name: explorviz-prometheus-data
+  grafana-data:
+    name: explorviz-grafana-data
+
+networks:
+  default:
+    name: explorviz
+#endregion Volumes + Network

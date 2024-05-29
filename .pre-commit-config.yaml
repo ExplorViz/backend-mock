@@ -18,11 +18,11 @@ repos:
     rev: 0.28.4
     hooks:
       - id: check-jsonschema
-        name: "Check Docker Aux Stack"
+        name: "Check Docker Extra Stack"
         language: python
-        files: docker/compose/compose.aux.yaml
+        files: docker/compose/compose.extra.yaml
         types: [yaml]
-        args: ["--schemafile", "docker/.json-schemas/aux/main-schema.json"]
+        args: ["--schemafile", "docker/.json-schemas/extra/main-schema.json"]
       - id: check-jsonschema
         name: "Check Docker Base Stack"
         language: python

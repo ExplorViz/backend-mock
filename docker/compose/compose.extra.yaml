@@ -1,9 +1,9 @@
-# Contains auxiliary software for ExplorViz
+# Contains extra software for ExplorViz
 
 # If you only want to use it without dockerized ExplorViz:
 
-# Start: `docker compose -f compose.aux.yaml --env-file ../.env up -d`
-# Stop and remove volumes: `docker compose -f compose.aux.yaml --env-file ../.env down -v`
+# Start: `docker compose -f compose.extra.yaml --env-file ../.env up -d`
+# Stop and remove volumes: `docker compose -f compose.extra.yaml --env-file ../.env down -v`
 
 services:
   #region Environment

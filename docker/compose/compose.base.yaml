@@ -3,7 +3,7 @@
 # Start with top-level compose.yaml.
 
 include:
-  - ./compose.aux.yaml
+  - ./compose.extra.yaml
 
 services:
 

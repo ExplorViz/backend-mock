@@ -9,7 +9,7 @@ services:
 
   collaboration-service-js:
     hostname: collaboration-service-js
-    image: explorviz/collaboration-service-js:latest
+    image: explorviz/collaboration-service-js:${COLLABORATION_SERVICE_IMAGE_TAG}
     env_file:
        - path: ../.env
        - path: ../.env-custom
@@ -22,7 +22,7 @@ services:
 
   frontend:
     hostname: explorviz-frontend
-    image: explorviz/explorviz-frontend:dev-noauth
+    image: explorviz/explorviz-frontend:${FRONTEND_IMAGE_TAG}
     env_file:
        - path: ../.env
        - path: ../.env-custom

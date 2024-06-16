@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/adapter-service-${EXPLORVIZ_JAVA_IMAGE_TYPE}:latest" },
+    "image": { "const": "explorviz/adapter-service-${EXPLORVIZ_JAVA_IMAGE_TYPE}:${ADAPTER_SERVICE_IMAGE_TAG}" },
     "environment": {
       "type": "array",
       "allOf": [

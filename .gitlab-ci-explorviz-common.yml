@@ -69,7 +69,7 @@ default:
       -Dquarkus.container-image.username=$DOCKERHUB_USERNAME
       -Dquarkus.container-image.password=$DOCKERHUB_PASSWORD
   after_script:
-    - echo "Image was uploaded to Dockerhub; explorviz/${DOCKERHUB_IMAGE_NAME}::${IMAGE_TAG}"
+    - echo "Image was uploaded to Dockerhub; explorviz/${DOCKERHUB_IMAGE_NAME}:${IMAGE_TAG}"
 
 .retag-dockerhub-image:
   stage: deploy:retagging

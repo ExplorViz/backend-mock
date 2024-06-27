@@ -69,7 +69,7 @@ services:
 
   user-service:
     hostname: user-service
-    image: explorviz/user-service-jvm:mr-57-jvm
+    image: explorviz/user-service-${EXPLORVIZ_JAVA_IMAGE_TYPE}:${USER_SERVICE_IMAGE_TAG}
     env_file:
        - path: ./.env
        - path: ./.env-custom

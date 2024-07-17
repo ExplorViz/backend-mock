@@ -27,12 +27,26 @@ inspectit:
         tracing:
           start-span: true
           attributes:
-            java.fqn: method_fqn_attr
+            code.function: method_name
+            code.namespace: class_fqn
+            java.fqn: method_fqn_attr # For compatibility with older ExplorViz versions
         entry:
+          method_name:
+            action: a_get_method_name
+          class_fqn:
+            action: a_get_class_fqn
           method_fqn_attr:
             action: a_get_method_fqn
 
     actions:
+      a_get_method_name:
+        input:
+          _methodName: String
+        value: "_methodName"
+      a_get_class_fqn:
+        input:
+          _class: Class
+        value: "_class.getName()"
       a_get_method_fqn:
         input:
           _methodName: String

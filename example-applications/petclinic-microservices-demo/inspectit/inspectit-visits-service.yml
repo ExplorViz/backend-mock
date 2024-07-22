@@ -1,6 +1,13 @@
 inspectit:
   tags:
     extra:
+      explorviz.token.id: ${LANDSCAPE_TOKEN_ID}
+      explorviz.token.secret: ${LANDSCAPE_TOKEN_SECRET}
+      service.name: "petclinic-visits-service"
+      service.instance.id: "0"
+      telemetry.sdk.language: "java"
+
+      # The following attributes are for compatibility with older ExplorViz versions
       landscape_token: ${LANDSCAPE_TOKEN_ID}
       token_secret: ${LANDSCAPE_TOKEN_SECRET}
       application_name: "petclinic-visits-service"

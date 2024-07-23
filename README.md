@@ -8,6 +8,10 @@ This repo contains different
 - A [vs-code-demo](/vs-code-demo) Docker-Compose stack to start a browser-based VS Code with the ExplorViz VS code extension and the frontend-demo stack.
 - [Sample applications](/example-applications) with instrumentation and Docker-Compose files.
 
+## Caveats for Windows
+
+- Be sure to use LF (not CRLF!) for line endings. Otherwise, scripts such as the Docker entry point for Cassandra may fail.
+
 ## Pre-Commit Validation
 
 The CI pipeline for this repository uses pre-commit with different hooks to validate if changes to files follow well-defined rules.

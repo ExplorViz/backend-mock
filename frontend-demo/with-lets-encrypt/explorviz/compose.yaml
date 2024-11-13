@@ -10,7 +10,7 @@ services:
 
   frontend:
     container_name: explorviz-frontend
-    image: explorviz/explorviz-frontend:dev-noauth
+    image: explorviz/explorviz-frontend:latest
     environment:
       - VIRTUAL_HOST=${LETSENCRYPT_HOSTNAME}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOSTNAME}
@@ -29,7 +29,7 @@ services:
 
   demo-supplier:
     container_name: explorviz-demo-supplier
-    image: explorviz/demo-supplier
+    image: explorviz/demo-supplier:latest
     expose:
       - 8083
 

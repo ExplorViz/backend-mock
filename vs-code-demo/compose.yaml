@@ -15,7 +15,7 @@ services:
 
   collaboration-service:
     container_name: collaboration-service
-    image: explorviz/collaboration-service-js:latest
+    image: explorviz/collaboration-service:latest
     ports:
       - ${COLLABORATION_PORT}:4444
     environment:
@@ -44,7 +44,7 @@ services:
       - ${VSCODE_PORT}:3000
 
   frontend:
-    image: explorviz/explorviz-frontend:dev-noauth
+    image: explorviz/explorviz-frontend:latest
     ports:
       - ${FRONTEND_PORT}:80
     extra_hosts:

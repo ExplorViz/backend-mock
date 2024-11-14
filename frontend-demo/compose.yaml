@@ -9,8 +9,8 @@ services:
       - REDIS_PORT=6379
 
   frontend:
-    container_name: explorviz-frontend
-    image: explorviz/explorviz-frontend:latest
+    container_name: frontend
+    image: explorviz/frontend:latest
     ports:
       - ${FRONTEND_PORT}:80
     extra_hosts:

@@ -21,8 +21,8 @@ services:
       - REDIS_PORT=6379
 
   frontend:
-    hostname: explorviz-frontend
-    image: explorviz/explorviz-frontend:${FRONTEND_IMAGE_TAG}
+    hostname: frontend
+    image: explorviz/frontend:${FRONTEND_IMAGE_TAG}
     env_file:
        - path: ../.env
        - path: ../.env-custom

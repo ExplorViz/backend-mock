@@ -7,9 +7,9 @@ include:
 
 services:
 
-  collaboration-service-js:
-    hostname: collaboration-service-js
-    image: explorviz/collaboration-service-js:${COLLABORATION_SERVICE_IMAGE_TAG}
+  collaboration-service:
+    hostname: collaboration-service
+    image: explorviz/collaboration-service:${COLLABORATION_SERVICE_IMAGE_TAG}
     env_file:
        - path: ../.env
        - path: ../.env-custom
@@ -30,7 +30,7 @@ services:
     depends_on:
       - span-service
       - user-service
-      - collaboration-service-js
+      - collaboration-service
     ports:
       - ${FRONTEND_PORT}:80
     environment:

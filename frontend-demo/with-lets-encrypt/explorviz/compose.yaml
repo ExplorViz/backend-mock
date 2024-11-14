@@ -1,7 +1,7 @@
 services:
   collaboration-service:
-    hostname: collaboration-service-js
-    image: explorviz/collaboration-service-js:latest
+    hostname: collaboration-service
+    image: explorviz/collaboration-service:latest
     expose:
       - 4444
     environment:

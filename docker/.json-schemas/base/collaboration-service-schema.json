@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
-    "image": { "const": "explorviz/collaboration-service-js:${COLLABORATION_SERVICE_IMAGE_TAG}" },
+    "image": { "const": "explorviz/collaboration-service:${COLLABORATION_SERVICE_IMAGE_TAG}" },
     "environment": {
       "type": "array",
       "allOf": [

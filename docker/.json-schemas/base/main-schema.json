@@ -9,17 +9,14 @@
         "type": "object"
       },
       "properties": {
-        "collaboration-service-js": {
+        "collaboration-service": {
           "$ref": "collaboration-service-schema.json"
         },
         "frontend": {
           "$ref": "frontend-schema.json"
         }
       },
-      "required": [
-        "collaboration-service-js",
-        "frontend"
-      ]
+      "required": ["collaboration-service", "frontend"]
     }
   },
   "required": ["services"]

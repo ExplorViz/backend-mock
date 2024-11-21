@@ -97,16 +97,6 @@ publish-multi-arch-manifest-petclinic:
     forward:
       pipeline_variables: true
 
-trigger-collaboration-service:
-  extends: .trigger-multi-project-pipeline
-  variables:
-    TRIGGERED_PROJECT: "collaboration-service-js"
-
-trigger-frontend:
-  extends: .trigger-multi-project-pipeline
-  variables:
-    TRIGGERED_PROJECT: "frontend"
-
 trigger-metrics-service:
   extends: .trigger-multi-project-pipeline
   variables:

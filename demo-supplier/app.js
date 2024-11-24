@@ -13,9 +13,11 @@ const { time } = require("node:console");
 
 const spanApp = createExpressApplication(8083);
 const userApp = createExpressApplication(8084);
+const evolutionApp = createExpressApplication(8085);
 
 const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
+const evolutionRootUrl = "/v2/code";
 
 (async () => {
   const user = JSON.parse(await readFile("./user.json"));
@@ -225,6 +227,7 @@ async function createLandscapeSample({
     await readFile(`demo-data/${filePrefix}-timestamp.json`)
   );
 
+
   structureData.landscapeToken = token;
   initializer?.(structureData, dynamicData);
 
@@ -240,6 +243,10 @@ async function createLandscapeSample({
 
   spanApp.get(`${spanRootUrl}/${token}/timestamps`, (req, res) => {
     const potentialLatestTimestamp = req.query.newest;
+    const commit = req.query.commit;
+    if(commit){
+      // TODO
+    }
     if (potentialLatestTimestamp && timestampModifier) {
       const newTimestamp = timestampModifier(potentialLatestTimestamp);
 
@@ -253,4 +260,51 @@ async function createLandscapeSample({
       res.json(timestampData);
     }
   });
+
+
+  // Use try-catch block since we only provide a mockup for the evolution to the distributed-petclinic by now
+  try {
+    const fileContentAppNames = await readFile(`demo-data/${filePrefix}-application-names.json`);
+    const evolutedAppNames = JSON.parse(fileContentAppNames);
+
+    const fileContentCommitTrees = await readFile(`demo-data/${filePrefix}-commit-trees.json`);
+    const appNameToCommitTreeMap = JSON.parse(fileContentCommitTrees);
+
+    const fileContentStructures = await readFile(`demo-data/${filePrefix}-evolution-structures.json`);
+    const commitIdToStructureMap = JSON.parse(fileContentStructures);
+
+    const fileContentMetrics = await readFile(`demo-data/${filePrefix}-metrics.json`);
+    const commitIdToMetricsMap = JSON.parse(fileContentStructures);
+
+    // TODO: commit-comparison
+
+    if(evolutedAppNames) {
+      evolutionApp.get(`${evolutionRootUrl}/applications/${token}`, (req, res) => {
+        res.json(evolutedAppNames);
+      });
+
+      for (const appName of evolutedAppNames) {
+        evolutionApp.get(`${evolutionRootUrl}/commit-tree/${token}/${appName}/`, (req, res) => {
+          res.json(appNameToCommitTreeMap[appName]);
+        });
+        evolutionApp.get(`${evolutionRootUrl}/structure/${token}/${appName}/:commitId`, (req, res) => {
+          const landscapeStructure = commitIdToStructureMap[req.params["commitId"]] ?? {"nodes": []};
+          landscapeStructure.landscapeToken = token;
+          res.json(landscapeStructure);
+        });
+        evolutionApp.get(`${evolutionRootUrl}/metrics/${token}/${appName}/:commitId`, (req, res) => {
+          const metrics = commitIdToMetricsMap[req.params["commitId"]] ?? 
+          {
+            "files": [],
+            "fileMetrics": [],
+            "classMetrics": [],
+            "methodMetrics": []
+          };
+          res.json(metrics);
+        });
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }

@@ -1,0 +1,32 @@
+{
+    "maincommit1": {
+        "files": [],
+        "fileMetrics": [],
+        "classMetrics": [],
+        "methodMetrics": []
+    },
+    "maincommit2": {
+        "files": [],
+        "fileMetrics": [],
+        "classMetrics": [],
+        "methodMetrics": []
+    },
+    "maincommit3": {
+        "files": [],
+        "fileMetrics": [],
+        "classMetrics": [],
+        "methodMetrics": []
+    },
+    "featureAcommit1": {
+        "files": [],
+        "fileMetrics": [],
+        "classMetrics": [],
+        "methodMetrics": []
+    },
+    "featureAcommit2": {
+        "files": [],
+        "fileMetrics": [],
+        "classMetrics": [],
+        "methodMetrics": []
+    }
+}

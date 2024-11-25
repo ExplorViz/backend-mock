@@ -223,9 +223,6 @@ async function createLandscapeSample({
   const dynamicData = JSON.parse(
     await readFile(`demo-data/${filePrefix}-dynamic.json`)
   );
-  const timestampData = JSON.parse(
-    await readFile(`demo-data/${filePrefix}-timestamp.json`)
-  );
 
 
   structureData.landscapeToken = token;
@@ -241,12 +238,22 @@ async function createLandscapeSample({
     res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
 
-  spanApp.get(`${spanRootUrl}/${token}/timestamps`, (req, res) => {
+  spanApp.get(`${spanRootUrl}/${token}/timestamps`, async (req, res) => {
     const potentialLatestTimestamp = req.query.newest;
     const commit = req.query.commit;
-    if(commit){
-      // TODO
+
+    let timestampData;
+
+    // Use try-catch block since we only provide a mockup for the evolution to the distributed-petclinic by now
+    try {
+      const commitIdToTimestampsMap = JSON.parse(await readFile(`demo-data/${filePrefix}-commit-timestamps.json`));
+      timestampData = commit ? (commitIdToTimestampsMap[commit] ?? []): commitIdToTimestampsMap["cross-commit"];
+    } catch (error) {
+      timestampData = JSON.parse(
+        await readFile(`demo-data/${filePrefix}-timestamp.json`)
+      );
     }
+
     if (potentialLatestTimestamp && timestampModifier) {
       const newTimestamp = timestampModifier(potentialLatestTimestamp);
 
@@ -260,6 +267,7 @@ async function createLandscapeSample({
       res.json(timestampData);
     }
   });
+    
 
 
   // Use try-catch block since we only provide a mockup for the evolution to the distributed-petclinic by now
@@ -274,9 +282,11 @@ async function createLandscapeSample({
     const commitIdToStructureMap = JSON.parse(fileContentStructures);
 
     const fileContentMetrics = await readFile(`demo-data/${filePrefix}-metrics.json`);
-    const commitIdToMetricsMap = JSON.parse(fileContentStructures);
+    const commitIdToMetricsMap = JSON.parse(fileContentMetrics);
 
-    // TODO: commit-comparison
+    const fileContentCommitComparisons = await readFile(`demo-data/${filePrefix}-commit-comparisons.json`);
+    const commitIdsToCommitComparisonMap = JSON.parse(fileContentCommitComparisons);
+
 
     if(evolutedAppNames) {
       evolutionApp.get(`${evolutionRootUrl}/applications/${token}`, (req, res) => {
@@ -301,6 +311,18 @@ async function createLandscapeSample({
             "methodMetrics": []
           };
           res.json(metrics);
+        });
+        evolutionApp.get(`${evolutionRootUrl}/commit-comparison/${token}/${appName}/:commitIds`, (req, res) => {
+          const commitComparison = commitIdsToCommitComparisonMap[req.params["commitIds"]] ?? 
+          {
+            "modified": [],
+            "added": [],
+            "deleted": [],
+            "addedPackages": [],
+            "deletedPackages": [],
+            "metrics": []
+          };
+          res.json(commitComparison);
         });
       }
     }

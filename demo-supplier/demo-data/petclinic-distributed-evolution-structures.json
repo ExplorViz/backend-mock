@@ -43,7 +43,46 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                    "name": "ABC",
+                                                    "methods": []
+                                                  }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -59,7 +98,51 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -75,7 +158,35 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "fAc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -91,7 +202,41 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "fAc1",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "fAc2",
+                                                        "subPackages": [],
+                                                        "classes": []
+                                                    }
+                                                ],
+                                                "classes": []
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -107,7 +252,46 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                    "name": "ABC",
+                                                    "methods": []
+                                                  }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -123,7 +307,46 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                    "name": "ABC",
+                                                    "methods": []
+                                                  }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -139,7 +362,51 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -155,7 +422,51 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -235,7 +546,62 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }
@@ -251,7 +617,62 @@
                         "name": "petclinic-costumer-service",
                         "language": "java",
                         "instanceId": "0",
-                        "packages": []
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
                     }
                 ]
             }

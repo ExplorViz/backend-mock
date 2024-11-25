@@ -1,5 +1,40 @@
 {
-    "maincommit1": [],
+    "cross-commit": [
+        {
+          "epochMilli": 1702891140000,
+          "spanCount": 1
+        },
+        {
+          "epochMilli": 1702891150000,
+          "spanCount": 11
+        },
+        {
+          "epochMilli": 1702891160000,
+          "spanCount": 136
+        },
+        {
+          "epochMilli": 1702891170000,
+          "spanCount": 43
+        }
+    ],
+    "maincommit1": [
+      {
+        "epochMilli": 1732543549,
+        "spanCount": 4
+      },
+      {
+        "epochMilli": 1732543731,
+        "spanCount": 7
+      },
+      {
+        "epochMilli": 1732544112,
+        "spanCount": 55
+      },
+      {
+        "epochMilli": 1732544186,
+        "spanCount": 72
+      }
+    ],
     "maincommit2": [],
     "maincommit3": [],
     "featureAcommit1": [],

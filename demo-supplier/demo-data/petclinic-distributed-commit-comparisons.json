@@ -17,18 +17,18 @@
     },
     "maincommit1-maincommit3": {
         "modified": [],
-        "added": [],
+        "added": ["org.mc3.mc3-1.NewMC3Class", "org.springframework.mc2.ABC"],
         "deleted": [],
-        "addedPackages": [],
+        "addedPackages": ["mc3.mc3-1", "mc2"],
         "deletedPackages": [],
         "metrics": []
     },
     "maincommit3-maincommit1": {
         "modified": [],
         "added": [],
-        "deleted": [],
+        "deleted": ["org.mc3.mc3-1.NewMC3Class", "org.springframework.mc2.ABC"],
         "addedPackages": [],
-        "deletedPackages": [],
+        "deletedPackages": ["mc3.mc3-1", "mc2"],
         "metrics": []
     },
     "maincommit1-featureAcommit1": {

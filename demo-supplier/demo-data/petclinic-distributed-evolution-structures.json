@@ -19,7 +19,17 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": [
+                                                            { 
+                                                                "name": "doSomething",
+                                                                "methodHash": "NewMC1ClassDoSomethingMethodHash"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
                                             }
                                         ],
                                         "classes": []
@@ -53,7 +63,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -108,7 +123,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -262,7 +282,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -317,7 +342,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -372,7 +402,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -432,7 +467,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -556,7 +596,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",
@@ -627,7 +672,12 @@
                                             {
                                                 "name": "mc1",
                                                 "subPackages": [],
-                                                "classes": []
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "name": "mc2",

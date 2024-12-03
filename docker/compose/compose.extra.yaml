@@ -125,7 +125,7 @@ services:
       interval: 15s
       timeout: 10s
       retries: 10
-      
+
   init-cassandra:
     image: explorviz/init-cassandra
     profiles: ["env", "init-env"]

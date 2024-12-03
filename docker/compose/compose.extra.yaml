@@ -232,8 +232,6 @@ volumes:
     name: explorviz-mongo-user-config
   cassandra:
     name: explorviz-cassandra
-  init-cassandra:
-    name: explorviz-init-cassandra
   prometheus-data:
     name: explorviz-prometheus-data
   grafana-data:

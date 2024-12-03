@@ -127,11 +127,11 @@ services:
       retries: 10
       
   init-cassandra:
-    image: test/init_cassandra:latest
+    image: explorviz/init-cassandra
+    profiles: ["env", "init-env"]
     depends_on:
       cassandra:
         condition: service_healthy
-    command: "cqlsh cassandra-explorviz -f /init.cql"
 
   ## User-Service ##
 

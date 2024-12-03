@@ -4,6 +4,16 @@ receivers:
       grpc:
         endpoint: :55678
 
+processors:
+  attributes/add_default_landscape_token:
+    actions:
+      - key: landscape_token
+        value: "mytokenvalue"
+        action: insert
+      - key: token_secret
+        value: "mytokensecret"
+        action: insert
+
 exporters:
   kafka:
     protocol_version: 2.0.0
@@ -24,5 +34,7 @@ service:
     traces:
       receivers:
         - otlp
+      processors:
+        - attributes/add_default_landscape_token
       exporters:
         - kafka

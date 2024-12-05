@@ -1,4 +1,4 @@
-# ExplorViz Java Backend
+# ExplorViz Backend
 
 # Start: `docker compose up -d`
 # Stop + remove volumes: `docker compose down -v`
@@ -7,6 +7,7 @@
 # or start with `EXPLORVIZ_JAVA_IMAGE_TYPE=native docker compose up -d`
 
 # Using custom .env file, e.g., `docker compose --env-file .env-custom up -d`
+# Specify which environment to use in env-file, i.e. enable self-monitoring
 
 include:
   - ./compose/compose.base.yaml

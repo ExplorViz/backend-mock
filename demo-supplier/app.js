@@ -27,14 +27,14 @@ const landscapes = [];
 listFilesInDirectory("demo-data");
 
 async function listFilesInDirectory(directoryPath) {
-  fs.readdir(directoryPath, (err, files) => {
+  fs.readdir(directoryPath, (err, folders) => {
     if (err) {
       console.error(`Error reading directory: ${err.message}`);
       return;
     }
 
-    files.forEach((file) => {
-      const filePath = path.join(directoryPath, file);
+    folders.forEach((folder) => {
+      const filePath = path.join(directoryPath, folder);
 
       // Check if it's a file or a directory
       fs.stat(filePath, (err, stats) => {
@@ -43,8 +43,8 @@ async function listFilesInDirectory(directoryPath) {
           return;
         }
 
-        if (stats.isFile() && file.includes("-structure.json")) {
-          createLandscapeSample({ filePrefix: file.replace("-structure.json", "") });
+        if (stats.isDirectory()) {
+          createLandscapeSample({ folder: folder });
         }
       });
     });
@@ -53,7 +53,7 @@ async function listFilesInDirectory(directoryPath) {
 
 // Expanding PetClinic
 createLandscapeSample({
-  filePrefix: "Petclinic Samle",
+  folder: "Petclinic Sample",
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
   alias: "Petclinic Sample (Random traces and increasing, unrelated timestamps (with random gaps))",
   traceModifier: removeRandomTraces,
@@ -74,7 +74,7 @@ createLandscapeSample({
 
 // BEGIN BIG SL Sample
 createLandscapeSample({
-  filePrefix: "Petclinic Samle",
+  folder: "Petclinic Sample",
   token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
   alias: "Large Landscape Sample",
   initializer: (structure, traces) => {
@@ -120,7 +120,7 @@ createLandscapeSample({
   let previousStructure = null;
 
   createLandscapeSample({
-    filePrefix: "Distributed Petclinic Sample",
+    folder: "Distributed Petclinic Sample",
     token: "12444195-6144-4254-a17b-0f7fb49adb0a",
     alias: "Expanding Sample (Expanding structure and increasing, unrelated timestamps)",
     structureModifier: (structureData) => {
@@ -194,7 +194,7 @@ function createExpressApplication(port) {
  * Create a sample landscape for the ExplorViz demo.
  * Loads the data and sets up express routes.
  * @param {{
- *  filePrefix: string;
+ *  folder: string;
  *  token: string;
  *  traceModifier?: DataModifier,
  *  structureModifier?: DataModifier,
@@ -203,7 +203,7 @@ function createExpressApplication(port) {
  * }} options
  */
 async function createLandscapeSample({
-  filePrefix,
+  folder,
   token,
   alias,
   traceModifier,
@@ -211,9 +211,17 @@ async function createLandscapeSample({
   timestampModifier,
   initializer,
 }) {
-  const structureData = JSON.parse(await readFile(`demo-data/${filePrefix}-structure.json`));
-  const dynamicData = JSON.parse(await readFile(`demo-data/${filePrefix}-dynamic.json`));
-  const timestampData = JSON.parse(await readFile(`demo-data/${filePrefix}-timestamp.json`));
+  let structureData;
+  let dynamicData;
+  let timestampData;
+  try {
+    structureData = JSON.parse(await readFile(`demo-data/${folder}/structure.json`));
+    dynamicData = JSON.parse(await readFile(`demo-data/${folder}/dynamic.json`));
+    timestampData = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
+  } catch {
+    console.error("Could not read files for folder:", folder);
+    return;
+  }
 
   const landscapeToken = token ? token : structureData.landscapeToken;
 
@@ -221,7 +229,7 @@ async function createLandscapeSample({
     value: landscapeToken,
     ownerId: "github|123456",
     created: timestampData.length > 0 ? timestampData[0].epochMilli : 0,
-    alias: alias ? alias : filePrefix,
+    alias: alias ? alias : folder,
     sharedUsersIds: [],
   });
 

@@ -53,7 +53,7 @@ async function listFilesInDirectory(directoryPath) {
 
 // Expanding PetClinic
 createLandscapeSample({
-  folder: "Petclinic Sample",
+  folder: "PetClinic Sample",
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
   alias: "Petclinic Sample (Random traces and increasing, unrelated timestamps (with random gaps))",
   traceModifier: removeRandomTraces,
@@ -74,7 +74,7 @@ createLandscapeSample({
 
 // BEGIN BIG SL Sample
 createLandscapeSample({
-  folder: "Petclinic Sample",
+  folder: "PetClinic Sample",
   token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
   alias: "Large Landscape Sample",
   initializer: (structure, traces) => {
@@ -120,7 +120,7 @@ createLandscapeSample({
   let previousStructure = null;
 
   createLandscapeSample({
-    folder: "Distributed Petclinic Sample",
+    folder: "Distributed PetClinic Sample",
     token: "12444195-6144-4254-a17b-0f7fb49adb0a",
     alias: "Expanding Sample (Expanding structure and increasing, unrelated timestamps)",
     structureModifier: (structureData) => {

@@ -127,15 +127,11 @@ services:
       retries: 10
 
   init-cassandra:
-    image: cassandra:3.11.14
+    image: explorviz/init-cassandra
     profiles: ["env", "init-env"]
     depends_on:
       cassandra:
         condition: service_healthy
-    volumes:
-      - ./configurations/cassandra/setup.cql:/setup.cql
-      - init-cassandra:/var/lib/cassandra
-    command: "cqlsh cassandra-explorviz -f /setup.cql"
 
   ## User-Service ##
 
@@ -236,8 +232,6 @@ volumes:
     name: explorviz-mongo-user-config
   cassandra:
     name: explorviz-cassandra
-  init-cassandra:
-    name: explorviz-init-cassandra
   prometheus-data:
     name: explorviz-prometheus-data
   grafana-data:

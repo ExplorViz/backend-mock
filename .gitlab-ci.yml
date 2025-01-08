@@ -1,7 +1,6 @@
 include: "/.gitlab-ci-explorviz-common.yml"
 
 stages:
-  - trigger-multi-project-pipeline
   - test
   - deploy:images
   - deploy:retagging
@@ -31,29 +30,6 @@ deploy-petclinic-arm64:
   tags:
     - arm64
 
-deploy-demo-supplier-amd64:
-  extends: .build-and-deploy
-  variables:
-    DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR/demo-supplier
-  rules:
-    - if: $ARM64_BUILD
-      when: never
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-      changes:
-        - demo-supplier/app.js
-        - demo-supplier/Dockerfile
-        - demo-supplier/package.json
-        - demo-supplier/user.json
-
-deploy-demo-supplier-arm64:
-  extends: deploy-demo-supplier-amd64
-  rules:
-    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
-  variables:
-    DOCKERHUB_TAG: "arm64"
-  tags:
-    - arm64
-
 retag-petclinic-as-latest:
   extends: .retag-dockerhub-image
   rules:
@@ -64,22 +40,6 @@ retag-petclinic-as-latest:
     SOURCE_TAG: "amd64"
     TARGET_TAG: "latest"
 
-retag-demo-supplier-as-latest:
-  extends: .retag-dockerhub-image
-  rules:
-    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
-      when: never
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-      changes:
-        - demo-supplier/app.js
-        - demo-supplier/Dockerfile
-        - demo-supplier/package.json
-        - demo-supplier/user.json
-  variables:
-    IMAGE_NAME: "demo-supplier"
-    SOURCE_TAG: "amd64"
-    TARGET_TAG: "latest"
-
 publish-multi-arch-manifest-demo-supplier:
   extends: .retag-as-multi-arch-dockerhub-image
   variables:
@@ -87,17 +47,3 @@ publish-multi-arch-manifest-demo-supplier:
 
 publish-multi-arch-manifest-petclinic:
   extends: .retag-as-multi-arch-dockerhub-image
-
-.trigger-multi-project-pipeline:
-  stage: trigger-multi-project-pipeline
-  rules:
-    - if: $MULTI_PROJECT_PIPELINE
-  trigger:
-    project: ExplorViz/code/$TRIGGERED_PROJECT
-    forward:
-      pipeline_variables: true
-
-trigger-metrics-service:
-  extends: .trigger-multi-project-pipeline
-  variables:
-    TRIGGERED_PROJECT: "metrics-service"

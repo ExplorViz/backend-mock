@@ -1,12 +1,12 @@
-# ExplorViz Deployment Repo
+# ExplorViz Deployment
 
-This repo contains different
+This repository contains applications and configuration files for the development and deployment of ExplorViz:
 
-- A [Docker-Compose stack](/docker) to start ExplorViz with all its components.
+- A [Docker Compose stack](/docker) to start ExplorViz with all its components.
 - A [backend and application substitute](/demo-supplier), convenient for frontend development (demo-supplier).
 - A [frontend-demo](/frontend-demo) Docker-Compose stack to start the ExplorViz frontend with the backend substitute and application substitute.
 - A [vs-code-demo](/vs-code-demo) Docker-Compose stack to start a browser-based VS Code with the ExplorViz VS code extension and the frontend-demo stack.
-- [Sample applications](/example-applications) with instrumentation and Docker-Compose files.
+- [Sample applications](/example-applications) with instrumentation and Docker Compose files.
 
 ## Caveats for Windows
 

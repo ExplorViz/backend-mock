@@ -282,29 +282,48 @@ async function createLandscapeSample({
     }
   });
 
-  // Use try-catch block since we only provide a mockup for the evolution to the distributed-petclinic by now
-  try {
-    const fileContentAppNames = await readFile(`demo-data/petclinic-distributed-application-names.json`);
-    const evolutedAppNames = JSON.parse(fileContentAppNames);
+  landscapes.push({
+    value: landscapeToken,
+    ownerId: "github|123456",
+    created: timestampData && timestampData.length > 0 ? timestampData[0].epochMilli : 0,
+    alias: alias ? alias : folder,
+    sharedUsersIds: [],
+  });
 
-    const fileContentCommitTrees = await readFile(`demo-data/petclinic-distributed-commit-trees.json`);
+  try {
+    await readFile(`demo-data/${folder}/application-names.json`);
+    // Application names found => csode evolution data is present
+    provideEvolutionData(folder, landscapeToken);
+  } catch {
+    // No demo data for code evolution - this is expected, do not throw error
+    return;
+  }
+}
+
+async function provideEvolutionData(folder, landscapeToken) {
+  // ToDo: Refactor such function can handle if individual files are missing
+  try {
+    const fileContentAppNames = await readFile(`demo-data/${folder}/application-names.json`);
+    const applicationNames = JSON.parse(fileContentAppNames);
+
+    const fileContentCommitTrees = await readFile(`demo-data/${folder}/commit-trees.json`);
     const appNameToCommitTreeMap = JSON.parse(fileContentCommitTrees);
 
-    const fileContentStructures = await readFile(`demo-data/petclinic-distributed-evolution-structures.json`);
+    const fileContentStructures = await readFile(`demo-data/${folder}/evolution-structures.json`);
     const commitIdToStructureMap = JSON.parse(fileContentStructures);
 
-    const fileContentMetrics = await readFile(`demo-data/petclinic-distributed-metrics.json`);
+    const fileContentMetrics = await readFile(`demo-data/${folder}/evolution-metrics.json`);
     const commitIdToMetricsMap = JSON.parse(fileContentMetrics);
 
-    const fileContentCommitComparisons = await readFile(`demo-data/petclinic-distributed-commit-comparisons.json`);
+    const fileContentCommitComparisons = await readFile(`demo-data/${folder}/commit-comparisons.json`);
     const commitIdsToCommitComparisonMap = JSON.parse(fileContentCommitComparisons);
 
-    if (evolutedAppNames) {
+    if (applicationNames) {
       evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {
-        res.json(evolutedAppNames);
+        res.json(applicationNames);
       });
 
-      for (const appName of evolutedAppNames) {
+      for (const appName of applicationNames) {
         evolutionApp.get(`${evolutionRootUrl}/commit-tree/${landscapeToken}/${appName}/`, (req, res) => {
           res.json(appNameToCommitTreeMap[appName]);
         });
@@ -341,12 +360,4 @@ async function createLandscapeSample({
   } catch (error) {
     console.log(error);
   }
-
-  landscapes.push({
-    value: landscapeToken,
-    ownerId: "github|123456",
-    created: timestampData && timestampData.length > 0 ? timestampData[0].epochMilli : 0,
-    alias: alias ? alias : folder,
-    sharedUsersIds: [],
-  });
 }

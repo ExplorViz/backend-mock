@@ -36,4 +36,3 @@ runs:
           -Dquarkus.container-image.tag=${{ inputs.image-tag }} \
           -Dquarkus.container-image.username=${{ inputs.docker-username }} \
           -Dquarkus.container-image.password=${{ inputs.docker-password }}
-

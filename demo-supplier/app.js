@@ -211,37 +211,44 @@ async function createLandscapeSample({
   timestampModifier,
   initializer,
 }) {
-  let structureData;
-  let dynamicData;
-  let timestampData;
+  let structureData, dynamicData, timestampData;
+
   try {
     structureData = JSON.parse(await readFile(`demo-data/${folder}/structure.json`));
-    dynamicData = JSON.parse(await readFile(`demo-data/${folder}/dynamic.json`));
-    timestampData = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
   } catch {
-    console.error("Could not read files for folder:", folder);
-    return;
+    structureData = { landscapeToken: token, nodes: [] };
+    console.error("Could not read structure data for:", folder);
   }
 
   const landscapeToken = token ? token : structureData.landscapeToken;
-
-  landscapes.push({
-    value: landscapeToken,
-    ownerId: "github|123456",
-    created: timestampData.length > 0 ? timestampData[0].epochMilli : 0,
-    alias: alias ? alias : folder,
-    sharedUsersIds: [],
-  });
-
-  initializer?.(structureData, dynamicData);
 
   spanApp.get(`${spanRootUrl}/${landscapeToken}/structure`, (req, res) =>
     res.json(structureModifier ? structureModifier(structureData) : structureData)
   );
 
+  try {
+    dynamicData = JSON.parse(await readFile(`demo-data/${folder}/dynamic.json`));
+  } catch {
+    dynamicData = [];
+    console.error("Could not read dynamic data for:", folder);
+  }
+
   spanApp.get(`${spanRootUrl}/${landscapeToken}/dynamic`, (req, res) =>
     res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
   );
+  initializer?.(structureData, dynamicData);
+
+  try {
+    timestampData = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
+  } catch {
+    timestampData = [
+      {
+        epochMilli: 0,
+        spanCount: 0,
+      },
+    ];
+    console.error("Could not read timestamps for:", folder);
+  }
 
   spanApp.get(`${spanRootUrl}/${landscapeToken}/timestamps`, (req, res) => {
     const potentialLatestTimestamp = req.query.newest;
@@ -257,5 +264,13 @@ async function createLandscapeSample({
     } else {
       res.json(timestampData);
     }
+  });
+
+  landscapes.push({
+    value: landscapeToken,
+    ownerId: "github|123456",
+    created: timestampData && timestampData.length > 0 ? timestampData[0].epochMilli : 0,
+    alias: alias ? alias : folder,
+    sharedUsersIds: [],
   });
 }

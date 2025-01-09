@@ -1,5 +1,5 @@
 {
-    
+
     "petclinic-costumer-service": {
         "name": "petclinic-costumer-service",
         "branches": [
@@ -43,5 +43,5 @@
     "petclinic-admin-server": {
 
     }
-    
+
 }

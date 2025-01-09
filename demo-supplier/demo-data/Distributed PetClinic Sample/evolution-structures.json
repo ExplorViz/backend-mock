@@ -1,6 +1,6 @@
 {
     "maincommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -23,7 +23,7 @@
                                                     {
                                                         "name": "NewMC1Class",
                                                         "methods": [
-                                                            { 
+                                                            {
                                                                 "name": "doSomething",
                                                                 "methodHash": "NewMC1ClassDoSomethingMethodHash"
                                                             }
@@ -44,7 +44,7 @@
         ]
     },
     "maincommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -104,7 +104,7 @@
         ]
     },
     "maincommit3": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -169,7 +169,7 @@
         ]
     },
     "featureAcommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -213,7 +213,7 @@
         ]
     },
     "featureAcommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -263,7 +263,7 @@
         ]
     },
     "maincommit1-maincommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -323,7 +323,7 @@
         ]
     },
     "maincommit2-maincommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -383,7 +383,7 @@
         ]
     },
     "maincommit1-maincommit3": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -448,7 +448,7 @@
         ]
     },
     "maincommit3-maincommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -513,7 +513,7 @@
         ]
     },
     "maincommit1-featureAcommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -529,7 +529,7 @@
         ]
     },
     "featureAcommit1-maincommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -545,7 +545,7 @@
         ]
     },
     "maincommit1-featureAcommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -561,7 +561,7 @@
         ]
     },
     "featureAcommit2-maincommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -577,7 +577,7 @@
         ]
     },
     "maincommit2-maincommit3": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -653,7 +653,7 @@
         ]
     },
     "maincommit3-maincommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -729,7 +729,7 @@
         ]
     },
     "maincommit2-featureAcommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -745,7 +745,7 @@
         ]
     },
     "featureAcommit1-maincommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -761,7 +761,7 @@
         ]
     },
     "maincommit2-featureAcommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -777,7 +777,7 @@
         ]
     },
     "featureAcommit2-maincommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -793,7 +793,7 @@
         ]
     },
     "maincommit3-featureAcommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -809,7 +809,7 @@
         ]
     },
     "featureAcommit1-maincommit3": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -825,7 +825,7 @@
         ]
     },
     "maincommit3-featureAcommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -841,7 +841,7 @@
         ]
     },
     "featureAcommit2-maincommit3": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -857,7 +857,7 @@
         ]
     },
     "featureAcommit1-featureAcommit2": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",
@@ -873,7 +873,7 @@
         ]
     },
     "featureAcommit2-featureAcommit1": {
-        "nodes": [ 
+        "nodes": [
             {
                 "ipAddress": "172.20.0.13",
                 "hostName": "b569d5185c71",

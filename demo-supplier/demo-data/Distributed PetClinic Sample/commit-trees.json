@@ -1,0 +1,47 @@
+{
+
+    "petclinic-costumer-service": {
+        "name": "petclinic-costumer-service",
+        "branches": [
+            {
+                "name": "main",
+                "commits": [
+                    "maincommit1",
+                    "maincommit2",
+                    "maincommit3"
+                ],
+                "branchPoint": {
+                    "name": "NONE",
+                    "commit": ""
+                }
+            },
+            {
+                "name": "feature-a",
+                "commits": [
+                    "featureAcommit1",
+                    "featureAcommit2"
+                ],
+                "branchPoint": {
+                    "name": "main",
+                    "commit": "maincommit2"
+                }
+            }
+        ]
+    },
+    "petclinic-visits-service": {
+
+    },
+    "petclinic-api-gateway": {
+
+    },
+    "petclinic-vets-service": {
+
+    },
+    "petclinic-discovery-service": {
+
+    },
+    "petclinic-admin-server": {
+
+    }
+
+}

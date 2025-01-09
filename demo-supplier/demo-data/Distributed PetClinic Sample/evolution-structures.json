@@ -1,0 +1,891 @@
+{
+    "maincommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": [
+                                                            {
+                                                                "name": "doSomething",
+                                                                "methodHash": "NewMC1ClassDoSomethingMethodHash"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                    "name": "ABC",
+                                                    "methods": []
+                                                  }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit3": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "fAc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": []
+                                            },
+                                            {
+                                                "name": "fAc1",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "fAc2",
+                                                        "subPackages": [],
+                                                        "classes": []
+                                                    }
+                                                ],
+                                                "classes": []
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit1-maincommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                    "name": "ABC",
+                                                    "methods": []
+                                                  }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit2-maincommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                    "name": "ABC",
+                                                    "methods": []
+                                                  }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit1-maincommit3": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit3-maincommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit1-featureAcommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit1-maincommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit1-featureAcommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit2-maincommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit2-maincommit3": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit3-maincommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": [
+                            {
+                                "name": "org",
+                                "subPackages": [
+                                    {
+                                        "name": "springframework",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC1Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "mc2",
+                                                "subPackages": [
+                                                    {
+                                                        "name": "mc2-1",
+                                                        "subPackages": [],
+                                                        "classes": [
+                                                            {
+                                                                "name": "XYZ",
+                                                                "methods": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "classes": [
+                                                    {
+                                                        "name": "ABC",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    },
+                                    {
+                                        "name": "mc3",
+                                        "subPackages": [
+                                            {
+                                                "name": "mc3-1",
+                                                "subPackages": [],
+                                                "classes": [
+                                                    {
+                                                        "name": "NewMC3Class",
+                                                        "methods": []
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "classes": []
+                                    }
+                                ],
+                                "classes": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit2-featureAcommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit1-maincommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit2-featureAcommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit2-maincommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit3-featureAcommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit1-maincommit3": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "maincommit3-featureAcommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit2-maincommit3": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit1-featureAcommit2": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    },
+    "featureAcommit2-featureAcommit1": {
+        "nodes": [
+            {
+                "ipAddress": "172.20.0.13",
+                "hostName": "b569d5185c71",
+                "applications": [
+                    {
+                        "name": "petclinic-costumer-service",
+                        "language": "java",
+                        "instanceId": "0",
+                        "packages": []
+                    }
+                ]
+            }
+        ]
+    }
+}

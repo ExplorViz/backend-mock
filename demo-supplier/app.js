@@ -14,9 +14,11 @@ const {
 
 const spanApp = createExpressApplication(8083);
 const userApp = createExpressApplication(8084);
+const evolutionApp = createExpressApplication(8085);
 
 const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
+const evolutionRootUrl = "/v2/code";
 
 const landscapes = [];
 
@@ -250,8 +252,22 @@ async function createLandscapeSample({
     console.error("Could not read timestamps for:", folder);
   }
 
-  spanApp.get(`${spanRootUrl}/${landscapeToken}/timestamps`, (req, res) => {
+  spanApp.get(`${spanRootUrl}/${landscapeToken}/timestamps`, async (req, res) => {
     const potentialLatestTimestamp = req.query.newest;
+    const commit = req.query.commit;
+
+    let timestampData;
+
+    // Use try-catch block since we only provide a mockup for the evolution to the distributed-petclinic by now
+    try {
+      const commitIdToTimestampsMap = JSON.parse(
+        await readFile(`demo-data/petclinic-distributed-commit-timestamps.json`)
+      );
+      timestampData = commit ? commitIdToTimestampsMap[commit] ?? [] : commitIdToTimestampsMap["cross-commit"];
+    } catch (error) {
+      timestampData = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
+    }
+
     if (potentialLatestTimestamp && timestampModifier) {
       const newTimestamp = timestampModifier(potentialLatestTimestamp);
 
@@ -273,4 +289,75 @@ async function createLandscapeSample({
     alias: alias ? alias : folder,
     sharedUsersIds: [],
   });
+
+  try {
+    await readFile(`demo-data/${folder}/application-names.json`);
+    // Application names found => csode evolution data is present
+    provideEvolutionData(folder, landscapeToken);
+  } catch {
+    // No demo data for code evolution - this is expected, do not throw error
+    return;
+  }
+}
+
+async function provideEvolutionData(folder, landscapeToken) {
+  // ToDo: Refactor such function can handle if individual files are missing
+  try {
+    const fileContentAppNames = await readFile(`demo-data/${folder}/application-names.json`);
+    const applicationNames = JSON.parse(fileContentAppNames);
+
+    const fileContentCommitTrees = await readFile(`demo-data/${folder}/commit-trees.json`);
+    const appNameToCommitTreeMap = JSON.parse(fileContentCommitTrees);
+
+    const fileContentStructures = await readFile(`demo-data/${folder}/evolution-structures.json`);
+    const commitIdToStructureMap = JSON.parse(fileContentStructures);
+
+    const fileContentMetrics = await readFile(`demo-data/${folder}/evolution-metrics.json`);
+    const commitIdToMetricsMap = JSON.parse(fileContentMetrics);
+
+    const fileContentCommitComparisons = await readFile(`demo-data/${folder}/commit-comparisons.json`);
+    const commitIdsToCommitComparisonMap = JSON.parse(fileContentCommitComparisons);
+
+    if (applicationNames) {
+      evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {
+        res.json(applicationNames);
+      });
+
+      for (const appName of applicationNames) {
+        evolutionApp.get(`${evolutionRootUrl}/commit-tree/${landscapeToken}/${appName}/`, (req, res) => {
+          res.json(appNameToCommitTreeMap[appName]);
+        });
+        evolutionApp.get(`${evolutionRootUrl}/structure/${landscapeToken}/${appName}/:commitId`, (req, res) => {
+          const landscapeStructure = commitIdToStructureMap[req.params["commitId"]] ?? { nodes: [] };
+          landscapeStructure.landscapeToken = landscapeToken;
+          res.json(landscapeStructure);
+        });
+        evolutionApp.get(`${evolutionRootUrl}/metrics/${landscapeToken}/${appName}/:commitId`, (req, res) => {
+          const metrics = commitIdToMetricsMap[req.params["commitId"]] ?? {
+            files: [],
+            fileMetrics: [],
+            classMetrics: [],
+            methodMetrics: [],
+          };
+          res.json(metrics);
+        });
+        evolutionApp.get(
+          `${evolutionRootUrl}/commit-comparison/${landscapeToken}/${appName}/:commitIds`,
+          (req, res) => {
+            const commitComparison = commitIdsToCommitComparisonMap[req.params["commitIds"]] ?? {
+              modified: [],
+              added: [],
+              deleted: [],
+              addedPackages: [],
+              deletedPackages: [],
+              metrics: [],
+            };
+            res.json(commitComparison);
+          }
+        );
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }

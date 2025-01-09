@@ -1,0 +1,162 @@
+{
+    "maincommit1-maincommit2": {
+        "modified": [],
+        "added": ["org.springframework.mc2.ABC", "org.springframework.mc2.mc2-1.XYZ"],
+        "deleted": [],
+        "addedPackages": ["mc2", "mc2.mc2-1"],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit2-maincommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": ["org.springframework.mc2.ABC", "org.springframework.mc2.mc2-1.XYZ"],
+        "addedPackages": [],
+        "deletedPackages": ["mc2", "mc2.mc2-1"],
+        "metrics": []
+    },
+    "maincommit1-maincommit3": {
+        "modified": [],
+        "added": ["org.mc3.mc3-1.NewMC3Class", "org.springframework.mc2.ABC"],
+        "deleted": [],
+        "addedPackages": ["mc3.mc3-1", "mc2"],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit3-maincommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": ["org.mc3.mc3-1.NewMC3Class", "org.springframework.mc2.ABC"],
+        "addedPackages": [],
+        "deletedPackages": ["mc3.mc3-1", "mc2"],
+        "metrics": []
+    },
+    "maincommit1-featureAcommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit1-maincommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit1-featureAcommit2": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit2-maincommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit2-maincommit3": {
+        "modified": [],
+        "added": ["org.mc3.mc3-1.NewMC3Class"],
+        "deleted": ["org.springframework.mc2.mc2-1.XYZ"],
+        "addedPackages": ["mc3.mc3-1"],
+        "deletedPackages": ["mc2-1"],
+        "metrics": []
+    },
+    "maincommit3-maincommit2": {
+        "modified": [],
+        "added": ["org.springframework.mc2.mc2-1.XYZ"],
+        "deleted": ["org.mc3.mc3-1.NewMC3Class"],
+        "addedPackages": ["mc2-1"],
+        "deletedPackages": ["mc3.mc3-1"],
+        "metrics": []
+    },
+    "maincommit2-featureAcommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit1-maincommit2": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit2-featureAcommit2": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit2-maincommit2": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit3-featureAcommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit1-maincommit3": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "maincommit3-featureAcommit2": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit2-maincommit3": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit1-featureAcommit2": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    },
+    "featureAcommit2-featureAcommit1": {
+        "modified": [],
+        "added": [],
+        "deleted": [],
+        "addedPackages": [],
+        "deletedPackages": [],
+        "metrics": []
+    }
+}

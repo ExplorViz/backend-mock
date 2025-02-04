@@ -14,5 +14,21 @@
   {
     "epochMilli": 1702891170000,
     "spanCount": 43
+  },
+  {
+    "epochMilli": 1702891190000,
+    "spanCount": 42
+  },
+  {
+    "epochMilli": 1702891200000,
+    "spanCount": 79
+  },
+  {
+    "epochMilli": 1702891230000,
+    "spanCount": 0
+  },
+  {
+    "epochMilli": 1702891300000,
+    "spanCount": 50
   }
 ]

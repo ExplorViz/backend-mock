@@ -18,17 +18,30 @@ const evolutionApp = createExpressApplication(8085);
 
 const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
+const snapshotRootUrl = "/snapshot";
 const evolutionRootUrl = "/v2/code";
 
 const landscapes = [];
 
+// Request for list of landscapes
 (async () => {
   userApp.get(`${userRootUrl}`, (req, res) => res.json(landscapes));
 })();
 
-listFilesInDirectory("demo-data");
+// Return empty list for snapshot requests
+(async () => {
+  userApp.get(`${snapshotRootUrl}`, (req, res) =>
+    res.json({
+      personalSnapshots: [],
+      sharedSnapshots: [],
+      subsricedSnapshots: [],
+    })
+  );
+})();
 
-async function listFilesInDirectory(directoryPath) {
+iterateOverDemoData("demo-data");
+
+async function iterateOverDemoData(directoryPath) {
   fs.readdir(directoryPath, (err, folders) => {
     if (err) {
       console.error(`Error reading directory: ${err.message}`);

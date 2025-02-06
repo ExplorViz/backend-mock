@@ -296,6 +296,10 @@ async function createLandscapeSample({
     provideEvolutionData(folder, landscapeToken);
   } catch {
     // No demo data for code evolution - this is expected, do not throw error
+    // Return empty list of applications since no data is available
+    evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {
+      res.json([]);
+    });
     return;
   }
 }

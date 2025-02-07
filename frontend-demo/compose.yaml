@@ -1,24 +1,24 @@
 services:
   collaboration-service:
-    hostname: collaboration-service
+    hostname: ${COLLABORATION_HOSTNAME}
     image: explorviz/collaboration-service:latest
-    expose:
-      - "4444"
+    ports:
+      - "${COLLABORATION_PORT}:4444"
     environment:
-      - REDIS_HOST=redis-collab
-      - REDIS_PORT=6379
+      - REDIS_HOST=${REDIS_HOSTNAME}
+      - REDIS_PORT=${REDIS_PORT}
 
   frontend:
     container_name: frontend
     image: explorviz/frontend:latest
     ports:
-      - ${FRONTEND_PORT}:80
+      - "${FRONTEND_PORT}:80"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
       - FRONTEND_HOST_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
       - FRONTEND_HOST_NAME=${FRONTEND_HOST_NAME}
-      - CODE_SERV_URL=http://${FRONTEND_HOST_NAME}:${FRONTEND_PORT}
+      - CODE_SERV_URL=http://${CODE_HOSTNAME}:${CODE_PORT}
       - LANDSCAPE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
       - TRACE_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
       - TIMESTAMPS_URL=http://${SPAN_HOSTNAME}:${SPAN_PORT}
@@ -33,13 +33,17 @@ services:
   demo-supplier:
     container_name: explorviz-demo-supplier
     image: explorviz/demo-supplier:latest
-    expose:
-      - "8083-8085"
+    hostname: ${DEMO_HOSTNAME}
+    ports:
+      - "${SPAN_PORT}:8083"
+      - "${USER_PORT}:8084"
+      - "${CODE_PORT}:8085"
 
   redis-collab:
     image: redis:7.2.2
-    expose:
-      - "6379"
+    hostname: ${REDIS_HOSTNAME}
+    ports:
+      - "${REDIS_PORT}:6379"
 
 networks:
   default:

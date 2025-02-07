@@ -3,7 +3,7 @@ services:
     hostname: collaboration-service
     image: explorviz/collaboration-service:latest
     expose:
-      - 4444
+      - "4444"
     environment:
       - REDIS_HOST=redis-collab
       - REDIS_PORT=6379
@@ -34,12 +34,12 @@ services:
     container_name: explorviz-demo-supplier
     image: explorviz/demo-supplier:latest
     expose:
-      - 8083
+      - "8083-8085"
 
   redis-collab:
     image: redis:7.2.2
     expose:
-      - 6379
+      - "6379"
 
 networks:
   default:

@@ -1,0 +1,23 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: :55678
+
+exporters:
+  file:
+    path: "/etc/traces.json"
+
+extensions:
+  zpages:
+    endpoint: :55679
+
+service:
+  extensions:
+    - zpages
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+      exporters:
+        - file

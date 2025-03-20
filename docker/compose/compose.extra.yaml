@@ -78,13 +78,18 @@ services:
   ## Open Telemetry ##
 
   otel-collector:
-    image: otel/opentelemetry-collector
+    image: otel/opentelemetry-collector-contrib
     hostname: otel-collector
     profiles: ["env"]
     command: ["--config=/etc/otel-collector-config.yaml"]
+    # command: ["--config=/etc/otel-collector-record-config.yaml"]
+    # command: ["--config=/etc/otel-collector-replay-config.yaml"]
     restart: on-failure
     volumes:
       - ./configurations/otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      # - ./configurations/otel-collector-record-config.yaml:/etc/otel-collector-record-config.yaml
+      # - ./configurations/otel-collector-replay-config.yaml:/etc/otel-collector-replay-config.yaml
+      # - ./recorded-telemetry:/etc/otel
     ports:
       - ${OTEL_COLLECTOR_PORT}:55678
       - ${OTEL_COLLECTOR_ZPAGES_PORT}:55679 # zPages

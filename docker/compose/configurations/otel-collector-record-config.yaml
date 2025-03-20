@@ -6,7 +6,7 @@ receivers:
 
 exporters:
   file:
-    path: "/etc/traces.json"
+    path: "/etc/otel/traces.json"
 
 extensions:
   zpages:

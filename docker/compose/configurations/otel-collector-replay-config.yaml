@@ -1,4 +1,8 @@
 receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: :55678
   otlpjsonfile:
     include:
       - "/etc/otel/*.json"
@@ -32,6 +36,7 @@ service:
   pipelines:
     traces:
       receivers:
+        - otlp
         - otlpjsonfile
       processors:
         - attributes/add_default_landscape_token

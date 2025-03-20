@@ -34,7 +34,7 @@ const landscapes = [];
     res.json({
       personalSnapshots: [],
       sharedSnapshots: [],
-      subsricedSnapshots: [],
+      subscribedSnapshots: [],
     })
   );
 })();

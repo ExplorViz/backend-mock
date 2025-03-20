@@ -53,8 +53,8 @@ services:
         condition: service_healthy
       schema-registry:
         condition: service_started
-    ports:
-      - ${SPAN_PORT}:8080
+    # ports:
+    # - ${SPAN_PORT}:8080
     environment:
       - QUARKUS_CASSANDRA_CONTACT_POINTS=cassandra:9042
       - QUARKUS_CASSANDRA_AUTH_USERNAME=cassandra
@@ -83,8 +83,8 @@ services:
         condition: service_started
       schema-registry:
         condition: service_started
-    ports:
-      - ${USER_PORT}:8080
+    # ports:
+    # - ${USER_PORT}:8080
     environment:
       - QUARKUS_OIDC_ENABLED=false
       - INIT_TOKEN_ENABLED=true

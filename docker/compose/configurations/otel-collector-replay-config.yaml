@@ -37,4 +37,4 @@ service:
         - attributes/add_default_landscape_token
       exporters:
         - debug
-
+        - kafka

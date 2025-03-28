@@ -13,28 +13,6 @@ include:
   - ./compose/compose.base.yaml
 
 services:
-  adapter-service:
-    hostname: adapter-service
-    image: explorviz/adapter-service-${EXPLORVIZ_JAVA_IMAGE_TYPE}:${ADAPTER_SERVICE_IMAGE_TAG}
-    env_file:
-      - path: ./.env
-      - path: ./.env-custom
-        required: false
-    depends_on:
-      init-kafka:
-        condition: service_completed_successfully
-      kafka:
-        condition: service_healthy
-      schema-registry:
-        condition: service_started
-    environment:
-      - QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL=http://schema-registry:8081
-      - EXPLORVIZ_LOG_LVL=DEBUG
-      - EXPLORVIZ_VALIDATE_TOKEN_EXISTENCE=true
-    deploy:
-      mode: replicated
-      replicas: ${ADAPTER_REPLICAS}
-
   span-service:
     hostname: span-service
     image: explorviz/span-service-${EXPLORVIZ_JAVA_IMAGE_TYPE}:${SPAN_SERVICE_IMAGE_TAG}

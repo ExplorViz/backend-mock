@@ -9,9 +9,6 @@
         "type": "object"
       },
       "properties": {
-        "adapter-service": {
-          "$ref": "adapter-service-schema.json"
-        },
         "span-service": {
           "$ref": "span-service-schema.json"
         },
@@ -19,11 +16,7 @@
           "$ref": "user-service-schema.json"
         }
       },
-      "required": [
-        "adapter-service",
-        "span-service",
-        "user-service"
-      ]
+      "required": ["span-service", "user-service"]
     }
   },
   "required": ["services"]

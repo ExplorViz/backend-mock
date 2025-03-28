@@ -21,17 +21,6 @@ scrape_configs:
     static_configs:
       - targets: ["kafka-lag-exporter:8000"]
 
-  - job_name: "adapter-service"
-    metrics_path: "/q/metrics"
-    dns_sd_configs:
-      - names:
-          - "adapter-service"
-        type: "A"
-        port: 8080
-    static_configs:
-      - targets:
-          - "host.docker.internal:8087" # dev-mode
-
   - job_name: "landscape-service"
     metrics_path: "/q/metrics"
     dns_sd_configs:

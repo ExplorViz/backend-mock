@@ -1,0 +1,1370 @@
+{
+  "landscapeToken": "7cd8a9a7-b840-4735-9ef0-2dbbfa01c099",
+  "nodes": [
+    {
+      "ipAddress": "172.18.0.16",
+      "hostName": "ae75b2d5aa84",
+      "applications": [
+        {
+          "name": "petclinic-api-gateway",
+          "language": "java",
+          "instanceId": "0",
+          "packages": [
+            {
+              "name": "org",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "springframework",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "samples",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "petclinic",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "api",
+                              "level": 4,
+                              "subPackages": [
+                                {
+                                  "name": "dto",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "Visits",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getItems",
+                                          "methodHash": "-1118994750705426035"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "5804174084321827846"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "PetDetails",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getBirthDate",
+                                          "methodHash": "-1742324450551992573"
+                                        },
+                                        {
+                                          "name": "getType",
+                                          "methodHash": "-1993159255684253725"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-5738996588109057611"
+                                        },
+                                        {
+                                          "name": "setType",
+                                          "methodHash": "-6471824482110141135"
+                                        },
+                                        {
+                                          "name": "getName",
+                                          "methodHash": "1599546449394944065"
+                                        },
+                                        {
+                                          "name": "setName",
+                                          "methodHash": "3473499259142084336"
+                                        },
+                                        {
+                                          "name": "setId",
+                                          "methodHash": "4666989294207308353"
+                                        },
+                                        {
+                                          "name": "setBirthDate",
+                                          "methodHash": "588943361202093281"
+                                        },
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "7751737495448023078"
+                                        },
+                                        {
+                                          "name": "getVisits",
+                                          "methodHash": "8993613958915952112"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "OwnerDetails",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "-3872852734672463425"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-4131694715480593273"
+                                        },
+                                        {
+                                          "name": "getAddress",
+                                          "methodHash": "-4617433611782094038"
+                                        },
+                                        {
+                                          "name": "setTelephone",
+                                          "methodHash": "-5832761211982639214"
+                                        },
+                                        {
+                                          "name": "setFirstName",
+                                          "methodHash": "-6676796612731168014"
+                                        },
+                                        {
+                                          "name": "getPetIds",
+                                          "methodHash": "-8432011114705563804"
+                                        },
+                                        {
+                                          "name": "getLastName",
+                                          "methodHash": "1860612745471816534"
+                                        },
+                                        {
+                                          "name": "getCity",
+                                          "methodHash": "2316045225570685896"
+                                        },
+                                        {
+                                          "name": "setLastName",
+                                          "methodHash": "2495072675949745230"
+                                        },
+                                        {
+                                          "name": "setId",
+                                          "methodHash": "3597252402667621701"
+                                        },
+                                        {
+                                          "name": "getTelephone",
+                                          "methodHash": "4060008086288578744"
+                                        },
+                                        {
+                                          "name": "setCity",
+                                          "methodHash": "7229859760904590328"
+                                        },
+                                        {
+                                          "name": "getFirstName",
+                                          "methodHash": "7427625926085737398"
+                                        },
+                                        {
+                                          "name": "setAddress",
+                                          "methodHash": "7505321095959524998"
+                                        },
+                                        {
+                                          "name": "getPets",
+                                          "methodHash": "8854001450729992157"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "PetType",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getName",
+                                          "methodHash": "1517988130641453202"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "4307526187516118693"
+                                        },
+                                        {
+                                          "name": "setName",
+                                          "methodHash": "8461062427021351392"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "boundary",
+                                  "level": 5,
+                                  "subPackages": [
+                                    {
+                                      "name": "web",
+                                      "level": 6,
+                                      "subPackages": [],
+                                      "classes": [
+                                        {
+                                          "name": "ApiGatewayController",
+                                          "level": 7,
+                                          "methods": [
+                                            {
+                                              "name": "lambda$addVisitsToOwner$5",
+                                              "methodHash": "-2435661228874244044"
+                                            },
+                                            {
+                                              "name": "getOwnerDetails",
+                                              "methodHash": "-4053423892357703847"
+                                            },
+                                            {
+                                              "name": "addVisitsToOwner",
+                                              "methodHash": "-5360481520983441147"
+                                            },
+                                            {
+                                              "name": "lambda$getOwnerDetails$1",
+                                              "methodHash": "-6987222978384644072"
+                                            },
+                                            {
+                                              "name": "lambda$getOwnerDetails$2",
+                                              "methodHash": "-7606447626554114365"
+                                            },
+                                            {
+                                              "name": "lambda$addVisitsToOwner$4",
+                                              "methodHash": "6848412432056087223"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "classes": []
+                                },
+                                {
+                                  "name": "application",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "VisitsServiceClient",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getVisitsForPets",
+                                          "methodHash": "6482608345288475741"
+                                        },
+                                        {
+                                          "name": "joinIds",
+                                          "methodHash": "8966260333184273875"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "classes": [
+                                {
+                                  "name": "ApiGatewayApplication",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "lambda$routerFunction$0",
+                                      "methodHash": "2436447474090856265"
+                                    },
+                                    {
+                                      "name": "lambda$defaultCustomizer$1",
+                                      "methodHash": "730724626670279705"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                },
+                {
+                  "name": "apache",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "http",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "impl",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "client",
+                              "level": 4,
+                              "subPackages": [],
+                              "classes": [
+                                {
+                                  "name": "InternalHttpClient",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "doExecute(HttpHost, HttpRequest, HttpContext)",
+                                      "methodHash": "-5165556356671973671"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ipAddress": "172.18.0.17",
+      "hostName": "8051d53f1c8d",
+      "applications": [
+        {
+          "name": "petclinic-customer-service",
+          "language": "java",
+          "instanceId": "0",
+          "packages": [
+            {
+              "name": "org",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "springframework",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "samples",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "petclinic",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "customers",
+                              "level": 4,
+                              "subPackages": [
+                                {
+                                  "name": "model",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "Owner",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "setFirstName",
+                                          "methodHash": "-1318152430924375586"
+                                        },
+                                        {
+                                          "name": "addPet",
+                                          "methodHash": "-3128262728511022620"
+                                        },
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "-3162333692718801948"
+                                        },
+                                        {
+                                          "name": "setLastName",
+                                          "methodHash": "-6444304898163117129"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-7878958349378618629"
+                                        },
+                                        {
+                                          "name": "setCity",
+                                          "methodHash": "-8288607791163969586"
+                                        },
+                                        {
+                                          "name": "getLastName",
+                                          "methodHash": "158739965568561849"
+                                        },
+                                        {
+                                          "name": "getCity",
+                                          "methodHash": "2255074473756393799"
+                                        },
+                                        {
+                                          "name": "getAddress",
+                                          "methodHash": "2693115998872484446"
+                                        },
+                                        {
+                                          "name": "setTelephone",
+                                          "methodHash": "2809943473420406995"
+                                        },
+                                        {
+                                          "name": "getFirstName",
+                                          "methodHash": "3521417619346356175"
+                                        },
+                                        {
+                                          "name": "toString",
+                                          "methodHash": "418372724092566096"
+                                        },
+                                        {
+                                          "name": "getTelephone",
+                                          "methodHash": "6273932071590205594"
+                                        },
+                                        {
+                                          "name": "getPetsInternal",
+                                          "methodHash": "6632652733990424326"
+                                        },
+                                        {
+                                          "name": "getPets",
+                                          "methodHash": "6901237903580391625"
+                                        },
+                                        {
+                                          "name": "setAddress",
+                                          "methodHash": "7930577785117319857"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "PetType",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "-2801421845967852185"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-2917526582852979448"
+                                        },
+                                        {
+                                          "name": "getName",
+                                          "methodHash": "6006278414625052248"
+                                        },
+                                        {
+                                          "name": "setId",
+                                          "methodHash": "8364027456049269424"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Pet",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "setType",
+                                          "methodHash": "-2899476893486802101"
+                                        },
+                                        {
+                                          "name": "getName",
+                                          "methodHash": "-313114047546433466"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-3516712812455708211"
+                                        },
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "-4797571223927177421"
+                                        },
+                                        {
+                                          "name": "setName",
+                                          "methodHash": "-5645346075024817380"
+                                        },
+                                        {
+                                          "name": "getOwner",
+                                          "methodHash": "-5831299639428027327"
+                                        },
+                                        {
+                                          "name": "setOwner",
+                                          "methodHash": "-612416974118887639"
+                                        },
+                                        {
+                                          "name": "getType",
+                                          "methodHash": "-7048011585094369733"
+                                        },
+                                        {
+                                          "name": "setBirthDate",
+                                          "methodHash": "-8838513809739465392"
+                                        },
+                                        {
+                                          "name": "getBirthDate",
+                                          "methodHash": "-8968244147776365964"
+                                        },
+                                        {
+                                          "name": "toString",
+                                          "methodHash": "1836292216044772243"
+                                        },
+                                        {
+                                          "name": "setId",
+                                          "methodHash": "8455658609452424010"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "web",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "PetResource",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "save",
+                                          "methodHash": "-1487114429356430340"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-190804542525747088"
+                                        },
+                                        {
+                                          "name": "getPetTypes",
+                                          "methodHash": "-947780584815435207"
+                                        },
+                                        {
+                                          "name": "processCreationForm",
+                                          "methodHash": "6869413874492439757"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "PetRequest",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getBirthDate",
+                                          "methodHash": "-2524137075597872656"
+                                        },
+                                        {
+                                          "name": "getTypeId",
+                                          "methodHash": "-5648358750816718990"
+                                        },
+                                        {
+                                          "name": "setTypeId",
+                                          "methodHash": "-6068382970921896342"
+                                        },
+                                        {
+                                          "name": "setBirthDate",
+                                          "methodHash": "-6429644271148341374"
+                                        },
+                                        {
+                                          "name": "getName",
+                                          "methodHash": "-8253566429597257812"
+                                        },
+                                        {
+                                          "name": "setName",
+                                          "methodHash": "6790378153503248377"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "7673121675417772409"
+                                        },
+                                        {
+                                          "name": "setId",
+                                          "methodHash": "8787644214829605877"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "OwnerResource",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "createOwner",
+                                          "methodHash": "-2729708139200374737"
+                                        },
+                                        {
+                                          "name": "findAll",
+                                          "methodHash": "4137545646546548715"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "500414098813578033"
+                                        },
+                                        {
+                                          "name": "findOwner",
+                                          "methodHash": "5422248554521120210"
+                                        },
+                                        {
+                                          "name": "updateOwner",
+                                          "methodHash": "7865035763155902343"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "classes": [
+                                {
+                                  "name": "CustomersServiceApplication$$EnhancerBySpringCGLIB$$e6c7635e",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "CGLIB$BIND_CALLBACKS",
+                                      "methodHash": "1553468200945575536"
+                                    },
+                                    {
+                                      "name": "setBeanFactory",
+                                      "methodHash": "2587575628292038165"
+                                    },
+                                    {
+                                      "name": "<init>",
+                                      "methodHash": "3867921165762386240"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "CustomersServiceApplication",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "<init>",
+                                      "methodHash": "7261924593846186479"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    },
+                    {
+                      "name": "web",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "filter",
+                          "level": 3,
+                          "subPackages": [],
+                          "classes": [
+                            {
+                              "name": "OncePerRequestFilter",
+                              "level": 4,
+                              "methods": [
+                                {
+                                  "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
+                                  "methodHash": "7428403095237328628"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                },
+                {
+                  "name": "apache",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "http",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "impl",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "client",
+                              "level": 4,
+                              "subPackages": [],
+                              "classes": [
+                                {
+                                  "name": "InternalHttpClient",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "doExecute(HttpHost, HttpRequest, HttpContext)",
+                                      "methodHash": "8433407094236215529"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            },
+            {
+              "name": "com",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "zaxxer",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "hikari",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "pool",
+                          "level": 3,
+                          "subPackages": [],
+                          "classes": [
+                            {
+                              "name": "HikariProxyPreparedStatement",
+                              "level": 4,
+                              "methods": [
+                                {
+                                  "name": "executeUpdate()",
+                                  "methodHash": "-1823518756741476348"
+                                },
+                                {
+                                  "name": "executeQuery()",
+                                  "methodHash": "-2536177610257534265"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ipAddress": "172.18.0.19",
+      "hostName": "61995caff8cb",
+      "applications": [
+        {
+          "name": "petclinic-vets-service",
+          "language": "java",
+          "instanceId": "0",
+          "packages": [
+            {
+              "name": "org",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "springframework",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "samples",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "petclinic",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "vets",
+                              "level": 4,
+                              "subPackages": [
+                                {
+                                  "name": "system",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "VetsProperties",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "hashCode",
+                                          "methodHash": "-1958663393706623840"
+                                        },
+                                        {
+                                          "name": "getCache",
+                                          "methodHash": "1023464754960925421"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "4583722148658103448"
+                                        },
+                                        {
+                                          "name": "setCache",
+                                          "methodHash": "7988127569364264895"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "VetsProperties$Cache",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getTtl",
+                                          "methodHash": "-415792292169862131"
+                                        },
+                                        {
+                                          "name": "setHeapSize",
+                                          "methodHash": "-8459394213221809796"
+                                        },
+                                        {
+                                          "name": "getHeapSize",
+                                          "methodHash": "4937965627258514173"
+                                        },
+                                        {
+                                          "name": "setTtl",
+                                          "methodHash": "5781130562377597693"
+                                        },
+                                        {
+                                          "name": "hashCode",
+                                          "methodHash": "8164464529200276002"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "831519940427844882"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "web",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "VetResource",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-3581603571814895198"
+                                        },
+                                        {
+                                          "name": "showResourcesVetList",
+                                          "methodHash": "2223960982209387217"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "model",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "Vet",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "-5120633086485804427"
+                                        },
+                                        {
+                                          "name": "getSpecialtiesInternal",
+                                          "methodHash": "-645907714153006596"
+                                        },
+                                        {
+                                          "name": "getNrOfSpecialties",
+                                          "methodHash": "-7208058809029928868"
+                                        },
+                                        {
+                                          "name": "getSpecialties",
+                                          "methodHash": "3500493955930902388"
+                                        },
+                                        {
+                                          "name": "getFirstName",
+                                          "methodHash": "5362043940100703172"
+                                        },
+                                        {
+                                          "name": "getLastName",
+                                          "methodHash": "8519713945464293570"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "8674323273580214257"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Specialty",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "getName",
+                                          "methodHash": "-7846802756577984886"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "4280474264438632436"
+                                        },
+                                        {
+                                          "name": "getId",
+                                          "methodHash": "8119102968220074803"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "classes": [
+                                {
+                                  "name": "VetsServiceApplication$$EnhancerBySpringCGLIB$$a7df878",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "setBeanFactory",
+                                      "methodHash": "-1842494062556078262"
+                                    },
+                                    {
+                                      "name": "<init>",
+                                      "methodHash": "5452461179371069340"
+                                    },
+                                    {
+                                      "name": "CGLIB$BIND_CALLBACKS",
+                                      "methodHash": "728375355701566435"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "VetsServiceApplication",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "<init>",
+                                      "methodHash": "-6748813485158826900"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    },
+                    {
+                      "name": "web",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "filter",
+                          "level": 3,
+                          "subPackages": [],
+                          "classes": [
+                            {
+                              "name": "OncePerRequestFilter",
+                              "level": 4,
+                              "methods": [
+                                {
+                                  "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
+                                  "methodHash": "-6953954926677355376"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                },
+                {
+                  "name": "apache",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "http",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "impl",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "client",
+                              "level": 4,
+                              "subPackages": [],
+                              "classes": [
+                                {
+                                  "name": "InternalHttpClient",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "doExecute(HttpHost, HttpRequest, HttpContext)",
+                                      "methodHash": "1406438058163359950"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ipAddress": "172.18.0.18",
+      "hostName": "613c4f700d6e",
+      "applications": [
+        {
+          "name": "petclinic-visits-service",
+          "language": "java",
+          "instanceId": "0",
+          "packages": [
+            {
+              "name": "com",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "zaxxer",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "hikari",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "pool",
+                          "level": 3,
+                          "subPackages": [],
+                          "classes": [
+                            {
+                              "name": "HikariProxyPreparedStatement",
+                              "level": 4,
+                              "methods": [
+                                {
+                                  "name": "executeQuery()",
+                                  "methodHash": "-2284811855415722465"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            },
+            {
+              "name": "org",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "springframework",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "samples",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "petclinic",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "visits",
+                              "level": 4,
+                              "subPackages": [
+                                {
+                                  "name": "web",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "VisitResource$Visits",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-6643474179445962361"
+                                        },
+                                        {
+                                          "name": "getItems",
+                                          "methodHash": "-6826509371928760715"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "VisitResource",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "visitsMultiGet",
+                                          "methodHash": "-8094422030886762135"
+                                        },
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "5960877438698454040"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "model",
+                                  "level": 5,
+                                  "subPackages": [],
+                                  "classes": [
+                                    {
+                                      "name": "Visit",
+                                      "level": 6,
+                                      "methods": [
+                                        {
+                                          "name": "<init>",
+                                          "methodHash": "-8037436174941735751"
+                                        },
+                                        {
+                                          "name": "$default$date",
+                                          "methodHash": "5730488335052855251"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "classes": [
+                                {
+                                  "name": "VisitsServiceApplication",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "<init>",
+                                      "methodHash": "-5727499962586426846"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "VisitsServiceApplication$$EnhancerBySpringCGLIB$$6e67ac47",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "setBeanFactory",
+                                      "methodHash": "-9085273976590271217"
+                                    },
+                                    {
+                                      "name": "CGLIB$BIND_CALLBACKS",
+                                      "methodHash": "1524079173705298226"
+                                    },
+                                    {
+                                      "name": "<init>",
+                                      "methodHash": "5802860878537906715"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    },
+                    {
+                      "name": "web",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "filter",
+                          "level": 3,
+                          "subPackages": [],
+                          "classes": [
+                            {
+                              "name": "OncePerRequestFilter",
+                              "level": 4,
+                              "methods": [
+                                {
+                                  "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
+                                  "methodHash": "8574958671128751066"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                },
+                {
+                  "name": "apache",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "http",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "impl",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "client",
+                              "level": 4,
+                              "subPackages": [],
+                              "classes": [
+                                {
+                                  "name": "InternalHttpClient",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "doExecute(HttpHost, HttpRequest, HttpContext)",
+                                      "methodHash": "-9030020568114534372"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ipAddress": "172.18.0.15",
+      "hostName": "514fcbb7b402",
+      "applications": [
+        {
+          "name": "petclinic-discovery-service",
+          "language": "java",
+          "instanceId": "0",
+          "packages": [
+            {
+              "name": "org",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "springframework",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "web",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "filter",
+                          "level": 3,
+                          "subPackages": [],
+                          "classes": [
+                            {
+                              "name": "OncePerRequestFilter",
+                              "level": 4,
+                              "methods": [
+                                {
+                                  "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
+                                  "methodHash": "-2957064179374875960"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ipAddress": "172.18.0.20",
+      "hostName": "2143eb6fa080",
+      "applications": [
+        {
+          "name": "petclinic-admin-server",
+          "language": "java",
+          "instanceId": "0",
+          "packages": [
+            {
+              "name": "org",
+              "level": 0,
+              "subPackages": [
+                {
+                  "name": "apache",
+                  "level": 1,
+                  "subPackages": [
+                    {
+                      "name": "http",
+                      "level": 2,
+                      "subPackages": [
+                        {
+                          "name": "impl",
+                          "level": 3,
+                          "subPackages": [
+                            {
+                              "name": "client",
+                              "level": 4,
+                              "subPackages": [],
+                              "classes": [
+                                {
+                                  "name": "InternalHttpClient",
+                                  "level": 5,
+                                  "methods": [
+                                    {
+                                      "name": "doExecute(HttpHost, HttpRequest, HttpContext)",
+                                      "methodHash": "3249632100542430063"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "classes": []
+                        }
+                      ],
+                      "classes": []
+                    }
+                  ],
+                  "classes": []
+                }
+              ],
+              "classes": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "k8sNodes": []
+}

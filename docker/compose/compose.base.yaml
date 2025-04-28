@@ -9,6 +9,7 @@ services:
   collaboration-service:
     hostname: collaboration-service
     image: explorviz/collaboration-service:${COLLABORATION_SERVICE_IMAGE_TAG}
+    profiles: ["backend"]
     env_file:
       - path: ../.env
       - path: ../.env-custom
@@ -22,6 +23,7 @@ services:
   frontend:
     hostname: frontend
     image: explorviz/frontend:${FRONTEND_IMAGE_TAG}
+    profiles: ["frontend"]
     env_file:
       - path: ../.env
       - path: ../.env-custom

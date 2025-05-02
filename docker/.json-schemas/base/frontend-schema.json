@@ -8,7 +8,7 @@
     },
     "profiles": {
       "type": "array",
-      "items": [{ "enum": ["jvm", "native"] }]
+      "items": [{ "enum": ["jvm", "native", "frontend"] }]
     },
     "environment": {
       "type": "array",

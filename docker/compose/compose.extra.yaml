@@ -145,6 +145,16 @@ services:
 
   #endregion Environment
 
+  #region generator
+
+  trace-generator:
+    image: explorviz/trace-generator
+    profiles: ["generator"]
+    ports:
+      - ${TRACE_GENERATOR_PORT}:8079
+
+  #endregion generator
+
   #region monitoring
 
   prometheus:

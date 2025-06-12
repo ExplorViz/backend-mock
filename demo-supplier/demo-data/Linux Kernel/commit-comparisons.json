@@ -1,4 +1,768 @@
 {
-    "fd1f8473503e5bf897bd3e8efe3545c0352954e6-c8be54240893dbf89c294cb6a9e338fdc2f73ead": {"added":[],"modified":["kernel/module/internal.h","kernel/module/main.c","kernel/module/strict_rwx.c"],"deleted":[],"addedPackages":[],"deletedPackages":[],"metrics":[{"entityName":"kernel.module.internal","metricMap":{}},{"entityName":"kernel.module.internal.sect_empty#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.set_livepatch_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_sysfs_setup#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_tree_insert#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.check_version#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.try_add_tainted_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.try_add_failed_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_stat_bump_invalid#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_tree_remove_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.add_kallsyms#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.check_modstruct_version#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kmod_dup_request_exists_wait#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.init_param_lock#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_sysfs_teardown#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.free_module_elf#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.print_unloaded_tainted_modules#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.module_decompress_cleanup#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.module_decompress#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.same_magic#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kernel_symbol_value#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.copy_module_elf#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_tree_remove#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_stat_bump_becoming#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.layout_symtab#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kmemleak_load_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.module_sig_check#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_find#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.init_build_id#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kmod_dup_request_announce#parameterHash","metricMap":{}},{"entityName":"kernel.module.main","metricMap":{}},{"entityName":"kernel.module.main.any_section_objs#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_initstate#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_release_module_ref#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__is_module_percpu_address#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_force_unload#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.verify_namespace_is_imported#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_stop_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_coresize#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__mod_update_bounds#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.symbol_put_addr#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.mod_percpu#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_refcount#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__symbol_put#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_taint#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.kernel_symbol_namespace#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_unload_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_symbol#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_initsize#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.register_module_notifier#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_module_all#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_module_get#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_datasize#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_to_force_load#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.percpu_modalloc#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.kernel_symbol_name#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.get_modinfo#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.strong_try_module_get#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_pcpusec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.ref_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.mod_update_bounds#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.already_uses#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__module_put_and_kthread_exit#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.cmp_name#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_any_unique_sec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.section_addr#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.section_objs#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.is_module_percpu_address#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.add_module_usage#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_sec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_next_tag_pair#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.store_uevent#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.get_next_modinfo#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_exported_symbol_in_section#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_flags_taint#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__module_get#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_put#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.unregister_module_notifier#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_any_sec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.percpu_modcopy#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_unload_free#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_refcnt#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.add_taint_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.percpu_modfree#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_rodata_ro#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_rodata_ro_after_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_text_rox#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_data_nx#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_set_memory#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enforce_rwx_sections#parameterHash","metricMap":{}}]},
-"c8be54240893dbf89c294cb6a9e338fdc2f73ead-fd1f8473503e5bf897bd3e8efe3545c0352954e6": {"added":[],"modified":["kernel/module/internal.h","kernel/module/main.c","kernel/module/strict_rwx.c"],"deleted":[],"addedPackages":[],"deletedPackages":[],"metrics":[{"entityName":"kernel.module.internal","metricMap":{}},{"entityName":"kernel.module.internal.sect_empty#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.set_livepatch_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_sysfs_setup#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_tree_insert#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.check_version#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.try_add_tainted_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.try_add_failed_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_stat_bump_invalid#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_tree_remove_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.add_kallsyms#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.check_modstruct_version#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kmod_dup_request_exists_wait#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.init_param_lock#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_sysfs_teardown#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.free_module_elf#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.print_unloaded_tainted_modules#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.module_decompress_cleanup#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.module_decompress#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.same_magic#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kernel_symbol_value#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.copy_module_elf#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_tree_remove#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_stat_bump_becoming#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.layout_symtab#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kmemleak_load_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.module_sig_check#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.mod_find#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.init_build_id#parameterHash","metricMap":{}},{"entityName":"kernel.module.internal.kmod_dup_request_announce#parameterHash","metricMap":{}},{"entityName":"kernel.module.main","metricMap":{}},{"entityName":"kernel.module.main.any_section_objs#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_initstate#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_release_module_ref#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__is_module_percpu_address#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_force_unload#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.verify_namespace_is_imported#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_stop_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_coresize#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__mod_update_bounds#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.symbol_put_addr#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.mod_percpu#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_refcount#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__symbol_put#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_taint#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.kernel_symbol_namespace#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_unload_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_symbol#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_initsize#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.register_module_notifier#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_module_all#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_module_get#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_datasize#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.try_to_force_load#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.percpu_modalloc#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.kernel_symbol_name#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.get_modinfo#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.strong_try_module_get#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_pcpusec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.ref_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.mod_update_bounds#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.already_uses#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__module_put_and_kthread_exit#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.cmp_name#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_any_unique_sec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.section_addr#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.section_objs#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.is_module_percpu_address#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.add_module_usage#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_sec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_next_tag_pair#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.store_uevent#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.get_next_modinfo#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_exported_symbol_in_section#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_flags_taint#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.__module_get#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_put#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.unregister_module_notifier#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.find_any_sec#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.percpu_modcopy#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.module_unload_free#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.show_refcnt#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.add_taint_module#parameterHash","metricMap":{}},{"entityName":"kernel.module.main.percpu_modfree#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_rodata_ro#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_rodata_ro_after_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_text_rox#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enable_data_nx#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_set_memory#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_mark_ro_after_init#parameterHash","metricMap":{}},{"entityName":"kernel.module.strict_rwx.module_enforce_rwx_sections#parameterHash","metricMap":{}}]}
+  "fd1f8473503e5bf897bd3e8efe3545c0352954e6-c8be54240893dbf89c294cb6a9e338fdc2f73ead": {
+    "added": [],
+    "modified": [
+      "kernel/module/internal.h",
+      "kernel/module/main.c",
+      "kernel/module/strict_rwx.c"
+    ],
+    "deleted": [],
+    "addedPackages": [],
+    "deletedPackages": [],
+    "metrics": [
+      {
+        "entityName": "kernel.module.internal",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.sect_empty#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.set_livepatch_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_sysfs_setup#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_tree_insert#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.check_version#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.try_add_tainted_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.try_add_failed_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_stat_bump_invalid#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_tree_remove_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.add_kallsyms#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.check_modstruct_version#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kmod_dup_request_exists_wait#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.init_param_lock#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_sysfs_teardown#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.free_module_elf#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.print_unloaded_tainted_modules#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.module_decompress_cleanup#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.module_decompress#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.same_magic#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kernel_symbol_value#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.copy_module_elf#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_tree_remove#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_stat_bump_becoming#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.layout_symtab#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kmemleak_load_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.module_sig_check#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_find#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.init_build_id#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kmod_dup_request_announce#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.any_section_objs#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_initstate#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_release_module_ref#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__is_module_percpu_address#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_force_unload#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.verify_namespace_is_imported#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_stop_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_coresize#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__mod_update_bounds#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.symbol_put_addr#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.mod_percpu#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_refcount#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__symbol_put#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_taint#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.kernel_symbol_namespace#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_unload_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_symbol#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_initsize#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.register_module_notifier#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_module_all#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_module_get#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_datasize#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_to_force_load#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.percpu_modalloc#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.kernel_symbol_name#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.get_modinfo#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.strong_try_module_get#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_pcpusec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.ref_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.mod_update_bounds#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.already_uses#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__module_put_and_kthread_exit#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.cmp_name#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_any_unique_sec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.section_addr#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.section_objs#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.is_module_percpu_address#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.add_module_usage#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_sec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_next_tag_pair#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.store_uevent#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.get_next_modinfo#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_exported_symbol_in_section#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_flags_taint#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__module_get#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_put#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.unregister_module_notifier#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_any_sec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.percpu_modcopy#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_unload_free#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_refcnt#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.add_taint_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.percpu_modfree#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_rodata_ro#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_rodata_ro_after_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_text_rox#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_data_nx#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_set_memory#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enforce_rwx_sections#parameterHash",
+        "metricMap": {}
+      }
+    ]
+  },
+  "c8be54240893dbf89c294cb6a9e338fdc2f73ead-fd1f8473503e5bf897bd3e8efe3545c0352954e6": {
+    "added": [],
+    "modified": [
+      "kernel/module/internal.h",
+      "kernel/module/main.c",
+      "kernel/module/strict_rwx.c"
+    ],
+    "deleted": [],
+    "addedPackages": [],
+    "deletedPackages": [],
+    "metrics": [
+      {
+        "entityName": "kernel.module.internal",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.sect_empty#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.set_livepatch_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_sysfs_setup#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_tree_insert#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.check_version#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.try_add_tainted_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.try_add_failed_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_stat_bump_invalid#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_tree_remove_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.add_kallsyms#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.check_modstruct_version#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kmod_dup_request_exists_wait#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.init_param_lock#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_sysfs_teardown#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.free_module_elf#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.print_unloaded_tainted_modules#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.module_decompress_cleanup#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.module_decompress#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.same_magic#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kernel_symbol_value#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.copy_module_elf#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_tree_remove#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_stat_bump_becoming#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.layout_symtab#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kmemleak_load_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.module_sig_check#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.mod_find#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.init_build_id#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.internal.kmod_dup_request_announce#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.any_section_objs#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_initstate#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_release_module_ref#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__is_module_percpu_address#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_force_unload#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.verify_namespace_is_imported#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_stop_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_coresize#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__mod_update_bounds#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.symbol_put_addr#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.mod_percpu#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_refcount#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__symbol_put#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_taint#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.kernel_symbol_namespace#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_unload_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_symbol#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_initsize#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.register_module_notifier#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_module_all#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_module_get#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_datasize#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.try_to_force_load#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.percpu_modalloc#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.kernel_symbol_name#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.get_modinfo#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.strong_try_module_get#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_pcpusec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.ref_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.mod_update_bounds#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.already_uses#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__module_put_and_kthread_exit#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.cmp_name#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_any_unique_sec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.section_addr#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.section_objs#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.is_module_percpu_address#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.add_module_usage#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_sec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_next_tag_pair#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.store_uevent#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.get_next_modinfo#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_exported_symbol_in_section#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_flags_taint#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.__module_get#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_put#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.unregister_module_notifier#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.find_any_sec#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.percpu_modcopy#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.module_unload_free#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.show_refcnt#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.add_taint_module#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.main.percpu_modfree#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_rodata_ro#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_rodata_ro_after_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_text_rox#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enable_data_nx#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_set_memory#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_mark_ro_after_init#parameterHash",
+        "metricMap": {}
+      },
+      {
+        "entityName": "kernel.module.strict_rwx.module_enforce_rwx_sections#parameterHash",
+        "metricMap": {}
+      }
+    ]
+  }
 }

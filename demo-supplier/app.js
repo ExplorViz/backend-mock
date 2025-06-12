@@ -335,6 +335,10 @@ async function provideEvolutionData(folder, landscapeToken) {
     const fileContentCommitComparisons = await readFile(`demo-data/${folder}/commit-comparisons.json`);
     const commitIdsToCommitComparisonMap = JSON.parse(fileContentCommitComparisons);
 
+    console.log(
+      `Providing code evolution data for landscape ${landscapeToken} with ${applicationNames.length} applications.`
+    );
+
     if (applicationNames) {
       evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {
         res.json(applicationNames);

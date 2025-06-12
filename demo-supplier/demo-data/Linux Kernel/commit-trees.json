@@ -1,20 +1,16 @@
 {
-
-    "default-application-name": {
-        "name": "default-application-name",
-        "branches": [
-            {
-                "name": "main",
-                "commits": [
-                    "fd1f8473503e5bf897bd3e8efe3545c0352954e6",
-                    "c8be54240893dbf89c294cb6a9e338fdc2f73ead"
-                ],
-                "branchPoint": {
-                    "name": "NONE",
-                    "commit": ""
-                }
-            }
-        ]
+  "name": "Linux",
+  "branches": [
+    {
+      "name": "refs/heads/master",
+      "commits": [
+        "b562e44f507e863c6792946e4e1b1449fbbac85d",
+        "0ff41df1cb268fc69e703a08a57ee14ae967d0ca"
+      ],
+      "branchPoint": {
+        "name": "NONE",
+        "commit": ""
+      }
     }
-
+  ]
 }

@@ -6,7 +6,7 @@
       "hostName": "UNKNOWN-HOST",
       "applications": [
         {
-          "name": "default-application-name",
+          "name": "Linux",
           "language": "C",
           "instanceId": "0",
           "packages": [

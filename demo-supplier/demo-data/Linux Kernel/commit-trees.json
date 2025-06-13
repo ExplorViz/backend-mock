@@ -1,16 +1,19 @@
 {
-  "name": "Linux",
-  "branches": [
-    {
-      "name": "refs/heads/master",
-      "commits": [
-        "b562e44f507e863c6792946e4e1b1449fbbac85d",
-        "0ff41df1cb268fc69e703a08a57ee14ae967d0ca"
-      ],
-      "branchPoint": {
-        "name": "NONE",
-        "commit": ""
-      }
+
+    "Linux": {
+      "name": "Linux",
+      "branches": [
+        {
+          "name": "refs/heads/master",
+          "commits": [
+            "b562e44f507e863c6792946e4e1b1449fbbac85d",
+            "0ff41df1cb268fc69e703a08a57ee14ae967d0ca"
+          ],
+          "branchPoint": {
+            "name": "NONE",
+            "commit": ""
+          }
+        }
+      ]
     }
-  ]
 }

@@ -4,18 +4,11 @@
     "traceId": "5a01d7046574137de07af7f895babda2",
     "gitCommitChecksum": "0ff41df1cb268fc69e703a08a57ee14ae967d0ca",
     "startTime": 1749732228321,
-    "endTime": 1749732228364,
-    "duration": 43,
-    "overallRequestCount": 1,
+    "endTime": 1749732228321,
+    "duration": 0,
+    "overallRequestCount": 12,
     "traceCount": 1,
     "spanList": [
-      {
-        "spanId": "3e5614c03890a20d",
-        "parentSpanId": "",
-        "startTime": 1749732228321,
-        "endTime": 1749732228364,
-        "methodHash": "-8539092266633602008"
-      },
       {
         "spanId": "4050c6e0369e3d95",
         "parentSpanId": "ca6c2ba48c14a250",
@@ -53,7 +46,7 @@
       },
       {
         "spanId": "7208d871b0992fe9",
-        "parentSpanId": "3e5614c03890a20d",
+        "parentSpanId": "",
         "startTime": 1749732228321,
         "endTime": 1749732228321,
         "methodHash": "-280004377163715762"

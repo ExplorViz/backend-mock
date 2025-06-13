@@ -3,7 +3,7 @@
   "nodes": [
     {
       "ipAddress": "0.0.0.0",
-      "hostName": "UNKNOWN-HOST",
+      "hostName": "default-node",
       "applications": [
         {
           "name": "Linux",
@@ -124,30 +124,6 @@
                     {
                       "name": "vma_set_page_prot",
                       "methodHash": "156145280718264904"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Unknown Source",
-          "language": "C",
-          "instanceId": "0",
-          "packages": [
-            {
-              "name": "root",
-              "level": 0,
-              "subPackages": [],
-              "classes": [
-                {
-                  "name": "span",
-                  "level": 1,
-                  "methods": [
-                    {
-                      "name": "ftrace_root",
-                      "methodHash": "-8539092266633602008"
                     }
                   ]
                 }

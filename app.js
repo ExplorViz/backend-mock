@@ -18,6 +18,7 @@ const evolutionApp = createExpressApplication(8085);
 
 const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
+const userApiTokenUrl = "/userapi";
 const snapshotRootUrl = "/snapshot";
 const evolutionRootUrl = "/v2/code";
 
@@ -37,6 +38,11 @@ const landscapes = [];
       subscribedSnapshots: [],
     })
   );
+})();
+
+// Git API tokens
+(async () => {
+  userApp.get(`${userApiTokenUrl}`, (req, res) => res.json([]));
 })();
 
 iterateOverDemoData("demo-data");
@@ -334,6 +340,10 @@ async function provideEvolutionData(folder, landscapeToken) {
 
     const fileContentCommitComparisons = await readFile(`demo-data/${folder}/commit-comparisons.json`);
     const commitIdsToCommitComparisonMap = JSON.parse(fileContentCommitComparisons);
+
+    console.log(
+      `Providing code evolution data for landscape ${landscapeToken} with ${applicationNames.length} applications.`
+    );
 
     if (applicationNames) {
       evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {

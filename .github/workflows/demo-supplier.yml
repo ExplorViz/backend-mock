@@ -1,4 +1,4 @@
-name: Publish demo-supplier
+name: Publish backend-mock
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push multi-arch Docker image
-        working-directory: ./demo-supplier
+        working-directory: .
         run: |
           docker buildx build \
             --platform linux/amd64,linux/arm64 \

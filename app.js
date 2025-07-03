@@ -10,7 +10,7 @@ const {
   copyPackageAndTraces,
   createRandomHex,
   calculateTenSecondLaterNeighbourTimestamp,
-} = require("./utils.js");
+} = require("./utils/utils.js");
 
 const spanApp = createExpressApplication(8083);
 const userApp = createExpressApplication(8084);

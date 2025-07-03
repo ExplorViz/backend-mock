@@ -1,9 +1,8 @@
 services:
-  ## Demo-Supplier ##
+  ## ExplorViz Backend Mock ##
 
-  demo-supplier:
-    container_name: explorviz-demo-supplier
-    image: explorviz/demo-supplier:latest
+  backend-mock:
+    build: ./backend-mock
     networks:
       - explorviz
     ports:

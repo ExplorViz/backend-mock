@@ -4,11 +4,11 @@ Service that replaces the backend of ExplorViz and provides static data for soft
 
 ## Installation
 
-- `npm install`
+- `pnpm install`
 
 ## Running / Development
 
-- Start application: `npm run start`
+- Start application: `pnpm run start`
 
 ## Docker
 

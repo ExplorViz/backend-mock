@@ -9,18 +9,15 @@ const {
   recursivelyRandomizeAllHashCodesOfPackages,
   copyPackageAndTraces,
   createRandomHex,
-  calculateTenSecondLaterNeighbourTimestamp,
-} = require("./utils/utils.js");
+  calculateTenSecondLaterNeighborTimestamp,
+} = require("./utils.js");
 
-const spanApp = createExpressApplication(8083);
 const userApp = createExpressApplication(8084);
-const evolutionApp = createExpressApplication(8085);
+const persistenceApp = createExpressApplication(8085);
 
-const spanRootUrl = "/v2/landscapes";
 const userRootUrl = "/user/:uid/token";
-const userApiTokenUrl = "/userapi";
 const snapshotRootUrl = "/snapshot";
-const evolutionRootUrl = "/v2/code";
+const v3BaseUrl = "/v3/landscapes";
 
 const landscapes = [];
 
@@ -38,11 +35,6 @@ const landscapes = [];
       subscribedSnapshots: [],
     })
   );
-})();
-
-// Git API tokens
-(async () => {
-  userApp.get(`${userApiTokenUrl}`, (req, res) => res.json([]));
 })();
 
 iterateOverDemoData("demo-data");
@@ -64,7 +56,7 @@ async function iterateOverDemoData(directoryPath) {
           return;
         }
 
-        if (stats.isDirectory()) {
+        if (stats.isDirectory() && !folder.startsWith("v2")) {
           createLandscapeSample({ folder: folder });
         }
       });
@@ -78,116 +70,119 @@ createLandscapeSample({
   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
   alias: "Petclinic Sample (Random traces and increasing, unrelated timestamps (with random gaps))",
   traceModifier: removeRandomTraces,
-  timestampModifier: (latestTimestandEpochMilli) => {
-    let nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(parseInt(latestTimestandEpochMilli));
+  timestampModifier: (latestTimestampEpochNano) => {
+    let nextTimestampNano = calculateTenSecondLaterNeighborTimestamp(parseInt(latestTimestampEpochNano));
     let randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
 
     if (Math.random() > 0.75) {
-      nextTimestampMilli += 10000;
+      // Add 10 seconds in nanoseconds
+      nextTimestampNano += 10_000_000_000;
     }
 
     return {
-      epochMilli: nextTimestampMilli,
+      epochNano: nextTimestampNano,
       spanCount: randomSpanCount,
     };
   },
 });
 
+// TODO: Must be updated according to v3 changes
 // BEGIN BIG SL Sample
-createLandscapeSample({
-  folder: "PetClinic Sample",
-  token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
-  alias: "Large Landscape Sample",
-  initializer: (structure, traces) => {
-    const originalTraces = structuredClone(traces);
+// createLandscapeSample({
+//   folder: "PetClinic Sample",
+//   token: "1d8c9223-b790-4873-9b5d-fdf68cdc082f",
+//   alias: "Large Landscape Sample",
+//   initializer: (structure, traces) => {
+//     const originalTraces = structuredClone(traces);
 
-    const node = structure.nodes[0];
-    const app = node.applications[0];
-    const package = app.packages[0];
+//     const node = structure.nodes[0];
+//     const app = node.applications[0];
+//     const package = app.packages[0];
 
-    app.name = "large-demo-landscape";
+//     app.name = "large-demo-landscape";
 
-    app.packages.unshift({
-      name: "changing",
-      subPackages: [],
-      classes: Array.from({ length: 12 }, () => ({
-        name: "C" + createRandomHex(6),
-        methods: [],
-      })),
-    });
+//     app.packages.unshift({
+//       name: "changing",
+//       subPackages: [],
+//       classes: Array.from({ length: 12 }, () => ({
+//         name: "C" + createRandomHex(6),
+//         methods: [],
+//       })),
+//     });
 
-    for (let i = 0; i < 15; i++) {
-      const { packageCopy, newTraces } = copyPackageAndTraces(package, originalTraces);
+//     for (let i = 0; i < 15; i++) {
+//       const { packageCopy, newTraces } = copyPackageAndTraces(package, originalTraces);
 
-      app.packages.push({
-        name: `petclinic${i}`,
-        subPackages: [packageCopy],
-        classes: [],
-      });
+//       app.packages.push({
+//         name: `petclinic${i}`,
+//         subPackages: [packageCopy],
+//         classes: [],
+//       });
 
-      traces.push(...newTraces);
-    }
-  },
-  structureModifier: (structure) => {
-    const changingPackage = structure.nodes[0].applications[0].packages[0];
-    changingPackage.classes.forEach((c) => (c.name = "C" + createRandomHex(6)));
-    return structure;
-  },
-});
+//       traces.push(...newTraces);
+//     }
+//   },
+//   structureModifier: (structure) => {
+//     const changingPackage = structure.nodes[0].applications[0].packages[0];
+//     changingPackage.classes.forEach((c) => (c.name = "C" + createRandomHex(6)));
+//     return structure;
+//   },
+// });
 // END BIG SL Sample
 
-{
+// TODO: Must be updated according to v3 changes
+// {
   // BEGIN Increasing SL Sample
-  let previousStructure = null;
+  // let previousStructure = null;
 
-  createLandscapeSample({
-    folder: "Distributed PetClinic Sample",
-    token: "12444195-6144-4254-a17b-0f7fb49adb0a",
-    alias: "Expanding Sample (Expanding structure and increasing, unrelated timestamps)",
-    structureModifier: (structureData) => {
-      if (!previousStructure) {
-        previousStructure = structuredClone(structureData);
-        return previousStructure;
-      }
+  // createLandscapeSample({
+    // folder: "Distributed PetClinic Sample",
+    // token: "12444195-6144-4254-a17b-0f7fb49adb0a",
+    // alias: "Expanding Sample (Expanding structure and increasing, unrelated timestamps)",
+    // structureModifier: (structureData) => {
+    //   if (!previousStructure) {
+    //     previousStructure = structuredClone(structureData);
+    //     return previousStructure;
+    //   }
 
-      const node = structureData.nodes[0];
-      const app = node.applications[0];
-      const package = app.packages[0];
+    //   const node = structureData.nodes[0];
+    //   const app = node.applications[0];
+    //   const package = app.packages[0];
 
-      const newStructure = addTopLevelPackageToFirstApplication(package, previousStructure);
-      previousStructure = newStructure;
+    //   const newStructure = addTopLevelPackageToFirstApplication(package, previousStructure);
+    //   previousStructure = newStructure;
 
-      return previousStructure;
-    },
-    timestampModifier: (latestTimestandEpochMilli) => {
-      const nextTimestampMilli = calculateTenSecondLaterNeighbourTimestamp(parseInt(latestTimestandEpochMilli));
-      const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
+    //   return previousStructure;
+    // },
+    // timestampModifier: (latestTimestampEpochNano) => {
+    //   const nextTimestampNano = calculateTenSecondLaterNeighborTimestamp(parseInt(latestTimestampEpochNano));
+    //   const randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
 
-      return {
-        epochMilli: nextTimestampMilli,
-        spanCount: randomSpanCount,
-      };
-    },
-  });
+    //   return {
+    //     epochNano: nextTimestampNano,
+    //     spanCount: randomSpanCount,
+    //   };
+    // },
+  // });
 
-  function addTopLevelPackageToFirstApplication(topLevelPackage, structureRecord) {
-    const deepCopyPackage = structuredClone(topLevelPackage);
-    recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
+//   function addTopLevelPackageToFirstApplication(topLevelPackage, structureRecord) {
+//     const deepCopyPackage = structuredClone(topLevelPackage);
+//     recursivelyRandomizeAllHashCodesOfPackages(deepCopyPackage);
 
-    const node = structureRecord.nodes[0];
-    const app = node.applications[0];
+//     const node = structureRecord.nodes[0];
+//     const app = node.applications[0];
 
-    const newTopLevelPackage = {
-      name: `copy${app.packages.length - 1}`,
-      subPackages: [deepCopyPackage],
-      classes: [],
-    };
+//     const newTopLevelPackage = {
+//       name: `copy${app.packages.length - 1}`,
+//       subPackages: [deepCopyPackage],
+//       classes: [],
+//     };
 
-    app.packages.push(newTopLevelPackage);
+//     app.packages.push(newTopLevelPackage);
 
-    return structureRecord;
-  }
-} // END Increasing SL Sample
+//     return structureRecord;
+//   }
+// } // END Increasing SL Sample
 
 /**
  * Creates and configures a express application instance.
@@ -227,10 +222,10 @@ async function createLandscapeSample({
   folder,
   token,
   alias,
-  traceModifier,
-  structureModifier,
+  // traceModifier,
+  // structureModifier,
   timestampModifier,
-  initializer,
+  // initializer,
 }) {
   let structureData, dynamicData, timestampData;
 
@@ -241,10 +236,10 @@ async function createLandscapeSample({
     console.error("Could not read structure data for:", folder);
   }
 
-  const landscapeToken = token ? token : structureData.landscapeToken;
+  const landscapeToken = token ? token : structureData.landscapeToken ?? folder;
 
-  spanApp.get(`${spanRootUrl}/${landscapeToken}/structure`, (req, res) =>
-    res.json(structureModifier ? structureModifier(structureData) : structureData)
+  persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/structure/runtime`, (req, res) =>
+    res.json(structureData)
   );
 
   try {
@@ -254,69 +249,84 @@ async function createLandscapeSample({
     console.error("Could not read dynamic data for:", folder);
   }
 
-  spanApp.get(`${spanRootUrl}/${landscapeToken}/dynamic`, (req, res) =>
-    res.json(traceModifier ? traceModifier(dynamicData) : dynamicData)
+  persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/dynamic`, (req, res) =>
+    res.json(dynamicData)
   );
-  initializer?.(structureData, dynamicData);
+  // initializer?.(structureData, dynamicData);
 
   try {
     timestampData = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
   } catch {
     timestampData = [
       {
-        epochMilli: 0,
+        epochNano: 0,
         spanCount: 0,
       },
     ];
     console.error("Could not read timestamps for:", folder);
   }
 
-  spanApp.get(`${spanRootUrl}/${landscapeToken}/timestamps`, async (req, res) => {
+  persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/timestamps`, async (req, res) => {
     const potentialLatestTimestamp = req.query.newest;
     const commit = req.query.commit;
 
-    let timestampData;
+    let timestampDataToUse = timestampData;
 
     // Use try-catch block since we only provide a mockup for the evolution to the distributed-petclinic by now
     try {
       const commitIdToTimestampsMap = JSON.parse(
         await readFile(`demo-data/petclinic-distributed-commit-timestamps.json`)
       );
-      timestampData = commit ? commitIdToTimestampsMap[commit] ?? [] : commitIdToTimestampsMap["cross-commit"];
+      timestampDataToUse = commit ? commitIdToTimestampsMap[commit] ?? [] : commitIdToTimestampsMap["cross-commit"];
     } catch (error) {
-      timestampData = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
+      try {
+        timestampDataToUse = JSON.parse(await readFile(`demo-data/${folder}/timestamps.json`));
+      } catch (innerError) {
+        // Fall back to the timestampData set earlier (or default if that also failed)
+        timestampDataToUse = timestampData;
+      }
+    }
+
+    // Ensure we have a valid array
+    if (!timestampDataToUse || !Array.isArray(timestampDataToUse)) {
+      timestampDataToUse = [
+        {
+          epochNano: 0,
+          spanCount: 0,
+        },
+      ];
     }
 
     if (potentialLatestTimestamp && timestampModifier) {
       const newTimestamp = timestampModifier(potentialLatestTimestamp);
 
       if (newTimestamp) {
-        timestampData.push(newTimestamp);
+        timestampDataToUse.push(newTimestamp);
         res.json([newTimestamp]);
       } else {
         res.json([]);
       }
     } else {
-      res.json(timestampData);
+      res.json(timestampDataToUse);
     }
   });
 
   landscapes.push({
     value: landscapeToken,
     ownerId: "github|123456",
-    created: timestampData && timestampData.length > 0 ? timestampData[0].epochMilli : 0,
+    created: timestampData && timestampData.length > 0 ? timestampData[0].epochNano / 1000000 : 0,
     alias: alias ? alias : folder,
     sharedUsersIds: [],
   });
 
   try {
-    await readFile(`demo-data/${folder}/application-names.json`);
-    // Application names found => csode evolution data is present
+    await readFile(`demo-data/${folder}/repository-names.json`);
+    // Repository names found => csode evolution data is present
     provideEvolutionData(folder, landscapeToken);
   } catch {
     // No demo data for code evolution - this is expected, do not throw error
     // Return empty list of applications since no data is available
-    evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {
+    persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/repositories`, (req, res) => {
       res.json([]);
     });
     return;
@@ -326,60 +336,40 @@ async function createLandscapeSample({
 async function provideEvolutionData(folder, landscapeToken) {
   // ToDo: Refactor such function can handle if individual files are missing
   try {
-    const fileContentAppNames = await readFile(`demo-data/${folder}/application-names.json`);
-    const applicationNames = JSON.parse(fileContentAppNames);
+    const fileContentRepoNames = await readFile(`demo-data/${folder}/repository-names.json`);
+    const repositoryNames = JSON.parse(fileContentRepoNames);
 
     const fileContentCommitTrees = await readFile(`demo-data/${folder}/commit-trees.json`);
-    const appNameToCommitTreeMap = JSON.parse(fileContentCommitTrees);
+    const repoNameToCommitTreeMap = JSON.parse(fileContentCommitTrees);
 
-    const fileContentStructures = await readFile(`demo-data/${folder}/evolution-structures.json`);
-    const commitIdToStructureMap = JSON.parse(fileContentStructures);
-
-    const fileContentMetrics = await readFile(`demo-data/${folder}/evolution-metrics.json`);
-    const commitIdToMetricsMap = JSON.parse(fileContentMetrics);
-
-    const fileContentCommitComparisons = await readFile(`demo-data/${folder}/commit-comparisons.json`);
-    const commitIdsToCommitComparisonMap = JSON.parse(fileContentCommitComparisons);
-
-    console.log(
-      `Providing code evolution data for landscape ${landscapeToken} with ${applicationNames.length} applications.`
-    );
-
-    if (applicationNames) {
-      evolutionApp.get(`${evolutionRootUrl}/applications/${landscapeToken}`, (req, res) => {
-        res.json(applicationNames);
+    if (repositoryNames) {
+      persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/repositories`, (req, res) => {
+        res.json(repositoryNames);
       });
 
-      for (const appName of applicationNames) {
-        evolutionApp.get(`${evolutionRootUrl}/commit-tree/${landscapeToken}/${appName}/`, (req, res) => {
-          res.json(appNameToCommitTreeMap[appName]);
+      for (const repoName of repositoryNames) {
+        persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/commit-tree/${repoName}/`, (req, res) => {
+          res.json(repoNameToCommitTreeMap[repoName]);
         });
-        evolutionApp.get(`${evolutionRootUrl}/structure/${landscapeToken}/${appName}/:commitId`, (req, res) => {
-          const landscapeStructure = commitIdToStructureMap[req.params["commitId"]] ?? { nodes: [] };
-          landscapeStructure.landscapeToken = landscapeToken;
-          res.json(landscapeStructure);
-        });
-        evolutionApp.get(`${evolutionRootUrl}/metrics/${landscapeToken}/${appName}/:commitId`, (req, res) => {
-          const metrics = commitIdToMetricsMap[req.params["commitId"]] ?? {
-            files: [],
-            fileMetrics: [],
-            classMetrics: [],
-            methodMetrics: [],
-          };
-          res.json(metrics);
-        });
-        evolutionApp.get(
-          `${evolutionRootUrl}/commit-comparison/${landscapeToken}/${appName}/:commitIds`,
-          (req, res) => {
-            const commitComparison = commitIdsToCommitComparisonMap[req.params["commitIds"]] ?? {
-              modified: [],
-              added: [],
-              deleted: [],
-              addedPackages: [],
-              deletedPackages: [],
-              metrics: [],
-            };
-            res.json(commitComparison);
+        // TODO: Each commit-comparison (single or two-commits) need its own file
+        persistenceApp.get(
+          `${v3BaseUrl}/${landscapeToken}/structure/evolution/${repoName}/:commitIds`,
+          async (req, res) => {
+              const commitIds = req.params["commitIds"];
+              try {
+                const fileContentCommitComparison = await readFile(`demo-data/${folder}/${commitIds}.json`);
+                const fileContent = JSON.parse(fileContentCommitComparison);
+                res.json(fileContent);
+              } catch (e) {
+                const fileContent = {
+                  cities: {},
+                  districts: {},
+                  buildings: {},
+                  classes: {},
+                  functions: {},
+                };
+                res.json(fileContent);
+              }
           }
         );
       }

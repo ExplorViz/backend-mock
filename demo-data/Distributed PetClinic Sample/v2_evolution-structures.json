@@ -6,7 +6,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -50,7 +50,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -110,7 +110,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -175,7 +175,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -219,7 +219,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -269,7 +269,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -329,7 +329,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -389,7 +389,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -454,7 +454,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -519,7 +519,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -535,7 +535,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -551,7 +551,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -567,7 +567,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -583,7 +583,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -659,7 +659,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": [
@@ -735,7 +735,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -751,7 +751,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -767,7 +767,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -783,7 +783,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -799,7 +799,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -815,7 +815,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -831,7 +831,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -847,7 +847,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -863,7 +863,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []
@@ -879,7 +879,7 @@
                 "hostName": "b569d5185c71",
                 "applications": [
                     {
-                        "name": "petclinic-costumer-service",
+                        "name": "petclinic-customer-service",
                         "language": "java",
                         "instanceId": "0",
                         "packages": []

@@ -1,10 +1,8 @@
 exports.removeRandomTraces = removeRandomTraces;
-exports.recursivelyRandomizeAllHashCodesOfPackages =
-  recursivelyRandomizeAllHashCodesOfPackages;
+exports.recursivelyRandomizeAllHashCodesOfPackages = recursivelyRandomizeAllHashCodesOfPackages;
 exports.copyPackageAndTraces = copyPackageAndTraces;
 exports.createRandomHex = createRandomHex;
-exports.calculateTenSecondLaterNeighbourTimestamp =
-  calculateTenSecondLaterNeighbourTimestamp;
+exports.calculateTenSecondLaterNeighborTimestamp = calculateTenSecondLaterNeighborTimestamp;
 
 /**
  * Shuffles array in place. ES6 version
@@ -24,18 +22,13 @@ function removeRandomTraces(traceArray) {
 
   // remove random count of uniqueTraceIds
 
-  const itemsToRemove =
-    uniqueTraceIds.size > 1
-      ? Math.floor(Math.random() * uniqueTraceIds.size)
-      : 1;
+  const itemsToRemove = uniqueTraceIds.size > 1 ? Math.floor(Math.random() * uniqueTraceIds.size) : 1;
 
   const shuffledTraceIdArray = shuffle([...uniqueTraceIds]);
   shuffledTraceIdArray.splice(itemsToRemove);
   const remainingTraceIds = new Set(shuffledTraceIdArray);
 
-  const randomizedTraces = traceArray.filter((trace) =>
-    remainingTraceIds.has(trace["traceId"]),
-  );
+  const randomizedTraces = traceArray.filter((trace) => remainingTraceIds.has(trace["traceId"]));
 
   return randomizedTraces;
 }
@@ -47,10 +40,7 @@ function removeRandomTraces(traceArray) {
  * @param {Map<string, string> | undefined} hashMap
  * @returns {Map<string, string> | undefined}
  */
-function recursivelyRandomizeAllHashCodesOfPackages(
-  topLevelPackageRecord,
-  hashMap,
-) {
+function recursivelyRandomizeAllHashCodesOfPackages(topLevelPackageRecord, hashMap) {
   for (let clazz of topLevelPackageRecord.classes) {
     for (let method of clazz.methods) {
       const newHash = createRandomHex(64);
@@ -72,10 +62,7 @@ function recursivelyRandomizeAllHashCodesOfPackages(
 
 function copyPackageAndTraces(package, traces) {
   const packageCopy = structuredClone(package);
-  const hashMap = recursivelyRandomizeAllHashCodesOfPackages(
-    packageCopy,
-    new Map(),
-  );
+  const hashMap = recursivelyRandomizeAllHashCodesOfPackages(packageCopy, new Map());
   const newTraces = duplicateTraces(traces);
 
   // Switch traces to the new package:
@@ -141,6 +128,6 @@ function createRandomHex(length) {
   return id;
 }
 
-function calculateTenSecondLaterNeighbourTimestamp(epochMilli) {
-  return epochMilli + 10000;
+function calculateTenSecondLaterNeighborTimestamp(epochNano) {
+  return epochNano + 10_000_000_000;
 }

@@ -3,9 +3,10 @@
   "cities": {
     "1": {
       "id": "1",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic-customer-service",
       "fqn": "",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "districtIds": [
         "2",
         "25",
@@ -27,7 +28,8 @@
         "27",
         "28",
         "31",
-        "32"
+        "32",
+        "1000001"
       ],
       "allContainedBuildingIds": [
         "8",
@@ -38,14 +40,16 @@
         "19",
         "23",
         "29",
-        "33"
+        "33",
+        "1000000"
       ]
     },
     "35": {
       "id": "35",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic-visits-service",
       "fqn": "",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "districtIds": [
         "36",
         "53",
@@ -80,9 +84,10 @@
     },
     "63": {
       "id": "63",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic-api-gateway",
       "fqn": "",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "districtIds": [
         "64",
         "87"
@@ -114,9 +119,10 @@
     },
     "91": {
       "id": "91",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic-vets-service",
       "fqn": "",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "districtIds": [
         "92",
         "114"
@@ -148,9 +154,10 @@
     },
     "118": {
       "id": "118",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic-discovery-service",
       "fqn": "",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "districtIds": [
         "119"
       ],
@@ -167,9 +174,10 @@
     },
     "125": {
       "id": "125",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic-admin-server",
       "fqn": "",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "districtIds": [
         "126"
       ],
@@ -186,9 +194,10 @@
   "districts": {
     "7": {
       "id": "7",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/samples/petclinic/customers/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [],
       "buildingIds": [
@@ -200,9 +209,10 @@
     },
     "14": {
       "id": "14",
+      "commitComparison": "UNCHANGED",
       "name": "model",
       "fqn": "org/springframework/samples/petclinic/customers/model",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [],
       "buildingIds": [
@@ -214,9 +224,10 @@
     },
     "6": {
       "id": "6",
+      "commitComparison": "UNCHANGED",
       "name": "customers",
       "fqn": "org/springframework/samples/petclinic/customers",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "7",
@@ -227,9 +238,10 @@
     },
     "5": {
       "id": "5",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic",
       "fqn": "org/springframework/samples/petclinic",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "6"
@@ -239,9 +251,10 @@
     },
     "4": {
       "id": "4",
+      "commitComparison": "UNCHANGED",
       "name": "samples",
       "fqn": "org/springframework/samples",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "5"
@@ -251,9 +264,10 @@
     },
     "22": {
       "id": "22",
+      "commitComparison": "UNCHANGED",
       "name": "filter",
       "fqn": "org/springframework/web/filter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [],
       "buildingIds": [
@@ -263,9 +277,10 @@
     },
     "21": {
       "id": "21",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "22"
@@ -275,22 +290,25 @@
     },
     "3": {
       "id": "3",
+      "commitComparison": "UNCHANGED",
       "name": "springframework",
       "fqn": "org/springframework",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "4",
-        "21"
+        "21",
+        "1000001"
       ],
       "buildingIds": [],
       "parentDistrictId": "2"
     },
     "2": {
       "id": "2",
+      "commitComparison": "UNCHANGED",
       "name": "org",
       "fqn": "org",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "3"
@@ -299,9 +317,10 @@
     },
     "28": {
       "id": "28",
+      "commitComparison": "UNCHANGED",
       "name": "pool",
       "fqn": "com/zaxxer/hikari/pool",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [],
       "buildingIds": [
@@ -311,9 +330,10 @@
     },
     "27": {
       "id": "27",
+      "commitComparison": "UNCHANGED",
       "name": "hikari",
       "fqn": "com/zaxxer/hikari",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "28"
@@ -323,9 +343,10 @@
     },
     "26": {
       "id": "26",
+      "commitComparison": "UNCHANGED",
       "name": "zaxxer",
       "fqn": "com/zaxxer",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "27"
@@ -335,9 +356,10 @@
     },
     "25": {
       "id": "25",
+      "commitComparison": "UNCHANGED",
       "name": "com",
       "fqn": "com",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "26"
@@ -346,9 +368,10 @@
     },
     "32": {
       "id": "32",
+      "commitComparison": "UNCHANGED",
       "name": "net",
       "fqn": "java/net",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [],
       "buildingIds": [
@@ -358,9 +381,10 @@
     },
     "31": {
       "id": "31",
+      "commitComparison": "UNCHANGED",
       "name": "java",
       "fqn": "java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "districtIds": [
         "32"
@@ -369,9 +393,10 @@
     },
     "39": {
       "id": "39",
+      "commitComparison": "UNCHANGED",
       "name": "filter",
       "fqn": "org/springframework/web/filter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [],
       "buildingIds": [
@@ -381,9 +406,10 @@
     },
     "38": {
       "id": "38",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "39"
@@ -393,9 +419,10 @@
     },
     "45": {
       "id": "45",
+      "commitComparison": "UNCHANGED",
       "name": "model",
       "fqn": "org/springframework/samples/petclinic/visits/model",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [],
       "buildingIds": [
@@ -405,9 +432,10 @@
     },
     "48": {
       "id": "48",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/samples/petclinic/visits/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [],
       "buildingIds": [
@@ -418,9 +446,10 @@
     },
     "44": {
       "id": "44",
+      "commitComparison": "UNCHANGED",
       "name": "visits",
       "fqn": "org/springframework/samples/petclinic/visits",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "45",
@@ -431,9 +460,10 @@
     },
     "43": {
       "id": "43",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic",
       "fqn": "org/springframework/samples/petclinic",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "44"
@@ -443,9 +473,10 @@
     },
     "42": {
       "id": "42",
+      "commitComparison": "UNCHANGED",
       "name": "samples",
       "fqn": "org/springframework/samples",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "43"
@@ -455,9 +486,10 @@
     },
     "37": {
       "id": "37",
+      "commitComparison": "UNCHANGED",
       "name": "springframework",
       "fqn": "org/springframework",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "38",
@@ -468,9 +500,10 @@
     },
     "36": {
       "id": "36",
+      "commitComparison": "UNCHANGED",
       "name": "org",
       "fqn": "org",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "37"
@@ -479,9 +512,10 @@
     },
     "54": {
       "id": "54",
+      "commitComparison": "UNCHANGED",
       "name": "net",
       "fqn": "java/net",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [],
       "buildingIds": [
@@ -491,9 +525,10 @@
     },
     "53": {
       "id": "53",
+      "commitComparison": "UNCHANGED",
       "name": "java",
       "fqn": "java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "54"
@@ -502,9 +537,10 @@
     },
     "60": {
       "id": "60",
+      "commitComparison": "UNCHANGED",
       "name": "pool",
       "fqn": "com/zaxxer/hikari/pool",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [],
       "buildingIds": [
@@ -514,9 +550,10 @@
     },
     "59": {
       "id": "59",
+      "commitComparison": "UNCHANGED",
       "name": "hikari",
       "fqn": "com/zaxxer/hikari",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "60"
@@ -526,9 +563,10 @@
     },
     "58": {
       "id": "58",
+      "commitComparison": "UNCHANGED",
       "name": "zaxxer",
       "fqn": "com/zaxxer",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "59"
@@ -538,9 +576,10 @@
     },
     "57": {
       "id": "57",
+      "commitComparison": "UNCHANGED",
       "name": "com",
       "fqn": "com",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "districtIds": [
         "58"
@@ -549,9 +588,10 @@
     },
     "69": {
       "id": "69",
+      "commitComparison": "UNCHANGED",
       "name": "dto",
       "fqn": "org/springframework/samples/petclinic/api/dto",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [],
       "buildingIds": [
@@ -564,9 +604,10 @@
     },
     "78": {
       "id": "78",
+      "commitComparison": "UNCHANGED",
       "name": "application",
       "fqn": "org/springframework/samples/petclinic/api/application",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [],
       "buildingIds": [
@@ -577,9 +618,10 @@
     },
     "84": {
       "id": "84",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/samples/petclinic/api/boundary/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [],
       "buildingIds": [
@@ -589,9 +631,10 @@
     },
     "83": {
       "id": "83",
+      "commitComparison": "UNCHANGED",
       "name": "boundary",
       "fqn": "org/springframework/samples/petclinic/api/boundary",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "84"
@@ -601,9 +644,10 @@
     },
     "68": {
       "id": "68",
+      "commitComparison": "UNCHANGED",
       "name": "api",
       "fqn": "org/springframework/samples/petclinic/api",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "69",
@@ -615,9 +659,10 @@
     },
     "67": {
       "id": "67",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic",
       "fqn": "org/springframework/samples/petclinic",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "68"
@@ -627,9 +672,10 @@
     },
     "66": {
       "id": "66",
+      "commitComparison": "UNCHANGED",
       "name": "samples",
       "fqn": "org/springframework/samples",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "67"
@@ -639,9 +685,10 @@
     },
     "65": {
       "id": "65",
+      "commitComparison": "UNCHANGED",
       "name": "springframework",
       "fqn": "org/springframework",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "66"
@@ -651,9 +698,10 @@
     },
     "64": {
       "id": "64",
+      "commitComparison": "UNCHANGED",
       "name": "org",
       "fqn": "org",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "65"
@@ -662,9 +710,10 @@
     },
     "88": {
       "id": "88",
+      "commitComparison": "UNCHANGED",
       "name": "net",
       "fqn": "java/net",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [],
       "buildingIds": [
@@ -674,9 +723,10 @@
     },
     "87": {
       "id": "87",
+      "commitComparison": "UNCHANGED",
       "name": "java",
       "fqn": "java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "districtIds": [
         "88"
@@ -685,9 +735,10 @@
     },
     "97": {
       "id": "97",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/samples/petclinic/vets/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [],
       "buildingIds": [
@@ -697,9 +748,10 @@
     },
     "100": {
       "id": "100",
+      "commitComparison": "UNCHANGED",
       "name": "model",
       "fqn": "org/springframework/samples/petclinic/vets/model",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [],
       "buildingIds": [
@@ -710,9 +762,10 @@
     },
     "105": {
       "id": "105",
+      "commitComparison": "UNCHANGED",
       "name": "system",
       "fqn": "org/springframework/samples/petclinic/vets/system",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [],
       "buildingIds": [
@@ -723,9 +776,10 @@
     },
     "96": {
       "id": "96",
+      "commitComparison": "UNCHANGED",
       "name": "vets",
       "fqn": "org/springframework/samples/petclinic/vets",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "97",
@@ -737,9 +791,10 @@
     },
     "95": {
       "id": "95",
+      "commitComparison": "UNCHANGED",
       "name": "petclinic",
       "fqn": "org/springframework/samples/petclinic",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "96"
@@ -749,9 +804,10 @@
     },
     "94": {
       "id": "94",
+      "commitComparison": "UNCHANGED",
       "name": "samples",
       "fqn": "org/springframework/samples",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "95"
@@ -761,9 +817,10 @@
     },
     "111": {
       "id": "111",
+      "commitComparison": "UNCHANGED",
       "name": "filter",
       "fqn": "org/springframework/web/filter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [],
       "buildingIds": [
@@ -773,9 +830,10 @@
     },
     "110": {
       "id": "110",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "111"
@@ -785,9 +843,10 @@
     },
     "93": {
       "id": "93",
+      "commitComparison": "UNCHANGED",
       "name": "springframework",
       "fqn": "org/springframework",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "94",
@@ -798,9 +857,10 @@
     },
     "92": {
       "id": "92",
+      "commitComparison": "UNCHANGED",
       "name": "org",
       "fqn": "org",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "93"
@@ -809,9 +869,10 @@
     },
     "115": {
       "id": "115",
+      "commitComparison": "UNCHANGED",
       "name": "net",
       "fqn": "java/net",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [],
       "buildingIds": [
@@ -821,9 +882,10 @@
     },
     "114": {
       "id": "114",
+      "commitComparison": "UNCHANGED",
       "name": "java",
       "fqn": "java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "districtIds": [
         "115"
@@ -832,9 +894,10 @@
     },
     "122": {
       "id": "122",
+      "commitComparison": "UNCHANGED",
       "name": "filter",
       "fqn": "org/springframework/web/filter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "118",
       "districtIds": [],
       "buildingIds": [
@@ -844,9 +907,10 @@
     },
     "121": {
       "id": "121",
+      "commitComparison": "UNCHANGED",
       "name": "web",
       "fqn": "org/springframework/web",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "118",
       "districtIds": [
         "122"
@@ -856,9 +920,10 @@
     },
     "120": {
       "id": "120",
+      "commitComparison": "UNCHANGED",
       "name": "springframework",
       "fqn": "org/springframework",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "118",
       "districtIds": [
         "121"
@@ -868,9 +933,10 @@
     },
     "119": {
       "id": "119",
+      "commitComparison": "UNCHANGED",
       "name": "org",
       "fqn": "org",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "118",
       "districtIds": [
         "120"
@@ -879,9 +945,10 @@
     },
     "127": {
       "id": "127",
+      "commitComparison": "UNCHANGED",
       "name": "net",
       "fqn": "java/net",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "125",
       "districtIds": [],
       "buildingIds": [
@@ -891,22 +958,58 @@
     },
     "126": {
       "id": "126",
+      "commitComparison": "UNCHANGED",
       "name": "java",
       "fqn": "java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "125",
       "districtIds": [
         "127"
       ],
       "buildingIds": []
+    },
+    "1000001": {
+      "id": "1000001",
+      "commitComparison": "ADDED",
+      "name": "mc2",
+      "fqn": "org/springframework/mc2",
+      "originOfData": "static",
+      "parentCityId": "1",
+      "parentDistrictId": "3",
+      "districtIds": [],
+      "buildingIds": [
+        "1000000"
+      ]
     }
   },
   "buildings": {
+    "1000000": {
+      "id": "1000000",
+      "commitComparison": "ADDED",
+      "name": "ABC.java",
+      "fqn": "org/springframework/mc2/ABC.java",
+      "originOfData": "static",
+      "parentCityId": "1",
+      "parentDistrictId": "7",
+      "classIds": [
+        "9"
+      ],
+      "functionIds": [],
+      "allContainedClassIds": [
+        "9"
+      ],
+      "allContainedFunctionIds": [
+        "0179b4eb56a4b6b65ca029e374fb4ef556c637358440755f8b8abecc2cf39fbb",
+        "27fd46867bb15a2bdc47f40b42f59806e67b6a51fd169e8f905960a825f154c6",
+        "cd504e729542807e6ed4bb19656d11f875c08f61dd531688d094715b7652ad0b"
+      ]
+    },
     "8": {
       "id": "8",
+      "commitComparison": "UNCHANGED",
       "name": "OwnerResource.java",
       "fqn": "org/springframework/samples/petclinic/customers/web/OwnerResource.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "7",
       "classIds": [
@@ -924,9 +1027,10 @@
     },
     "10": {
       "id": "10",
+      "commitComparison": "UNCHANGED",
       "name": "PetRequest.java",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "7",
       "classIds": [
@@ -949,9 +1053,10 @@
     },
     "12": {
       "id": "12",
+      "commitComparison": "UNCHANGED",
       "name": "PetResource.java",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetResource.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "7",
       "classIds": [
@@ -969,9 +1074,10 @@
     },
     "15": {
       "id": "15",
+      "commitComparison": "UNCHANGED",
       "name": "Pet.java",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "14",
       "classIds": [
@@ -997,9 +1103,10 @@
     },
     "17": {
       "id": "17",
+      "commitComparison": "UNCHANGED",
       "name": "Owner.java",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "14",
       "classIds": [
@@ -1029,9 +1136,10 @@
     },
     "19": {
       "id": "19",
+      "commitComparison": "UNCHANGED",
       "name": "PetType.java",
       "fqn": "org/springframework/samples/petclinic/customers/model/PetType.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "14",
       "classIds": [
@@ -1049,9 +1157,10 @@
     },
     "23": {
       "id": "23",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter.java",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "22",
       "classIds": [
@@ -1067,9 +1176,10 @@
     },
     "29": {
       "id": "29",
+      "commitComparison": "UNCHANGED",
       "name": "HikariProxyPreparedStatement.java",
       "fqn": "com/zaxxer/hikari/pool/HikariProxyPreparedStatement.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "28",
       "classIds": [
@@ -1086,9 +1196,10 @@
     },
     "33": {
       "id": "33",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection.java",
       "fqn": "java/net/HttpURLConnection.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "1",
       "parentDistrictId": "32",
       "classIds": [
@@ -1104,9 +1215,10 @@
     },
     "40": {
       "id": "40",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter.java",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "parentDistrictId": "39",
       "classIds": [
@@ -1122,9 +1234,10 @@
     },
     "46": {
       "id": "46",
+      "commitComparison": "UNCHANGED",
       "name": "Visit.java",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "parentDistrictId": "45",
       "classIds": [
@@ -1146,9 +1259,10 @@
     },
     "49": {
       "id": "49",
+      "commitComparison": "UNCHANGED",
       "name": "VisitResource$Visits.java",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource$Visits.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "parentDistrictId": "48",
       "classIds": [
@@ -1165,9 +1279,10 @@
     },
     "51": {
       "id": "51",
+      "commitComparison": "UNCHANGED",
       "name": "VisitResource.java",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "parentDistrictId": "48",
       "classIds": [
@@ -1185,9 +1300,10 @@
     },
     "55": {
       "id": "55",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection.java",
       "fqn": "java/net/HttpURLConnection.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "parentDistrictId": "54",
       "classIds": [
@@ -1203,9 +1319,10 @@
     },
     "61": {
       "id": "61",
+      "commitComparison": "UNCHANGED",
       "name": "HikariProxyPreparedStatement.java",
       "fqn": "com/zaxxer/hikari/pool/HikariProxyPreparedStatement.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "35",
       "parentDistrictId": "60",
       "classIds": [
@@ -1221,9 +1338,10 @@
     },
     "70": {
       "id": "70",
+      "commitComparison": "UNCHANGED",
       "name": "PetDetails.java",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "69",
       "classIds": [
@@ -1248,9 +1366,10 @@
     },
     "72": {
       "id": "72",
+      "commitComparison": "UNCHANGED",
       "name": "OwnerDetails.java",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "69",
       "classIds": [
@@ -1280,9 +1399,10 @@
     },
     "74": {
       "id": "74",
+      "commitComparison": "UNCHANGED",
       "name": "Visits.java",
       "fqn": "org/springframework/samples/petclinic/api/dto/Visits.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "69",
       "classIds": [
@@ -1299,9 +1419,10 @@
     },
     "76": {
       "id": "76",
+      "commitComparison": "UNCHANGED",
       "name": "PetType.java",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetType.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "69",
       "classIds": [
@@ -1319,9 +1440,10 @@
     },
     "79": {
       "id": "79",
+      "commitComparison": "UNCHANGED",
       "name": "VisitsServiceClient.java",
       "fqn": "org/springframework/samples/petclinic/api/application/VisitsServiceClient.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "78",
       "classIds": [
@@ -1338,9 +1460,10 @@
     },
     "81": {
       "id": "81",
+      "commitComparison": "UNCHANGED",
       "name": "CustomersServiceClient.java",
       "fqn": "org/springframework/samples/petclinic/api/application/CustomersServiceClient.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "78",
       "classIds": [
@@ -1356,9 +1479,10 @@
     },
     "85": {
       "id": "85",
+      "commitComparison": "UNCHANGED",
       "name": "ApiGatewayController.java",
       "fqn": "org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "84",
       "classIds": [
@@ -1375,9 +1499,10 @@
     },
     "89": {
       "id": "89",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection.java",
       "fqn": "java/net/HttpURLConnection.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "63",
       "parentDistrictId": "88",
       "classIds": [
@@ -1393,9 +1518,10 @@
     },
     "98": {
       "id": "98",
+      "commitComparison": "UNCHANGED",
       "name": "VetResource.java",
       "fqn": "org/springframework/samples/petclinic/vets/web/VetResource.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "97",
       "classIds": [
@@ -1412,9 +1538,10 @@
     },
     "101": {
       "id": "101",
+      "commitComparison": "UNCHANGED",
       "name": "Vet.java",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "100",
       "classIds": [
@@ -1436,9 +1563,10 @@
     },
     "103": {
       "id": "103",
+      "commitComparison": "UNCHANGED",
       "name": "Specialty.java",
       "fqn": "org/springframework/samples/petclinic/vets/model/Specialty.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "100",
       "classIds": [
@@ -1456,9 +1584,10 @@
     },
     "106": {
       "id": "106",
+      "commitComparison": "UNCHANGED",
       "name": "VetsProperties$Cache.java",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "105",
       "classIds": [
@@ -1479,9 +1608,10 @@
     },
     "108": {
       "id": "108",
+      "commitComparison": "UNCHANGED",
       "name": "VetsProperties.java",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "105",
       "classIds": [
@@ -1500,9 +1630,10 @@
     },
     "112": {
       "id": "112",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter.java",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "111",
       "classIds": [
@@ -1518,9 +1649,10 @@
     },
     "116": {
       "id": "116",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection.java",
       "fqn": "java/net/HttpURLConnection.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "91",
       "parentDistrictId": "115",
       "classIds": [
@@ -1536,9 +1668,10 @@
     },
     "123": {
       "id": "123",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter.java",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "118",
       "parentDistrictId": "122",
       "classIds": [
@@ -1554,9 +1687,10 @@
     },
     "128": {
       "id": "128",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection.java",
       "fqn": "java/net/HttpURLConnection.java",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "parentCityId": "125",
       "parentDistrictId": "127",
       "classIds": [
@@ -1574,20 +1708,21 @@
   "classes": {
     "9": {
       "id": "9",
+      "commitComparison": "UNCHANGED",
       "name": "OwnerResource",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "0179b4eb56a4b6b65ca029e374fb4ef556c637358440755f8b8abecc2cf39fbb",
         "27fd46867bb15a2bdc47f40b42f59806e67b6a51fd169e8f905960a825f154c6",
         "cd504e729542807e6ed4bb19656d11f875c08f61dd531688d094715b7652ad0b"
       ],
-      "parentBuildingId": "8",
       "innerClassIds": []
     },
     "11": {
       "id": "11",
+      "commitComparison": "UNCHANGED",
       "name": "PetRequest",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "18b6dee2768cf1506f737fc7ed5c5c33cb82bb43930c3208c3e316a3b04e21c7",
         "5ad49015864f44220d7711ad407390d20fc375ea7e2ecca32918f9cc1474c03c",
@@ -1598,25 +1733,25 @@
         "d7297b7b54bdc092d1fd191b313861733a69f9caeced136bd5c6eacea11c2b6f",
         "da7bff54f3b6b342cfcd9b380535bd40bbef2272a2a62a5fe12f7c1c88e5afec"
       ],
-      "parentBuildingId": "10",
       "innerClassIds": []
     },
     "13": {
       "id": "13",
+      "commitComparison": "UNCHANGED",
       "name": "PetResource",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "6ced68b6a58ccc3de20f20347cc1167a62a6358e20112086d073107680287e68",
         "6e6d8687f2383c7a66e1db1d2ee2c6d452bbc6dac3c95b44eace5a7d39e794f4",
         "bf1d5eb4d99c3678e3b20dec1762e0d7eeefbfffa44f24900cb2b77132452314"
       ],
-      "parentBuildingId": "12",
       "innerClassIds": []
     },
     "16": {
       "id": "16",
+      "commitComparison": "UNCHANGED",
       "name": "Pet",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "0e57744ca42690cf8c57531dbbe0b5ea6c945e56a47148177febb85c9fc99ef9",
         "13d1a9fd32521def07d0d052532f0d780ddba77bf1aed859dcca965ed72f6a02",
@@ -1630,13 +1765,13 @@
         "ddedfe8f5ee8599b2c88e9d145b2c82270a172092b096f713d8ac3539568b697",
         "e7622bfc2ee3590b7419a3b7d7b1f5a7603a5c570c3271b57611c142ea200ace"
       ],
-      "parentBuildingId": "15",
       "innerClassIds": []
     },
     "18": {
       "id": "18",
+      "commitComparison": "UNCHANGED",
       "name": "Owner",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "1dfce0c432e43b032052b711bccaf0e87952d7430781eb1198a971a82541b098",
         "35ab9d3d87c604e3d95d93ad9370b1347334191952055d406d2b3b4bcaa73f13",
@@ -1654,66 +1789,66 @@
         "bd052addfe1306b63b0ebd4e5ca3dee980c29ada344dea6e92a18fd58781fa97",
         "c1991e8e81980b5408996298315e7cd8652fb34878367c87dc0a2c2dcb3de3b9"
       ],
-      "parentBuildingId": "17",
       "innerClassIds": []
     },
     "20": {
       "id": "20",
+      "commitComparison": "UNCHANGED",
       "name": "PetType",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "39d2b9b4921b4ca64795bb557b2c3b4a8e8f1f13c7cb58025249666f65b555fd",
         "86c9b85106843876b5d36bf70b952cff74259328e5965ea8bffcb82085befc1a",
         "9f3e3a999320cf131373dd0536d55848bd800b75de28fa9d3543b3020b5d73e1"
       ],
-      "parentBuildingId": "19",
       "innerClassIds": []
     },
     "24": {
       "id": "24",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "a4df69f397d355847914261bfb2ba327e4fa92e6faaa32f26c68fbca3dfcbc4e"
       ],
-      "parentBuildingId": "23",
       "innerClassIds": []
     },
     "30": {
       "id": "30",
+      "commitComparison": "UNCHANGED",
       "name": "HikariProxyPreparedStatement",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "89bffe78c0a366404ad0b683923ae66513c92901f6d6b5557649e4309ad40e8a",
         "c3a9d8bf2d1f8c6a2e3ce6694e49d89d42e5ab392510bb0977e983f2ed45e374"
       ],
-      "parentBuildingId": "29",
       "innerClassIds": []
     },
     "34": {
       "id": "34",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "93d513bc12ecd8f89737345e0137e18b21db1abc8b4e01227034b65152e0ff2b"
       ],
-      "parentBuildingId": "33",
       "innerClassIds": []
     },
     "41": {
       "id": "41",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "02a8588114390aaf055bd623f3e1281fda3d723ee79d30b2fa06cef716daf158"
       ],
-      "parentBuildingId": "40",
       "innerClassIds": []
     },
     "47": {
       "id": "47",
+      "commitComparison": "UNCHANGED",
       "name": "Visit",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "0519f52f62db35801a8d8e599c0aef20a2c4250e59f689c76825a1687a7e2ca6",
         "08091239335a0f690e81ede9fb2067015e5420d709506adbe0d10ccbce7a677e",
@@ -1723,56 +1858,56 @@
         "c49e8886ac7c6a2ed4274547a45a78d54b6c3fd7df7c9f4bd946bf486d4a5873",
         "f6f145925fb0b18b714192ac21ad9ba33c958a1a52b0f7d30216209eba28d33d"
       ],
-      "parentBuildingId": "46",
       "innerClassIds": []
     },
     "50": {
       "id": "50",
+      "commitComparison": "UNCHANGED",
       "name": "VisitResource$Visits",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "14c5bbb2fdcda9d59e217cb0b78e596fa3e70dd3ba64e87e0e75926503e1fbef",
         "f460a337668ac55cdee3bf1b700daa161f56469e14e1d2cdf7e67701bc5b993c"
       ],
-      "parentBuildingId": "49",
       "innerClassIds": []
     },
     "52": {
       "id": "52",
+      "commitComparison": "UNCHANGED",
       "name": "VisitResource",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "2759e0253e1776b1a7d5f26fe0bbd76cf3d3393daa0df571d0cabe179c1cc34c",
         "be880db556ffb767b8649a27bdaa09613125cc7fb0d1a1da666490ea1f5efd1b",
         "cad302b717a18806d5ee1b6ae315cecba2f0a408ce7e4562771b51e2740c9615"
       ],
-      "parentBuildingId": "51",
       "innerClassIds": []
     },
     "56": {
       "id": "56",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "83833db42e030d7d2825f7d79a66e37bd766e1bbebf178faf7065339f6fcdda4"
       ],
-      "parentBuildingId": "55",
       "innerClassIds": []
     },
     "62": {
       "id": "62",
+      "commitComparison": "UNCHANGED",
       "name": "HikariProxyPreparedStatement",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "c2440cf2ab2ce8c18c0d1adea9a4f61edca9a53bafc2ed6cd015a0dc232367fe"
       ],
-      "parentBuildingId": "61",
       "innerClassIds": []
     },
     "71": {
       "id": "71",
+      "commitComparison": "UNCHANGED",
       "name": "PetDetails",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "02c53d319ed093a54c1b1aff598275ef8ed87e7d4f78e5a4ddd69e58210ca47f",
         "15f1efe5c4ad059962ced301757c1924e1a53699faf2fbc340947af11fa71d20",
@@ -1785,13 +1920,13 @@
         "e03e331c70fac9244eda93a4c355573a4d4c19776d60a64f50a421d30cbde1dd",
         "f8bf9a18d7002a5b1abc63e9e2cb19ddbae9560f587862d0f8c13f95863ddea1"
       ],
-      "parentBuildingId": "70",
       "innerClassIds": []
     },
     "73": {
       "id": "73",
+      "commitComparison": "UNCHANGED",
       "name": "OwnerDetails",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "05a9d11c62401f7614c959844e2cfe68aaee45a92d07e75e88156b6a27632a35",
         "0a5d76a6bc93de8517f07ceb24f6dd892ca6952a40210bd595457426722371e7",
@@ -1809,89 +1944,89 @@
         "dd77f6619e67cfaa81c3cdf6edf39e71f8e11aa4630af71560d81914ea05d264",
         "e9fca7c7c16acabcb082c3bedcd3b63fd7f44f280ab55e743f48603287a763c7"
       ],
-      "parentBuildingId": "72",
       "innerClassIds": []
     },
     "75": {
       "id": "75",
+      "commitComparison": "UNCHANGED",
       "name": "Visits",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "2e35877a9fe46f68b232098c4b6d280b5e8bf28ea7ece7b6c636e11e7e8e1c8a",
         "e56f70662e65f648af40195084544309136786a90fd082a7a7ef46c21699595f"
       ],
-      "parentBuildingId": "74",
       "innerClassIds": []
     },
     "77": {
       "id": "77",
+      "commitComparison": "UNCHANGED",
       "name": "PetType",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "38a535d51098a0d7c7aa727ee04fa416fb8a888c402ee542e98075ad3e8f26c8",
         "c0d6b368270638b2b466b85f0db3aee7315d2d460930e6fa681796d533e056e6",
         "c1ed842a95b748add0ac2074fa2ac983cdcf9bdfaa8750d8df11827cc4591a32"
       ],
-      "parentBuildingId": "76",
       "innerClassIds": []
     },
     "80": {
       "id": "80",
+      "commitComparison": "UNCHANGED",
       "name": "VisitsServiceClient",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "50d8c1ac4ca24cc1d33213edf5c7225c72b6fea09d7c510b0dcb77564f60d615",
         "e42d832147c64fcc7e416706696406dc243f472c35a2bc541f8903efcb30078c"
       ],
-      "parentBuildingId": "79",
       "innerClassIds": []
     },
     "82": {
       "id": "82",
+      "commitComparison": "UNCHANGED",
       "name": "CustomersServiceClient",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "9204fc84ce645f77882e897550329e9fde8987d5d2345e4c56afc405b14e1433"
       ],
-      "parentBuildingId": "81",
       "innerClassIds": []
     },
     "86": {
       "id": "86",
+      "commitComparison": "UNCHANGED",
       "name": "ApiGatewayController",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "9aa1e0c075226b01875948a88de07e8a369314b4543690782c9dd203b1b26ae9",
         "ac9f9c55beaaad0fca7a65eeec668f55834a20e5077ef5f84fe2444c1b6af9a6"
       ],
-      "parentBuildingId": "85",
       "innerClassIds": []
     },
     "90": {
       "id": "90",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "cd35f41901328c8abfaca50c9829ecd7cdd19cbe74a59b751df58fabb9d0a3fe"
       ],
-      "parentBuildingId": "89",
       "innerClassIds": []
     },
     "99": {
       "id": "99",
+      "commitComparison": "UNCHANGED",
       "name": "VetResource",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "051e09a840116cae0f055c4cd2ef5a6fabfa737f47611d3dfb88c3c68eb33e91",
         "78169e61660714ed4b19295739fc6f3572768b2eeb8a7f6f642ed9015e1ddb81"
       ],
-      "parentBuildingId": "98",
       "innerClassIds": []
     },
     "102": {
       "id": "102",
+      "commitComparison": "UNCHANGED",
       "name": "Vet",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "09bda9a0c731b0c78dd8f3561024901c0a53b2c0de09f8f1456d51bd1577a864",
         "356e272f65191453ce3225c295cf3d466a6aec4a71ce87cf32855588cf374ae3",
@@ -1901,25 +2036,25 @@
         "c64b36282eb1dac3b4c278763e98b58543c6d1f2f3ae1d30616e19e1b29f60cf",
         "f75dad383776f4860c8f1c2a8d30c83acf40213131791d933ee7d914e8252361"
       ],
-      "parentBuildingId": "101",
       "innerClassIds": []
     },
     "104": {
       "id": "104",
+      "commitComparison": "UNCHANGED",
       "name": "Specialty",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "5b121b83da95028120cbd915b3e2715e4c56b2dc1a0ba96d9d012b7912e248c5",
         "96298f5bb885d7b161432c57134a593d3204d2b310b7757993928c2bd57cc32c",
         "ba4f3bccb19895195c7d9170ab32ab4e470ae94ceea7f00c6b5a25fee747d77e"
       ],
-      "parentBuildingId": "103",
       "innerClassIds": []
     },
     "107": {
       "id": "107",
+      "commitComparison": "UNCHANGED",
       "name": "VetsProperties$Cache",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "1990b76c42993d99220b263c6ca2776c9040ea543b7d7d14c0ab26369973da03",
         "4eb579e46e204d239290323a07bb16d32fedc5fd41b40cb62d57922c5c95d04f",
@@ -1928,1055 +2063,1054 @@
         "8975f0ff2f47090a7157472dcde10a5d72b06bd5c4df56f5f7034a5c867240b4",
         "8a29c6535a5b4242515b4d3d26a48bb4346c15753986776b66af8d3706ec094b"
       ],
-      "parentBuildingId": "106",
       "innerClassIds": []
     },
     "109": {
       "id": "109",
+      "commitComparison": "UNCHANGED",
       "name": "VetsProperties",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "25f5cba77e606416fc24b78c129b05c5d2603ed8cf5223ab92f1c9f93ec9b584",
         "51a93c71e195e147f2e51cad4601ec3c89eac5b7075241cb5a8e75e8bae0dcc6",
         "90f96e1ff1583f972d46c692961cc2d67ee3e271725854a2e5a70a6ca3672093",
         "d874a76ad7a703e396f6768a51ce6283a3fdef958d0a3e8256f3da3cf95b98d0"
       ],
-      "parentBuildingId": "108",
       "innerClassIds": []
     },
     "113": {
       "id": "113",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "2d5ef0592b6c24eef6b37005f533efa8596e2edda109bd3b712453b913a602d1"
       ],
-      "parentBuildingId": "112",
       "innerClassIds": []
     },
     "117": {
       "id": "117",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "401caf59418cd5f36282bde89eabbd4ae84cba5a99b811763bc705f3b75a39ae"
       ],
-      "parentBuildingId": "116",
       "innerClassIds": []
     },
     "124": {
       "id": "124",
+      "commitComparison": "UNCHANGED",
       "name": "OncePerRequestFilter",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "13182333817a8d49d13e9cad64c9bf176080b73c0df4042db89c475c366e20b9"
       ],
-      "parentBuildingId": "123",
       "innerClassIds": []
     },
     "129": {
       "id": "129",
+      "commitComparison": "UNCHANGED",
       "name": "HttpURLConnection",
-      "originOfData": "runtime",
+      "originOfData": "static",
       "functionIds": [
         "7ffec8334330359a81db433643dde6f15cccd77d6b698ae00a02fe975f1a1b84"
       ],
-      "parentBuildingId": "128",
       "innerClassIds": []
     }
   },
   "functions": {
     "0179b4eb56a4b6b65ca029e374fb4ef556c637358440755f8b8abecc2cf39fbb": {
       "id": "0179b4eb56a4b6b65ca029e374fb4ef556c637358440755f8b8abecc2cf39fbb",
+      "commitComparison": "UNCHANGED",
       "name": "createOwner",
       "fqn": "org/springframework/samples/petclinic/customers/web/OwnerResource.java/OwnerResource/createOwner",
-      "originOfData": "runtime",
-      "parentId": "9",
-      "parentBuildingId": "8"
+      "originOfData": "static",
+      "parentId": "9"
     },
     "27fd46867bb15a2bdc47f40b42f59806e67b6a51fd169e8f905960a825f154c6": {
       "id": "27fd46867bb15a2bdc47f40b42f59806e67b6a51fd169e8f905960a825f154c6",
+      "commitComparison": "UNCHANGED",
       "name": "findOwner",
       "fqn": "org/springframework/samples/petclinic/customers/web/OwnerResource.java/OwnerResource/findOwner",
-      "originOfData": "runtime",
-      "parentId": "9",
-      "parentBuildingId": "8"
+      "originOfData": "static",
+      "parentId": "9"
     },
     "cd504e729542807e6ed4bb19656d11f875c08f61dd531688d094715b7652ad0b": {
       "id": "cd504e729542807e6ed4bb19656d11f875c08f61dd531688d094715b7652ad0b",
+      "commitComparison": "UNCHANGED",
       "name": "findAll",
       "fqn": "org/springframework/samples/petclinic/customers/web/OwnerResource.java/OwnerResource/findAll",
-      "originOfData": "runtime",
-      "parentId": "9",
-      "parentBuildingId": "8"
+      "originOfData": "static",
+      "parentId": "9"
     },
     "18b6dee2768cf1506f737fc7ed5c5c33cb82bb43930c3208c3e316a3b04e21c7": {
       "id": "18b6dee2768cf1506f737fc7ed5c5c33cb82bb43930c3208c3e316a3b04e21c7",
+      "commitComparison": "UNCHANGED",
       "name": "getTypeId",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/getTypeId",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "5ad49015864f44220d7711ad407390d20fc375ea7e2ecca32918f9cc1474c03c": {
       "id": "5ad49015864f44220d7711ad407390d20fc375ea7e2ecca32918f9cc1474c03c",
+      "commitComparison": "UNCHANGED",
       "name": "setBirthDate",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/setBirthDate",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "6ceb4c14e56c4589591e041f893d0addc3e3454be6fc9c5e16762aed918b253a": {
       "id": "6ceb4c14e56c4589591e041f893d0addc3e3454be6fc9c5e16762aed918b253a",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/<init>",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "7904b58bb1e569e56519b5858f5366b17bc971537f48bf6626045e10e31cbbee": {
       "id": "7904b58bb1e569e56519b5858f5366b17bc971537f48bf6626045e10e31cbbee",
+      "commitComparison": "UNCHANGED",
       "name": "setName",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/setName",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "b2280cad7388d31ab0a94daceeff052feb6a8642e285c7f8877b9ca8688ce0f6": {
       "id": "b2280cad7388d31ab0a94daceeff052feb6a8642e285c7f8877b9ca8688ce0f6",
+      "commitComparison": "UNCHANGED",
       "name": "getBirthDate",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/getBirthDate",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "d6ce6ac9a2039f1b240b627d7924e3577c22bf290ba33c8a82ff634eac529780": {
       "id": "d6ce6ac9a2039f1b240b627d7924e3577c22bf290ba33c8a82ff634eac529780",
+      "commitComparison": "UNCHANGED",
       "name": "setTypeId",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/setTypeId",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "d7297b7b54bdc092d1fd191b313861733a69f9caeced136bd5c6eacea11c2b6f": {
       "id": "d7297b7b54bdc092d1fd191b313861733a69f9caeced136bd5c6eacea11c2b6f",
+      "commitComparison": "UNCHANGED",
       "name": "setId",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/setId",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "da7bff54f3b6b342cfcd9b380535bd40bbef2272a2a62a5fe12f7c1c88e5afec": {
       "id": "da7bff54f3b6b342cfcd9b380535bd40bbef2272a2a62a5fe12f7c1c88e5afec",
+      "commitComparison": "UNCHANGED",
       "name": "getName",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetRequest.java/PetRequest/getName",
-      "originOfData": "runtime",
-      "parentId": "11",
-      "parentBuildingId": "10"
+      "originOfData": "static",
+      "parentId": "11"
     },
     "6ced68b6a58ccc3de20f20347cc1167a62a6358e20112086d073107680287e68": {
       "id": "6ced68b6a58ccc3de20f20347cc1167a62a6358e20112086d073107680287e68",
+      "commitComparison": "UNCHANGED",
       "name": "getPetTypes",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetResource.java/PetResource/getPetTypes",
-      "originOfData": "runtime",
-      "parentId": "13",
-      "parentBuildingId": "12"
+      "originOfData": "static",
+      "parentId": "13"
     },
     "6e6d8687f2383c7a66e1db1d2ee2c6d452bbc6dac3c95b44eace5a7d39e794f4": {
       "id": "6e6d8687f2383c7a66e1db1d2ee2c6d452bbc6dac3c95b44eace5a7d39e794f4",
+      "commitComparison": "UNCHANGED",
       "name": "processCreationForm",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetResource.java/PetResource/processCreationForm",
-      "originOfData": "runtime",
-      "parentId": "13",
-      "parentBuildingId": "12"
+      "originOfData": "static",
+      "parentId": "13"
     },
     "bf1d5eb4d99c3678e3b20dec1762e0d7eeefbfffa44f24900cb2b77132452314": {
       "id": "bf1d5eb4d99c3678e3b20dec1762e0d7eeefbfffa44f24900cb2b77132452314",
+      "commitComparison": "UNCHANGED",
       "name": "save",
       "fqn": "org/springframework/samples/petclinic/customers/web/PetResource.java/PetResource/save",
-      "originOfData": "runtime",
-      "parentId": "13",
-      "parentBuildingId": "12"
+      "originOfData": "static",
+      "parentId": "13"
     },
     "0e57744ca42690cf8c57531dbbe0b5ea6c945e56a47148177febb85c9fc99ef9": {
       "id": "0e57744ca42690cf8c57531dbbe0b5ea6c945e56a47148177febb85c9fc99ef9",
+      "commitComparison": "UNCHANGED",
       "name": "setType",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/setType",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "13d1a9fd32521def07d0d052532f0d780ddba77bf1aed859dcca965ed72f6a02": {
       "id": "13d1a9fd32521def07d0d052532f0d780ddba77bf1aed859dcca965ed72f6a02",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/getId",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "3e8f224c1b38d52b8f61cea11fe6ec735133c376bcf0d953e7d10f6fd291f9f9": {
       "id": "3e8f224c1b38d52b8f61cea11fe6ec735133c376bcf0d953e7d10f6fd291f9f9",
+      "commitComparison": "UNCHANGED",
       "name": "getOwner",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/getOwner",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "7c4ab6d4ba6b02d2b004de7199131e15289826e215f5ec23675ed462b7495477": {
       "id": "7c4ab6d4ba6b02d2b004de7199131e15289826e215f5ec23675ed462b7495477",
+      "commitComparison": "UNCHANGED",
       "name": "setOwner",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/setOwner",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "7cbe049a6de17b57047f13a48750c8e32aae2a8e3f39a24e87060eb941245495": {
       "id": "7cbe049a6de17b57047f13a48750c8e32aae2a8e3f39a24e87060eb941245495",
+      "commitComparison": "UNCHANGED",
       "name": "getName",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/getName",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "8ff6259b004043fbb8ca63ca5630aa493fb348c702e67ecad5c0d2442f1c9785": {
       "id": "8ff6259b004043fbb8ca63ca5630aa493fb348c702e67ecad5c0d2442f1c9785",
+      "commitComparison": "UNCHANGED",
       "name": "getBirthDate",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/getBirthDate",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "99e80cef4e500b45d5e378261529a8a0b98d9876cc304b1e483fdec5d93ca47c": {
       "id": "99e80cef4e500b45d5e378261529a8a0b98d9876cc304b1e483fdec5d93ca47c",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/<init>",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "c0c488805dc04643537b95674de75692931e30ad703335a1ee35bff1ef13e95b": {
       "id": "c0c488805dc04643537b95674de75692931e30ad703335a1ee35bff1ef13e95b",
+      "commitComparison": "UNCHANGED",
       "name": "toString",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/toString",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "cbfe4edda9aba9801a239747ba73ebf728dd5d811b92e0531c5872a2f52451b7": {
       "id": "cbfe4edda9aba9801a239747ba73ebf728dd5d811b92e0531c5872a2f52451b7",
+      "commitComparison": "UNCHANGED",
       "name": "getType",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/getType",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "ddedfe8f5ee8599b2c88e9d145b2c82270a172092b096f713d8ac3539568b697": {
       "id": "ddedfe8f5ee8599b2c88e9d145b2c82270a172092b096f713d8ac3539568b697",
+      "commitComparison": "UNCHANGED",
       "name": "setBirthDate",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/setBirthDate",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "e7622bfc2ee3590b7419a3b7d7b1f5a7603a5c570c3271b57611c142ea200ace": {
       "id": "e7622bfc2ee3590b7419a3b7d7b1f5a7603a5c570c3271b57611c142ea200ace",
+      "commitComparison": "UNCHANGED",
       "name": "setName",
       "fqn": "org/springframework/samples/petclinic/customers/model/Pet.java/Pet/setName",
-      "originOfData": "runtime",
-      "parentId": "16",
-      "parentBuildingId": "15"
+      "originOfData": "static",
+      "parentId": "16"
     },
     "1dfce0c432e43b032052b711bccaf0e87952d7430781eb1198a971a82541b098": {
       "id": "1dfce0c432e43b032052b711bccaf0e87952d7430781eb1198a971a82541b098",
+      "commitComparison": "UNCHANGED",
       "name": "setCity",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/setCity",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "35ab9d3d87c604e3d95d93ad9370b1347334191952055d406d2b3b4bcaa73f13": {
       "id": "35ab9d3d87c604e3d95d93ad9370b1347334191952055d406d2b3b4bcaa73f13",
+      "commitComparison": "UNCHANGED",
       "name": "getFirstName",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getFirstName",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "380c5267f727b961849e34408e6d0e48249ea150fd59422b4666abcf0db85ab5": {
       "id": "380c5267f727b961849e34408e6d0e48249ea150fd59422b4666abcf0db85ab5",
+      "commitComparison": "UNCHANGED",
       "name": "getPets",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getPets",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "39014f6a622cb0f888800f7327bd754480fff57b26b34226b420ecf2b25112a5": {
       "id": "39014f6a622cb0f888800f7327bd754480fff57b26b34226b420ecf2b25112a5",
+      "commitComparison": "UNCHANGED",
       "name": "getLastName",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getLastName",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "41c68dd09effbc91aa4b3bde05c20589cb16046401a03ca5c5ac136718d6948c": {
       "id": "41c68dd09effbc91aa4b3bde05c20589cb16046401a03ca5c5ac136718d6948c",
+      "commitComparison": "UNCHANGED",
       "name": "addPet",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/addPet",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "42e94d13353469b24ddab70dda0f706607aae5a6a636a7d2e6b43fb28e085187": {
       "id": "42e94d13353469b24ddab70dda0f706607aae5a6a636a7d2e6b43fb28e085187",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getId",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "4a5679b3345ea79869b8f8fe95a512ce6ceb1b3c0d78d258565226b724678b54": {
       "id": "4a5679b3345ea79869b8f8fe95a512ce6ceb1b3c0d78d258565226b724678b54",
+      "commitComparison": "UNCHANGED",
       "name": "setLastName",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/setLastName",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "4f4bd218130d64b8a7230d6f4eaa0fc997676297bf59d0f68aaaa37e0026cab7": {
       "id": "4f4bd218130d64b8a7230d6f4eaa0fc997676297bf59d0f68aaaa37e0026cab7",
+      "commitComparison": "UNCHANGED",
       "name": "getAddress",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getAddress",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "555450a5f0b0be40c13adb69210915196d903984397c30471bf44054adbed701": {
       "id": "555450a5f0b0be40c13adb69210915196d903984397c30471bf44054adbed701",
+      "commitComparison": "UNCHANGED",
       "name": "setAddress",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/setAddress",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "5c9bf24007d3326a81ffe1557ea5fbc8b695eb26454d10bd001306d2a8bb9a52": {
       "id": "5c9bf24007d3326a81ffe1557ea5fbc8b695eb26454d10bd001306d2a8bb9a52",
+      "commitComparison": "UNCHANGED",
       "name": "getCity",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getCity",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "6e67bcc36c514313b5894187f9ff1f29cb6fd17a8cc127d4cf63573ea9ec571c": {
       "id": "6e67bcc36c514313b5894187f9ff1f29cb6fd17a8cc127d4cf63573ea9ec571c",
+      "commitComparison": "UNCHANGED",
       "name": "getTelephone",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getTelephone",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "7fa9e76c6adec2f463603062c2f3b6fa593fb81ebce48110da169c6d1cc5c54e": {
       "id": "7fa9e76c6adec2f463603062c2f3b6fa593fb81ebce48110da169c6d1cc5c54e",
+      "commitComparison": "UNCHANGED",
       "name": "setTelephone",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/setTelephone",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "8b40186c0ea40af0daab7057166ebadef9cebd4948143e87949d539a9f0da23b": {
       "id": "8b40186c0ea40af0daab7057166ebadef9cebd4948143e87949d539a9f0da23b",
+      "commitComparison": "UNCHANGED",
       "name": "setFirstName",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/setFirstName",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "bd052addfe1306b63b0ebd4e5ca3dee980c29ada344dea6e92a18fd58781fa97": {
       "id": "bd052addfe1306b63b0ebd4e5ca3dee980c29ada344dea6e92a18fd58781fa97",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/<init>",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "c1991e8e81980b5408996298315e7cd8652fb34878367c87dc0a2c2dcb3de3b9": {
       "id": "c1991e8e81980b5408996298315e7cd8652fb34878367c87dc0a2c2dcb3de3b9",
+      "commitComparison": "UNCHANGED",
       "name": "getPetsInternal",
       "fqn": "org/springframework/samples/petclinic/customers/model/Owner.java/Owner/getPetsInternal",
-      "originOfData": "runtime",
-      "parentId": "18",
-      "parentBuildingId": "17"
+      "originOfData": "static",
+      "parentId": "18"
     },
     "39d2b9b4921b4ca64795bb557b2c3b4a8e8f1f13c7cb58025249666f65b555fd": {
       "id": "39d2b9b4921b4ca64795bb557b2c3b4a8e8f1f13c7cb58025249666f65b555fd",
+      "commitComparison": "UNCHANGED",
       "name": "getName",
       "fqn": "org/springframework/samples/petclinic/customers/model/PetType.java/PetType/getName",
-      "originOfData": "runtime",
-      "parentId": "20",
-      "parentBuildingId": "19"
+      "originOfData": "static",
+      "parentId": "20"
     },
     "86c9b85106843876b5d36bf70b952cff74259328e5965ea8bffcb82085befc1a": {
       "id": "86c9b85106843876b5d36bf70b952cff74259328e5965ea8bffcb82085befc1a",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/customers/model/PetType.java/PetType/<init>",
-      "originOfData": "runtime",
-      "parentId": "20",
-      "parentBuildingId": "19"
+      "originOfData": "static",
+      "parentId": "20"
     },
     "9f3e3a999320cf131373dd0536d55848bd800b75de28fa9d3543b3020b5d73e1": {
       "id": "9f3e3a999320cf131373dd0536d55848bd800b75de28fa9d3543b3020b5d73e1",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/customers/model/PetType.java/PetType/getId",
-      "originOfData": "runtime",
-      "parentId": "20",
-      "parentBuildingId": "19"
+      "originOfData": "static",
+      "parentId": "20"
     },
     "a4df69f397d355847914261bfb2ba327e4fa92e6faaa32f26c68fbca3dfcbc4e": {
       "id": "a4df69f397d355847914261bfb2ba327e4fa92e6faaa32f26c68fbca3dfcbc4e",
+      "commitComparison": "UNCHANGED",
       "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java/OncePerRequestFilter/doFilter(ServletRequest, ServletResponse, FilterChain)",
-      "originOfData": "runtime",
-      "parentId": "24",
-      "parentBuildingId": "23"
+      "originOfData": "static",
+      "parentId": "24"
     },
     "89bffe78c0a366404ad0b683923ae66513c92901f6d6b5557649e4309ad40e8a": {
       "id": "89bffe78c0a366404ad0b683923ae66513c92901f6d6b5557649e4309ad40e8a",
+      "commitComparison": "UNCHANGED",
       "name": "executeUpdate()",
       "fqn": "com/zaxxer/hikari/pool/HikariProxyPreparedStatement.java/HikariProxyPreparedStatement/executeUpdate()",
-      "originOfData": "runtime",
-      "parentId": "30",
-      "parentBuildingId": "29"
+      "originOfData": "static",
+      "parentId": "30"
     },
     "c3a9d8bf2d1f8c6a2e3ce6694e49d89d42e5ab392510bb0977e983f2ed45e374": {
       "id": "c3a9d8bf2d1f8c6a2e3ce6694e49d89d42e5ab392510bb0977e983f2ed45e374",
+      "commitComparison": "UNCHANGED",
       "name": "executeQuery()",
       "fqn": "com/zaxxer/hikari/pool/HikariProxyPreparedStatement.java/HikariProxyPreparedStatement/executeQuery()",
-      "originOfData": "runtime",
-      "parentId": "30",
-      "parentBuildingId": "29"
+      "originOfData": "static",
+      "parentId": "30"
     },
     "93d513bc12ecd8f89737345e0137e18b21db1abc8b4e01227034b65152e0ff2b": {
       "id": "93d513bc12ecd8f89737345e0137e18b21db1abc8b4e01227034b65152e0ff2b",
+      "commitComparison": "UNCHANGED",
       "name": "getResponseCode()",
       "fqn": "java/net/HttpURLConnection.java/HttpURLConnection/getResponseCode()",
-      "originOfData": "runtime",
-      "parentId": "34",
-      "parentBuildingId": "33"
+      "originOfData": "static",
+      "parentId": "34"
     },
     "02a8588114390aaf055bd623f3e1281fda3d723ee79d30b2fa06cef716daf158": {
       "id": "02a8588114390aaf055bd623f3e1281fda3d723ee79d30b2fa06cef716daf158",
+      "commitComparison": "UNCHANGED",
       "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java/OncePerRequestFilter/doFilter(ServletRequest, ServletResponse, FilterChain)",
-      "originOfData": "runtime",
-      "parentId": "41",
-      "parentBuildingId": "40"
+      "originOfData": "static",
+      "parentId": "41"
     },
     "0519f52f62db35801a8d8e599c0aef20a2c4250e59f689c76825a1687a7e2ca6": {
       "id": "0519f52f62db35801a8d8e599c0aef20a2c4250e59f689c76825a1687a7e2ca6",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/getId",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "08091239335a0f690e81ede9fb2067015e5420d709506adbe0d10ccbce7a677e": {
       "id": "08091239335a0f690e81ede9fb2067015e5420d709506adbe0d10ccbce7a677e",
+      "commitComparison": "UNCHANGED",
       "name": "getDate",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/getDate",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "a753098612744b69a0e32620726af32a9f3ed4359c50df480f42c72c44b4fe48": {
       "id": "a753098612744b69a0e32620726af32a9f3ed4359c50df480f42c72c44b4fe48",
+      "commitComparison": "UNCHANGED",
       "name": "getDescription",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/getDescription",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "ae69be0edc4d4e6d843f6697e5f8100e11d15f54f96d26d161fe9e0f1b76d137": {
       "id": "ae69be0edc4d4e6d843f6697e5f8100e11d15f54f96d26d161fe9e0f1b76d137",
+      "commitComparison": "UNCHANGED",
       "name": "getPetId",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/getPetId",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "b1f441b44ae3f39e62bc183d822571de80792b686b9266d5799b991f0789ff05": {
       "id": "b1f441b44ae3f39e62bc183d822571de80792b686b9266d5799b991f0789ff05",
+      "commitComparison": "UNCHANGED",
       "name": "setPetId",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/setPetId",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "c49e8886ac7c6a2ed4274547a45a78d54b6c3fd7df7c9f4bd946bf486d4a5873": {
       "id": "c49e8886ac7c6a2ed4274547a45a78d54b6c3fd7df7c9f4bd946bf486d4a5873",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/<init>",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "f6f145925fb0b18b714192ac21ad9ba33c958a1a52b0f7d30216209eba28d33d": {
       "id": "f6f145925fb0b18b714192ac21ad9ba33c958a1a52b0f7d30216209eba28d33d",
+      "commitComparison": "UNCHANGED",
       "name": "$default$date",
       "fqn": "org/springframework/samples/petclinic/visits/model/Visit.java/Visit/$default$date",
-      "originOfData": "runtime",
-      "parentId": "47",
-      "parentBuildingId": "46"
+      "originOfData": "static",
+      "parentId": "47"
     },
     "14c5bbb2fdcda9d59e217cb0b78e596fa3e70dd3ba64e87e0e75926503e1fbef": {
       "id": "14c5bbb2fdcda9d59e217cb0b78e596fa3e70dd3ba64e87e0e75926503e1fbef",
+      "commitComparison": "UNCHANGED",
       "name": "getItems",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource$Visits.java/VisitResource$Visits/getItems",
-      "originOfData": "runtime",
-      "parentId": "50",
-      "parentBuildingId": "49"
+      "originOfData": "static",
+      "parentId": "50"
     },
     "f460a337668ac55cdee3bf1b700daa161f56469e14e1d2cdf7e67701bc5b993c": {
       "id": "f460a337668ac55cdee3bf1b700daa161f56469e14e1d2cdf7e67701bc5b993c",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource$Visits.java/VisitResource$Visits/<init>",
-      "originOfData": "runtime",
-      "parentId": "50",
-      "parentBuildingId": "49"
+      "originOfData": "static",
+      "parentId": "50"
     },
     "2759e0253e1776b1a7d5f26fe0bbd76cf3d3393daa0df571d0cabe179c1cc34c": {
       "id": "2759e0253e1776b1a7d5f26fe0bbd76cf3d3393daa0df571d0cabe179c1cc34c",
+      "commitComparison": "UNCHANGED",
       "name": "visits",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource.java/VisitResource/visits",
-      "originOfData": "runtime",
-      "parentId": "52",
-      "parentBuildingId": "51"
+      "originOfData": "static",
+      "parentId": "52"
     },
     "be880db556ffb767b8649a27bdaa09613125cc7fb0d1a1da666490ea1f5efd1b": {
       "id": "be880db556ffb767b8649a27bdaa09613125cc7fb0d1a1da666490ea1f5efd1b",
+      "commitComparison": "UNCHANGED",
       "name": "visitsMultiGet",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource.java/VisitResource/visitsMultiGet",
-      "originOfData": "runtime",
-      "parentId": "52",
-      "parentBuildingId": "51"
+      "originOfData": "static",
+      "parentId": "52"
     },
     "cad302b717a18806d5ee1b6ae315cecba2f0a408ce7e4562771b51e2740c9615": {
       "id": "cad302b717a18806d5ee1b6ae315cecba2f0a408ce7e4562771b51e2740c9615",
+      "commitComparison": "UNCHANGED",
       "name": "create",
       "fqn": "org/springframework/samples/petclinic/visits/web/VisitResource.java/VisitResource/create",
-      "originOfData": "runtime",
-      "parentId": "52",
-      "parentBuildingId": "51"
+      "originOfData": "static",
+      "parentId": "52"
     },
     "83833db42e030d7d2825f7d79a66e37bd766e1bbebf178faf7065339f6fcdda4": {
       "id": "83833db42e030d7d2825f7d79a66e37bd766e1bbebf178faf7065339f6fcdda4",
+      "commitComparison": "UNCHANGED",
       "name": "getResponseCode()",
       "fqn": "java/net/HttpURLConnection.java/HttpURLConnection/getResponseCode()",
-      "originOfData": "runtime",
-      "parentId": "56",
-      "parentBuildingId": "55"
+      "originOfData": "static",
+      "parentId": "56"
     },
     "c2440cf2ab2ce8c18c0d1adea9a4f61edca9a53bafc2ed6cd015a0dc232367fe": {
       "id": "c2440cf2ab2ce8c18c0d1adea9a4f61edca9a53bafc2ed6cd015a0dc232367fe",
+      "commitComparison": "UNCHANGED",
       "name": "executeUpdate()",
       "fqn": "com/zaxxer/hikari/pool/HikariProxyPreparedStatement.java/HikariProxyPreparedStatement/executeUpdate()",
-      "originOfData": "runtime",
-      "parentId": "62",
-      "parentBuildingId": "61"
+      "originOfData": "static",
+      "parentId": "62"
     },
     "02c53d319ed093a54c1b1aff598275ef8ed87e7d4f78e5a4ddd69e58210ca47f": {
       "id": "02c53d319ed093a54c1b1aff598275ef8ed87e7d4f78e5a4ddd69e58210ca47f",
+      "commitComparison": "UNCHANGED",
       "name": "getVisits",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/getVisits",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "15f1efe5c4ad059962ced301757c1924e1a53699faf2fbc340947af11fa71d20": {
       "id": "15f1efe5c4ad059962ced301757c1924e1a53699faf2fbc340947af11fa71d20",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/<init>",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "258173279efb94eea8ca40d7ef22008053e16933db8916fd804fa38b6563d603": {
       "id": "258173279efb94eea8ca40d7ef22008053e16933db8916fd804fa38b6563d603",
+      "commitComparison": "UNCHANGED",
       "name": "setBirthDate",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/setBirthDate",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "28b12281ac4e05dd6330612d65b378bdc554d7c04973029895936fce8fcb95a7": {
       "id": "28b12281ac4e05dd6330612d65b378bdc554d7c04973029895936fce8fcb95a7",
+      "commitComparison": "UNCHANGED",
       "name": "setId",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/setId",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "3759f68529bac876ffb284d1dfb527db82b6a442ea3de8f23f425937062fb92d": {
       "id": "3759f68529bac876ffb284d1dfb527db82b6a442ea3de8f23f425937062fb92d",
+      "commitComparison": "UNCHANGED",
       "name": "getName",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/getName",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "9b44b5c4b94f7143675ba776f3480848b8cc164ee2a8281ad0903d5b5fccdd7a": {
       "id": "9b44b5c4b94f7143675ba776f3480848b8cc164ee2a8281ad0903d5b5fccdd7a",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/getId",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "c23bcaac06dcf91d45582bc96d0c0273c4f7ff89aeca787dc6fa7d34bae1b3dc": {
       "id": "c23bcaac06dcf91d45582bc96d0c0273c4f7ff89aeca787dc6fa7d34bae1b3dc",
+      "commitComparison": "UNCHANGED",
       "name": "setName",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/setName",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "d1b468984739e0a643dfb526a7333d587fd254fd72a14c0f2d88954d8b6b7efb": {
       "id": "d1b468984739e0a643dfb526a7333d587fd254fd72a14c0f2d88954d8b6b7efb",
+      "commitComparison": "UNCHANGED",
       "name": "getBirthDate",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/getBirthDate",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "e03e331c70fac9244eda93a4c355573a4d4c19776d60a64f50a421d30cbde1dd": {
       "id": "e03e331c70fac9244eda93a4c355573a4d4c19776d60a64f50a421d30cbde1dd",
+      "commitComparison": "UNCHANGED",
       "name": "getType",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/getType",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "f8bf9a18d7002a5b1abc63e9e2cb19ddbae9560f587862d0f8c13f95863ddea1": {
       "id": "f8bf9a18d7002a5b1abc63e9e2cb19ddbae9560f587862d0f8c13f95863ddea1",
+      "commitComparison": "UNCHANGED",
       "name": "setType",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetDetails.java/PetDetails/setType",
-      "originOfData": "runtime",
-      "parentId": "71",
-      "parentBuildingId": "70"
+      "originOfData": "static",
+      "parentId": "71"
     },
     "05a9d11c62401f7614c959844e2cfe68aaee45a92d07e75e88156b6a27632a35": {
       "id": "05a9d11c62401f7614c959844e2cfe68aaee45a92d07e75e88156b6a27632a35",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/<init>",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "0a5d76a6bc93de8517f07ceb24f6dd892ca6952a40210bd595457426722371e7": {
       "id": "0a5d76a6bc93de8517f07ceb24f6dd892ca6952a40210bd595457426722371e7",
+      "commitComparison": "UNCHANGED",
       "name": "setFirstName",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/setFirstName",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "263fdf20d350a4cfd158ad9fa154b31899401f108240132765be6f9d40b285f9": {
       "id": "263fdf20d350a4cfd158ad9fa154b31899401f108240132765be6f9d40b285f9",
+      "commitComparison": "UNCHANGED",
       "name": "getLastName",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getLastName",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "3890528d40d981d0e7f7043d772605762f0d9b01c10886ac5966ad593a7d553a": {
       "id": "3890528d40d981d0e7f7043d772605762f0d9b01c10886ac5966ad593a7d553a",
+      "commitComparison": "UNCHANGED",
       "name": "setId",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/setId",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "63df7642e5932c2ab5faa8c77428e53f89554896f56a820e8fd70722f29d0d08": {
       "id": "63df7642e5932c2ab5faa8c77428e53f89554896f56a820e8fd70722f29d0d08",
+      "commitComparison": "UNCHANGED",
       "name": "setCity",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/setCity",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "6c9d6fcfa485f6bf106930f87560e732d55f080d953d73814af647f7ae925b19": {
       "id": "6c9d6fcfa485f6bf106930f87560e732d55f080d953d73814af647f7ae925b19",
+      "commitComparison": "UNCHANGED",
       "name": "getPets",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getPets",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "9175554f0b2a097bcde120116f0b398b6fac23d8177fd5475b3d1bf68f8c93bf": {
       "id": "9175554f0b2a097bcde120116f0b398b6fac23d8177fd5475b3d1bf68f8c93bf",
+      "commitComparison": "UNCHANGED",
       "name": "getAddress",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getAddress",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "951790c8a912beadd0eeb8768c348267c6b6765a57afeaff436b6d1d03f372bd": {
       "id": "951790c8a912beadd0eeb8768c348267c6b6765a57afeaff436b6d1d03f372bd",
+      "commitComparison": "UNCHANGED",
       "name": "getTelephone",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getTelephone",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "b5ae2e84464a9f47639162b603dec412300bd1bdc73045e45a62d416344fc305": {
       "id": "b5ae2e84464a9f47639162b603dec412300bd1bdc73045e45a62d416344fc305",
+      "commitComparison": "UNCHANGED",
       "name": "setAddress",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/setAddress",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "c65544553564dfd80acf2a9d62961a40c6f7e4680d295de44f5ab94e458b3b09": {
       "id": "c65544553564dfd80acf2a9d62961a40c6f7e4680d295de44f5ab94e458b3b09",
+      "commitComparison": "UNCHANGED",
       "name": "getCity",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getCity",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "cf200ce22d7f5dd2b500e45ba3c047fa984c6b10a0d69585606f2092fb698b10": {
       "id": "cf200ce22d7f5dd2b500e45ba3c047fa984c6b10a0d69585606f2092fb698b10",
+      "commitComparison": "UNCHANGED",
       "name": "getFirstName",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getFirstName",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "d37abe26536f6409ed98b7794c05fd4cb5eee6fe3db897b83ee2a3ac08170e63": {
       "id": "d37abe26536f6409ed98b7794c05fd4cb5eee6fe3db897b83ee2a3ac08170e63",
+      "commitComparison": "UNCHANGED",
       "name": "setLastName",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/setLastName",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "d869ae9a3b62cb106efe81c9c6200940494efe380e3d91ec0528c28d4d593ca2": {
       "id": "d869ae9a3b62cb106efe81c9c6200940494efe380e3d91ec0528c28d4d593ca2",
+      "commitComparison": "UNCHANGED",
       "name": "getPetIds",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getPetIds",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "dd77f6619e67cfaa81c3cdf6edf39e71f8e11aa4630af71560d81914ea05d264": {
       "id": "dd77f6619e67cfaa81c3cdf6edf39e71f8e11aa4630af71560d81914ea05d264",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/getId",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "e9fca7c7c16acabcb082c3bedcd3b63fd7f44f280ab55e743f48603287a763c7": {
       "id": "e9fca7c7c16acabcb082c3bedcd3b63fd7f44f280ab55e743f48603287a763c7",
+      "commitComparison": "UNCHANGED",
       "name": "setTelephone",
       "fqn": "org/springframework/samples/petclinic/api/dto/OwnerDetails.java/OwnerDetails/setTelephone",
-      "originOfData": "runtime",
-      "parentId": "73",
-      "parentBuildingId": "72"
+      "originOfData": "static",
+      "parentId": "73"
     },
     "2e35877a9fe46f68b232098c4b6d280b5e8bf28ea7ece7b6c636e11e7e8e1c8a": {
       "id": "2e35877a9fe46f68b232098c4b6d280b5e8bf28ea7ece7b6c636e11e7e8e1c8a",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/api/dto/Visits.java/Visits/<init>",
-      "originOfData": "runtime",
-      "parentId": "75",
-      "parentBuildingId": "74"
+      "originOfData": "static",
+      "parentId": "75"
     },
     "e56f70662e65f648af40195084544309136786a90fd082a7a7ef46c21699595f": {
       "id": "e56f70662e65f648af40195084544309136786a90fd082a7a7ef46c21699595f",
+      "commitComparison": "UNCHANGED",
       "name": "getItems",
       "fqn": "org/springframework/samples/petclinic/api/dto/Visits.java/Visits/getItems",
-      "originOfData": "runtime",
-      "parentId": "75",
-      "parentBuildingId": "74"
+      "originOfData": "static",
+      "parentId": "75"
     },
     "38a535d51098a0d7c7aa727ee04fa416fb8a888c402ee542e98075ad3e8f26c8": {
       "id": "38a535d51098a0d7c7aa727ee04fa416fb8a888c402ee542e98075ad3e8f26c8",
+      "commitComparison": "UNCHANGED",
       "name": "getName",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetType.java/PetType/getName",
-      "originOfData": "runtime",
-      "parentId": "77",
-      "parentBuildingId": "76"
+      "originOfData": "static",
+      "parentId": "77"
     },
     "c0d6b368270638b2b466b85f0db3aee7315d2d460930e6fa681796d533e056e6": {
       "id": "c0d6b368270638b2b466b85f0db3aee7315d2d460930e6fa681796d533e056e6",
+      "commitComparison": "UNCHANGED",
       "name": "setName",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetType.java/PetType/setName",
-      "originOfData": "runtime",
-      "parentId": "77",
-      "parentBuildingId": "76"
+      "originOfData": "static",
+      "parentId": "77"
     },
     "c1ed842a95b748add0ac2074fa2ac983cdcf9bdfaa8750d8df11827cc4591a32": {
       "id": "c1ed842a95b748add0ac2074fa2ac983cdcf9bdfaa8750d8df11827cc4591a32",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/api/dto/PetType.java/PetType/<init>",
-      "originOfData": "runtime",
-      "parentId": "77",
-      "parentBuildingId": "76"
+      "originOfData": "static",
+      "parentId": "77"
     },
     "50d8c1ac4ca24cc1d33213edf5c7225c72b6fea09d7c510b0dcb77564f60d615": {
       "id": "50d8c1ac4ca24cc1d33213edf5c7225c72b6fea09d7c510b0dcb77564f60d615",
+      "commitComparison": "UNCHANGED",
       "name": "joinIds",
       "fqn": "org/springframework/samples/petclinic/api/application/VisitsServiceClient.java/VisitsServiceClient/joinIds",
-      "originOfData": "runtime",
-      "parentId": "80",
-      "parentBuildingId": "79"
+      "originOfData": "static",
+      "parentId": "80"
     },
     "e42d832147c64fcc7e416706696406dc243f472c35a2bc541f8903efcb30078c": {
       "id": "e42d832147c64fcc7e416706696406dc243f472c35a2bc541f8903efcb30078c",
+      "commitComparison": "UNCHANGED",
       "name": "getVisitsForPets",
       "fqn": "org/springframework/samples/petclinic/api/application/VisitsServiceClient.java/VisitsServiceClient/getVisitsForPets",
-      "originOfData": "runtime",
-      "parentId": "80",
-      "parentBuildingId": "79"
+      "originOfData": "static",
+      "parentId": "80"
     },
     "9204fc84ce645f77882e897550329e9fde8987d5d2345e4c56afc405b14e1433": {
       "id": "9204fc84ce645f77882e897550329e9fde8987d5d2345e4c56afc405b14e1433",
+      "commitComparison": "UNCHANGED",
       "name": "getOwner",
       "fqn": "org/springframework/samples/petclinic/api/application/CustomersServiceClient.java/CustomersServiceClient/getOwner",
-      "originOfData": "runtime",
-      "parentId": "82",
-      "parentBuildingId": "81"
+      "originOfData": "static",
+      "parentId": "82"
     },
     "9aa1e0c075226b01875948a88de07e8a369314b4543690782c9dd203b1b26ae9": {
       "id": "9aa1e0c075226b01875948a88de07e8a369314b4543690782c9dd203b1b26ae9",
+      "commitComparison": "UNCHANGED",
       "name": "getOwnerDetails",
       "fqn": "org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java/ApiGatewayController/getOwnerDetails",
-      "originOfData": "runtime",
-      "parentId": "86",
-      "parentBuildingId": "85"
+      "originOfData": "static",
+      "parentId": "86"
     },
     "ac9f9c55beaaad0fca7a65eeec668f55834a20e5077ef5f84fe2444c1b6af9a6": {
       "id": "ac9f9c55beaaad0fca7a65eeec668f55834a20e5077ef5f84fe2444c1b6af9a6",
+      "commitComparison": "UNCHANGED",
       "name": "addVisitsToOwner",
       "fqn": "org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java/ApiGatewayController/addVisitsToOwner",
-      "originOfData": "runtime",
-      "parentId": "86",
-      "parentBuildingId": "85"
+      "originOfData": "static",
+      "parentId": "86"
     },
     "cd35f41901328c8abfaca50c9829ecd7cdd19cbe74a59b751df58fabb9d0a3fe": {
       "id": "cd35f41901328c8abfaca50c9829ecd7cdd19cbe74a59b751df58fabb9d0a3fe",
+      "commitComparison": "UNCHANGED",
       "name": "getResponseCode()",
       "fqn": "java/net/HttpURLConnection.java/HttpURLConnection/getResponseCode()",
-      "originOfData": "runtime",
-      "parentId": "90",
-      "parentBuildingId": "89"
+      "originOfData": "static",
+      "parentId": "90"
     },
     "051e09a840116cae0f055c4cd2ef5a6fabfa737f47611d3dfb88c3c68eb33e91": {
       "id": "051e09a840116cae0f055c4cd2ef5a6fabfa737f47611d3dfb88c3c68eb33e91",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/vets/web/VetResource.java/VetResource/<init>",
-      "originOfData": "runtime",
-      "parentId": "99",
-      "parentBuildingId": "98"
+      "originOfData": "static",
+      "parentId": "99"
     },
     "78169e61660714ed4b19295739fc6f3572768b2eeb8a7f6f642ed9015e1ddb81": {
       "id": "78169e61660714ed4b19295739fc6f3572768b2eeb8a7f6f642ed9015e1ddb81",
+      "commitComparison": "UNCHANGED",
       "name": "showResourcesVetList",
       "fqn": "org/springframework/samples/petclinic/vets/web/VetResource.java/VetResource/showResourcesVetList",
-      "originOfData": "runtime",
-      "parentId": "99",
-      "parentBuildingId": "98"
+      "originOfData": "static",
+      "parentId": "99"
     },
     "09bda9a0c731b0c78dd8f3561024901c0a53b2c0de09f8f1456d51bd1577a864": {
       "id": "09bda9a0c731b0c78dd8f3561024901c0a53b2c0de09f8f1456d51bd1577a864",
+      "commitComparison": "UNCHANGED",
       "name": "getSpecialtiesInternal",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/getSpecialtiesInternal",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "356e272f65191453ce3225c295cf3d466a6aec4a71ce87cf32855588cf374ae3": {
       "id": "356e272f65191453ce3225c295cf3d466a6aec4a71ce87cf32855588cf374ae3",
+      "commitComparison": "UNCHANGED",
       "name": "getFirstName",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/getFirstName",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "368b9b872c1c82ff47e00e5956037963d53601dfe95f370daf13de103c035117": {
       "id": "368b9b872c1c82ff47e00e5956037963d53601dfe95f370daf13de103c035117",
+      "commitComparison": "UNCHANGED",
       "name": "getLastName",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/getLastName",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "43c18726366d6641ca74fbf06747876711b91117908ec3119012ac1cd6eb8c7f": {
       "id": "43c18726366d6641ca74fbf06747876711b91117908ec3119012ac1cd6eb8c7f",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/getId",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "62e5ccaf42035d59b6759a1265803960511478dff6f94b0d1f7f90129d433751": {
       "id": "62e5ccaf42035d59b6759a1265803960511478dff6f94b0d1f7f90129d433751",
+      "commitComparison": "UNCHANGED",
       "name": "getNrOfSpecialties",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/getNrOfSpecialties",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "c64b36282eb1dac3b4c278763e98b58543c6d1f2f3ae1d30616e19e1b29f60cf": {
       "id": "c64b36282eb1dac3b4c278763e98b58543c6d1f2f3ae1d30616e19e1b29f60cf",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/<init>",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "f75dad383776f4860c8f1c2a8d30c83acf40213131791d933ee7d914e8252361": {
       "id": "f75dad383776f4860c8f1c2a8d30c83acf40213131791d933ee7d914e8252361",
+      "commitComparison": "UNCHANGED",
       "name": "getSpecialties",
       "fqn": "org/springframework/samples/petclinic/vets/model/Vet.java/Vet/getSpecialties",
-      "originOfData": "runtime",
-      "parentId": "102",
-      "parentBuildingId": "101"
+      "originOfData": "static",
+      "parentId": "102"
     },
     "5b121b83da95028120cbd915b3e2715e4c56b2dc1a0ba96d9d012b7912e248c5": {
       "id": "5b121b83da95028120cbd915b3e2715e4c56b2dc1a0ba96d9d012b7912e248c5",
+      "commitComparison": "UNCHANGED",
       "name": "getName",
       "fqn": "org/springframework/samples/petclinic/vets/model/Specialty.java/Specialty/getName",
-      "originOfData": "runtime",
-      "parentId": "104",
-      "parentBuildingId": "103"
+      "originOfData": "static",
+      "parentId": "104"
     },
     "96298f5bb885d7b161432c57134a593d3204d2b310b7757993928c2bd57cc32c": {
       "id": "96298f5bb885d7b161432c57134a593d3204d2b310b7757993928c2bd57cc32c",
+      "commitComparison": "UNCHANGED",
       "name": "getId",
       "fqn": "org/springframework/samples/petclinic/vets/model/Specialty.java/Specialty/getId",
-      "originOfData": "runtime",
-      "parentId": "104",
-      "parentBuildingId": "103"
+      "originOfData": "static",
+      "parentId": "104"
     },
     "ba4f3bccb19895195c7d9170ab32ab4e470ae94ceea7f00c6b5a25fee747d77e": {
       "id": "ba4f3bccb19895195c7d9170ab32ab4e470ae94ceea7f00c6b5a25fee747d77e",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/vets/model/Specialty.java/Specialty/<init>",
-      "originOfData": "runtime",
-      "parentId": "104",
-      "parentBuildingId": "103"
+      "originOfData": "static",
+      "parentId": "104"
     },
     "1990b76c42993d99220b263c6ca2776c9040ea543b7d7d14c0ab26369973da03": {
       "id": "1990b76c42993d99220b263c6ca2776c9040ea543b7d7d14c0ab26369973da03",
+      "commitComparison": "UNCHANGED",
       "name": "getTtl",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java/VetsProperties$Cache/getTtl",
-      "originOfData": "runtime",
-      "parentId": "107",
-      "parentBuildingId": "106"
+      "originOfData": "static",
+      "parentId": "107"
     },
     "4eb579e46e204d239290323a07bb16d32fedc5fd41b40cb62d57922c5c95d04f": {
       "id": "4eb579e46e204d239290323a07bb16d32fedc5fd41b40cb62d57922c5c95d04f",
+      "commitComparison": "UNCHANGED",
       "name": "getHeapSize",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java/VetsProperties$Cache/getHeapSize",
-      "originOfData": "runtime",
-      "parentId": "107",
-      "parentBuildingId": "106"
+      "originOfData": "static",
+      "parentId": "107"
     },
     "7984aa16134de9f2d16cdfb7ab497f2d2c47a6bc1ee372d684289534b010fd60": {
       "id": "7984aa16134de9f2d16cdfb7ab497f2d2c47a6bc1ee372d684289534b010fd60",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java/VetsProperties$Cache/<init>",
-      "originOfData": "runtime",
-      "parentId": "107",
-      "parentBuildingId": "106"
+      "originOfData": "static",
+      "parentId": "107"
     },
     "7f4a70da0d2e0fef1c56377ccb503b21c1ed8b0d728b6a97024fd84389d23c8c": {
       "id": "7f4a70da0d2e0fef1c56377ccb503b21c1ed8b0d728b6a97024fd84389d23c8c",
+      "commitComparison": "UNCHANGED",
       "name": "setTtl",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java/VetsProperties$Cache/setTtl",
-      "originOfData": "runtime",
-      "parentId": "107",
-      "parentBuildingId": "106"
+      "originOfData": "static",
+      "parentId": "107"
     },
     "8975f0ff2f47090a7157472dcde10a5d72b06bd5c4df56f5f7034a5c867240b4": {
       "id": "8975f0ff2f47090a7157472dcde10a5d72b06bd5c4df56f5f7034a5c867240b4",
+      "commitComparison": "UNCHANGED",
       "name": "setHeapSize",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java/VetsProperties$Cache/setHeapSize",
-      "originOfData": "runtime",
-      "parentId": "107",
-      "parentBuildingId": "106"
+      "originOfData": "static",
+      "parentId": "107"
     },
     "8a29c6535a5b4242515b4d3d26a48bb4346c15753986776b66af8d3706ec094b": {
       "id": "8a29c6535a5b4242515b4d3d26a48bb4346c15753986776b66af8d3706ec094b",
+      "commitComparison": "UNCHANGED",
       "name": "methodHash",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties$Cache.java/VetsProperties$Cache/methodHash",
-      "originOfData": "runtime",
-      "parentId": "107",
-      "parentBuildingId": "106"
+      "originOfData": "static",
+      "parentId": "107"
     },
     "25f5cba77e606416fc24b78c129b05c5d2603ed8cf5223ab92f1c9f93ec9b584": {
       "id": "25f5cba77e606416fc24b78c129b05c5d2603ed8cf5223ab92f1c9f93ec9b584",
+      "commitComparison": "UNCHANGED",
       "name": "methodHash",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties.java/VetsProperties/methodHash",
-      "originOfData": "runtime",
-      "parentId": "109",
-      "parentBuildingId": "108"
+      "originOfData": "static",
+      "parentId": "109"
     },
     "51a93c71e195e147f2e51cad4601ec3c89eac5b7075241cb5a8e75e8bae0dcc6": {
       "id": "51a93c71e195e147f2e51cad4601ec3c89eac5b7075241cb5a8e75e8bae0dcc6",
+      "commitComparison": "UNCHANGED",
       "name": "getCache",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties.java/VetsProperties/getCache",
-      "originOfData": "runtime",
-      "parentId": "109",
-      "parentBuildingId": "108"
+      "originOfData": "static",
+      "parentId": "109"
     },
     "90f96e1ff1583f972d46c692961cc2d67ee3e271725854a2e5a70a6ca3672093": {
       "id": "90f96e1ff1583f972d46c692961cc2d67ee3e271725854a2e5a70a6ca3672093",
+      "commitComparison": "UNCHANGED",
       "name": "<init>",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties.java/VetsProperties/<init>",
-      "originOfData": "runtime",
-      "parentId": "109",
-      "parentBuildingId": "108"
+      "originOfData": "static",
+      "parentId": "109"
     },
     "d874a76ad7a703e396f6768a51ce6283a3fdef958d0a3e8256f3da3cf95b98d0": {
       "id": "d874a76ad7a703e396f6768a51ce6283a3fdef958d0a3e8256f3da3cf95b98d0",
+      "commitComparison": "UNCHANGED",
       "name": "setCache",
       "fqn": "org/springframework/samples/petclinic/vets/system/VetsProperties.java/VetsProperties/setCache",
-      "originOfData": "runtime",
-      "parentId": "109",
-      "parentBuildingId": "108"
+      "originOfData": "static",
+      "parentId": "109"
     },
     "2d5ef0592b6c24eef6b37005f533efa8596e2edda109bd3b712453b913a602d1": {
       "id": "2d5ef0592b6c24eef6b37005f533efa8596e2edda109bd3b712453b913a602d1",
+      "commitComparison": "UNCHANGED",
       "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java/OncePerRequestFilter/doFilter(ServletRequest, ServletResponse, FilterChain)",
-      "originOfData": "runtime",
-      "parentId": "113",
-      "parentBuildingId": "112"
+      "originOfData": "static",
+      "parentId": "113"
     },
     "401caf59418cd5f36282bde89eabbd4ae84cba5a99b811763bc705f3b75a39ae": {
       "id": "401caf59418cd5f36282bde89eabbd4ae84cba5a99b811763bc705f3b75a39ae",
+      "commitComparison": "UNCHANGED",
       "name": "getResponseCode()",
       "fqn": "java/net/HttpURLConnection.java/HttpURLConnection/getResponseCode()",
-      "originOfData": "runtime",
-      "parentId": "117",
-      "parentBuildingId": "116"
+      "originOfData": "static",
+      "parentId": "117"
     },
     "13182333817a8d49d13e9cad64c9bf176080b73c0df4042db89c475c366e20b9": {
       "id": "13182333817a8d49d13e9cad64c9bf176080b73c0df4042db89c475c366e20b9",
+      "commitComparison": "UNCHANGED",
       "name": "doFilter(ServletRequest, ServletResponse, FilterChain)",
       "fqn": "org/springframework/web/filter/OncePerRequestFilter.java/OncePerRequestFilter/doFilter(ServletRequest, ServletResponse, FilterChain)",
-      "originOfData": "runtime",
-      "parentId": "124",
-      "parentBuildingId": "123"
+      "originOfData": "static",
+      "parentId": "124"
     },
     "7ffec8334330359a81db433643dde6f15cccd77d6b698ae00a02fe975f1a1b84": {
       "id": "7ffec8334330359a81db433643dde6f15cccd77d6b698ae00a02fe975f1a1b84",
+      "commitComparison": "UNCHANGED",
       "name": "getResponseCode()",
       "fqn": "java/net/HttpURLConnection.java/HttpURLConnection/getResponseCode()",
-      "originOfData": "runtime",
-      "parentId": "129",
-      "parentBuildingId": "128"
+      "originOfData": "static",
+      "parentId": "129"
     }
   }
 }

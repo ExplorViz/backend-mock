@@ -1,6 +1,0 @@
-microk8s/
-test.db
-logDir
-jmeter.log
-.env-custom
-.DS_Store

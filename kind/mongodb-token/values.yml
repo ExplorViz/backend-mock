@@ -1,7 +1,0 @@
-## MongoDB Authentication parameters
-##
-auth:
-  ## Enable authentication
-  ## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
-  ##
-  enabled: false

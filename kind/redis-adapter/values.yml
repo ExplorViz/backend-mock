@@ -1,5 +1,0 @@
-cluster:
-  enabled: true
-  slaveCount: 0
-
-usePassword: false

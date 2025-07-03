@@ -1,6 +1,0 @@
-dbUser:
-  user: explorviz
-  password: explorviz
-
-cluster:
-  datacenter: localDatacenter1

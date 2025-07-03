@@ -2,48 +2,10 @@ include: "/.gitlab-ci-explorviz-common.yml"
 
 stages:
   - test
-  - deploy:images
-  - deploy:retagging
+
 
 run-pre-commit:
   stage: test
   image: explorviz/pre-commit:latest
   script:
     - pre-commit run --all-files --config .pre-commit-config.yaml
-
-deploy-petclinic-amd64:
-  extends: .build-and-deploy
-  variables:
-    DOCKER_CONTEXT_PATH: $CI_PROJECT_DIR/example-applications/petclinic-demo
-    DOCKERFILE_NAME: Dockerfile_Spring_2.7
-  rules:
-    - if: $ARM64_BUILD
-      when: never
-    - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"
-
-deploy-petclinic-arm64:
-  extends: deploy-petclinic-amd64
-  rules:
-    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
-  variables:
-    DOCKERHUB_TAG: "arm64"
-  tags:
-    - arm64
-
-retag-petclinic-as-latest:
-  extends: .retag-dockerhub-image
-  rules:
-    - if: $MULTI_ARCH_BUILD || $ARM64_BUILD
-      when: never
-    - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"
-  variables:
-    SOURCE_TAG: "amd64"
-    TARGET_TAG: "latest"
-
-publish-multi-arch-manifest-demo-supplier:
-  extends: .retag-as-multi-arch-dockerhub-image
-  variables:
-    IMAGE_NAME: "demo-supplier"
-
-publish-multi-arch-manifest-petclinic:
-  extends: .retag-as-multi-arch-dockerhub-image

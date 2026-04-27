@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "functionCount": {
+      "min": 0,
+      "max": 0
+    },
+    "executionTime": {
+      "min": 0,
+      "max": 0
+    },
+    "requestCount": {
+      "min": 0,
+      "max": 0
+    }
+  },
+  "communications": []
+}

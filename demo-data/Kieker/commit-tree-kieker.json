@@ -1,0 +1,15 @@
+{
+  "name": "kieker",
+  "branches": [
+    {
+      "name": "main",
+      "commits": [
+        "ae26d6063bcf4f53f4d17ad6c76b579be90a4a6c"
+      ],
+      "branchPoint": {
+        "name": "NONE",
+        "commit": ""
+      }
+    }
+  ]
+}

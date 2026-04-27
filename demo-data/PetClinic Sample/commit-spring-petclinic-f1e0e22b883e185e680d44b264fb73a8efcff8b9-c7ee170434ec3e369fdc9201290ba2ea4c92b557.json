@@ -1,0 +1,4149 @@
+{
+    "landscapeToken": "32582526-9a36-4edc-a664-c592848b3020",
+    "cities": {
+        "4": {
+            "id": "4",
+            "name": "Spring PetClinic",
+            "fqn": "",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "districtIds": [
+                "3"
+            ],
+            "buildingIds": [],
+            "allContainedDistrictIds": [
+                "88",
+                "44",
+                "89",
+                "45",
+                "46",
+                "47",
+                "48",
+                "152",
+                "153",
+                "154",
+                "155",
+                "111",
+                "156",
+                "112",
+                "157",
+                "113",
+                "115",
+                "92",
+                "51",
+                "97",
+                "11",
+                "56",
+                "13",
+                "19",
+                "162",
+                "164",
+                "3",
+                "124",
+                "5",
+                "20",
+                "26",
+                "27",
+                "170",
+                "173",
+                "130",
+                "132",
+                "177",
+                "136",
+                "70",
+                "32",
+                "76",
+                "39",
+                "180",
+                "141",
+                "144",
+                "101",
+                "147",
+                "83",
+                "40",
+                "43"
+            ],
+            "allContainedBuildingIds": [
+                "110",
+                "114",
+                "116",
+                "117",
+                "90",
+                "118",
+                "91",
+                "119",
+                "93",
+                "94",
+                "95",
+                "96",
+                "98",
+                "10",
+                "99",
+                "12",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "120",
+                "121",
+                "122",
+                "123",
+                "125",
+                "126",
+                "127",
+                "128",
+                "7",
+                "129",
+                "8",
+                "9",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "28",
+                "29",
+                "131",
+                "133",
+                "134",
+                "135",
+                "137",
+                "138",
+                "139",
+                "30",
+                "31",
+                "33",
+                "34",
+                "35",
+                "36",
+                "37",
+                "38",
+                "140",
+                "142",
+                "143",
+                "145",
+                "146",
+                "148",
+                "149",
+                "41",
+                "42",
+                "49",
+                "150",
+                "151",
+                "158",
+                "159",
+                "50",
+                "52",
+                "53",
+                "54",
+                "55",
+                "57",
+                "59",
+                "160",
+                "161",
+                "163",
+                "165",
+                "166",
+                "167",
+                "168",
+                "169",
+                "60",
+                "62",
+                "63",
+                "64",
+                "65",
+                "66",
+                "68",
+                "69",
+                "171",
+                "172",
+                "174",
+                "570",
+                "175",
+                "571",
+                "176",
+                "572",
+                "178",
+                "179",
+                "71",
+                "72",
+                "73",
+                "74",
+                "75",
+                "77",
+                "78",
+                "79",
+                "181",
+                "100",
+                "102",
+                "103",
+                "104",
+                "105",
+                "106",
+                "107",
+                "80",
+                "108",
+                "81",
+                "109",
+                "82",
+                "84",
+                "85",
+                "86",
+                "87"
+            ]
+        }
+    },
+    "districts": {
+        "44": {
+            "id": "44",
+            "name": "org",
+            "fqn": "spring-petclinic/src/main/java/org",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "43",
+            "districtIds": [
+                "45"
+            ],
+            "buildingIds": []
+        },
+        "88": {
+            "id": "88",
+            "name": "db",
+            "fqn": "spring-petclinic/src/main/resources/db",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "83",
+            "districtIds": [
+                "89",
+                "92",
+                "97"
+            ],
+            "buildingIds": []
+        },
+        "89": {
+            "id": "89",
+            "name": "h2",
+            "fqn": "spring-petclinic/src/main/resources/db/h2",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "88",
+            "districtIds": [],
+            "buildingIds": [
+                "90",
+                "91"
+            ]
+        },
+        "45": {
+            "id": "45",
+            "name": "springframework",
+            "fqn": "spring-petclinic/src/main/java/org/springframework",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "44",
+            "districtIds": [
+                "46"
+            ],
+            "buildingIds": []
+        },
+        "46": {
+            "id": "46",
+            "name": "samples",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "45",
+            "districtIds": [
+                "47"
+            ],
+            "buildingIds": []
+        },
+        "47": {
+            "id": "47",
+            "name": "petclinic",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "46",
+            "districtIds": [
+                "56",
+                "70",
+                "51",
+                "76"
+            ],
+            "buildingIds": [
+                "69",
+                "49",
+                "50"
+            ]
+        },
+        "48": {
+            "id": "48",
+            "name": "main",
+            "fqn": "spring-petclinic/src/main",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "39",
+            "districtIds": [
+                "147",
+                "83",
+                "43"
+            ],
+            "buildingIds": []
+        },
+        "152": {
+            "id": "152",
+            "name": "test",
+            "fqn": "spring-petclinic/src/test",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "39",
+            "districtIds": [
+                "180",
+                "153"
+            ],
+            "buildingIds": []
+        },
+        "153": {
+            "id": "153",
+            "name": "java",
+            "fqn": "spring-petclinic/src/test/java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "152",
+            "districtIds": [
+                "154"
+            ],
+            "buildingIds": []
+        },
+        "154": {
+            "id": "154",
+            "name": "org",
+            "fqn": "spring-petclinic/src/test/java/org",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "153",
+            "districtIds": [
+                "155"
+            ],
+            "buildingIds": []
+        },
+        "155": {
+            "id": "155",
+            "name": "springframework",
+            "fqn": "spring-petclinic/src/test/java/org/springframework",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "154",
+            "districtIds": [
+                "156"
+            ],
+            "buildingIds": []
+        },
+        "111": {
+            "id": "111",
+            "name": "static",
+            "fqn": "spring-petclinic/src/main/resources/static",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "83",
+            "districtIds": [
+                "112"
+            ],
+            "buildingIds": []
+        },
+        "112": {
+            "id": "112",
+            "name": "resources",
+            "fqn": "spring-petclinic/src/main/resources/static/resources",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "111",
+            "districtIds": [
+                "113",
+                "124",
+                "115"
+            ],
+            "buildingIds": []
+        },
+        "156": {
+            "id": "156",
+            "name": "samples",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "155",
+            "districtIds": [
+                "157"
+            ],
+            "buildingIds": []
+        },
+        "113": {
+            "id": "113",
+            "name": "css",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/css",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "112",
+            "districtIds": [],
+            "buildingIds": [
+                "114"
+            ]
+        },
+        "157": {
+            "id": "157",
+            "name": "petclinic",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "156",
+            "districtIds": [
+                "177",
+                "170",
+                "173",
+                "162",
+                "164"
+            ],
+            "buildingIds": [
+                "158",
+                "159",
+                "160",
+                "161"
+            ]
+        },
+        "115": {
+            "id": "115",
+            "name": "fonts",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "112",
+            "districtIds": [],
+            "buildingIds": [
+                "121",
+                "122",
+                "123",
+                "116",
+                "117",
+                "118",
+                "119",
+                "120"
+            ]
+        },
+        "92": {
+            "id": "92",
+            "name": "mysql",
+            "fqn": "spring-petclinic/src/main/resources/db/mysql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "88",
+            "districtIds": [],
+            "buildingIds": [
+                "93",
+                "94",
+                "95",
+                "96"
+            ]
+        },
+        "51": {
+            "id": "51",
+            "name": "model",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/model",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "47",
+            "districtIds": [],
+            "buildingIds": [
+                "55",
+                "52",
+                "53",
+                "54"
+            ]
+        },
+        "97": {
+            "id": "97",
+            "name": "postgres",
+            "fqn": "spring-petclinic/src/main/resources/db/postgres",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "88",
+            "districtIds": [],
+            "buildingIds": [
+                "99",
+                "100",
+                "98"
+            ]
+        },
+        "11": {
+            "id": "11",
+            "name": ".github",
+            "fqn": "spring-petclinic/.github",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "3",
+            "districtIds": [
+                "13"
+            ],
+            "buildingIds": [
+                "12"
+            ]
+        },
+        "56": {
+            "id": "56",
+            "name": "owner",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "47",
+            "districtIds": [],
+            "buildingIds": [
+                "572",
+                "66",
+                "57",
+                "68",
+                "59",
+                "60",
+                "62",
+                "63",
+                "570",
+                "64",
+                "571",
+                "65"
+            ]
+        },
+        "13": {
+            "id": "13",
+            "name": "workflows",
+            "fqn": "spring-petclinic/.github/workflows",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "11",
+            "districtIds": [],
+            "buildingIds": [
+                "14",
+                "15",
+                "16"
+            ]
+        },
+        "19": {
+            "id": "19",
+            "name": ".mvn",
+            "fqn": "spring-petclinic/.mvn",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "3",
+            "districtIds": [
+                "20"
+            ],
+            "buildingIds": []
+        },
+        "162": {
+            "id": "162",
+            "name": "model",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/model",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "157",
+            "districtIds": [],
+            "buildingIds": [
+                "163"
+            ]
+        },
+        "164": {
+            "id": "164",
+            "name": "owner",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "157",
+            "districtIds": [],
+            "buildingIds": [
+                "165",
+                "166",
+                "167",
+                "168",
+                "169"
+            ]
+        },
+        "124": {
+            "id": "124",
+            "name": "images",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/images",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "112",
+            "districtIds": [],
+            "buildingIds": [
+                "125",
+                "126",
+                "127",
+                "128",
+                "129"
+            ]
+        },
+        "3": {
+            "id": "3",
+            "name": "spring-petclinic",
+            "fqn": "spring-petclinic",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "4",
+            "districtIds": [
+                "11",
+                "26",
+                "5",
+                "39",
+                "19",
+                "32"
+            ],
+            "buildingIds": [
+                "22",
+                "23",
+                "35",
+                "24",
+                "36",
+                "25",
+                "37",
+                "38",
+                "17",
+                "18",
+                "9",
+                "30",
+                "31",
+                "10"
+            ]
+        },
+        "5": {
+            "id": "5",
+            "name": ".devcontainer",
+            "fqn": "spring-petclinic/.devcontainer",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "3",
+            "districtIds": [],
+            "buildingIds": [
+                "7",
+                "8"
+            ]
+        },
+        "20": {
+            "id": "20",
+            "name": "wrapper",
+            "fqn": "spring-petclinic/.mvn/wrapper",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "19",
+            "districtIds": [],
+            "buildingIds": [
+                "21"
+            ]
+        },
+        "26": {
+            "id": "26",
+            "name": "gradle",
+            "fqn": "spring-petclinic/gradle",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "3",
+            "districtIds": [
+                "27"
+            ],
+            "buildingIds": []
+        },
+        "27": {
+            "id": "27",
+            "name": "wrapper",
+            "fqn": "spring-petclinic/gradle/wrapper",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "26",
+            "districtIds": [],
+            "buildingIds": [
+                "28",
+                "29"
+            ]
+        },
+        "170": {
+            "id": "170",
+            "name": "service",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/service",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "157",
+            "districtIds": [],
+            "buildingIds": [
+                "171",
+                "172"
+            ]
+        },
+        "173": {
+            "id": "173",
+            "name": "system",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/system",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "157",
+            "districtIds": [],
+            "buildingIds": [
+                "176",
+                "174",
+                "175"
+            ]
+        },
+        "130": {
+            "id": "130",
+            "name": "templates",
+            "fqn": "spring-petclinic/src/main/resources/templates",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "83",
+            "districtIds": [
+                "132",
+                "144",
+                "136",
+                "141"
+            ],
+            "buildingIds": [
+                "146",
+                "131"
+            ]
+        },
+        "132": {
+            "id": "132",
+            "name": "fragments",
+            "fqn": "spring-petclinic/src/main/resources/templates/fragments",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "130",
+            "districtIds": [],
+            "buildingIds": [
+                "133",
+                "134",
+                "135"
+            ]
+        },
+        "177": {
+            "id": "177",
+            "name": "vet",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/vet",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "157",
+            "districtIds": [],
+            "buildingIds": [
+                "178",
+                "179"
+            ]
+        },
+        "136": {
+            "id": "136",
+            "name": "owners",
+            "fqn": "spring-petclinic/src/main/resources/templates/owners",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "130",
+            "districtIds": [],
+            "buildingIds": [
+                "137",
+                "138",
+                "139",
+                "140"
+            ]
+        },
+        "70": {
+            "id": "70",
+            "name": "system",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/system",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "47",
+            "districtIds": [],
+            "buildingIds": [
+                "71",
+                "72",
+                "73",
+                "74",
+                "75"
+            ]
+        },
+        "76": {
+            "id": "76",
+            "name": "vet",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "47",
+            "districtIds": [],
+            "buildingIds": [
+                "77",
+                "78",
+                "79",
+                "80",
+                "81",
+                "82"
+            ]
+        },
+        "32": {
+            "id": "32",
+            "name": "k8s",
+            "fqn": "spring-petclinic/k8s",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "3",
+            "districtIds": [],
+            "buildingIds": [
+                "33",
+                "34"
+            ]
+        },
+        "39": {
+            "id": "39",
+            "name": "src",
+            "fqn": "spring-petclinic/src",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "3",
+            "districtIds": [
+                "48",
+                "40",
+                "152"
+            ],
+            "buildingIds": []
+        },
+        "180": {
+            "id": "180",
+            "name": "jmeter",
+            "fqn": "spring-petclinic/src/test/jmeter",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "152",
+            "districtIds": [],
+            "buildingIds": [
+                "181"
+            ]
+        },
+        "141": {
+            "id": "141",
+            "name": "pets",
+            "fqn": "spring-petclinic/src/main/resources/templates/pets",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "130",
+            "districtIds": [],
+            "buildingIds": [
+                "143",
+                "142"
+            ]
+        },
+        "144": {
+            "id": "144",
+            "name": "vets",
+            "fqn": "spring-petclinic/src/main/resources/templates/vets",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "130",
+            "districtIds": [],
+            "buildingIds": [
+                "145"
+            ]
+        },
+        "101": {
+            "id": "101",
+            "name": "messages",
+            "fqn": "spring-petclinic/src/main/resources/messages",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "83",
+            "districtIds": [],
+            "buildingIds": [
+                "110",
+                "102",
+                "103",
+                "104",
+                "105",
+                "106",
+                "107",
+                "108",
+                "109"
+            ]
+        },
+        "147": {
+            "id": "147",
+            "name": "scss",
+            "fqn": "spring-petclinic/src/main/scss",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "48",
+            "districtIds": [],
+            "buildingIds": [
+                "148",
+                "149",
+                "150",
+                "151"
+            ]
+        },
+        "83": {
+            "id": "83",
+            "name": "resources",
+            "fqn": "spring-petclinic/src/main/resources",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "48",
+            "districtIds": [
+                "88",
+                "111",
+                "101",
+                "130"
+            ],
+            "buildingIds": [
+                "84",
+                "85",
+                "86",
+                "87"
+            ]
+        },
+        "40": {
+            "id": "40",
+            "name": "checkstyle",
+            "fqn": "spring-petclinic/src/checkstyle",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "39",
+            "districtIds": [],
+            "buildingIds": [
+                "41",
+                "42"
+            ]
+        },
+        "43": {
+            "id": "43",
+            "name": "java",
+            "fqn": "spring-petclinic/src/main/java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "parentDistrictId": "48",
+            "districtIds": [
+                "44"
+            ],
+            "buildingIds": []
+        }
+    },
+    "buildings": {
+        "110": {
+            "id": "110",
+            "name": "messages_tr.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_tr.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1258.0",
+                    "previous": "1258.0"
+                }
+            }
+        },
+        "114": {
+            "id": "114",
+            "name": "petclinic.css",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/css/petclinic.css",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "9532.0",
+                    "previous": "9532.0"
+                },
+                "size": {
+                    "current": "278931.0",
+                    "previous": "278931.0"
+                }
+            }
+        },
+        "116": {
+            "id": "116",
+            "name": "montserrat-webfont.eot",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/montserrat-webfont.eot",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "180.0",
+                    "previous": "180.0"
+                },
+                "size": {
+                    "current": "20979.0",
+                    "previous": "20979.0"
+                }
+            }
+        },
+        "117": {
+            "id": "117",
+            "name": "montserrat-webfont.svg",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/montserrat-webfont.svg",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "1283.0",
+                    "previous": "1283.0"
+                },
+                "size": {
+                    "current": "84634.0",
+                    "previous": "84634.0"
+                }
+            }
+        },
+        "90": {
+            "id": "90",
+            "name": "data.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/h2/data.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "53.0",
+                    "previous": "53.0"
+                },
+                "size": {
+                    "current": "3118.0",
+                    "previous": "3118.0"
+                }
+            }
+        },
+        "91": {
+            "id": "91",
+            "name": "schema.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/h2/schema.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "64.0",
+                    "previous": "64.0"
+                },
+                "size": {
+                    "current": "2056.0",
+                    "previous": "2056.0"
+                }
+            }
+        },
+        "118": {
+            "id": "118",
+            "name": "montserrat-webfont.ttf",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/montserrat-webfont.ttf",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "618.0",
+                    "previous": "618.0"
+                },
+                "size": {
+                    "current": "42692.0",
+                    "previous": "42692.0"
+                }
+            }
+        },
+        "119": {
+            "id": "119",
+            "name": "montserrat-webfont.woff",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/montserrat-webfont.woff",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "182.0",
+                    "previous": "182.0"
+                },
+                "size": {
+                    "current": "24240.0",
+                    "previous": "24240.0"
+                }
+            }
+        },
+        "93": {
+            "id": "93",
+            "name": "data.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/mysql/data.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "53.0",
+                    "previous": "53.0"
+                },
+                "size": {
+                    "current": "3200.0",
+                    "previous": "3200.0"
+                }
+            }
+        },
+        "94": {
+            "id": "94",
+            "name": "petclinic_db_setup_mysql.txt",
+            "fqn": "spring-petclinic/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "36.0",
+                    "previous": "36.0"
+                },
+                "size": {
+                    "current": "1690.0",
+                    "previous": "1690.0"
+                }
+            }
+        },
+        "95": {
+            "id": "95",
+            "name": "schema.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/mysql/schema.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "55.0",
+                    "previous": "55.0"
+                },
+                "size": {
+                    "current": "1546.0",
+                    "previous": "1546.0"
+                }
+            }
+        },
+        "96": {
+            "id": "96",
+            "name": "user.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/mysql/user.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                },
+                "size": {
+                    "current": "277.0",
+                    "previous": "277.0"
+                }
+            }
+        },
+        "98": {
+            "id": "98",
+            "name": "data.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/postgres/data.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "53.0",
+                    "previous": "53.0"
+                },
+                "size": {
+                    "current": "6422.0",
+                    "previous": "6422.0"
+                }
+            }
+        },
+        "10": {
+            "id": "10",
+            "name": ".gitattributes",
+            "fqn": "spring-petclinic/.gitattributes",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "6.0",
+                    "previous": "6.0"
+                },
+                "size": {
+                    "current": "145.0",
+                    "previous": "145.0"
+                }
+            }
+        },
+        "99": {
+            "id": "99",
+            "name": "petclinic_db_setup_postgres.txt",
+            "fqn": "spring-petclinic/src/main/resources/db/postgres/petclinic_db_setup_postgres.txt",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "19.0",
+                    "previous": "19.0"
+                },
+                "size": {
+                    "current": "857.0",
+                    "previous": "857.0"
+                }
+            }
+        },
+        "12": {
+            "id": "12",
+            "name": "dco.yml",
+            "fqn": "spring-petclinic/.github/dco.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "size": {
+                    "current": "25.0",
+                    "previous": "25.0"
+                }
+            }
+        },
+        "14": {
+            "id": "14",
+            "name": "deploy-and-test-cluster.yml",
+            "fqn": "spring-petclinic/.github/workflows/deploy-and-test-cluster.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "31.0",
+                    "previous": "31.0"
+                },
+                "size": {
+                    "current": "673.0",
+                    "previous": "673.0"
+                }
+            }
+        },
+        "15": {
+            "id": "15",
+            "name": "gradle-build.yml",
+            "fqn": "spring-petclinic/.github/workflows/gradle-build.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "31.0",
+                    "previous": "31.0"
+                },
+                "size": {
+                    "current": "838.0",
+                    "previous": "838.0"
+                }
+            }
+        },
+        "16": {
+            "id": "16",
+            "name": "maven-build.yml",
+            "fqn": "spring-petclinic/.github/workflows/maven-build.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "29.0",
+                    "previous": "29.0"
+                },
+                "size": {
+                    "current": "771.0",
+                    "previous": "771.0"
+                }
+            }
+        },
+        "17": {
+            "id": "17",
+            "name": ".gitignore",
+            "fqn": "spring-petclinic/.gitignore",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "48.0",
+                    "previous": "48.0"
+                },
+                "size": {
+                    "current": "598.0",
+                    "previous": "598.0"
+                }
+            }
+        },
+        "18": {
+            "id": "18",
+            "name": ".gitpod.yml",
+            "fqn": "spring-petclinic/.gitpod.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "9.0",
+                    "previous": "9.0"
+                },
+                "size": {
+                    "current": "287.0",
+                    "previous": "287.0"
+                }
+            }
+        },
+        "120": {
+            "id": "120",
+            "name": "varela_round-webfont.eot",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/varela_round-webfont.eot",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "234.0",
+                    "previous": "234.0"
+                },
+                "size": {
+                    "current": "28963.0",
+                    "previous": "28963.0"
+                }
+            }
+        },
+        "121": {
+            "id": "121",
+            "name": "varela_round-webfont.svg",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/varela_round-webfont.svg",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "7875.0",
+                    "previous": "7875.0"
+                },
+                "size": {
+                    "current": "370273.0",
+                    "previous": "370273.0"
+                }
+            }
+        },
+        "122": {
+            "id": "122",
+            "name": "varela_round-webfont.ttf",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/varela_round-webfont.ttf",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "747.0",
+                    "previous": "747.0"
+                },
+                "size": {
+                    "current": "63044.0",
+                    "previous": "63044.0"
+                }
+            }
+        },
+        "123": {
+            "id": "123",
+            "name": "varela_round-webfont.woff",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/fonts/varela_round-webfont.woff",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "242.0",
+                    "previous": "242.0"
+                },
+                "size": {
+                    "current": "32712.0",
+                    "previous": "32712.0"
+                }
+            }
+        },
+        "125": {
+            "id": "125",
+            "name": "favicon.png",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/images/favicon.png",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "10.0",
+                    "previous": "10.0"
+                },
+                "size": {
+                    "current": "528.0",
+                    "previous": "528.0"
+                }
+            }
+        },
+        "126": {
+            "id": "126",
+            "name": "pets.png",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/images/pets.png",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "487.0",
+                    "previous": "487.0"
+                },
+                "size": {
+                    "current": "67721.0",
+                    "previous": "67721.0"
+                }
+            }
+        },
+        "127": {
+            "id": "127",
+            "name": "spring-logo-dataflow-mobile.png",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/images/spring-logo-dataflow-mobile.png",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "36.0",
+                    "previous": "36.0"
+                },
+                "size": {
+                    "current": "3705.0",
+                    "previous": "3705.0"
+                }
+            }
+        },
+        "7": {
+            "id": "7",
+            "name": "Dockerfile",
+            "fqn": "spring-petclinic/.devcontainer/Dockerfile",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                },
+                "size": {
+                    "current": "643.0",
+                    "previous": "643.0"
+                }
+            }
+        },
+        "128": {
+            "id": "128",
+            "name": "spring-logo-dataflow.png",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/images/spring-logo-dataflow.png",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "54.0",
+                    "previous": "54.0"
+                },
+                "size": {
+                    "current": "6888.0",
+                    "previous": "6888.0"
+                }
+            }
+        },
+        "8": {
+            "id": "8",
+            "name": "devcontainer.json",
+            "fqn": "spring-petclinic/.devcontainer/devcontainer.json",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "25.0",
+                    "previous": "25.0"
+                },
+                "size": {
+                    "current": "623.0",
+                    "previous": "623.0"
+                }
+            }
+        },
+        "129": {
+            "id": "129",
+            "name": "spring-logo.svg",
+            "fqn": "spring-petclinic/src/main/resources/static/resources/images/spring-logo.svg",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "66.0",
+                    "previous": "66.0"
+                },
+                "size": {
+                    "current": "7935.0",
+                    "previous": "7935.0"
+                }
+            }
+        },
+        "9": {
+            "id": "9",
+            "name": ".editorconfig",
+            "fqn": "spring-petclinic/.editorconfig",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "24.0",
+                    "previous": "24.0"
+                },
+                "size": {
+                    "current": "344.0",
+                    "previous": "344.0"
+                }
+            }
+        },
+        "21": {
+            "id": "21",
+            "name": "maven-wrapper.properties",
+            "fqn": "spring-petclinic/.mvn/wrapper/maven-wrapper.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                },
+                "size": {
+                    "current": "168.0",
+                    "previous": "168.0"
+                }
+            }
+        },
+        "22": {
+            "id": "22",
+            "name": "LICENSE.txt",
+            "fqn": "spring-petclinic/LICENSE.txt",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "202.0",
+                    "previous": "202.0"
+                },
+                "size": {
+                    "current": "11360.0",
+                    "previous": "11360.0"
+                }
+            }
+        },
+        "23": {
+            "id": "23",
+            "name": "README.md",
+            "fqn": "spring-petclinic/README.md",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "174.0",
+                    "previous": "174.0"
+                },
+                "size": {
+                    "current": "10405.0",
+                    "previous": "10405.0"
+                }
+            }
+        },
+        "24": {
+            "id": "24",
+            "name": "build.gradle",
+            "fqn": "spring-petclinic/build.gradle",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "93.0",
+                    "previous": "93.0"
+                },
+                "size": {
+                    "current": "3383.0",
+                    "previous": "3383.0"
+                }
+            }
+        },
+        "25": {
+            "id": "25",
+            "name": "docker-compose.yml",
+            "fqn": "spring-petclinic/docker-compose.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "21.0",
+                    "previous": "21.0"
+                },
+                "size": {
+                    "current": "488.0",
+                    "previous": "488.0"
+                }
+            }
+        },
+        "28": {
+            "id": "28",
+            "name": "gradle-wrapper.jar",
+            "fqn": "spring-petclinic/gradle/wrapper/gradle-wrapper.jar",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "341.0",
+                    "previous": "341.0"
+                },
+                "size": {
+                    "current": "45633.0",
+                    "previous": "45633.0"
+                }
+            }
+        },
+        "29": {
+            "id": "29",
+            "name": "gradle-wrapper.properties",
+            "fqn": "spring-petclinic/gradle/wrapper/gradle-wrapper.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                },
+                "size": {
+                    "current": "252.0",
+                    "previous": "252.0"
+                }
+            }
+        },
+        "131": {
+            "id": "131",
+            "name": "error.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/error.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "21.0",
+                    "previous": "21.0"
+                },
+                "size": {
+                    "current": "776.0",
+                    "previous": "776.0"
+                }
+            }
+        },
+        "133": {
+            "id": "133",
+            "name": "inputField.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/fragments/inputField.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "27.0",
+                    "previous": "27.0"
+                },
+                "size": {
+                    "current": "1065.0",
+                    "previous": "1065.0"
+                }
+            }
+        },
+        "134": {
+            "id": "134",
+            "name": "layout.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/fragments/layout.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "88.0",
+                    "previous": "88.0"
+                },
+                "size": {
+                    "current": "3211.0",
+                    "previous": "3211.0"
+                }
+            }
+        },
+        "135": {
+            "id": "135",
+            "name": "selectField.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/fragments/selectField.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "27.0",
+                    "previous": "27.0"
+                },
+                "size": {
+                    "current": "980.0",
+                    "previous": "980.0"
+                }
+            }
+        },
+        "137": {
+            "id": "137",
+            "name": "createOrUpdateOwnerForm.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/owners/createOrUpdateOwnerForm.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "25.0",
+                    "previous": "25.0"
+                },
+                "size": {
+                    "current": "1073.0",
+                    "previous": "1073.0"
+                }
+            }
+        },
+        "138": {
+            "id": "138",
+            "name": "findOwners.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/owners/findOwners.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "35.0",
+                    "previous": "35.0"
+                },
+                "size": {
+                    "current": "1150.0",
+                    "previous": "1150.0"
+                }
+            }
+        },
+        "139": {
+            "id": "139",
+            "name": "ownerDetails.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/owners/ownerDetails.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "96.0",
+                    "previous": "96.0"
+                },
+                "size": {
+                    "current": "2887.0",
+                    "previous": "2887.0"
+                }
+            }
+        },
+        "30": {
+            "id": "30",
+            "name": "gradlew",
+            "fqn": "spring-petclinic/gradlew",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "248.0",
+                    "previous": "248.0"
+                },
+                "size": {
+                    "current": "8618.0",
+                    "previous": "8618.0"
+                }
+            }
+        },
+        "31": {
+            "id": "31",
+            "name": "gradlew.bat",
+            "fqn": "spring-petclinic/gradlew.bat",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "93.0",
+                    "previous": "93.0"
+                },
+                "size": {
+                    "current": "2896.0",
+                    "previous": "2896.0"
+                }
+            }
+        },
+        "33": {
+            "id": "33",
+            "name": "db.yml",
+            "fqn": "spring-petclinic/k8s/db.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "73.0",
+                    "previous": "73.0"
+                },
+                "size": {
+                    "current": "1458.0",
+                    "previous": "1458.0"
+                }
+            }
+        },
+        "34": {
+            "id": "34",
+            "name": "petclinic.yml",
+            "fqn": "spring-petclinic/k8s/petclinic.yml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "64.0",
+                    "previous": "64.0"
+                },
+                "size": {
+                    "current": "1358.0",
+                    "previous": "1358.0"
+                }
+            }
+        },
+        "35": {
+            "id": "35",
+            "name": "mvnw",
+            "fqn": "spring-petclinic/mvnw",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "295.0",
+                    "previous": "295.0"
+                },
+                "size": {
+                    "current": "11791.0",
+                    "previous": "11791.0"
+                }
+            }
+        },
+        "36": {
+            "id": "36",
+            "name": "mvnw.cmd",
+            "fqn": "spring-petclinic/mvnw.cmd",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "189.0",
+                    "previous": "189.0"
+                },
+                "size": {
+                    "current": "8482.0",
+                    "previous": "8482.0"
+                }
+            }
+        },
+        "37": {
+            "id": "37",
+            "name": "pom.xml",
+            "fqn": "spring-petclinic/pom.xml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "420.0",
+                    "previous": "420.0"
+                },
+                "size": {
+                    "current": "15251.0",
+                    "previous": "15251.0"
+                }
+            }
+        },
+        "38": {
+            "id": "38",
+            "name": "settings.gradle",
+            "fqn": "spring-petclinic/settings.gradle",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "size": {
+                    "current": "38.0",
+                    "previous": "38.0"
+                }
+            }
+        },
+        "140": {
+            "id": "140",
+            "name": "ownersList.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/owners/ownersList.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "61.0",
+                    "previous": "61.0"
+                },
+                "size": {
+                    "current": "2423.0",
+                    "previous": "2423.0"
+                }
+            }
+        },
+        "142": {
+            "id": "142",
+            "name": "createOrUpdatePetForm.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/pets/createOrUpdatePetForm.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "34.0",
+                    "previous": "34.0"
+                },
+                "size": {
+                    "current": "1230.0",
+                    "previous": "1230.0"
+                }
+            }
+        },
+        "143": {
+            "id": "143",
+            "name": "createOrUpdateVisitForm.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/pets/createOrUpdateVisitForm.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "59.0",
+                    "previous": "59.0"
+                },
+                "size": {
+                    "current": "1788.0",
+                    "previous": "1788.0"
+                }
+            }
+        },
+        "145": {
+            "id": "145",
+            "name": "vetList.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/vets/vetList.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "57.0",
+                    "previous": "57.0"
+                },
+                "size": {
+                    "current": "2192.0",
+                    "previous": "2192.0"
+                }
+            }
+        },
+        "146": {
+            "id": "146",
+            "name": "welcome.html",
+            "fqn": "spring-petclinic/src/main/resources/templates/welcome.html",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "size": {
+                    "current": "375.0",
+                    "previous": "375.0"
+                }
+            }
+        },
+        "148": {
+            "id": "148",
+            "name": "header.scss",
+            "fqn": "spring-petclinic/src/main/scss/header.scss",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "73.0",
+                    "previous": "73.0"
+                },
+                "size": {
+                    "current": "1386.0",
+                    "previous": "1386.0"
+                }
+            }
+        },
+        "149": {
+            "id": "149",
+            "name": "petclinic.scss",
+            "fqn": "spring-petclinic/src/main/scss/petclinic.scss",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "214.0",
+                    "previous": "214.0"
+                },
+                "size": {
+                    "current": "4403.0",
+                    "previous": "4403.0"
+                }
+            }
+        },
+        "41": {
+            "id": "41",
+            "name": "nohttp-checkstyle-suppressions.xml",
+            "fqn": "spring-petclinic/src/checkstyle/nohttp-checkstyle-suppressions.xml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                },
+                "size": {
+                    "current": "470.0",
+                    "previous": "470.0"
+                }
+            }
+        },
+        "42": {
+            "id": "42",
+            "name": "nohttp-checkstyle.xml",
+            "fqn": "spring-petclinic/src/checkstyle/nohttp-checkstyle.xml",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "10.0",
+                    "previous": "10.0"
+                },
+                "size": {
+                    "current": "412.0",
+                    "previous": "412.0"
+                }
+            }
+        },
+        "49": {
+            "id": "49",
+            "name": "PetClinicApplication.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "36.0",
+                    "previous": "36.0"
+                },
+                "cloc": {
+                    "current": "20.0",
+                    "previous": "20.0"
+                },
+                "size": {
+                    "current": "1144.0",
+                    "previous": "1144.0"
+                },
+                "sloc": {
+                    "current": "12.0",
+                    "previous": "12.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "150": {
+            "id": "150",
+            "name": "responsive.scss",
+            "fqn": "spring-petclinic/src/main/scss/responsive.scss",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "41.0",
+                    "previous": "41.0"
+                },
+                "size": {
+                    "current": "678.0",
+                    "previous": "678.0"
+                }
+            }
+        },
+        "151": {
+            "id": "151",
+            "name": "typography.scss",
+            "fqn": "spring-petclinic/src/main/scss/typography.scss",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "60.0",
+                    "previous": "60.0"
+                },
+                "size": {
+                    "current": "1472.0",
+                    "previous": "1472.0"
+                }
+            }
+        },
+        "158": {
+            "id": "158",
+            "name": "MySqlIntegrationTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "74.0",
+                    "previous": "74.0"
+                },
+                "cloc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "size": {
+                    "current": "2645.0",
+                    "previous": "2645.0"
+                },
+                "sloc": {
+                    "current": "49.0",
+                    "previous": "49.0"
+                },
+                "variableCount": {
+                    "current": "6.0",
+                    "previous": "6.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "159": {
+            "id": "159",
+            "name": "MysqlTestApplication.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/MysqlTestApplication.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "47.0",
+                    "previous": "47.0"
+                },
+                "cloc": {
+                    "current": "20.0",
+                    "previous": "20.0"
+                },
+                "size": {
+                    "current": "1529.0",
+                    "previous": "1529.0"
+                },
+                "sloc": {
+                    "current": "22.0",
+                    "previous": "22.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "50": {
+            "id": "50",
+            "name": "PetClinicRuntimeHints.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/PetClinicRuntimeHints.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "37.0",
+                    "previous": "37.0"
+                },
+                "cloc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "size": {
+                    "current": "1494.0",
+                    "previous": "1494.0"
+                },
+                "sloc": {
+                    "current": "18.0",
+                    "previous": "18.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "52": {
+            "id": "52",
+            "name": "BaseEntity.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "cloc": {
+                    "current": "22.0",
+                    "previous": "22.0"
+                },
+                "size": {
+                    "current": "1344.0",
+                    "previous": "1344.0"
+                },
+                "sloc": {
+                    "current": "22.0",
+                    "previous": "22.0"
+                },
+                "variableCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "functionCount": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                }
+            }
+        },
+        "53": {
+            "id": "53",
+            "name": "NamedEntity.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "cloc": {
+                    "current": "23.0",
+                    "previous": "23.0"
+                },
+                "size": {
+                    "current": "1367.0",
+                    "previous": "1367.0"
+                },
+                "sloc": {
+                    "current": "22.0",
+                    "previous": "22.0"
+                },
+                "variableCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "functionCount": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                }
+            }
+        },
+        "54": {
+            "id": "54",
+            "name": "Person.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/model/Person.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "54.0",
+                    "previous": "54.0"
+                },
+                "cloc": {
+                    "current": "20.0",
+                    "previous": "20.0"
+                },
+                "size": {
+                    "current": "1327.0",
+                    "previous": "1327.0"
+                },
+                "sloc": {
+                    "current": "26.0",
+                    "previous": "26.0"
+                },
+                "variableCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "functionCount": {
+                    "current": "4.0",
+                    "previous": "4.0"
+                }
+            }
+        },
+        "55": {
+            "id": "55",
+            "name": "package-info.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/model/package-info.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "20.0",
+                    "previous": "20.0"
+                },
+                "cloc": {
+                    "current": "18.0",
+                    "previous": "18.0"
+                },
+                "size": {
+                    "current": "755.0",
+                    "previous": "755.0"
+                },
+                "sloc": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "57": {
+            "id": "57",
+            "name": "Owner.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "176.0",
+                    "previous": "176.0"
+                },
+                "cloc": {
+                    "current": "46.0",
+                    "previous": "46.0"
+                },
+                "size": {
+                    "current": "4533.0",
+                    "previous": "4533.0"
+                },
+                "sloc": {
+                    "current": "105.0",
+                    "previous": "105.0"
+                },
+                "variableCount": {
+                    "current": "9.0",
+                    "previous": "9.0"
+                },
+                "functionCount": {
+                    "current": "13.0",
+                    "previous": "13.0"
+                }
+            }
+        },
+        "59": {
+            "id": "59",
+            "name": "OwnerRepository.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "62.0",
+                    "previous": "62.0"
+                },
+                "cloc": {
+                    "current": "47.0",
+                    "previous": "47.0"
+                },
+                "size": {
+                    "current": "2298.0",
+                    "previous": "2298.0"
+                },
+                "sloc": {
+                    "current": "10.0",
+                    "previous": "10.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "160": {
+            "id": "160",
+            "name": "PetClinicIntegrationTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "70.0",
+                    "previous": "70.0"
+                },
+                "cloc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "size": {
+                    "current": "2478.0",
+                    "previous": "2478.0"
+                },
+                "sloc": {
+                    "current": "44.0",
+                    "previous": "44.0"
+                },
+                "variableCount": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                },
+                "functionCount": {
+                    "current": "4.0",
+                    "previous": "4.0"
+                }
+            }
+        },
+        "161": {
+            "id": "161",
+            "name": "PostgresIntegrationTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "150.0",
+                    "previous": "150.0"
+                },
+                "cloc": {
+                    "current": "23.0",
+                    "previous": "23.0"
+                },
+                "size": {
+                    "current": "5148.0",
+                    "previous": "5148.0"
+                },
+                "sloc": {
+                    "current": "110.0",
+                    "previous": "110.0"
+                },
+                "variableCount": {
+                    "current": "17.0",
+                    "previous": "17.0"
+                },
+                "functionCount": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                }
+            }
+        },
+        "163": {
+            "id": "163",
+            "name": "ValidatorTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "60.0",
+                    "previous": "60.0"
+                },
+                "cloc": {
+                    "current": "19.0",
+                    "previous": "19.0"
+                },
+                "size": {
+                    "current": "2057.0",
+                    "previous": "2057.0"
+                },
+                "sloc": {
+                    "current": "30.0",
+                    "previous": "30.0"
+                },
+                "variableCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "165": {
+            "id": "165",
+            "name": "OwnerControllerTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "251.0",
+                    "previous": "251.0"
+                },
+                "cloc": {
+                    "current": "21.0",
+                    "previous": "21.0"
+                },
+                "size": {
+                    "current": "9292.0",
+                    "previous": "9292.0"
+                },
+                "sloc": {
+                    "current": "200.0",
+                    "previous": "200.0"
+                },
+                "variableCount": {
+                    "current": "13.0",
+                    "previous": "13.0"
+                },
+                "functionCount": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                }
+            }
+        },
+        "166": {
+            "id": "166",
+            "name": "PetControllerTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "211.0",
+                    "previous": "211.0"
+                },
+                "cloc": {
+                    "current": "21.0",
+                    "previous": "21.0"
+                },
+                "size": {
+                    "current": "7620.0",
+                    "previous": "7620.0"
+                },
+                "sloc": {
+                    "current": "163.0",
+                    "previous": "163.0"
+                },
+                "variableCount": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                },
+                "functionCount": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                }
+            }
+        },
+        "167": {
+            "id": "167",
+            "name": "PetTypeFormatterTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "97.0",
+                    "previous": "97.0"
+                },
+                "cloc": {
+                    "current": "24.0",
+                    "previous": "24.0"
+                },
+                "size": {
+                    "current": "2616.0",
+                    "previous": "2616.0"
+                },
+                "sloc": {
+                    "current": "61.0",
+                    "previous": "61.0"
+                },
+                "variableCount": {
+                    "current": "6.0",
+                    "previous": "6.0"
+                },
+                "functionCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                }
+            }
+        },
+        "168": {
+            "id": "168",
+            "name": "PetValidatorTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "117.0",
+                    "previous": "117.0"
+                },
+                "cloc": {
+                    "current": "20.0",
+                    "previous": "20.0"
+                },
+                "size": {
+                    "current": "2833.0",
+                    "previous": "2833.0"
+                },
+                "sloc": {
+                    "current": "70.0",
+                    "previous": "70.0"
+                },
+                "variableCount": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                },
+                "functionCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                }
+            }
+        },
+        "169": {
+            "id": "169",
+            "name": "VisitControllerTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "94.0",
+                    "previous": "94.0"
+                },
+                "cloc": {
+                    "current": "21.0",
+                    "previous": "21.0"
+                },
+                "size": {
+                    "current": "3163.0",
+                    "previous": "3163.0"
+                },
+                "sloc": {
+                    "current": "60.0",
+                    "previous": "60.0"
+                },
+                "variableCount": {
+                    "current": "6.0",
+                    "previous": "6.0"
+                },
+                "functionCount": {
+                    "current": "4.0",
+                    "previous": "4.0"
+                }
+            }
+        },
+        "60": {
+            "id": "60",
+            "name": "Pet.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "85.0",
+                    "previous": "85.0"
+                },
+                "cloc": {
+                    "current": "23.0",
+                    "previous": "23.0"
+                },
+                "size": {
+                    "current": "2186.0",
+                    "previous": "2186.0"
+                },
+                "sloc": {
+                    "current": "49.0",
+                    "previous": "49.0"
+                },
+                "variableCount": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                },
+                "functionCount": {
+                    "current": "6.0",
+                    "previous": "6.0"
+                }
+            }
+        },
+        "62": {
+            "id": "62",
+            "name": "PetType.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetType.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "30.0",
+                    "previous": "30.0"
+                },
+                "cloc": {
+                    "current": "18.0",
+                    "previous": "18.0"
+                },
+                "size": {
+                    "current": "951.0",
+                    "previous": "951.0"
+                },
+                "sloc": {
+                    "current": "9.0",
+                    "previous": "9.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "63": {
+            "id": "63",
+            "name": "PetTypeFormatter.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "62.0",
+                    "previous": "62.0"
+                },
+                "cloc": {
+                    "current": "25.0",
+                    "previous": "25.0"
+                },
+                "size": {
+                    "current": "1987.0",
+                    "previous": "1987.0"
+                },
+                "sloc": {
+                    "current": "30.0",
+                    "previous": "30.0"
+                },
+                "variableCount": {
+                    "current": "4.0",
+                    "previous": "4.0"
+                },
+                "functionCount": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                }
+            }
+        },
+        "64": {
+            "id": "64",
+            "name": "PetTypeRepository.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetTypeRepository.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "39.0",
+                    "previous": "39.0"
+                },
+                "cloc": {
+                    "current": "24.0",
+                    "previous": "24.0"
+                },
+                "size": {
+                    "current": "1208.0",
+                    "previous": "1208.0"
+                },
+                "sloc": {
+                    "current": "9.0",
+                    "previous": "9.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "65": {
+            "id": "65",
+            "name": "PetValidator.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "64.0",
+                    "previous": "64.0"
+                },
+                "cloc": {
+                    "current": "31.0",
+                    "previous": "31.0"
+                },
+                "size": {
+                    "current": "1807.0",
+                    "previous": "1807.0"
+                },
+                "sloc": {
+                    "current": "26.0",
+                    "previous": "26.0"
+                },
+                "variableCount": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "66": {
+            "id": "66",
+            "name": "Visit.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "68.0",
+                    "previous": "68.0"
+                },
+                "cloc": {
+                    "current": "24.0",
+                    "previous": "24.0"
+                },
+                "size": {
+                    "current": "1694.0",
+                    "previous": "1694.0"
+                },
+                "sloc": {
+                    "current": "33.0",
+                    "previous": "33.0"
+                },
+                "variableCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "functionCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                }
+            }
+        },
+        "68": {
+            "id": "68",
+            "name": "package-info.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/package-info.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "cloc": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                },
+                "size": {
+                    "current": "675.0",
+                    "previous": "675.0"
+                },
+                "sloc": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "69": {
+            "id": "69",
+            "name": "package-info.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/package-info.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "cloc": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                },
+                "size": {
+                    "current": "669.0",
+                    "previous": "669.0"
+                },
+                "sloc": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "171": {
+            "id": "171",
+            "name": "ClinicServiceTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "251.0",
+                    "previous": "251.0"
+                },
+                "cloc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "8289.0",
+                    "previous": "8289.0"
+                },
+                "sloc": {
+                    "current": "166.0",
+                    "previous": "166.0"
+                },
+                "variableCount": {
+                    "current": "38.0",
+                    "previous": "38.0"
+                },
+                "functionCount": {
+                    "current": "10.0",
+                    "previous": "10.0"
+                }
+            }
+        },
+        "172": {
+            "id": "172",
+            "name": "EntityUtils.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "53.0",
+                    "previous": "53.0"
+                },
+                "cloc": {
+                    "current": "32.0",
+                    "previous": "32.0"
+                },
+                "size": {
+                    "current": "1901.0",
+                    "previous": "1901.0"
+                },
+                "sloc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "variableCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "570": {
+            "id": "570",
+            "name": "OwnerController.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+            "originOfData": "static",
+            "commitComparison": "MODIFIED",
+            "parentCityId": "4",
+            "parentDistrictId": "56",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "176.0",
+                    "previous": "176.0"
+                },
+                "cloc": {
+                    "current": "33.0",
+                    "previous": "33.0"
+                },
+                "size": {
+                    "current": "6219.0",
+                    "previous": "6211.0"
+                },
+                "sloc": {
+                    "current": "119.0",
+                    "previous": "119.0"
+                },
+                "variableCount": {
+                    "current": "10.0",
+                    "previous": "10.0"
+                },
+                "functionCount": {
+                    "current": "12.0",
+                    "previous": "12.0"
+                }
+            }
+        },
+        "174": {
+            "id": "174",
+            "name": "CrashControllerIntegrationTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "101.0",
+                    "previous": "101.0"
+                },
+                "cloc": {
+                    "current": "23.0",
+                    "previous": "23.0"
+                },
+                "size": {
+                    "current": "4213.0",
+                    "previous": "4213.0"
+                },
+                "sloc": {
+                    "current": "67.0",
+                    "previous": "67.0"
+                },
+                "variableCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "571": {
+            "id": "571",
+            "name": "PetController.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+            "originOfData": "static",
+            "commitComparison": "MODIFIED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "183.0",
+                    "previous": "182.0"
+                },
+                "cloc": {
+                    "current": "28.0",
+                    "previous": "28.0"
+                },
+                "size": {
+                    "current": "5831.0",
+                    "previous": "5775.0"
+                },
+                "sloc": {
+                    "current": "125.0",
+                    "previous": "124.0"
+                },
+                "variableCount": {
+                    "current": "14.0",
+                    "previous": "14.0"
+                },
+                "functionCount": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                }
+            }
+        },
+        "175": {
+            "id": "175",
+            "name": "CrashControllerTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "41.0",
+                    "previous": "41.0"
+                },
+                "cloc": {
+                    "current": "23.0",
+                    "previous": "23.0"
+                },
+                "size": {
+                    "current": "1326.0",
+                    "previous": "1326.0"
+                },
+                "sloc": {
+                    "current": "12.0",
+                    "previous": "12.0"
+                },
+                "variableCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "176": {
+            "id": "176",
+            "name": "I18nPropertiesSyncTest.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "138.0",
+                    "previous": "138.0"
+                },
+                "cloc": {
+                    "current": "9.0",
+                    "previous": "9.0"
+                },
+                "size": {
+                    "current": "4231.0",
+                    "previous": "4231.0"
+                },
+                "sloc": {
+                    "current": "102.0",
+                    "previous": "102.0"
+                },
+                "variableCount": {
+                    "current": "31.0",
+                    "previous": "31.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "572": {
+            "id": "572",
+            "name": "VisitController.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+            "originOfData": "static",
+            "commitComparison": "MODIFIED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "104.0",
+                    "previous": "104.0"
+                },
+                "cloc": {
+                    "current": "34.0",
+                    "previous": "34.0"
+                },
+                "size": {
+                    "current": "3511.0",
+                    "previous": "3503.0"
+                },
+                "sloc": {
+                    "current": "57.0",
+                    "previous": "57.0"
+                },
+                "variableCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                },
+                "functionCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                }
+            }
+        },
+        "178": {
+            "id": "178",
+            "name": "VetControllerTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "100.0",
+                    "previous": "100.0"
+                },
+                "cloc": {
+                    "current": "18.0",
+                    "previous": "18.0"
+                },
+                "size": {
+                    "current": "3168.0",
+                    "previous": "3168.0"
+                },
+                "sloc": {
+                    "current": "67.0",
+                    "previous": "67.0"
+                },
+                "variableCount": {
+                    "current": "6.0",
+                    "previous": "6.0"
+                },
+                "functionCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                }
+            }
+        },
+        "179": {
+            "id": "179",
+            "name": "VetTests.java",
+            "fqn": "spring-petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetTests.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "41.0",
+                    "previous": "41.0"
+                },
+                "cloc": {
+                    "current": "18.0",
+                    "previous": "18.0"
+                },
+                "size": {
+                    "current": "1313.0",
+                    "previous": "1313.0"
+                },
+                "sloc": {
+                    "current": "19.0",
+                    "previous": "19.0"
+                },
+                "variableCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "71": {
+            "id": "71",
+            "name": "CacheConfiguration.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "53.0",
+                    "previous": "53.0"
+                },
+                "cloc": {
+                    "current": "29.0",
+                    "previous": "29.0"
+                },
+                "size": {
+                    "current": "2014.0",
+                    "previous": "2014.0"
+                },
+                "sloc": {
+                    "current": "18.0",
+                    "previous": "18.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "72": {
+            "id": "72",
+            "name": "CrashController.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/system/CrashController.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "37.0",
+                    "previous": "37.0"
+                },
+                "cloc": {
+                    "current": "22.0",
+                    "previous": "22.0"
+                },
+                "size": {
+                    "current": "1204.0",
+                    "previous": "1204.0"
+                },
+                "sloc": {
+                    "current": "12.0",
+                    "previous": "12.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "73": {
+            "id": "73",
+            "name": "WebConfiguration.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "60.0",
+                    "previous": "60.0"
+                },
+                "cloc": {
+                    "current": "24.0",
+                    "previous": "24.0"
+                },
+                "size": {
+                    "current": "1947.0",
+                    "previous": "1947.0"
+                },
+                "sloc": {
+                    "current": "30.0",
+                    "previous": "30.0"
+                },
+                "variableCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "functionCount": {
+                    "current": "3.0",
+                    "previous": "3.0"
+                }
+            }
+        },
+        "74": {
+            "id": "74",
+            "name": "WelcomeController.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "30.0",
+                    "previous": "30.0"
+                },
+                "cloc": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                },
+                "size": {
+                    "current": "898.0",
+                    "previous": "898.0"
+                },
+                "sloc": {
+                    "current": "11.0",
+                    "previous": "11.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "75": {
+            "id": "75",
+            "name": "package-info.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/system/package-info.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "cloc": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                },
+                "size": {
+                    "current": "676.0",
+                    "previous": "676.0"
+                },
+                "sloc": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "77": {
+            "id": "77",
+            "name": "Specialty.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet/Specialty.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "32.0",
+                    "previous": "32.0"
+                },
+                "cloc": {
+                    "current": "20.0",
+                    "previous": "20.0"
+                },
+                "size": {
+                    "current": "998.0",
+                    "previous": "998.0"
+                },
+                "sloc": {
+                    "current": "9.0",
+                    "previous": "9.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "78": {
+            "id": "78",
+            "name": "Vet.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "74.0",
+                    "previous": "74.0"
+                },
+                "cloc": {
+                    "current": "23.0",
+                    "previous": "23.0"
+                },
+                "size": {
+                    "current": "2190.0",
+                    "previous": "2190.0"
+                },
+                "sloc": {
+                    "current": "42.0",
+                    "previous": "42.0"
+                },
+                "variableCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "functionCount": {
+                    "current": "4.0",
+                    "previous": "4.0"
+                }
+            }
+        },
+        "79": {
+            "id": "79",
+            "name": "VetController.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "78.0",
+                    "previous": "78.0"
+                },
+                "cloc": {
+                    "current": "25.0",
+                    "previous": "25.0"
+                },
+                "size": {
+                    "current": "2681.0",
+                    "previous": "2681.0"
+                },
+                "sloc": {
+                    "current": "44.0",
+                    "previous": "44.0"
+                },
+                "variableCount": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                },
+                "functionCount": {
+                    "current": "5.0",
+                    "previous": "5.0"
+                }
+            }
+        },
+        "181": {
+            "id": "181",
+            "name": "petclinic_test_plan.jmx",
+            "fqn": "spring-petclinic/src/test/jmeter/petclinic_test_plan.jmx",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "LANGUAGE_UNSPECIFIED",
+            "metrics": {
+                "loc": {
+                    "current": "540.0",
+                    "previous": "540.0"
+                },
+                "size": {
+                    "current": "32098.0",
+                    "previous": "32098.0"
+                }
+            }
+        },
+        "100": {
+            "id": "100",
+            "name": "schema.sql",
+            "fqn": "spring-petclinic/src/main/resources/db/postgres/schema.sql",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "52.0",
+                    "previous": "52.0"
+                },
+                "size": {
+                    "current": "1386.0",
+                    "previous": "1386.0"
+                }
+            }
+        },
+        "102": {
+            "id": "102",
+            "name": "messages.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1176.0",
+                    "previous": "1176.0"
+                }
+            }
+        },
+        "103": {
+            "id": "103",
+            "name": "messages_de.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_de.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1380.0",
+                    "previous": "1380.0"
+                }
+            }
+        },
+        "104": {
+            "id": "104",
+            "name": "messages_en.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_en.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "size": {
+                    "current": "110.0",
+                    "previous": "110.0"
+                }
+            }
+        },
+        "105": {
+            "id": "105",
+            "name": "messages_es.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_es.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1370.0",
+                    "previous": "1370.0"
+                }
+            }
+        },
+        "106": {
+            "id": "106",
+            "name": "messages_fa.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_fa.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1608.0",
+                    "previous": "1608.0"
+                }
+            }
+        },
+        "107": {
+            "id": "107",
+            "name": "messages_ko.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_ko.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1423.0",
+                    "previous": "1423.0"
+                }
+            }
+        },
+        "80": {
+            "id": "80",
+            "name": "VetRepository.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "58.0",
+                    "previous": "58.0"
+                },
+                "cloc": {
+                    "current": "36.0",
+                    "previous": "36.0"
+                },
+                "size": {
+                    "current": "1994.0",
+                    "previous": "1994.0"
+                },
+                "sloc": {
+                    "current": "17.0",
+                    "previous": "17.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                }
+            }
+        },
+        "81": {
+            "id": "81",
+            "name": "Vets.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "43.0",
+                    "previous": "43.0"
+                },
+                "cloc": {
+                    "current": "21.0",
+                    "previous": "21.0"
+                },
+                "size": {
+                    "current": "1215.0",
+                    "previous": "1215.0"
+                },
+                "sloc": {
+                    "current": "17.0",
+                    "previous": "17.0"
+                },
+                "variableCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                },
+                "functionCount": {
+                    "current": "1.0",
+                    "previous": "1.0"
+                }
+            }
+        },
+        "108": {
+            "id": "108",
+            "name": "messages_pt.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_pt.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1413.0",
+                    "previous": "1413.0"
+                }
+            }
+        },
+        "109": {
+            "id": "109",
+            "name": "messages_ru.properties",
+            "fqn": "spring-petclinic/src/main/resources/messages/messages_ru.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "51.0",
+                    "previous": "51.0"
+                },
+                "size": {
+                    "current": "1947.0",
+                    "previous": "1947.0"
+                }
+            }
+        },
+        "82": {
+            "id": "82",
+            "name": "package-info.java",
+            "fqn": "spring-petclinic/src/main/java/org/springframework/samples/petclinic/vet/package-info.java",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "JAVA",
+            "metrics": {
+                "loc": {
+                    "current": "16.0",
+                    "previous": "16.0"
+                },
+                "cloc": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                },
+                "size": {
+                    "current": "673.0",
+                    "previous": "673.0"
+                },
+                "sloc": {
+                    "current": "2.0",
+                    "previous": "2.0"
+                },
+                "variableCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                },
+                "functionCount": {
+                    "current": "0.0",
+                    "previous": "0.0"
+                }
+            }
+        },
+        "84": {
+            "id": "84",
+            "name": "application-mysql.properties",
+            "fqn": "spring-petclinic/src/main/resources/application-mysql.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                },
+                "size": {
+                    "current": "299.0",
+                    "previous": "299.0"
+                }
+            }
+        },
+        "85": {
+            "id": "85",
+            "name": "application-postgres.properties",
+            "fqn": "spring-petclinic/src/main/resources/application-postgres.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "7.0",
+                    "previous": "7.0"
+                },
+                "size": {
+                    "current": "319.0",
+                    "previous": "319.0"
+                }
+            }
+        },
+        "86": {
+            "id": "86",
+            "name": "application.properties",
+            "fqn": "spring-petclinic/src/main/resources/application.properties",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "29.0",
+                    "previous": "29.0"
+                },
+                "size": {
+                    "current": "981.0",
+                    "previous": "981.0"
+                }
+            }
+        },
+        "87": {
+            "id": "87",
+            "name": "banner.txt",
+            "fqn": "spring-petclinic/src/main/resources/banner.txt",
+            "originOfData": "static",
+            "commitComparison": "UNCHANGED",
+            "parentCityId": "4",
+            "language": "PLAINTEXT",
+            "metrics": {
+                "loc": {
+                    "current": "15.0",
+                    "previous": "15.0"
+                },
+                "size": {
+                    "current": "709.0",
+                    "previous": "709.0"
+                }
+            }
+        }
+    }
+}

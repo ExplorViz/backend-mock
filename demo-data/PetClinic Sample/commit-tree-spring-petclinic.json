@@ -1,0 +1,16 @@
+{
+  "name": "spring-petclinic",
+  "branches": [
+    {
+      "name": "main",
+      "commits": [
+        "f1e0e22b883e185e680d44b264fb73a8efcff8b9",
+        "c7ee170434ec3e369fdc9201290ba2ea4c92b557"
+      ],
+      "branchPoint": {
+        "name": "NONE",
+        "commit": ""
+      }
+    }
+  ]
+}

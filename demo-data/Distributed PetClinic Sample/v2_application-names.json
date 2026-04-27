@@ -1,8 +1,0 @@
-[
-    "petclinic-customer-service",
-    "petclinic-visits-service",
-    "petclinic-api-gateway",
-    "petclinic-vets-service",
-    "petclinic-discovery-service",
-    "petclinic-admin-server"
-]

@@ -41,5 +41,5 @@ jobs:
         run: |
           docker buildx build \
             --platform linux/amd64,linux/arm64 \
-            --tag ${{ vars.DOCKER_IMAGE_NAME }}:${{ steps.image_tag.outputs.value }} . \
+            --tag ${{ vars.DOCKER_BACKEND_MOCK_IMAGE_NAME }}:${{ steps.image_tag.outputs.value }} . \
             --push

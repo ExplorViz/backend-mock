@@ -10,6 +10,11 @@ on:
         description: 'Docker image tag (e.g. 1.0.0, v1.2.3)'
         required: true
         type: string
+      ref:
+        description: 'Git ref to build (branch, tag, or commit SHA). Defaults to main.'
+        required: false
+        type: string
+        default: main
 
 jobs:
   build:
@@ -18,6 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
       - name: Determine image tag
         id: image_tag
         run: |

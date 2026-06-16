@@ -1,0 +1,15 @@
+{
+  "name": "opentelemetry-demo",
+  "branches": [
+    {
+      "name": "main",
+      "commits": [
+        "4baa77b5e0bcb911ed6af53e9a61fc7adadc6140"
+      ],
+      "branchPoint": {
+        "name": "NONE",
+        "commit": ""
+      }
+    }
+  ]
+}

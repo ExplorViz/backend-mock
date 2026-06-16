@@ -93,6 +93,7 @@ function createExpressApplication(port) {
 
   app.use(compression());
   app.use(cors());
+  app.use(express.json());
   app.listen(port, () => {});
 
   return app;
@@ -260,31 +261,79 @@ async function provideEvolutionData(folder, landscapeToken) {
   });
 
   persistenceApp.get(`${v3BaseUrl}/${landscapeToken}/structure/evolution/:repoName/:commitIds`, async (req, res) => {
-    const repoName = req.params.repoName;
-    const commitIds = req.params.commitIds;
-
-    const potentialFiles = [
-      `demo-data/${folder}/commit-${repoName}-${commitIds}.json`,
-      `demo-data/${folder}/${commitIds}.json`,
-    ];
-
-    for (const filePath of potentialFiles) {
-      if (fs.existsSync(filePath)) {
-        try {
-          const fileContent = await readFile(filePath);
-          return res.json(JSON.parse(fileContent));
-        } catch (e) {
-          // try next
-        }
-      }
+    const data = await loadEvolutionStructureData(folder, req.params.repoName, req.params.commitIds);
+    if (data) {
+      return res.json(data);
     }
 
-    res.json({
-      cities: {},
-      districts: {},
-      buildings: {},
-      classes: {},
-      functions: {},
-    });
+    res.json(emptyFlatLandscape(landscapeToken));
   });
+
+  persistenceApp.post(`${v3BaseUrl}/${landscapeToken}/structure/evolution/batch`, async (req, res) => {
+    const repositories = req.body?.repositories ?? [];
+    const parts = [];
+
+    for (const { repositoryName, commitHashes } of repositories) {
+      if (!repositoryName || !Array.isArray(commitHashes) || commitHashes.length === 0) {
+        continue;
+      }
+
+      const commitIds = commitHashes.join("-");
+      const data = await loadEvolutionStructureData(folder, repositoryName, commitIds);
+      parts.push(data ?? emptyFlatLandscape(landscapeToken));
+    }
+
+    res.json(mergeFlatLandscapes(landscapeToken, parts));
+  });
+}
+
+function emptyFlatLandscape(landscapeToken) {
+  return {
+    landscapeToken,
+    cities: {},
+    districts: {},
+    buildings: {},
+  };
+}
+
+async function loadEvolutionStructureData(folder, repoName, commitIds) {
+  const potentialFiles = [
+    `demo-data/${folder}/commit-${repoName}-${commitIds}.json`,
+    `demo-data/${folder}/${commitIds}.json`,
+  ];
+
+  for (const filePath of potentialFiles) {
+    if (fs.existsSync(filePath)) {
+      try {
+        const fileContent = await readFile(filePath);
+        return JSON.parse(fileContent);
+      } catch {
+        // try next
+      }
+    }
+  }
+
+  return null;
+}
+
+function mergeFlatLandscapes(landscapeToken, parts) {
+  const cities = {};
+  const districts = {};
+  const buildings = {};
+
+  for (const part of parts) {
+    if (!part) {
+      continue;
+    }
+    Object.assign(cities, part.cities ?? {});
+    Object.assign(districts, part.districts ?? {});
+    Object.assign(buildings, part.buildings ?? {});
+  }
+
+  return {
+    landscapeToken,
+    cities,
+    districts,
+    buildings,
+  };
 }

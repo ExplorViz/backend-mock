@@ -58,28 +58,6 @@ async function iterateOverDemoData(directoryPath) {
   });
 }
 
-// Expanding PetClinic
-// createLandscapeSample({
-//   folder: "PetClinic Sample",
-//   token: "19844195-7235-4254-a17b-0f7fb49adb0a",
-//   alias: "Petclinic Sample (Random traces and increasing, unrelated timestamps (with random gaps))",
-//   traceModifier: removeRandomTraces,
-//   timestampModifier: (latestTimestampEpochNano) => {
-//     let nextTimestampNano = calculateTenSecondLaterNeighborTimestamp(parseInt(latestTimestampEpochNano));
-//     let randomSpanCount = parseInt(Math.random() * (150 - 50) + 50);
-
-//     if (Math.random() > 0.75) {
-//       // Add 10 seconds in nanoseconds
-//       nextTimestampNano += 10_000_000_000;
-//     }
-
-//     return {
-//       epochNano: nextTimestampNano,
-//       spanCount: randomSpanCount,
-//     };
-//   },
-// });
-
 /**
  * Creates and configures a express application instance.
  * @param {number} port
@@ -208,14 +186,14 @@ async function createLandscapeSample({
   landscapes.push({
     value: landscapeToken,
     ownerId: "github|123456",
-    created: timestampData && timestampData.length > 0 ? timestampData[0].epochNano / 1000000 : 0,
+    created: timestampData && timestampData.length > 0 ? timestampData[0].epochNano / 1000000 : Date.now(),
     alias: alias ? alias : folder,
     sharedUsersIds: [],
   });
 
   try {
     await readFile(`demo-data/${folder}/repository-names.json`);
-    // Repository names found => csode evolution data is present
+    // Repository names found => code evolution data is present
     provideEvolutionData(folder, landscapeToken);
   } catch {
     // No demo data for code evolution - this is expected, do not throw error

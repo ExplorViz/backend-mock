@@ -1,10 +1,10 @@
 {
   "metrics": {
-    "functionCount": {
+    "executionTime": {
       "min": 0,
       "max": 0
     },
-    "executionTime": {
+    "functionCount": {
       "min": 0,
       "max": 0
     },
